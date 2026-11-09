@@ -40,7 +40,7 @@ export function Pricing() {
 
                 <p className="mt-8 flex items-baseline gap-2 whitespace-nowrap">
                   <span className="text-stat tabular-nums text-foreground">${plan.price.toFixed(2)}</span>
-                  <span className="font-serif text-serif-sm text-muted-foreground">one-time</span>
+                  <span className="text-caption text-muted-foreground">one-time</span>
                 </p>
                 <p className="mt-2 min-h-10 text-caption text-muted-foreground">
                   {plan.savings ? (
@@ -73,7 +73,7 @@ export function Pricing() {
                         aria-hidden
                         className={cn(
                           "mt-0.5 h-4 w-4 shrink-0",
-                          plan.isPopular ? "text-brand" : "text-subtle",
+                          plan.isPopular ? "text-foreground" : "text-subtle",
                         )}
                       />
                       {feature}

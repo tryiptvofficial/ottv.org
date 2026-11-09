@@ -214,7 +214,7 @@ export default async function HowToPage({ params }: Props) {
                     <ul className="space-y-3 text-muted-foreground">
                       {requirements.map((item) => (
                         <li key={item} className="flex items-start gap-3">
-                          <Check aria-hidden className="mt-0.5 h-4 w-4 shrink-0 text-brand" /> {item}
+                          <Check aria-hidden className="mt-0.5 h-4 w-4 shrink-0 text-foreground" /> {item}
                         </li>
                       ))}
                     </ul>
@@ -269,7 +269,7 @@ export default async function HowToPage({ params }: Props) {
                 {faqs && (
                   <>
                     <h2>Frequently Asked Questions</h2>
-                    <FaqList items={faqs} className="not-prose mt-8 max-w-none" />
+                    <FaqList items={faqs} columns={1} className="not-prose mt-8 max-w-none" />
                   </>
                 )}
               </div>

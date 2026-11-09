@@ -2,6 +2,7 @@
 import { MetadataRoute } from 'next'
 import { howToArticles } from '@/lib/how-to';
 import { allCountries } from '@/lib/countries';
+import { legalDetails, legalLinks } from '@/lib/site-data/legal-details';
 import { marketProfiles } from '@/lib/site-data/market-profiles';
 import { siteConfig, siteContentUpdatedAt } from '@/lib/site-config';
 
@@ -65,9 +66,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
+  const legalPages: MetadataRoute.Sitemap = legalLinks.map((link) => ({
+    url: `${baseUrl}${link.href}`,
+    lastModified: new Date(legalDetails.effectiveDate),
+    changeFrequency: 'yearly',
+    priority: 0.3,
+  }));
+
   return [
     ...staticPages,
     ...devicePages,
     ...countryPages,
+    ...legalPages,
   ]
 }

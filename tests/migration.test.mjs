@@ -262,12 +262,16 @@ test('order and checkout flows still go to the same WhatsApp number at the same 
 
 test('analytics and verification tags are intact', () => {
   const home = pages.get('/').body;
-  assert.ok(home.includes('analytics.ahrefs.com/analytics.js'));
-  assert.ok(home.includes('cdn.visitors.now/v.js'));
-  assert.ok(home.includes('0a9ca441-3262-415a-a3ac-e06859feeeba'));
+  // The scripts load only after consent, so they live behind ConsentManager and must stay out of the HTML.
+  assert.ok(!home.includes('analytics.ahrefs.com/analytics.js'));
+  assert.ok(!home.includes('cdn.visitors.now/v.js'));
+  const analytics = fs.readFileSync(path.join(root, 'src/components/shared/Analytics.tsx'), 'utf8');
+  assert.ok(analytics.includes('analytics.ahrefs.com/analytics.js'));
+  assert.ok(analytics.includes('cdn.visitors.now/v.js'));
+  assert.ok(analytics.includes('0a9ca441-3262-415a-a3ac-e06859feeeba'));
   assert.equal(metaContent(home, 'name', 'msvalidate.01'), 'CEC29E9356C1B062CC9637E64D68C778');
   assert.match(home, /google-site-verification/);
-  assert.ok(fs.readFileSync(path.join(root, 'src/app/layout.tsx'), 'utf8').includes('<Analytics />'));
+  assert.ok(fs.readFileSync(path.join(root, 'src/app/layout.tsx'), 'utf8').includes('<ConsentManager'));
   assert.ok(fs.existsSync(path.join(root, 'public/34703b31e96542ffb49bffed790d5e29.txt')));
 });
 

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Container } from "./Container";
+import { ConsentSettingsButton } from "./ConsentManager";
 import { Logo } from "./Logo";
 import { WhatsAppLink } from "./WhatsAppLink";
 import { footerLinks } from "@/lib/site-data/footer";
@@ -50,10 +51,11 @@ export function Footer() {
             </ul>
           </div>
         </div>
-        <div className="border-t py-6">
+        <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2 border-t py-6">
           <p className="text-meta text-subtle">
             &copy; {new Date().getFullYear()} OTTV. All rights reserved.
           </p>
+          <ConsentSettingsButton className="min-h-6 text-meta text-subtle underline underline-offset-2 transition-colors hover:text-foreground" />
         </div>
       </Container>
     </footer>

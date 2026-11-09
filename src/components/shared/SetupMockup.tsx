@@ -16,10 +16,10 @@ export function SetupMockup() {
     <div aria-hidden className="relative mx-auto h-[34rem] w-full max-w-xl select-none">
       <div className="tone-light absolute right-2 top-4 w-[78%] rotate-6 rounded-card p-6 pb-20 shadow-mockup">
         <div className="flex items-center justify-between">
-          <p className="font-serif text-serif-sm">Your order</p>
-          <span className="inline-flex h-6 items-center rounded-badge bg-sprout-wash px-3 text-meta font-medium text-moss">WhatsApp</span>
+          <p className="text-caption">Your order</p>
+          <span className="inline-flex h-6 items-center rounded-badge bg-secondary px-3 text-meta font-medium text-secondary-foreground">WhatsApp</span>
         </div>
-        <p className="mt-4 ml-auto w-fit max-w-[85%] rounded-card bg-sprout-wash px-4 py-2 text-caption text-moss">
+        <p className="mt-4 ml-auto w-fit max-w-[85%] rounded-card bg-secondary px-4 py-2 text-caption text-secondary-foreground">
           I would like to order the 12 Months IPTV plan.
         </p>
         <p className="mt-2 w-fit max-w-[85%] rounded-card border border-input px-4 py-2 text-caption">

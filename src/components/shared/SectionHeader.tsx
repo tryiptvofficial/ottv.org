@@ -10,13 +10,13 @@ interface SectionHeaderProps {
   className?: string;
 }
 
-export function SectionHeader({ title, subtitle, level = 2, align = 'center', className }: SectionHeaderProps) {
+export function SectionHeader({ title, subtitle, level = 2, align = 'start', className }: SectionHeaderProps) {
   return (
-    <div className={cn('mb-12 max-w-narrow', align === 'center' ? 'mx-auto text-center' : 'text-left', className)}>
-      <Heading level={level} size={level === 1 ? 'display-xl' : 'display'}>
+    <div className={cn('mb-6 max-w-narrow', align === 'center' ? 'mx-auto text-center' : 'text-left', className)}>
+      <Heading level={level} size={level === 1 ? 'display-xl' : 'heading'}>
         {title}
       </Heading>
-      {subtitle && <Lead className={cn('mt-4 max-w-2xl', align === 'center' && 'mx-auto')}>{subtitle}</Lead>}
+      {subtitle && <Lead className={cn('mt-2 max-w-2xl text-body', align === 'center' && 'mx-auto')}>{subtitle}</Lead>}
     </div>
   );
 }

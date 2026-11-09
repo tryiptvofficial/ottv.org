@@ -29,14 +29,16 @@ export function Features() {
         <Grid as="ul" cols={3}>
           {features.map((feature) => (
             <Card as="li" key={feature.title} className="flex flex-col p-6">
-              <IconTile className="mb-6">
-                <feature.icon aria-hidden />
-              </IconTile>
               <Heading level={3} size="subheading">{feature.title}</Heading>
               <p className="mt-2 flex-grow text-muted-foreground">{feature.body}</p>
-              <Link href={feature.href} className="mt-4 inline-flex items-center gap-2 text-link">
-                {feature.cta} <ArrowRight aria-hidden className="h-4 w-4" />
-              </Link>
+              <div className="mt-6 flex items-center justify-between gap-4">
+                <Link href={feature.href} className="inline-flex items-center gap-2 text-link">
+                  {feature.cta} <ArrowRight aria-hidden className="h-4 w-4" />
+                </Link>
+                <IconTile>
+                  <feature.icon aria-hidden />
+                </IconTile>
+              </div>
             </Card>
           ))}
         </Grid>

@@ -8,53 +8,52 @@
  */
 @layer base {
   :root {
-    /* Primitives. --lichen-deep is Lichen Sage darkened to pass AA on white. */
-    --forest-depths: 127 32.1% 10.4%; /* #122314 */
-    --moss-shadow: 130 23.5% 20.0%; /* #273f2b */
-    --lichen-sage: 77 7.4% 47.8%; /* #7e8371 */
-    --lichen-deep: 80 8.4% 35.1%; /* #5c6152 */
-    --pale-fern: 75 15.4% 69.4%; /* #b7bda5 */
-    --electric-sprout: 106 84.6% 59.2%; /* #68ef3f */
-    --deep-verdant: 106 100.0% 31.8%; /* #26a200 */
-    --sprout-wash: 99 70.0% 92.2%; /* #e7f9dd */
-    --mist-green: 75 23.3% 83.1%; /* #d9deca */
-    --onyx-olive: 75 8.7% 18.0%; /* #30322a */
-    --pure-white: 0 0.0% 100.0%; /* #ffffff */
-    --bone-white: 78 33.3% 94.1%; /* #f2f5eb */
+    /* Primitives. Near-black neutrals plus one red. */
+    --void-black: 0 0% 0%; /* #000000 */
+    --surface-raised: 0 0% 13.7%; /* #232323 */
+    --graphite: 0 0% 17.6%; /* #2d2d2d */
+    --charcoal: 0 0% 25.5%; /* #414141 */
+    --slate: 0 0% 35.3%; /* #5a5a5a */
+    --ash: 0 0% 50.2%; /* #808080 */
+    --silver: 0 0% 70.2%; /* #b3b3b3 */
+    --chalk: 0 0% 100%; /* #ffffff */
+    --signal-red: 357 92.4% 46.7%; /* #e50914 */
     --danger-hue: 358 75.1% 59.0%; /* #e5484d */
     --warning-hue: 37 91.3% 55.1%; /* #f5a524 */
+    --feature-gradient: linear-gradient(149deg, #192247, #210e17);
 
-    /* Semantic: components depend on these, not on primitives. Dark is the default tone. */
-    --background: var(--forest-depths);
-    --foreground: var(--pure-white);
-    --card: var(--forest-depths);
-    --card-foreground: var(--pure-white);
-    --popover: var(--forest-depths);
-    --popover-foreground: var(--pure-white);
-    --recessed: var(--onyx-olive);
-    --secondary: var(--onyx-olive);
-    --secondary-foreground: var(--pure-white);
-    --muted: var(--onyx-olive);
-    --muted-foreground: var(--pale-fern);
-    --subtle: var(--pale-fern);
-    --accent: var(--onyx-olive);
-    --accent-foreground: var(--pure-white);
-    --border: var(--onyx-olive);
-    --input: var(--moss-shadow);
-    --ring: var(--electric-sprout);
-    --brand: var(--electric-sprout);
-    --primary: var(--electric-sprout);
-    --primary-foreground: var(--onyx-olive);
+    /* Semantic: components depend on these, not on primitives. */
+    --background: var(--void-black);
+    --foreground: var(--chalk);
+    --card: var(--surface-raised);
+    --card-foreground: var(--chalk);
+    --popover: var(--surface-raised);
+    --popover-foreground: var(--chalk);
+    --recessed: var(--surface-raised);
+    --secondary: var(--charcoal);
+    --secondary-foreground: var(--chalk);
+    --muted: var(--graphite);
+    --muted-foreground: var(--silver);
+    --subtle: var(--silver);
+    --placeholder: var(--ash);
+    --accent: var(--graphite);
+    --accent-foreground: var(--chalk);
+    --border: var(--graphite);
+    --input: var(--slate);
+    --ring: var(--chalk);
+    --brand: var(--signal-red);
+    --primary: var(--signal-red);
+    --primary-foreground: var(--chalk);
     --destructive: var(--danger-hue);
-    --destructive-foreground: var(--pure-white);
-    --info: var(--deep-verdant);
-    --success: var(--electric-sprout);
+    --destructive-foreground: var(--chalk);
+    --info: var(--silver);
+    --success: var(--chalk);
     --warning: var(--warning-hue);
-    --chart-1: var(--electric-sprout);
-    --chart-2: var(--deep-verdant);
-    --chart-3: var(--pale-fern);
-    --chart-4: var(--lichen-sage);
-    --chart-5: var(--mist-green);
+    --chart-1: var(--signal-red);
+    --chart-2: var(--silver);
+    --chart-3: var(--ash);
+    --chart-4: var(--slate);
+    --chart-5: var(--charcoal);
     --radius: 0.5rem;
 
     /* Motion */
@@ -64,55 +63,15 @@
     --ease-standard: cubic-bezier(0.2, 0, 0, 1);
   }
 
-  /* A white band re-points the same semantic tokens, so components need no light variants. */
-  .tone-light,
-  .surface-invert {
-    --background: var(--pure-white);
-    --foreground: var(--onyx-olive);
-    --card: var(--bone-white);
-    --card-foreground: var(--onyx-olive);
-    --popover: var(--pure-white);
-    --popover-foreground: var(--onyx-olive);
-    --recessed: var(--bone-white);
-    --secondary: var(--sprout-wash);
-    --secondary-foreground: var(--moss-shadow);
-    --muted: var(--bone-white);
-    --muted-foreground: var(--moss-shadow);
-    --subtle: var(--lichen-deep);
-    --accent: var(--mist-green);
-    --accent-foreground: var(--onyx-olive);
-    --border: var(--onyx-olive);
-    --input: var(--pale-fern);
-    --ring: var(--deep-verdant);
-    --brand: var(--deep-verdant);
+  /* The whole site is dark, so a "light" band is only a marker for section grouping. */
+  .tone-light {
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
   }
 
-  /* An inverted card: Bone White on a dark band, Forest Depths on a white one. */
+  /* The highlighted card: the feature gradient, framed so it reads against other gradient cards. */
   .surface-invert {
-    --background: var(--bone-white);
-  }
-  .tone-light .surface-invert {
-    --background: var(--forest-depths);
-    --foreground: var(--pure-white);
-    --card: var(--forest-depths);
-    --card-foreground: var(--pure-white);
-    --popover: var(--forest-depths);
-    --popover-foreground: var(--pure-white);
-    --recessed: var(--onyx-olive);
-    --secondary: var(--onyx-olive);
-    --secondary-foreground: var(--pure-white);
-    --muted: var(--onyx-olive);
-    --muted-foreground: var(--pale-fern);
-    --subtle: var(--pale-fern);
-    --accent: var(--onyx-olive);
-    --accent-foreground: var(--pure-white);
-    --border: var(--onyx-olive);
-    --input: var(--moss-shadow);
-    --ring: var(--electric-sprout);
-    --brand: var(--electric-sprout);
-    background-color: hsl(var(--background));
+    background-image: var(--feature-gradient);
     color: hsl(var(--foreground));
   }
 }
@@ -124,7 +83,7 @@
   html {
     color-scheme: dark;
     scroll-padding-top: 6rem;
-    scrollbar-color: hsl(var(--moss-shadow)) hsl(var(--forest-depths));
+    scrollbar-color: hsl(var(--charcoal)) hsl(var(--void-black));
   }
   body {
     @apply bg-background text-body text-foreground;
@@ -137,13 +96,13 @@
     text-wrap: pretty;
   }
   ::selection {
-    background: hsl(var(--electric-sprout));
-    color: hsl(var(--onyx-olive));
+    background: hsl(var(--signal-red));
+    color: hsl(var(--chalk));
   }
   input,
   textarea {
-    caret-color: hsl(var(--brand));
-    accent-color: hsl(var(--electric-sprout));
+    caret-color: hsl(var(--foreground));
+    accent-color: hsl(var(--signal-red));
   }
 
   /* Every animation and transition stops for people who ask for less motion */
@@ -161,9 +120,9 @@
 
 /* Long-form reading style for guides and generated HTML. `.not-prose` opts a block out. */
 @layer components {
-  /* Inline text link: a green underline; the text takes the accent on hover */
+  /* Inline text link: white text with a quiet underline that brightens on hover. Red fails AA at this size. */
   .text-link {
-    @apply rounded-control text-foreground underline decoration-brand underline-offset-4 transition-colors duration-fast hover:text-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring;
+    @apply rounded-control text-foreground underline decoration-subtle underline-offset-4 transition-colors duration-fast hover:decoration-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring;
   }
   .prose {
     @apply text-body text-muted-foreground;
@@ -211,7 +170,7 @@
 
 /* Named one-off recipes. Pages use these names instead of arbitrary values. */
 @layer utilities {
-  /* The one atmospheric element: a grainy green orb rising out of the hero, cropped by the section. */
+  /* The one atmospheric element: a soft glow of the feature gradient rising out of the hero. */
   .hero-orb {
     position: absolute;
     left: 50%;
@@ -220,18 +179,9 @@
     aspect-ratio: 1;
     transform: translateX(-50%);
     border-radius: 9999px;
-    overflow: hidden;
-    opacity: 0.6;
-    background: linear-gradient(180deg, hsl(var(--deep-verdant) / 0.5), hsl(var(--moss-shadow)) 30%, #000 75%);
-    mask-image: radial-gradient(closest-side, #000 62%, transparent);
-  }
-  .hero-orb::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    opacity: 0.6;
-    mix-blend-mode: overlay;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.7;
+    background: var(--feature-gradient);
+    mask-image: radial-gradient(closest-side, #000 40%, transparent);
   }
 
   /* Hero height: 76% of the small viewport (stable under mobile toolbars, 76vh fallback),

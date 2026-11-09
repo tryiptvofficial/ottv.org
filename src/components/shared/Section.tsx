@@ -7,11 +7,11 @@ const sectionVariants = cva('relative', {
   variants: {
     spacing: {
       none: '',
-      compact: 'py-20 md:py-24',
-      default: 'py-20 md:py-30',
+      compact: 'py-8 md:py-10',
+      default: 'py-10 md:py-14',
       spacious: 'py-24 md:py-30 short:py-12',
     },
-    // Bands alternate between Forest Depths and Pure White; the colour change is the divider.
+    // Every band is black; generous spacing separates them.
     tone: {
       dark: '',
       light: 'tone-light',

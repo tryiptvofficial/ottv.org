@@ -1,6 +1,5 @@
 
 import type { Metadata, Viewport } from "next";
-import Script from "next/script";
 import { Boldonse, Geist, Instrument_Serif } from 'next/font/google';
 import { ThemeProvider } from "@/components/shared/ThemeProvider";
 import { Navbar } from "@/components/shared/Navbar";
@@ -10,7 +9,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ContactSheet } from "@/components/shared/ContactSheet";
 import { ProgressBar } from '@/components/shared/ProgressBar';
-import { Analytics } from "@/components/shared/Analytics";
+import { ConsentManager } from "@/components/shared/ConsentManager";
 import { Schema } from "@/components/shared/Schema";
 import { generateOrganizationSchema, generateWebSiteSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/site-config";
@@ -139,24 +138,10 @@ export default function RootLayout({
        <head>
           <Schema id="organization" schema={generateOrganizationSchema()} />
           <Schema id="website" schema={generateWebSiteSchema()} />
-          <link rel="dns-prefetch" href="https://www.google-analytics.com"/>
         </head>
       <body>
         <ProgressBar />
-        <Analytics />
-        {/* Visitors refuses to track localhost and logs a console error, which the dev overlay reports. */}
-        {process.env.NODE_ENV === "production" && (
-          <Script
-              src="https://cdn.visitors.now/v.js"
-              data-token="0a9ca441-3262-415a-a3ac-e06859feeeba"
-              strategy="lazyOnload"
-          />
-        )}
-        <Script
-            src="https://analytics.ahrefs.com/analytics.js"
-            id="ahrefs-analytics"
-            strategy="lazyOnload"
-        />
+        <ConsentManager />
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

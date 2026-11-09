@@ -129,7 +129,7 @@ export default function ContactPage() {
               <ul className="mt-6 space-y-3 text-body text-muted-foreground">
                 {checklist.map((item) => (
                   <li key={item} className="flex gap-3">
-                    <Check aria-hidden className="mt-1 h-4 w-4 shrink-0 text-brand" />
+                    <Check aria-hidden className="mt-1 h-4 w-4 shrink-0 text-foreground" />
                     {item}
                   </li>
                 ))}

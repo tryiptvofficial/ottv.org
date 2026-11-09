@@ -36,7 +36,7 @@ export function WhyOttv() {
           title="Why Choose OTTV for IPTV?"
           subtitle="Straightforward plans, setup help for your devices and a free trial before you commit."
         />
-        <Grid cols={2} gap="loose" className="mx-auto max-w-medium">
+        <Grid cols={2} gap="loose">
           {reasons.map((reason) => (
             <div key={reason.title}>
               <Heading level={3} size="subheading">{reason.title}</Heading>

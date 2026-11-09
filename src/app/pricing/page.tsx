@@ -77,7 +77,7 @@ export default async function PricingPage() {
             <ul className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-caption text-muted-foreground">
               {[`${productFacts.liveChannels} live channels`, `${productFacts.vodTitles} movies & shows`, "One payment per plan", "7-day money-back guarantee"].map((item) => (
                 <li key={item} className="flex items-center gap-2">
-                  <Check aria-hidden className="h-4 w-4 text-brand" /> {item}
+                  <Check aria-hidden className="h-4 w-4 text-foreground" /> {item}
                 </li>
               ))}
             </ul>
@@ -90,7 +90,7 @@ export default async function PricingPage() {
       <Section spacing="compact">
         <Container>
           <SectionHeader title="Compare IPTV Plan Prices" subtitle={`The 12-month plan costs $${longest.price.toFixed(2)}, or $${lowestMonthly} a month. A single month costs $${shortest.price.toFixed(2)}.`} />
-          <div className="mx-auto max-w-medium">
+          <div>
             <Table>
               <TableCaption>Prices in US dollars. Each plan is a one-time payment.</TableCaption>
               <TableHeader>
@@ -139,12 +139,12 @@ export default async function PricingPage() {
               <ul className="mt-4 space-y-3 text-body text-muted-foreground">
                 {shortest.features.map((feature) => (
                   <li key={feature} className="flex gap-3">
-                    <Check aria-hidden className="mt-1 h-4 w-4 shrink-0 text-brand" />
+                    <Check aria-hidden className="mt-1 h-4 w-4 shrink-0 text-foreground" />
                     {feature}
                   </li>
                 ))}
                 <li className="flex gap-3">
-                  <Check aria-hidden className="mt-1 h-4 w-4 shrink-0 text-brand" />
+                  <Check aria-hidden className="mt-1 h-4 w-4 shrink-0 text-foreground" />
                   Setup guides for 10 kinds of device
                 </li>
               </ul>

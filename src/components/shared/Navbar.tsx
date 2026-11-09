@@ -11,7 +11,7 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-40 w-full pt-3 md:pt-6">
       <Container>
-        <div className="flex h-14 items-center rounded-nav bg-onyx/90 pl-5 pr-2 shadow-nav">
+        <div className="flex h-14 items-center rounded-nav bg-background/70 pl-5 pr-2 backdrop-blur-sm">
           <Logo />
           <nav className="ml-10 hidden items-center space-x-6 lg:flex">
             <NavLinks />

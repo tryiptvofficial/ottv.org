@@ -30,7 +30,7 @@ export function Comparison() {
           title="How Is IPTV Different From Cable?"
           subtitle="Thinking of dropping cable? Here is how an OTTV subscription compares with a typical cable package."
         />
-        <Grid cols={2} className="mx-auto max-w-medium">
+        <Grid cols={2}>
           <Card className="p-6">
             <Heading level={3} size="subheading">Typical cable TV</Heading>
             <ul className="mt-6 space-y-3 text-body text-muted-foreground">
@@ -47,7 +47,7 @@ export function Comparison() {
             <ul className="mt-6 space-y-3 text-body text-foreground">
               {ottv.map((item) => (
                 <li key={item} className="flex gap-3">
-                  <Check aria-hidden className="mt-1 h-4 w-4 shrink-0 text-brand" />
+                  <Check aria-hidden className="mt-1 h-4 w-4 shrink-0 text-foreground" />
                   {item}
                 </li>
               ))}

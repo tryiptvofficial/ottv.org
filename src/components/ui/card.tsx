@@ -3,19 +3,19 @@ import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
 
-// Flat, framed by a 1px hairline. Before reaching for a card, check the content needs containment
-// at all: spacing, a divider or a grid is often enough.
+// Depth comes from the feature gradient, never a shadow. Before reaching for a card, check the content needs
+// containment at all: spacing, a divider or a grid is often enough.
 const cardVariants = cva("relative text-card-foreground", {
   variants: {
     variant: {
-      // Forest on dark bands, Bone White on white bands. The default information group.
-      base: "rounded-card border bg-card",
+      // The default information group.
+      base: "rounded-card bg-feature",
       // Defined by its edge only; the band shows through.
       edge: "rounded-card border bg-transparent",
       // Same surface as base, kept for the most important feature blocks.
-      key: "rounded-card border bg-card",
-      // Flips to the opposite tone. For the featured plan or the closing call to action.
-      accent: "surface-invert rounded-card border",
+      key: "rounded-card bg-feature",
+      // For the featured plan or the closing call to action.
+      accent: "surface-invert rounded-card border border-input",
     },
     size: {
       default: "",
