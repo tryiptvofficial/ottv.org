@@ -1,0 +1,261 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Design system tokens: the single source of truth for colour, elevation and motion.
+ * Spec and usage rules: docs/design-system.md. Values are HSL triplets so Tailwind can apply alpha.
+ */
+@layer base {
+  :root {
+    /* Primitives */
+    --void: 210 20% 2%;        /* #040506 canvas */
+    --ink: 220 18% 3%;         /* #07080a card */
+    --obsidian: 220 8% 7%;     /* #111214 recessed */
+    --graphite: 220 5% 11%;    /* #1b1c1e dense controls */
+    --slate: 180 2% 19%;       /* #2f3031 quiet divider */
+    --hairline: 210 2% 21%;    /* #363739 border */
+    --iron: 210 1% 27%;        /* #454647 text on Mist */
+    --smoke: 210 1% 42%;       /* #6a6b6c metadata */
+    --ash: 240 1% 61%;         /* #9c9c9d secondary text */
+    --mist: 0 0% 90%;          /* #e6e6e6 action fill */
+    --white: 0 0% 100%;
+    --coral: 0 100% 69%;       /* #ff6363 brand accent */
+    --ember: 358 33% 20%;      /* #452324 accent tint */
+    --sky: 216 100% 69%;       /* #63a1ff hero artwork */
+    --cobalt: 223 78% 36%;     /* #143ca3 hero artwork */
+    --deep-space: 216 93% 12%; /* #02193b hero artwork */
+    --info-hue: 202 100% 67%;  /* #56c2ff */
+    --success-hue: 151 59% 59%;/* #59d499 */
+    --warning-hue: 37 91% 55%; /* #f5a524 */
+    --danger-hue: 358 75% 59%; /* #e5484d */
+
+    /* Semantic: components depend on these, not on primitives */
+    --background: var(--void);
+    --foreground: var(--white);
+    --card: var(--ink);
+    --card-foreground: var(--white);
+    --popover: var(--obsidian);
+    --popover-foreground: var(--white);
+    --recessed: var(--obsidian);
+    --primary: var(--mist);
+    --primary-foreground: var(--iron);
+    --secondary: var(--graphite);
+    --secondary-foreground: var(--white);
+    --muted: var(--obsidian);
+    --muted-foreground: var(--ash);
+    --subtle: var(--smoke);
+    --accent: var(--graphite);
+    --accent-foreground: var(--white);
+    --destructive: var(--danger-hue);
+    --destructive-foreground: var(--white);
+    --info: var(--info-hue);
+    --success: var(--success-hue);
+    --warning: var(--warning-hue);
+    --border: var(--hairline);
+    --input: var(--hairline);
+    --ring: var(--mist);
+    --brand: var(--coral);
+    --brand-tint: var(--ember);
+    --chart-1: var(--mist);
+    --chart-2: var(--ash);
+    --chart-3: var(--smoke);
+    --chart-4: var(--coral);
+    --chart-5: var(--info-hue);
+    --radius: 0.5rem;
+
+    /* Motion */
+    --duration-fast: 150ms;
+    --duration-standard: 200ms;
+    --duration-slow: 350ms;
+    --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    color-scheme: dark;
+    scroll-padding-top: 5rem;
+  }
+  body {
+    @apply bg-background text-body text-foreground;
+    font-feature-settings: "calt", "kern", "liga";
+  }
+  h1, h2, h3, h4 {
+    text-wrap: balance;
+  }
+  p, li, dd, figcaption {
+    text-wrap: pretty;
+  }
+  ::selection {
+    background: hsl(var(--mist) / 0.25);
+  }
+
+  /* Every animation and transition stops for people who ask for less motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* Long-form reading style for guides and generated HTML. `.not-prose` opts a block out. */
+@layer components {
+  /* Inline text link: no colour, a hairline underline that firms up on hover */
+  .text-link {
+    @apply rounded-control text-foreground underline decoration-border underline-offset-4 transition-colors duration-fast hover:decoration-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring;
+  }
+  .prose {
+    @apply text-body text-muted-foreground;
+  }
+  .prose :where(h2):not(:where(.not-prose, .not-prose *)) {
+    @apply mb-4 mt-12 text-balance text-heading text-foreground;
+  }
+  .prose :where(h3):not(:where(.not-prose, .not-prose *)) {
+    @apply mb-2 mt-8 text-balance text-subheading text-foreground;
+  }
+  .prose :where(p, ul, ol, blockquote, table):not(:where(.not-prose, .not-prose *)) {
+    @apply my-4;
+  }
+  .prose :where(ul):not(:where(.not-prose, .not-prose *)) {
+    @apply list-disc space-y-2 pl-6 marker:text-subtle;
+  }
+  .prose :where(ol):not(:where(.not-prose, .not-prose *)) {
+    @apply list-decimal space-y-2 pl-6 marker:text-subtle;
+  }
+  .prose :where(strong):not(:where(.not-prose, .not-prose *)) {
+    @apply font-medium text-foreground;
+  }
+  .prose :where(a):not(:where(.not-prose, .not-prose *)) {
+    @apply text-link;
+  }
+  .prose :where(blockquote):not(:where(.not-prose, .not-prose *)) {
+    @apply border-l-2 border-foreground/30 pl-4 text-foreground;
+  }
+  .prose :where(code):not(:where(.not-prose, .not-prose *)) {
+    @apply rounded-badge bg-recessed px-1.5 py-0.5 font-mono text-meta text-foreground;
+  }
+  .prose :where(table):not(:where(.not-prose, .not-prose *)) {
+    @apply w-full text-left text-caption;
+  }
+  .prose :where(th, td):not(:where(.not-prose, .not-prose *)) {
+    @apply border-b px-3 py-2;
+  }
+  .prose :where(th):not(:where(.not-prose, .not-prose *)) {
+    @apply font-medium text-foreground;
+  }
+  .prose > :first-child {
+    @apply mt-0;
+  }
+}
+
+/* Named one-off recipes. Pages use these names instead of arbitrary values. */
+@layer utilities {
+  /* The single cinematic moment: blue wash with coral bars cutting across. Hero only. */
+  .hero-atmosphere {
+    background:
+      radial-gradient(60% 60% at 50% 26%, hsl(var(--cobalt) / 0.55), hsl(var(--deep-space) / 0.35) 55%, transparent 80%);
+  }
+  .hero-atmosphere::before,
+  .hero-atmosphere::after {
+    content: "";
+    position: absolute;
+    border-radius: 9999px;
+    transform: translateX(-50%) rotate(-14deg);
+    filter: blur(48px);
+  }
+  .hero-atmosphere::before {
+    left: 50%;
+    top: 18%;
+    height: 6rem;
+    width: 70%;
+    max-width: 80rem;
+    background: hsl(var(--coral) / 0.5);
+  }
+  .hero-atmosphere::after {
+    left: 58%;
+    top: 34%;
+    height: 3rem;
+    width: 45%;
+    max-width: 52rem;
+    background: hsl(var(--coral) / 0.35);
+  }
+
+  /* Hero height: 80% of the small viewport (stable under mobile toolbars, 80vh fallback),
+     a fixed 600px from 768 up, and no minimum on short landscape screens */
+  .min-h-hero {
+    min-height: 80vh;
+    min-height: 80svh;
+  }
+  @media (min-width: 768px) {
+    .min-h-hero {
+      min-height: 600px;
+    }
+  }
+  @media (max-height: 500px) {
+    .min-h-hero {
+      min-height: 0;
+    }
+  }
+
+  /* Expands a small control's hit area to 44px without changing its layout */
+  .touch-target {
+    position: relative;
+  }
+  .touch-target::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: max(100%, 44px);
+    height: max(100%, 44px);
+    transform: translate(-50%, -50%);
+  }
+
+  .bg-dot-grid {
+    background-image: radial-gradient(hsl(var(--foreground) / 0.1) 1px, transparent 1px);
+    background-size: 16px 16px;
+  }
+
+  /* Soft light behind a section, neutral or warm. Positioned by the caller. */
+  .ambient-glow {
+    background: radial-gradient(ellipse 50% 45% at 50% 40%, hsl(var(--foreground) / 0.04), transparent);
+  }
+  .ambient-glow-brand {
+    background: radial-gradient(ellipse 50% 45% at 50% 50%, hsl(var(--brand) / 0.08), transparent);
+  }
+
+  .mask-radial {
+    mask-image: radial-gradient(ellipse at center, black, transparent 70%);
+  }
+  .mask-fade-b {
+    mask-image: linear-gradient(to bottom, black 60%, transparent);
+  }
+  .mask-fade-x {
+    mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      /* Translate exactly half the strip width + half the gap so the loop is seamless */
+      transform: translateX(calc(-50% - 0.5rem));
+    }
+  }
+  .animate-marquee {
+    animation: marquee 40s linear infinite;
+  }
+  .animate-marquee-reverse {
+    animation: marquee 40s linear infinite reverse;
+  }
+}

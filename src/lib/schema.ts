@@ -1,0 +1,210 @@
+
+import type {
+  Product,
+  WebSite,
+  Organization,
+  FAQPage,
+  BreadcrumbList,
+  Article,
+  HowToLeaf,
+  Service,
+  Offer,
+  AggregateOffer,
+  WithContext
+} from 'schema-dts';
+import { siteConfig, whatsappUrl } from '@/lib/site-config';
+import { plans } from '@/lib/site-data/pricing';
+import { productFacts } from '@/lib/site-data/product-facts';
+
+// Reusable parts of schemas
+const defaultPublisher = {
+  '@type': 'Organization' as const,
+  'name': siteConfig.name,
+  'logo': {
+    '@type': 'ImageObject' as const,
+    'url': `${siteConfig.url}/api/og`,
+  },
+};
+
+export const organizationId = `${siteConfig.url}/#organization`;
+
+export function generateWebSiteSchema(): WithContext<WebSite> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    'url': siteConfig.url,
+    'name': siteConfig.name,
+    'publisher': { '@id': organizationId },
+  };
+}
+
+// Only verified details: no address, email or social profiles are published until the owner confirms them.
+export function generateOrganizationSchema(): WithContext<Organization> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': organizationId,
+    'name': siteConfig.name,
+    'url': siteConfig.url,
+    'logo': `${siteConfig.url}/apple-touch-icon.png`,
+    'contactPoint': {
+      '@type': 'ContactPoint',
+      'contactType': 'customer support',
+      'url': whatsappUrl(),
+    },
+  };
+}
+
+/** The subscription as a product, built only from `pricing.ts` and the product facts. No ratings: there are no reviews on the site. */
+export function generateSubscriptionProductSchema(): WithContext<Product> {
+  const prices = plans.map((plan) => plan.price);
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: `${siteConfig.name} IPTV subscription`,
+    description: `IPTV subscription with ${productFacts.summary}, in 1, 3, 6 and 12 month plans priced in US dollars.`,
+    image: `${siteConfig.url}${siteConfig.ogImage}`,
+    brand: { '@type': 'Brand', name: siteConfig.name },
+    offers: {
+      '@type': 'AggregateOffer',
+      priceCurrency: 'USD',
+      lowPrice: Math.min(...prices).toFixed(2),
+      highPrice: Math.max(...prices).toFixed(2),
+      offerCount: plans.length,
+      offers: plans.map((plan) => ({
+        '@type': 'Offer',
+        name: plan.name,
+        price: plan.price.toFixed(2),
+        priceCurrency: 'USD',
+        url: `${siteConfig.url}/pricing`,
+      })),
+    },
+  };
+}
+
+
+export function generateFAQPageSchema(mainEntity: { question: string; answer: string }[]): WithContext<FAQPage> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: mainEntity.map(({ question, answer }) => ({
+      '@type': 'Question',
+      name: question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: answer,
+      },
+    })),
+  };
+}
+
+export function generateBreadcrumbSchema(itemListElement: { name: string; item: string }[]): WithContext<BreadcrumbList> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: itemListElement.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      item: item.item,
+    })),
+  };
+}
+
+interface ArticleSchemaProps {
+    headline: string;
+    description: string;
+    image?: string;
+    datePublished: string;
+    dateModified: string;
+    authorName?: string;
+    publisherName?: string;
+    url: string;
+}
+
+export function generateArticleSchema(props: ArticleSchemaProps): WithContext<Article> {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: props.headline,
+        description: props.description,
+        image: props.image,
+        datePublished: props.datePublished,
+        dateModified: props.dateModified,
+        author: {
+            '@type': 'Organization',
+            name: props.authorName || siteConfig.name,
+        },
+        publisher: defaultPublisher,
+        mainEntityOfPage: {
+            '@type': 'WebPage',
+            '@id': props.url,
+        },
+    };
+}
+
+interface HowToSchemaProps {
+    name: string;
+    description: string;
+    image?: { url: string; width?: number; height?: number; };
+    steps: { name: string; text: string; url: string; }[];
+    totalTime?: string;
+}
+
+// schema-dts types ImageObject width/height as Distance strings; Google reads plain pixel numbers,
+// so the image is typed here to keep emitting numbers.
+type HowToJsonLd = WithContext<Omit<HowToLeaf, 'image'>> & {
+    image?: { '@type': 'ImageObject'; url: string; width?: number; height?: number };
+};
+
+export function generateHowToSchema(props: HowToSchemaProps): HowToJsonLd {
+    const { name, description, image, steps, totalTime } = props;
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'HowTo',
+        name,
+        description,
+        image: image ? {
+            '@type': 'ImageObject',
+            url: image.url,
+            width: image.width,
+            height: image.height,
+        } : undefined,
+        step: steps.map((step, index) => ({
+            '@type': 'HowToStep',
+            name: step.name,
+            text: step.text,
+            url: step.url,
+            position: index + 1,
+        })),
+        totalTime: totalTime,
+    };
+}
+
+
+interface ServiceSchemaProps {
+    serviceType: string;
+    areaServed?: { type: 'Country' | 'Place', name: string, identifier?: string };
+    name: string;
+    description: string;
+    offers?: Offer | AggregateOffer | Offer[];
+}
+
+export function generateServiceSchema(props: ServiceSchemaProps): WithContext<Service> {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        serviceType: props.serviceType,
+        provider: { '@id': organizationId },
+        ...(props.areaServed && {
+            areaServed: {
+                '@type': props.areaServed.type,
+                name: props.areaServed.name,
+                ...(props.areaServed.identifier && { identifier: props.areaServed.identifier }),
+            },
+        }),
+        name: props.name,
+        description: props.description,
+        offers: props.offers
+    }
+}

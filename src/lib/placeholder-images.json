@@ -1,0 +1,216 @@
+{
+  "placeholderImages": [
+    {
+      "id": "hero-background",
+      "description": "A dark, cinematic background image of an empty movie theater, evoking a premium entertainment experience for the hero section.",
+      "imageUrl": "https://images.unsplash.com/photo-1646678376409-d3fe0099759b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjaW5lbWElMjB0aGVhdGVyfGVufDB8fHx8MTc2MTcxOTIyN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cinema theater"
+    },
+    {
+      "id": "subscription-offering-og",
+      "description": "An open graph and product image showing a branded IPTV subscription box, representing the service being sold.",
+      "imageUrl": "https://images-cdn.ubuy.co.in/633fee9c3a16a463ad2f7388-iptv-subscription-not-box-including.jpg",
+      "imageHint": "IPTV box"
+    },
+    {
+      "id": "brand-logo-forbes",
+      "imageUrl": "https://iptvwell.com/demo13/wp-content/uploads/2023/04/brand_item21-150x46-1-1.webp",
+      "imageHint": "Forbes logo",
+      "description": "The Forbes logo, representing media mentions and authority.",
+      "width": 150,
+      "height": 46
+    },
+    {
+      "id": "brand-logo-techcrunch",
+      "imageUrl": "https://iptvwell.com/demo13/wp-content/uploads/2023/04/brand_item22-150x46-1-1.webp",
+      "imageHint": "TechCrunch logo",
+      "description": "The TechCrunch logo, representing media mentions and authority.",
+      "width": 150,
+      "height": 46
+    },
+    {
+      "id": "brand-logo-wired",
+      "imageUrl": "https://iptvwell.com/demo13/wp-content/uploads/2023/04/brand_item14-150x46-1-1.webp",
+      "imageHint": "Wired logo",
+      "description": "The Wired logo, representing media mentions and authority.",
+      "width": 150,
+      "height": 46
+    },
+    {
+      "id": "brand-logo-theverge",
+      "imageUrl": "https://iptvwell.com/demo13/wp-content/uploads/2023/04/brand_item13-150x46-1-1.webp",
+      "imageHint": "The Verge logo",
+      "description": "The Verge logo, representing media mentions and authority.",
+      "width": 150,
+      "height": 46
+    },
+    {
+      "id": "brand-logo-mashable",
+      "imageUrl": "https://iptvwell.com/demo13/wp-content/uploads/2023/04/brand_item12-1.webp",
+      "imageHint": "Mashable logo",
+      "description": "The Mashable logo, representing media mentions and authority.",
+      "width": 150,
+      "height": 46
+    },
+    {
+      "id": "brand-logo-gizmodo",
+      "imageUrl": "https://iptvwell.com/demo13/wp-content/uploads/2023/04/brand_item18-150x46-1-1.webp",
+      "imageHint": "Gizmodo logo",
+      "description": "The Gizmodo logo, representing media mentions and authority.",
+      "width": 150,
+      "height": 46
+    },
+    {
+      "id": "brand-logo-cnet",
+      "imageUrl": "https://iptvwell.com/demo13/wp-content/uploads/2023/04/brand_item17-150x46-1-1.webp",
+      "imageHint": "CNET logo",
+      "description": "The CNET logo, representing media mentions and authority.",
+      "width": 150,
+      "height": 46
+    },
+    {
+      "id": "brand-logo-engadget",
+      "imageUrl": "https://iptvwell.com/demo13/wp-content/uploads/2023/04/brand_item15-150x46-1-1.webp",
+      "imageHint": "Engadget logo",
+      "description": "The Engadget logo, representing media mentions and authority.",
+      "width": 150,
+      "height": 46
+    },
+    {
+      "id": "brand-logo-pcmag",
+      "imageUrl": "https://iptvwell.com/demo13/wp-content/uploads/2023/04/brand_item16-150x46-1-1.webp",
+      "imageHint": "PCMag logo",
+      "description": "The PCMag logo, representing media mentions and authority.",
+      "width": 150,
+      "height": 46
+    },
+    {
+      "id": "brand-logo-techradar",
+      "imageUrl": "https://iptvwell.com/demo13/wp-content/uploads/2023/04/brand_item10-150x46-1-1.webp",
+      "imageHint": "TechRadar logo",
+      "description": "The TechRadar logo, representing media mentions and authority.",
+      "width": 150,
+      "height": 46
+    },
+    {
+      "id": "brand-logo-digitaltrends",
+      "imageUrl": "https://iptvwell.com/demo13/wp-content/uploads/2023/04/brand_item11-1.webp",
+      "imageHint": "Digital Trends logo",
+      "description": "The Digital Trends logo, representing media mentions and authority.",
+      "width": 150,
+      "height": 46
+    },
+    {
+      "id": "brand-logo-arstechnica",
+      "imageUrl": "https://iptvwell.com/demo13/wp-content/uploads/2023/04/brand_item08-150x46-1-1.webp",
+      "imageHint": "Ars Technica logo",
+      "description": "The Ars Technica logo, representing media mentions and authority.",
+      "width": 150,
+      "height": 46
+    },
+    {
+      "id": "brand-logo-tomsguide",
+      "imageUrl": "https://iptvwell.com/demo13/wp-content/uploads/2023/04/brand_item09-150x46-1-1.webp",
+      "imageHint": "Tom's Guide logo",
+      "description": "The Tom's Guide logo, representing media mentions and authority.",
+      "width": 150,
+      "height": 46
+    },
+    {
+      "id": "brand-logo-slashdot",
+      "imageUrl": "https://iptvwell.com/demo13/wp-content/uploads/2023/04/brand_item06-150x46-1-1.webp",
+      "imageHint": "Slashdot logo",
+      "description": "The Slashdot logo, representing media mentions and authority.",
+      "width": 150,
+      "height": 46
+    },
+    {
+      "id": "brand-logo-hackernews",
+      "imageUrl": "https://iptvwell.com/demo13/wp-content/uploads/2023/04/brand_item05-150x46-1-1.webp",
+      "imageHint": "Hacker News logo",
+      "description": "The Hacker News logo, representing media mentions and authority.",
+      "width": 150,
+      "height": 46
+    },
+    {
+      "id": "guide-image-fire-tv",
+      "imageUrl": "https://images.unsplash.com/photo-1701422522356-03444a156644?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZmlyZSUyMHR2fGVufDB8fHx8MTc2MzM5Njg5Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "fire tv",
+      "description": "Featured image for the Fire TV Stick IPTV guide showing the device remote, symbolizing the ease of setup.",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "id": "guide-image-android",
+      "imageUrl": "https://images.unsplash.com/photo-1658282513894-612835eb44e4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxhbmRyb2lkJTIwZGV2aWNlfGVufDB8fHx8MTc2MzM5Njg5Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "android device",
+      "description": "Featured image for the Android IPTV guide, showing an Android phone to represent mobile compatibility.",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "id": "guide-image-troubleshooting",
+      "imageUrl": "https://images.unsplash.com/photo-1760531932521-8eb5a064dbca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx0cm91Ymxlc2hvb3RpbmclMjB0ZWNofGVufDB8fHx8MTc2MzM5Njg5Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "troubleshooting tech",
+      "description": "Conceptual image for IPTV troubleshooting, showing a technician examining equipment to represent problem-solving.",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "id": "guide-image-ios",
+      "imageUrl": "https://images.unsplash.com/photo-1729860646582-10a6721e05f4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxpb3MlMjBkZXZpY2V8ZW58MHx8fHwxNzYzMzk2ODk2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "ios device",
+      "description": "Featured image for the iOS IPTV guide, showing an iPhone to illustrate compatibility with Apple mobile devices.",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "id": "guide-image-windows",
+      "imageUrl": "https://images.unsplash.com/photo-1624571395775-253d9666612b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3aW5kb3dzJTIwcGN8ZW58MHx8fHwxNzYzMzk2ODk2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "windows pc",
+      "description": "Featured image for the Windows IPTV guide, illustrating a PC setup to show desktop compatibility.",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "id": "guide-image-macos",
+      "imageUrl": "https://images.unsplash.com/photo-1627660163617-72878fc413e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtYWNvcyUyMGxhcHRvcHxlbnwwfHx8fDE3NjMzOTY4OTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "macos laptop",
+      "description": "Featured image for the macOS IPTV guide, showing a MacBook to represent compatibility with Apple computers.",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "id": "guide-image-samsung-tv",
+      "imageUrl": "https://images.unsplash.com/photo-1593784991188-c899ca07263b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxzYW1zdW5nJTIwdHZ8ZW58MHx8fHwxNzYzMzk2ODk3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "samsung tv",
+      "description": "Featured image for the Samsung TV IPTV guide, showing a Samsung Smart TV in a living room setting.",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "id": "guide-image-lg-tv",
+      "imageUrl": "https://images.unsplash.com/photo-1611718663049-4c39b6b1182e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxsZyUyMHR2fGVufDB8fHx8MTc2MzM5Njg5Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "lg tv",
+      "description": "Featured image for the LG TV IPTV guide, showing an LG Smart TV to illustrate compatibility.",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "id": "guide-image-apple-tv",
+      "imageUrl": "https://images.unsplash.com/photo-1591970698020-e685959dcdaa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxhcHBsZSUyMHR2fGVufDB8fHx8MTc2MzM5Njg5Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "apple tv",
+      "description": "Featured image for the Apple TV IPTV guide, showing the Apple TV device and remote.",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "id": "guide-image-roku",
+      "imageUrl": "https://images.unsplash.com/photo-1699940191424-c99a129e7b1a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxyb2t1JTIwZGV2aWNlfGVufDB8fHx8MTc2MzM9Njg5Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "roku device",
+      "description": "Featured image for the Roku IPTV guide, showing a Roku streaming device to represent compatibility.",
+      "width": 600,
+      "height": 400
+    }
+  ]
+}

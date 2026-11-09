@@ -1,0 +1,22 @@
+{
+  "name": "IPTVMax",
+  "short_name": "IPTVMax",
+  "description": "Your premier IPTV service for unlocking a world of entertainment.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#040506",
+  "theme_color": "#FF6363",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
