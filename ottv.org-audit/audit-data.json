@@ -1,0 +1,99 @@
+{
+  "summary": {
+    "health_score": 72,
+    "business_type": "Online IPTV subscription sold over WhatsApp, with 199 country landing pages",
+    "scope_note": "Production build of commit 32303a2 served locally. www.ottv.org returned HTTP 402 DEPLOYMENT_DISABLED, so nothing is indexable today.",
+    "top_findings": [
+      "Live domain returns 402 DEPLOYMENT_DISABLED",
+      "197 country pages share one template, an 88% median word match",
+      "15 third-party service logos hotlinked with no rights statement",
+      "No seller identity, terms, privacy policy, payment method or licensing statement",
+      "Wrong language or time facts on some country pages"
+    ],
+    "quick_wins": [
+      "Correct language facts and Comoros raw codes",
+      "Fix 'the the' on /country/congo-free-state",
+      "Make Fire TV steps 3 and 5 work for trial users",
+      "Show player-app fees next to the $0 trial caption",
+      "Add a price summary to the first screen of /pricing"
+    ]
+  },
+  "categories": [
+    {
+      "name": "Technical SEO",
+      "score": 88,
+      "what_works": ["216 of 216 URLs return 200", "Sitemap and crawl agree", "Canonicals self-reference", "Single-hop 301 redirects on the local build"],
+      "findings": [
+        {"title": "Live domain disabled", "severity": "Critical", "description": "www.ottv.org and ottv.org return HTTP 402 DEPLOYMENT_DISABLED.", "recommendation": "Restore the Vercel deployment."},
+        {"title": "No Content-Security-Policy", "severity": "Medium", "description": "Header absent on the production build.", "recommendation": "Add a CSP in report-only mode first."},
+        {"title": "IndexNow not automated", "severity": "Medium", "description": "The route needs INDEXING_API_SECRET and a post-deploy call.", "recommendation": "Configure and call after each deploy."}
+      ]
+    },
+    {
+      "name": "Content Quality",
+      "score": 37,
+      "what_works": ["Core pages and guides read clearly", "Guides state they were checked against vendor documentation, not tested on every device"],
+      "findings": [
+        {"title": "Scaled template country pages", "severity": "Critical", "description": "197 pages at an 88% median word match, with no OTTV fact varying by country.", "recommendation": "Owner decision: add real per-country service facts, consolidate, or noindex."},
+        {"title": "Wrong language and time facts", "severity": "High", "description": "South Africa, Ukraine, Montenegro and Comoros are confirmed on the page; Zimbabwe and Nigeria look doubtful.", "recommendation": "Review all 197 language rows against government sources."},
+        {"title": "Unsubstantiated catalog counts", "severity": "High", "description": "25,000+ channels and 120,000+ titles have no published support.", "recommendation": "Owner must substantiate or soften."}
+      ]
+    },
+    {
+      "name": "On-Page SEO",
+      "score": 90,
+      "what_works": ["Titles unique and at most 60 characters", "Descriptions unique", "One H1 per page", "No skipped heading levels"],
+      "findings": [
+        {"title": "No plans on the first screen of /pricing", "severity": "High", "description": "The only link above the fold at 1366 and 375 px is the breadcrumb.", "recommendation": "Add a price summary."},
+        {"title": "Promotional prices omit related costs", "severity": "High", "description": "$0 and from $7.35 leave out player-app fees and the $88.23 upfront payment.", "recommendation": "State both beside the price."}
+      ]
+    },
+    {
+      "name": "Schema / Structured Data",
+      "score": 76,
+      "what_works": ["All JSON-LD parses on 216 pages", "All 844 FAQ pairs are visible", "No invented ratings or reviews"],
+      "findings": [
+        {"title": "Thin Offer markup", "severity": "Medium", "description": "Offers lack availability.", "recommendation": "Add availability; return policy is an owner decision."},
+        {"title": "HowTo markup has no rich result", "severity": "Medium", "description": "Emitted on 11 guides; no rich result since September 2023.", "recommendation": "Harmless. Leave, or remove when next touched."}
+      ]
+    },
+    {
+      "name": "Performance (CWV)",
+      "score": 75,
+      "what_works": ["Lab LCP under 1.3 s on 8 pages", "Lab CLS 0"],
+      "findings": [
+        {"title": "Provisional lab score", "severity": "Info", "description": "Localhost lab data only. No field data and INP not measured.", "recommendation": "Measure on the live domain."},
+        {"title": "Slow menu tap under throttling", "severity": "Medium", "description": "248-320 ms for one tap at 4x CPU slowdown. A lab probe, not INP.", "recommendation": "Confirm with field data before optimizing."}
+      ]
+    },
+    {
+      "name": "AI Search Readiness",
+      "score": 69,
+      "what_works": ["Server-rendered pages", "Valid llms.txt", "Search crawlers allowed"],
+      "findings": [
+        {"title": "No identifiable business entity", "severity": "High", "description": "No legal entity, About page or sameAs.", "recommendation": "Owner must supply."},
+        {"title": "Ambiguous brand name", "severity": "High", "description": "OTTV mostly means a building-energy metric on Wikipedia and Wikidata.", "recommendation": "Build consistent off-site entity signals."}
+      ]
+    },
+    {
+      "name": "Images",
+      "score": 85,
+      "what_works": ["0 images missing alt", "0 images missing dimensions"],
+      "findings": [
+        {"title": "Hotlinked third-party logos", "severity": "Critical", "description": "15 service logos load from iptvwell.com and are mislabelled in source as press brands.", "recommendation": "Owner decision: remove, or confirm rights and self-host."}
+      ]
+    }
+  ],
+  "action_plan": {
+    "phases": [
+      {"name": "Phase 1: Critical Fixes", "timeframe": "Before launch", "items": ["Restore deployment", "Decide country page strategy", "Resolve third-party logos", "Legal review of content rights"]},
+      {"name": "Phase 2: High-Impact Improvements", "timeframe": "Before launch", "items": ["Correct country facts", "Fix Fire TV trial steps", "Clarify price and fees", "Publish legal pages with owner approval", "Name payment methods", "Test WhatsApp journey and devices"]},
+      {"name": "Phase 3: Content & Authority", "timeframe": "Month after launch", "items": ["Substantiate catalog claims", "Add internal links to top markets", "Set real per-page dates", "Add CSP and IndexNow automation"]},
+      {"name": "Phase 4: Monitoring & Iteration", "timeframe": "Ongoing", "items": ["Search Console and Bing setup", "Capture drift baseline", "Review field data after 28 days"]}
+    ]
+  },
+  "artifacts": {
+    "findings_dir": "findings/",
+    "screenshots_dir": "screenshots/"
+  }
+}

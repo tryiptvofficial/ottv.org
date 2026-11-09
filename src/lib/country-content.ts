@@ -1,5 +1,6 @@
 import { allCountries, historicalEntries, nameInSentence, type Country } from "@/lib/countries";
 import factsData from "@/lib/site-data/country-facts.json";
+import { factCorrections } from "@/lib/site-data/country-fact-corrections";
 import { plans } from "@/lib/site-data/pricing";
 
 export interface CountryFacts {
@@ -9,17 +10,21 @@ export interface CountryFacts {
   languages: string[];
   /** "official" when the languages have official status, "spoken" when none does. */
   languageBasis: "official" | "spoken";
+  /** True when the country has more official languages than the ones listed. */
+  languagesPartial?: boolean;
   /** Standard-time UTC offsets in minutes, ascending. */
   utcOffsets: number[];
   zoneCount: number;
   dst: boolean;
 }
 
-// Generated once from Unicode CLDR 49 and the ICU time zone database. Refresh the file rather than editing values.
+// Generated once from Unicode CLDR 49 and the ICU time zone database. Refresh the file rather than editing
+// values; known errors are fixed in country-fact-corrections.ts.
 const facts = factsData as Record<string, CountryFacts>;
 
 export function countryFacts(country: Country): CountryFacts | undefined {
-  return facts[country.code];
+  const base = facts[country.code];
+  return base && { ...base, ...factCorrections[country.code] };
 }
 
 // Amazon's device specification for the Fire TV Stick HD (2026) names these markets.
@@ -199,7 +204,7 @@ export function buildCountryContent(country: Country, data: CountryFacts): Count
     quickFacts: [
       { label: "Region", value: data.subregion },
       { label: data.currencies.length > 1 ? "Currencies" : "Currency", value: joinList(data.currencies.map((c) => `${c.name} (${c.code})`)) },
-      { label: officialLanguages ? (data.languages.length > 1 ? "Official languages" : "Official language") : "Widely spoken", value: languageList },
+      { label: officialLanguages ? (data.languages.length > 1 ? "Official languages" : "Official language") : "Widely spoken", value: data.languagesPartial ? joinList([...data.languages, "others"]) : languageList },
       { label: data.zoneCount > 1 ? "Standard time" : "Time zone", value: data.zoneCount > 1 ? `${formatOffset(first)} to ${formatOffset(last)}` : formatOffset(first) },
       { label: "OTTV billing currency", value: "US Dollar (USD)" },
     ],

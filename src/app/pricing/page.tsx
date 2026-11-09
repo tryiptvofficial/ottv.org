@@ -63,10 +63,17 @@ export default async function PricingPage() {
           <PageHeader
             breadcrumb={[{ label: "Home", href: "/" }, { label: "Pricing" }]}
             title="IPTV Subscription Plans & Pricing"
-            lead={`Choose your OTTV plan, from $${lowestMonthly} a month. Every plan includes ${productFacts.summary}; only the length and the price change.`}
+            lead={`Every plan includes ${productFacts.summary}; only the length and the price change.`}
             className="mb-0 md:mb-0"
           >
-            <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-caption text-muted-foreground">
+            <p className="text-body text-foreground">
+              ${shortest.price.toFixed(2)} for 1 month, or ${longest.price.toFixed(2)} paid once for 12 months (${lowestMonthly} a month).
+            </p>
+            <Button asChild size="lg" className="mt-4">
+              <Link href="#pricing">See all {plans.length} plans</Link>
+            </Button>
+            <p className="mt-4 text-meta text-muted-foreground">Some devices need a player app that charges its own fee. Each setup guide says which.</p>
+            <ul className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-caption text-muted-foreground">
               {[`${productFacts.liveChannels} live channels`, `${productFacts.vodTitles} movies & shows`, "One payment per plan", "7-day money-back guarantee"].map((item) => (
                 <li key={item} className="flex items-center gap-2">
                   <Check aria-hidden className="h-4 w-4 text-brand" /> {item}

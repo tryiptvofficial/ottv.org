@@ -56,7 +56,7 @@ const testTips = [
 ];
 
 const proofPoints = [
-  { value: "$0", label: "Trial cost, no card taken" },
+  { value: "$0", label: "OTTV trial cost, no card taken" },
   { value: "24 h", label: "Full access" },
   { value: productFacts.liveChannels, label: "Live channels" },
   { value: productFacts.vodTitles, label: "Movies & TV shows" },
@@ -143,6 +143,11 @@ export default function IptvFreeTrialPage() {
             <Link href="/devices/samsung-tv" className="text-link">Samsung TV</Link>,{" "}
             <Link href="/devices/ios" className="text-link">iPhone</Link> and{" "}
             <Link href="/devices/android" className="text-link">Android</Link> setup guides show where to enter it.
+            The trial is free, but some player apps charge their own fee, including those in the{" "}
+            <Link href="/devices/samsung-tv" className="text-link">Samsung</Link>,{" "}
+            <Link href="/devices/lg-tv" className="text-link">LG</Link>,{" "}
+            <Link href="/devices/ios" className="text-link">iPhone and iPad</Link> and{" "}
+            <Link href="/devices/apple-tv" className="text-link">Apple TV</Link> guides, so check yours first.
           </p>
         </Container>
       </Section>
@@ -232,7 +237,7 @@ export default function IptvFreeTrialPage() {
             title="Start Your OTTV Free Trial Tonight"
             action={<TrialButtons />}
           >
-            24 hours of full access on your own devices, with no card and nothing to cancel. If OTTV earns a place on your TV, pick a plan. If it does not, you owe nothing.
+            24 hours of full access on your own devices, with no card and nothing to cancel. If OTTV earns a place on your TV, pick a plan. If it does not, you owe OTTV nothing.
           </Callout>
         </Container>
       </Section>

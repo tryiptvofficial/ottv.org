@@ -50,7 +50,7 @@ export default async function CountryPage({ params }: Props) {
             <PageHeader breadcrumb={breadcrumb} title={countryH1(country)} lead={history?.description} className="mb-0 md:mb-0">
               {history && (
                 <p className="max-w-narrow text-body text-muted-foreground">
-                  This page stays online for people searching the historical name. OTTV publishes nothing specific to {country.name}; current plans and setup guides are on the {history.successorName} page.
+                  This page stays online for people searching the historical name. OTTV publishes nothing specific to {country.name}; current plans and setup guides are on the page for {history.successorName}.
                 </p>
               )}
               {history && (
@@ -112,7 +112,7 @@ export default async function CountryPage({ params }: Props) {
               ))}
             </dl>
             <p className="mt-4 text-caption text-subtle">
-              Regional data from <a href="https://cldr.unicode.org/" target="_blank" rel="noopener noreferrer" className="text-link">Unicode CLDR 49</a>.
+              Regional data based on <a href="https://cldr.unicode.org/" target="_blank" rel="noopener noreferrer" className="text-link">Unicode CLDR 49</a>, with some language and time entries corrected. Language lists are simplified.
             </p>
           </Card>
           <Grid cols={3} className="mt-6">

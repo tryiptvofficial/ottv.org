@@ -16,9 +16,9 @@
     "steps": [
       { "title": "Install the Downloader App", "description": "From the Fire TV home screen, use the search function to find the 'Downloader' app and install it. This utility lets you download files from the internet directly onto your Fire TV." },
       { "title": "Allow Downloader to Install Apps", "description": "Go to <strong>Settings > My Fire TV > Developer Options > Install unknown apps</strong>, select <strong>Downloader</strong> and turn it on. On older models, turn on <strong>Apps from Unknown Sources</strong> instead. If Developer Options is missing, go to <strong>Settings > My Fire TV > About</strong>, highlight <strong>Your TV</strong> and press the remote's D-pad seven times." },
-      { "title": "Enter the IPTV App URL", "description": "Open the Downloader app and enter the APK URL for your chosen IPTV player (e.g., IPTV Smarters Pro or TiviMate). You will receive this unique URL from us after you subscribe to our service." },
+      { "title": "Enter the IPTV App URL", "description": "Open the Downloader app and enter the APK URL for your chosen IPTV player (e.g., IPTV Smarters Pro or TiviMate). Ask us for this URL on WhatsApp when you request your free trial or place your order." },
       { "title": "Download and Install the App", "description": "Follow the on-screen prompts to download and install the IPTV application. After installation is complete, you can delete the downloaded APK file to free up storage space." },
-      { "title": "Log In with Your Credentials", "description": "Open your newly installed IPTV app and log in using the username, password, and server URL we sent you when you ordered. Then choose a channel to start watching." }
+      { "title": "Log In with Your Credentials", "description": "Open your newly installed IPTV app and log in using the username, password, and server URL we sent you for your plan or free trial. Then choose a channel to start watching." }
     ],
     "faqs": [
       { "question": "Is it safe to allow apps from outside the Amazon Appstore?", "answer": "Amazon warns that apps from unknown sources may make your device and personal data more vulnerable. Install only apps you trust." },
@@ -41,7 +41,7 @@
       { "title": "Download a Recommended IPTV Player", "description": "Go to the Google Play Store and search for an IPTV player. On an Android TV box, <a href='https://play.google.com/store/apps/details?id=ar.tvplayer.tv' target='_blank' rel='noopener noreferrer'><strong>TiviMate</strong></a> is designed for the TV screen and is not optimized for touch devices. On a phone or tablet, use a touch-friendly player such as IPTV Smarters Pro. Several apps have similar names, so check the developer before installing, or ask us on WhatsApp which listing to use." },
       { "title": "Install the Application", "description": "Tap the 'Install' button and wait for the app to download and install on your Android phone, tablet, or TV box." },
       { "title": "Open the App and Select Login Method", "description": "Launch the IPTV app. You will typically be prompted to add a new user or playlist. Choose the Xtream Codes login option, often labelled <strong>'Login with Xtream Codes API'</strong>." },
-      { "title": "Enter Your Subscription Details", "description": "Carefully enter the login details we sent you when you ordered. This includes a playlist name (e.g., 'OTTV'), your username, your password, and the server URL. Double-check for typos." },
+      { "title": "Enter Your Subscription Details", "description": "Carefully enter the login details we sent you for your plan or free trial. This includes a playlist name (e.g., 'OTTV'), your username, your password, and the server URL. Double-check for typos." },
       { "title": "Start Streaming Your Content", "description": "After logging in, the app will automatically download the channel lists, movies, and TV shows. You can now choose something to watch." }
     ],
     "faqs": [
@@ -89,7 +89,7 @@
       { "title": "Install an IPTV Player from the App Store", "description": "Open the App Store on your iPhone or iPad and search for an IPTV player. This guide uses <strong>'GSE SMART IPTV PRO'</strong> by droidvision, which is a paid app. Several apps have similar names, so check the developer before you buy." },
       { "title": "Accept Terms and Open Menu", "description": "Launch the app you just installed. After accepting the terms and conditions, open the main menu. This is usually represented by an icon with three horizontal lines (a 'hamburger' icon) located in the top-left corner of the screen." },
       { "title": "Add Remote Playlist", "description": "In the menu, find and select the 'Remote Playlists' option. Tap the '+' icon to add a new playlist to the application." },
-      { "title": "Enter M3U Link", "description": "Select the 'Add M3U URL' option. In the 'Playlist Name' field, enter a descriptive name like 'OTTV'. In the 'Playlist Link' field, carefully paste the complete M3U URL we sent you after you ordered." },
+      { "title": "Enter M3U Link", "description": "Select the 'Add M3U URL' option. In the 'Playlist Name' field, enter a descriptive name like 'OTTV'. In the 'Playlist Link' field, carefully paste the complete M3U URL we sent you for your plan or free trial." },
       { "title": "Watch Your Channels", "description": "Tap 'Add'. The app will begin processing the playlist. Once it's loaded, you can navigate through the channel groups and start watching all your content." }
     ],
     "faqs": [
