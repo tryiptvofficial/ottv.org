@@ -19,15 +19,15 @@ const ottv = [
   `${productFacts.liveChannels} live channels and ${productFacts.vodTitles} on-demand titles on every plan`,
   "One payment per plan, with nothing renewing on its own",
   "Setup guides for 10 kinds of device",
+  "One stream at a time on a standard plan",
 ];
 
 export function Comparison() {
   return (
-    <Section divided spacing="compact">
+    <Section spacing="compact">
       <Container>
         <SectionHeader
-          eyebrow="Stream more, pay once"
-          title="What Makes OTTV Different From Cable?"
+          title="How Is IPTV Different From Cable?"
           subtitle="Thinking of dropping cable? Here is how an OTTV subscription compares with a typical cable package."
         />
         <Grid cols={2} className="mx-auto max-w-medium">
@@ -47,7 +47,7 @@ export function Comparison() {
             <ul className="mt-6 space-y-3 text-body text-foreground">
               {ottv.map((item) => (
                 <li key={item} className="flex gap-3">
-                  <Check aria-hidden className="mt-1 h-4 w-4 shrink-0 text-primary" />
+                  <Check aria-hidden className="mt-1 h-4 w-4 shrink-0 text-brand" />
                   {item}
                 </li>
               ))}

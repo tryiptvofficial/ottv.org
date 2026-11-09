@@ -3,19 +3,19 @@ import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
 
-// Five card types. Before reaching for a card, check the content needs containment at all:
-// spacing, a divider or a grid is often enough.
+// Flat, framed by a 1px hairline. Before reaching for a card, check the content needs containment
+// at all: spacing, a divider or a grid is often enough.
 const cardVariants = cva("relative text-card-foreground", {
   variants: {
     variant: {
-      // Ink surface with a hairline and the inset edge. The default information group.
-      base: "rounded-card border bg-card shadow-edge",
-      // Defined by its edge only; the canvas shows through.
-      edge: "rounded-card border bg-transparent shadow-edge",
-      // Tactile key cap: the ring replaces the border. For the most important feature blocks.
-      key: "rounded-card bg-card shadow-key",
-      // Rare warm tint for coral-anchored content (featured plan, closing CTA).
-      accent: "rounded-card border border-brand/25 bg-gradient-to-b from-brand-tint/50 to-card shadow-edge",
+      // Forest on dark bands, Bone White on white bands. The default information group.
+      base: "rounded-card border bg-card",
+      // Defined by its edge only; the band shows through.
+      edge: "rounded-card border bg-transparent",
+      // Same surface as base, kept for the most important feature blocks.
+      key: "rounded-card border bg-card",
+      // Flips to the opposite tone. For the featured plan or the closing call to action.
+      accent: "surface-invert rounded-card border",
     },
     size: {
       default: "",

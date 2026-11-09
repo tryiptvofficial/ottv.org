@@ -9,11 +9,11 @@ interface IndexLabelProps {
 
 /**
  * The site's channel-style numbering ("01 / Plan", "01 / Step"). Only for content that is a real
- * sequence. The number is white, the word muted; Geist Mono marks it as metadata.
+ * sequence. The number takes the foreground colour, the word stays muted.
  */
 export function IndexLabel({ index, label, className }: IndexLabelProps) {
   return (
-    <p className={cn("font-mono text-eyebrow uppercase text-muted-foreground tabular-nums", className)}>
+    <p className={cn("text-label text-muted-foreground tabular-nums", className)}>
       <span className="text-foreground">{String(index).padStart(2, "0")}</span> / {label}
     </p>
   );

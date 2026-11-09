@@ -12,10 +12,9 @@ const featured = ["united-states", "united-kingdom", "canada", "australia", "ger
 
 export function Worldwide() {
   return (
-    <Section divided spacing="compact">
+    <Section tone="light" spacing="compact">
       <Container>
         <SectionHeader
-          eyebrow="Around the world"
           title="OTTV Around the World"
           subtitle={`Find the OTTV page for your country or territory. There are pages for ${allCountries.length} of them, each with plans in US dollars and setup guides for your devices.`}
         />

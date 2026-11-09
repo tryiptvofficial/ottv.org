@@ -72,10 +72,10 @@ test('production build exists', () => {
 test('public output has no old-domain URLs or old brand', () => {
   for (const [p, { body }] of pages) {
     assert.doesNotMatch(body, /iptvmax\.co/i, p);
-    // The only permitted mention is the schema's alternateName, in the JSON-LD and its copy in the RSC payload.
-    assert.doesNotMatch(body.replace(/alternateName[\\":]+IPTVMax/g, ''), /IPTVMax/, p);
+    // The permitted mentions are the schema's alternateName and the footer's "formerly IPTVMax" note.
+    assert.doesNotMatch(body.replace(/alternateName[\\":]+IPTVMax/g, '').replace(/OTTV, formerly IPTVMax,/g, ''), /IPTVMax/, p);
     // Rendered text, so a name split across elements cannot slip through.
-    const rendered = body.replace(/<script[\s\S]*?<\/script>/g, '').replace(/<[^>]+>/g, '');
+    const rendered = body.replace(/<script[\s\S]*?<\/script>/g, '').replace(/<[^>]+>/g, '').replace(/OTTV, formerly IPTVMax,/g, '');
     assert.doesNotMatch(rendered, /IPTV\s*Max/i, `${p}: rendered text`);
   }
 });
@@ -83,7 +83,7 @@ test('public output has no old-domain URLs or old brand', () => {
 test('source and public files reference the old domain nowhere, and the old brand only on purpose', () => {
   const files = [...walk(path.join(root, 'src')), ...walk(path.join(root, 'public')), ...walk(path.join(root, 'scripts'))]
     .filter((f) => /\.(tsx?|mjs|json|txt|svg|webmanifest|css)$/.test(f));
-  const brandAllowed = new Set(['src/lib/schema.ts', 'public/llms.txt']);
+  const brandAllowed = new Set(['src/lib/schema.ts', 'public/llms.txt', 'src/components/shared/Footer.tsx', 'src/lib/site-data/faq.ts']);
   for (const f of files) {
     const rel = path.relative(root, f);
     const text = fs.readFileSync(f, 'utf8');
@@ -278,4 +278,41 @@ test('no secrets are committed', () => {
   for (const f of files) assert.doesNotMatch(fs.readFileSync(f, 'utf8'), secret, path.relative(root, f));
   assert.ok(fs.readFileSync(path.join(root, '.gitignore'), 'utf8').includes('.env*'));
   assert.deepEqual(fs.readdirSync(root).filter((n) => /^\.env/.test(n)), []);
+});
+
+const mainText = (html) => decode((html.match(/<main[\s\S]*?<\/main>/) || [''])[0]
+  .replace(/<script[\s\S]*?<\/script>|<svg[\s\S]*?<\/svg>/g, ' ')
+  .replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim();
+
+test('all 216 URLs stay indexable and listed in the sitemap', () => {
+  assert.equal(locs.length, 216);
+  const baseline = JSON.parse(fs.readFileSync(path.join(root, 'scripts/country-urls.baseline.json'), 'utf8'));
+  const countries = (Array.isArray(baseline) ? baseline : baseline.urls ?? baseline.paths).map((u) => new URL(u, ORIGIN).pathname);
+  assert.equal(countries.length, 199);
+  for (const p of countries) assert.ok(paths.includes(p), p);
+  for (const [p, res] of pages) {
+    assert.equal(res.status, 200, p);
+    assert.doesNotMatch(res.body, /<meta name="robots" content="[^"]*noindex/, p);
+  }
+});
+
+test('country pages make no availability claim and differ beyond the country name', () => {
+  const countryPaths = paths.filter((p) => p.startsWith('/country/'));
+  const historical = new Set(['/country/east-germany', '/country/congo-free-state']);
+  const masked = new Set();
+  for (const p of countryPaths) {
+    const html = pages.get(p).body;
+    assert.doesNotMatch(html, /areaServed/, p);
+    assert.doesNotMatch(titleOf(html), /Best IPTV/i, p);
+    assert.ok(titleOf(html).length <= 60, `${p} title: ${titleOf(html)}`);
+    assert.ok(metaContent(html, 'name', 'description').length <= 160, p);
+    if (historical.has(p)) continue;
+    assert.equal((html.match(/<h1[\s>]/g) || []).length, 1, p);
+    const h1 = mainText((html.match(/<h1[\s\S]*?<\/h1>/) || [''])[0].replace(/^/, '<main>').concat('</main>'));
+    const name = h1.replace(/^IPTV in (the )?/, '');
+    const text = mainText(html).replace(/Other Pages in [\s\S]*?Ready to start\?/, '').replace(new RegExp(`\\b${name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'g'), 'X');
+    masked.add(text);
+  }
+  // A few countries genuinely share every fact (same currency, language, offset and device lists), so this is not 197.
+  assert.ok(masked.size >= 185, `only ${masked.size} of 197 pages differ once the name is masked`);
 });

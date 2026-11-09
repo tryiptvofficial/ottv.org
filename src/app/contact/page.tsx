@@ -18,6 +18,7 @@ import { SectionHeader } from '@/components/shared/SectionHeader';
 import { WhatsAppLink } from '@/components/shared/WhatsAppLink';
 import { getContactPageData } from '@/lib/data/contact-page';
 import { generateMetadata as generatePageMetadata } from '@/lib/site-config';
+import { generateWebPageSchema } from '@/lib/schema';
 
 const supportMessage = "Hi, I need help with my OTTV service.";
 
@@ -67,13 +68,13 @@ export default function ContactPage() {
   return (
     <>
       <Schema id="breadcrumb" schema={breadcrumbSchema} />
+      <Schema id="webpage" schema={generateWebPageSchema({ type: "ContactPage", path: "/contact", name: "Contact OTTV Support" })} />
       <Schema id="faq" schema={faqSchema} />
 
       <Section>
         <Container>
           <PageHeader
             breadcrumb={[{ label: "Home", href: "/" }, { label: "Contact Us" }]}
-            eyebrow="OTTV support"
             title="OTTV Support Center"
             lead="All OTTV support runs through WhatsApp. Message us and our team replies in the same chat."
             className="mb-0 md:mb-0"
@@ -81,9 +82,9 @@ export default function ContactPage() {
         </Container>
       </Section>
 
-      <Section divided>
+      <Section tone="light">
         <Container>
-          <SectionHeader eyebrow="How to reach us" title="Choose How to Contact Us" />
+          <SectionHeader title="Choose How to Contact Us" />
           <Grid as="ul" cols={3}>
             <Card as="li" className="flex flex-col p-6">
               <IconTile className="mb-6"><MessageCircle aria-hidden /></IconTile>
@@ -118,7 +119,7 @@ export default function ContactPage() {
         </Container>
       </Section>
 
-      <Section divided>
+      <Section>
         <Container>
           <Grid cols="aside" gap="loose">
             <div>
@@ -127,7 +128,7 @@ export default function ContactPage() {
               <ul className="mt-6 space-y-3 text-body text-muted-foreground">
                 {checklist.map((item) => (
                   <li key={item} className="flex gap-3">
-                    <Check aria-hidden className="mt-1 h-4 w-4 shrink-0 text-primary" />
+                    <Check aria-hidden className="mt-1 h-4 w-4 shrink-0 text-brand" />
                     {item}
                   </li>
                 ))}
@@ -144,10 +145,9 @@ export default function ContactPage() {
         </Container>
       </Section>
 
-      <Section divided>
+      <Section tone="light">
         <Container>
           <SectionHeader
-            eyebrow="Quick answers"
             title="Common Support Questions"
             subtitle="The questions we hear most, with the fix for each."
           />
@@ -155,7 +155,7 @@ export default function ContactPage() {
         </Container>
       </Section>
 
-      <Section divided>
+      <Section>
         <Container>
           <Callout
             title="Still Need Help?"

@@ -2,7 +2,7 @@
 import { ClientCarousel } from "./ClientCarousel";
 import { Container } from "./Container";
 import { Section } from "./Section";
-import { Reveal, blurFade } from "./Reveal";
+import { Reveal } from "./Reveal";
 import { Skeleton } from "../ui/skeleton";
 import { SectionHeader } from "./SectionHeader";
 
@@ -15,19 +15,17 @@ type CarouselItem = {
 
 interface ContentCarouselProps {
   items: CarouselItem[];
-  /** Small label above the heading, e.g. "Top 10". */
-  title: string;
   /** The section heading, e.g. "Movies". */
   subtitle: string;
   showHoverContent?: boolean;
+  tone?: "dark" | "light";
 }
 
-export function ContentCarouselSkeleton() {
+export function ContentCarouselSkeleton({ tone }: { tone?: "dark" | "light" }) {
   return (
-    <Section spacing="compact">
+    <Section spacing="compact" tone={tone}>
       <Container>
         <div className="mb-12 space-y-4">
-          <Skeleton className="h-3 w-16" />
           <Skeleton className="h-8 w-40" />
         </div>
         <div className="flex gap-3 overflow-hidden">
@@ -42,18 +40,18 @@ export function ContentCarouselSkeleton() {
 
 export function ContentCarousel({
   items,
-  title,
   subtitle,
   showHoverContent = false,
+  tone,
 }: ContentCarouselProps) {
   return (
-    <Section spacing="compact">
+    <Section spacing="compact" tone={tone}>
       <Container>
-        <Reveal variants={blurFade}>
-          <SectionHeader align="start" eyebrow={title} title={subtitle} />
+        <Reveal>
+          <SectionHeader align="start" title={subtitle} />
         </Reveal>
-        <Reveal variants={blurFade} delay={0.1}>
-          <ClientCarousel items={items} showHoverContent={showHoverContent} />
+        <Reveal delay={0.1}>
+          <ClientCarousel items={items} showHoverContent={showHoverContent} label={subtitle} />
         </Reveal>
       </Container>
     </Section>

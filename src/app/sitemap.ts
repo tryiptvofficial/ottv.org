@@ -6,15 +6,16 @@ import { siteConfig } from '@/lib/site-config';
 
 const baseUrl = siteConfig.url;
 
-// Date of the last content change shared by every page (the OTTV rebrand). Update by hand only when
-// that content really changes, never from the build, so lastmod stays truthful.
+// Date of the last content change shared by the static and country pages (the OTTV rebrand). Update
+// by hand only when that content really changes, never from the build, so lastmod stays truthful.
+// Device guides use their own dateModified, which matches the date shown on each guide.
 const siteContentUpdatedAt = '2026-11-09';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   
   const devicePages: MetadataRoute.Sitemap = howToArticles.map((article) => ({
     url: `${baseUrl}/devices/${article.id}`,
-    lastModified: new Date(Math.max(Date.parse(article.dateModified), Date.parse(siteContentUpdatedAt))),
+    lastModified: new Date(article.dateModified),
     changeFrequency: 'weekly',
     priority: 0.8,
   }));

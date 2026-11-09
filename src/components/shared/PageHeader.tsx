@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
-import { Eyebrow, Heading, Lead } from '@/components/ui/typography';
+import { Heading, Lead } from '@/components/ui/typography';
+import { AnnouncementPill } from './AnnouncementPill';
 
 interface Crumb {
   label: string;
@@ -34,8 +35,8 @@ export function Breadcrumb({ items, className }: { items: Crumb[]; className?: s
 
 interface PageHeaderProps {
   breadcrumb?: Crumb[];
-  /** Small label above the H1. */
-  eyebrow?: React.ReactNode;
+  /** A real offer shown as a chip above the H1. */
+  announcement?: React.ReactNode;
   title: React.ReactNode;
   lead?: React.ReactNode;
   /** Extra content under the lead: actions, meta row. */
@@ -45,17 +46,17 @@ interface PageHeaderProps {
 }
 
 /** The top of every inner page: breadcrumb, the page's H1 and its lead paragraph. */
-export function PageHeader({ breadcrumb, eyebrow, title, lead, children, align = 'center', className }: PageHeaderProps) {
+export function PageHeader({ breadcrumb, announcement, title, lead, children, align = 'center', className }: PageHeaderProps) {
   const centered = align === 'center';
   return (
     <header className={cn('mb-12 md:mb-16', className)}>
       {breadcrumb && <Breadcrumb items={breadcrumb} className="mb-8" />}
       <div className={cn('max-w-narrow', centered && 'mx-auto text-center')}>
-        {eyebrow && <Eyebrow className="mb-4">{eyebrow}</Eyebrow>}
-        <Heading level={1} size="heading-lg">
+        {announcement && <AnnouncementPill className="mb-8">{announcement}</AnnouncementPill>}
+        <Heading level={1} size="display-xl">
           {title}
         </Heading>
-        {lead && <Lead className={cn('mt-4 max-w-2xl', centered && 'mx-auto')}>{lead}</Lead>}
+        {lead && <Lead className={cn('mt-6 max-w-2xl', centered && 'mx-auto')}>{lead}</Lead>}
         {children && <div className="mt-8">{children}</div>}
       </div>
     </header>

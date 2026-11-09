@@ -30,11 +30,10 @@ const reasons = [
 
 export function WhyOttv() {
   return (
-    <Section divided spacing="compact">
+    <Section spacing="compact">
       <Container>
         <SectionHeader
-          eyebrow="Why OTTV"
-          title="Why Choose OTTV?"
+          title="Why Choose OTTV for IPTV?"
           subtitle="Straightforward plans, setup help for your devices and a free trial before you commit."
         />
         <Grid cols={2} gap="loose" className="mx-auto max-w-medium">

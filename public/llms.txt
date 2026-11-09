@@ -4,10 +4,38 @@
 
 Website: https://www.ottv.org/
 
+## Plans
+
+Prices are in US dollars. Each plan is a one-time payment and does not renew automatically.
+
+- 1 month: $15.82
+- 3 months: $38.30
+- 6 months: $59.15
+- 12 months: $88.23
+
+Paid plans come with a 7-day money-back guarantee. A standard plan allows one stream at a time.
+
 ## Key pages
 
 - [Pricing](https://www.ottv.org/pricing): subscription plans and prices
 - [IPTV free trial](https://www.ottv.org/iptv-free-trial): how the 24-hour trial works
-- [Locations](https://www.ottv.org/locations): service pages by country or territory
 - [FAQ](https://www.ottv.org/faq): frequently asked questions
 - [Contact](https://www.ottv.org/contact): support on WhatsApp
+
+## Setup guides
+
+- [Amazon Fire TV Stick, Fire OS models only](https://www.ottv.org/devices/fire-tv)
+- [Samsung smart TV](https://www.ottv.org/devices/samsung-tv)
+- [LG smart TV](https://www.ottv.org/devices/lg-tv)
+- [Apple TV](https://www.ottv.org/devices/apple-tv)
+- [Roku, through screen mirroring](https://www.ottv.org/devices/roku)
+- [iPhone and iPad](https://www.ottv.org/devices/ios)
+- [Android](https://www.ottv.org/devices/android)
+- [Windows](https://www.ottv.org/devices/windows)
+- [Mac](https://www.ottv.org/devices/macos)
+- [MAG box](https://www.ottv.org/devices/mag)
+- [Fix IPTV buffering](https://www.ottv.org/devices/troubleshooting)
+
+## Country pages
+
+[Locations](https://www.ottv.org/locations) lists a page for each country or territory, with currency, languages, time zones and setup guide suggestions. Regional facts come from Unicode CLDR. OTTV has not published a country-by-country availability or channel list, so these pages do not confirm coverage in any country.

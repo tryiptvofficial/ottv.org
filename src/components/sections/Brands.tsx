@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from "next/image";
@@ -7,8 +6,6 @@ import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Container } from "../shared/Container";
 import { Section } from "../shared/Section";
 import { cn } from "@/lib/utils";
-
-const BLUR_DATA_URL = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4IDUiPjxwYXRoIGQ9Ik0wIDBoOHY1SDB6IiBmaWxsPSIjZWRlZGVkIi8+PC9zdmc+";
 
 const BrandCarousel = ({ images, reverse = false }: { images: typeof brands, reverse?: boolean }) => {
     return (
@@ -32,12 +29,9 @@ const BrandCarousel = ({ images, reverse = false }: { images: typeof brands, rev
                             alt=""
                             width={brandImage.width || 150}
                             height={brandImage.height || 46}
-                            className="object-contain h-12 w-auto"
-                            data-ai-hint={brandImage.imageHint}
+                            className="h-12 w-auto object-contain opacity-50 brightness-0 invert"
                             loading="lazy"
                             sizes="144px"
-                            placeholder="blur"
-                            blurDataURL={BLUR_DATA_URL}
                         />
                     </div>
                  )
@@ -49,12 +43,9 @@ const BrandCarousel = ({ images, reverse = false }: { images: typeof brands, rev
 
 export function Brands() {
   return (
-    <Section spacing="compact">
+    <Section spacing="none" className="pb-20 md:pb-24">
       <Container>
-        <div className="space-y-4">
-          <BrandCarousel images={brands} reverse />
-          <BrandCarousel images={brands_two} />
-        </div>
+        <BrandCarousel images={[...brands, ...brands_two]} />
       </Container>
     </Section>
   );

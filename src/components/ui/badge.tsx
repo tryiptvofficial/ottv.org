@@ -3,19 +3,18 @@ import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
 
-// Compact metadata tags. Status colours tint the text and a faint wash, never a full fill,
-// except `accent`, the coral fill reserved for a featured marker.
+// Compact pills. Sprout Wash is the soft default; `accent` is the Electric Sprout fill.
 const badgeVariants = cva(
-  "inline-flex h-5 items-center gap-1 rounded-badge border px-1.5 text-meta font-medium",
+  "inline-flex h-6 items-center gap-1 rounded-badge border px-3 text-meta font-medium",
   {
     variants: {
       variant: {
-        neutral: "border-transparent bg-secondary text-foreground",
-        accent: "border-transparent bg-brand text-white",
-        success: "border-success/20 bg-success/10 text-success",
-        info: "border-info/20 bg-info/10 text-info",
+        neutral: "border-transparent bg-sprout-wash text-moss",
+        accent: "border-transparent bg-primary text-primary-foreground",
+        success: "border-transparent bg-sprout-wash text-moss",
+        info: "border-transparent bg-sprout-wash text-moss",
         warning: "border-warning/20 bg-warning/10 text-warning",
-        outline: "text-muted-foreground",
+        outline: "border-subtle text-muted-foreground",
       },
     },
     defaultVariants: {

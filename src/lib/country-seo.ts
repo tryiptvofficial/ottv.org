@@ -1,22 +1,40 @@
 import type { Metadata } from "next";
-import { type Country, nameInSentence } from "@/lib/countries";
+import { type Country, historicalEntries, nameInSentence } from "@/lib/countries";
+import { buildCountryContent, countryFacts } from "@/lib/country-content";
 import { plans } from "@/lib/site-data/pricing";
-import { productFacts } from "@/lib/site-data/product-facts";
 import { generateMetadata as generatePageMetadata } from "@/lib/site-config";
 
 const lowestMonthly = Math.min(...plans.map((p) => p.price_monthly)).toFixed(2);
+const maxTitle = 60;
+const maxDescription = 160;
 
-/** `Best IPTV Service in [Country] | OTTV` — the one title pattern for every country page. */
 export function countryTitle(country: Country): string {
-  return `Best IPTV Service in ${country.name} | OTTV`;
+  const history = historicalEntries[country.id];
+  if (history) return `${country.name} (${history.period}): IPTV Information | OTTV`;
+  const where = nameInSentence(country);
+  const options = [
+    `IPTV in ${where}: USD Plans, Setup & 24h Trial | OTTV`,
+    `IPTV in ${where}: Plans & 24h Trial | OTTV`,
+    `IPTV in ${where} | OTTV`,
+  ];
+  return options.find((title) => title.length <= maxTitle) ?? options[options.length - 1];
 }
 
 export function countryH1(country: Country): string {
-  return `Best IPTV Service in ${nameInSentence(country)}`;
+  const history = historicalEntries[country.id];
+  return history ? `${country.name} (${history.period})` : `IPTV in ${nameInSentence(country)}`;
 }
 
 export function countryDescription(country: Country): string {
-  return `Best IPTV Service in ${nameInSentence(country)}: OTTV brings ${productFacts.liveChannels} live channels and ${productFacts.vodTitles} movies & TV shows, with plans from $${lowestMonthly} a month.`;
+  const history = historicalEntries[country.id];
+  if (history) return history.description;
+  const where = nameInSentence(country);
+  const data = countryFacts(country);
+  const language = data?.languages[0];
+  const check = language ? `, a free 24-hour trial to check for ${language} channels` : ", a free 24-hour trial";
+  const full = `IPTV in ${where}: plans from $${lowestMonthly} a month charged in US dollars${check}, and device setup guides.`;
+  if (full.length <= maxDescription) return full;
+  return `IPTV in ${where}: plans from $${lowestMonthly} a month in US dollars${check}.`;
 }
 
 /** Every country page stays indexable with a self-referencing canonical. */
@@ -27,3 +45,5 @@ export function countryMetadata(country: Country): Metadata {
     canonical: `/country/${country.id}`,
   });
 }
+
+export { buildCountryContent };

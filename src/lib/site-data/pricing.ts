@@ -9,7 +9,8 @@ const features = [
   "Pay-Per-View (PPV) Events Included",
   "Smart EPG (TV Guide) & Catch-Up TV",
   "Customer Support",
-  "Multi-Device Compatibility",
+  "Works on TVs, Phones and Computers",
+  "One Stream at a Time",
 ];
 
 const orderOnWhatsApp = (planName: string) =>

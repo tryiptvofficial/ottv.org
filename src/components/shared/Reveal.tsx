@@ -1,51 +1,20 @@
-"use client";
-
-import { motion, useInView, useAnimation, type Variants } from "framer-motion";
-import { useEffect, useRef, type ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import { cn } from "@/lib/utils";
-
-/** Reveal variants: fade and slide up out of a slight blur. */
-export const blurFade = {
-  hidden: { opacity: 0, y: 12, filter: "blur(6px)" },
-  visible: { opacity: 1, y: 0, filter: "blur(0px)" },
-};
 
 interface RevealProps {
   children: ReactNode;
   className?: string;
+  /** Staggers items in a row, in seconds. */
   delay?: number;
-  variants?: Variants;
 }
 
-export function Reveal({
-  children,
-  className,
-  delay = 0,
-  variants = {
-    hidden: { opacity: 0, y: 75 },
-    visible: { opacity: 1, y: 0 },
-  },
-}: RevealProps) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
-  const mainControls = useAnimation();
-
-  useEffect(() => {
-    if (isInView) {
-      mainControls.start("visible");
-    }
-  }, [isInView, mainControls]);
-
+/** Fades content in on scroll with CSS only, so it is visible without JavaScript and in browsers without scroll timelines. */
+export function Reveal({ children, className, delay = 0 }: RevealProps) {
   return (
-    <div ref={ref} className={cn("relative", className)}>
-      <motion.div
-        variants={variants}
-        initial="hidden"
-        animate={mainControls}
-        transition={{ duration: 0.5, delay }}
-      >
+    <div className={cn("relative", className)}>
+      <div className="reveal" style={{ "--reveal-start": `${Math.round(delay * 200)}px` } as CSSProperties}>
         {children}
-      </motion.div>
+      </div>
     </div>
   );
 }

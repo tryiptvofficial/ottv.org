@@ -1,6 +1,7 @@
 import dynamic from 'next/dynamic';
 import { Hero } from "@/components/sections/Hero";
 import { Brands } from "@/components/sections/Brands";
+import { KeyFacts } from "@/components/sections/KeyFacts";
 import { Pricing } from "@/components/sections/Pricing";
 import { Devices } from "@/components/sections/Devices";
 import { HowItWorks } from "@/components/sections/HowItWorks";
@@ -14,9 +15,10 @@ import { CTA } from "@/components/sections/CTA";
 import { ContentCarouselSkeleton } from "@/components/shared/ContentCarousel";
 import { Schema } from "@/components/shared/Schema";
 import { getHomePageData } from "@/lib/data/home-page";
+import { generateWebPageSchema } from "@/lib/schema";
 
 const WeeklyBuzz = dynamic(() => import('@/components/sections/WeeklyBuzz').then(mod => mod.WeeklyBuzz), {
-  loading: () => <ContentCarouselSkeleton />,
+  loading: () => <ContentCarouselSkeleton tone="light" />,
 });
 
 const SportEvents = dynamic(() => import('@/components/sections/SportEvents').then(mod => mod.SportEvents), {
@@ -28,9 +30,11 @@ export default async function Home() {
 
   return (
     <>
+      <Schema id="webpage" schema={generateWebPageSchema({ type: "WebPage", path: "", name: "OTTV IPTV service", aboutProduct: true })} />
       <Schema id="product" schema={productSchema} />
       <Hero />
       <Brands />
+      <KeyFacts />
       <Pricing />
       <Devices />
       <HowItWorks />

@@ -2,7 +2,6 @@ import { MessageCircle, Package, Tv } from "lucide-react";
 import { Container } from "../shared/Container";
 import { Section } from "../shared/Section";
 import { SectionHeader } from "../shared/SectionHeader";
-import { SectionBackdrop } from "../shared/SectionBackdrop";
 import { StepList } from "../shared/StepList";
 
 const steps = [
@@ -25,11 +24,9 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <Section id="how-it-works" spacing="compact" className="isolate overflow-x-clip">
-      <SectionBackdrop />
+    <Section tone="light" id="how-it-works" spacing="compact" className="isolate overflow-x-clip">
       <Container>
         <SectionHeader
-          eyebrow="How it works"
           title="Get Started in 3 Simple Steps"
           subtitle="From choosing a plan to watching on your TV, in three steps."
         />

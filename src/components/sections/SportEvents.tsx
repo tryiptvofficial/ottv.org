@@ -15,8 +15,7 @@ export function SportEvents({ items }: SportEventsProps) {
   return (
     <ContentCarousel
       items={items}
-      title="Sport"
-      subtitle="Events"
+      subtitle="Sports Events"
     />
   );
 }

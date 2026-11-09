@@ -3,7 +3,7 @@ import { Container } from "../shared/Container";
 import { FaqList } from "../shared/FaqList";
 import { Section } from "../shared/Section";
 import { SectionHeader } from "../shared/SectionHeader";
-import { Reveal, blurFade } from "../shared/Reveal";
+import { Reveal } from "../shared/Reveal";
 
 interface FAQProps {
   /** /faq supplies its own Section and Container, and the header acts as the page header. */
@@ -16,12 +16,11 @@ export function FAQ({ bare = false }: FAQProps) {
       <SectionHeader
         level={bare ? 1 : 2}
         className={bare ? "md:mb-16" : undefined}
-        eyebrow="FAQ"
         title="Frequently Asked Questions"
-        subtitle="Have questions? We've got answers. If you can't find what you're looking for, feel free to contact us."
+        subtitle="Answers on cost, setup and the free trial. Still stuck? Message us on WhatsApp."
       />
-      <Reveal variants={blurFade} delay={0.1}>
-        <FaqList items={faqs} />
+      <Reveal delay={0.1}>
+        <FaqList items={faqs} headingLevel={bare ? 2 : 3} />
       </Reveal>
     </>
   );
@@ -29,7 +28,7 @@ export function FAQ({ bare = false }: FAQProps) {
   if (bare) return content;
 
   return (
-    <Section id="faq" spacing="compact">
+    <Section tone="light" id="faq" spacing="compact">
       <Container>{content}</Container>
     </Section>
   );

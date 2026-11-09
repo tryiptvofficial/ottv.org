@@ -133,22 +133,6 @@
       "height": 46
     },
     {
-      "id": "guide-image-fire-tv",
-      "imageUrl": "https://images.unsplash.com/photo-1701422522356-03444a156644?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZmlyZSUyMHR2fGVufDB8fHx8MTc2MzM5Njg5Nnww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "fire tv",
-      "description": "Featured image for the Fire TV Stick IPTV guide showing the device remote, symbolizing the ease of setup.",
-      "width": 600,
-      "height": 400
-    },
-    {
-      "id": "guide-image-android",
-      "imageUrl": "https://images.unsplash.com/photo-1658282513894-612835eb44e4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxhbmRyb2lkJTIwZGV2aWNlfGVufDB8fHx8MTc2MzM5Njg5Nnww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "android device",
-      "description": "Featured image for the Android IPTV guide, showing an Android phone to represent mobile compatibility.",
-      "width": 600,
-      "height": 400
-    },
-    {
       "id": "guide-image-troubleshooting",
       "imageUrl": "https://images.unsplash.com/photo-1760531932521-8eb5a064dbca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx0cm91Ymxlc2hvb3RpbmclMjB0ZWNofGVufDB8fHx8MTc2MzM5Njg5Nnww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "troubleshooting tech",
@@ -189,26 +173,10 @@
       "height": 400
     },
     {
-      "id": "guide-image-lg-tv",
-      "imageUrl": "https://images.unsplash.com/photo-1611718663049-4c39b6b1182e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxsZyUyMHR2fGVufDB8fHx8MTc2MzM5Njg5Nnww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "lg tv",
-      "description": "Featured image for the LG TV IPTV guide, showing an LG Smart TV to illustrate compatibility.",
-      "width": 600,
-      "height": 400
-    },
-    {
       "id": "guide-image-apple-tv",
       "imageUrl": "https://images.unsplash.com/photo-1591970698020-e685959dcdaa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxhcHBsZSUyMHR2fGVufDB8fHx8MTc2MzM5Njg5Nnww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "apple tv",
       "description": "Featured image for the Apple TV IPTV guide, showing the Apple TV device and remote.",
-      "width": 600,
-      "height": 400
-    },
-    {
-      "id": "guide-image-roku",
-      "imageUrl": "https://images.unsplash.com/photo-1699940191424-c99a129e7b1a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxyb2t1JTIwZGV2aWNlfGVufDB8fHx8MTc2MzM9Njg5Nnww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "roku device",
-      "description": "Featured image for the Roku IPTV guide, showing a Roku streaming device to represent compatibility.",
       "width": 600,
       "height": 400
     }

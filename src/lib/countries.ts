@@ -14,11 +14,17 @@ export type Country = {
 export const countryReviewNotes: Record<string, string> = {
   "east-germany": "Historical state (German Democratic Republic, 1949–1990). Shared ISO code 'de' with Germany; code removed from this entry.",
   "congo-free-state": "Historical state (1885–1908). Shared ISO code 'cd' with DR Congo; code removed from this entry.",
-  "korea": "Ambiguous name. ISO 'kr' is the Republic of Korea (South Korea).",
+  "korea": "Slug 'korea' is ambiguous. ISO 'kr' is the Republic of Korea, so the page is named South Korea; slug unchanged.",
   "burma": "ISO 3166 / UN short name is Myanmar.",
   "turkey": "ISO 3166 / UN short name is Türkiye (since 2022).",
   "kosovo": "'xk' is a user-assigned code, not an official ISO 3166-1 code.",
   "cote-divoire": "Display name corrected from 'Cote d’Ivoire (Ivory Coast)'; slug unchanged.",
+};
+
+/** Former states kept at their URLs. Their pages state the history and point to the present-day country. */
+export const historicalEntries: Record<string, { period: string; description: string; successorId: string; successorName: string }> = {
+  "east-germany": { period: "1949–1990", description: "East Germany, the German Democratic Republic, existed from 1949 to 1990. Its territory has been part of Germany since reunification.", successorId: "germany", successorName: "Germany" },
+  "congo-free-state": { period: "1885–1908", description: "The Congo Free State existed from 1885 to 1908. Its territory is now the Democratic Republic of the Congo.", successorId: "democratic-republic-of-the-congo", successorName: "the Democratic Republic of the Congo" },
 };
 
 export const allCountries: Country[] = [
@@ -116,7 +122,7 @@ export const allCountries: Country[] = [
   { id: "kazakhstan", name: "Kazakhstan", code: "kz" },
   { id: "kenya", name: "Kenya", code: "ke" },
   { id: "kiribati", name: "Kiribati", code: "ki" },
-  { id: "korea", name: "Korea", code: "kr" },
+  { id: "korea", name: "South Korea", code: "kr" },
   { id: "kosovo", name: "Kosovo", code: "xk" },
   { id: "kuwait", name: "Kuwait", code: "kw" },
   { id: "kyrgyzstan", name: "Kyrgyzstan", code: "kg" },

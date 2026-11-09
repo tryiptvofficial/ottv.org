@@ -11,12 +11,12 @@ export const quickAnswers: { question: string; answer: string; link?: { href: st
     answer: "Not necessarily. The player app is made by another company, and some, such as Smart IPTV, SET IPTV or NET IPTV on smart TVs, can ask for their own activation fee after a trial period. That message is about the app, not your OTTV plan, which runs for the full length you paid for. Message us and we can suggest another app from our setup guides.",
   },
   {
-    question: "My login says invalid.",
+    question: "Why does my login say invalid?",
     answer: "Usually it is a typing mistake or an extra space. Copy the username, password and server URL exactly as we sent them, then sign in again.",
     link: { href: "/devices/fire-tv", label: "See how to sign in on a Fire TV Stick." },
   },
   {
-    question: "Channels buffer or freeze.",
+    question: "What should I do if channels buffer or freeze?",
     answer: "Restart your devices, try a wired Ethernet connection, and clear the player app's cache. The buffering guide walks through each step.",
     link: { href: "/devices/troubleshooting", label: "Open the buffering troubleshooting guide." },
   },

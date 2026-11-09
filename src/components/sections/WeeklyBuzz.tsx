@@ -13,10 +13,9 @@ interface WeeklyBuzzProps {
 
 export function WeeklyBuzz({ items }: WeeklyBuzzProps) {
   return (
-    <ContentCarousel
+    <ContentCarousel tone="light"
       items={items}
-      title="Top 10"
-      subtitle="Movies"
+      subtitle="Top 10 Movies"
     />
   );
 }

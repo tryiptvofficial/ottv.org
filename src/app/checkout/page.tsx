@@ -2,23 +2,21 @@
 import { Container } from "@/components/shared/Container";
 import { WhatsAppLink } from "@/components/shared/WhatsAppLink";
 import { Section } from "@/components/shared/Section";
-import { Grid } from "@/components/shared/Grid";
 import { Breadcrumb } from "@/components/shared/PageHeader";
-import { Field } from "@/components/ui/field";
 import { SectionHeader } from "@/components/shared/SectionHeader";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { CreditCard } from "lucide-react";
+import { Heading } from "@/components/ui/typography";
 import type { Metadata } from "next";
 import { SiWhatsapp } from "react-icons/si";
 import { Schema } from "@/components/shared/Schema";
 import { getCheckoutPageData } from "@/lib/data/checkout-page";
 import { generateMetadata as generatePageMetadata } from "@/lib/site-config";
+import { plans } from "@/lib/site-data/pricing";
 
 export function generateMetadata(): Metadata {
     return generatePageMetadata({
-        title: "Secure Checkout | OTTV",
+        title: "Order on WhatsApp | OTTV",
         description: "Complete your OTTV subscription by contacting our team on WhatsApp.",
         canonical: "/checkout",
         noIndex: true,
@@ -26,6 +24,7 @@ export function generateMetadata(): Metadata {
 }
 
 
+// Orders are completed on WhatsApp, so this page takes no payment details.
 export default async function CheckoutPage() {
     const { breadcrumbSchema } = await getCheckoutPageData();
 
@@ -36,76 +35,41 @@ export default async function CheckoutPage() {
             <Section data-fab-avoid>
                 <Container>
                     <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Checkout" }]} className="mb-8" />
-                    <SectionHeader 
+                    <SectionHeader
                         level={1}
                         className="md:mb-16"
-                        title="Contact Us to Purchase"
-                        subtitle="To complete your purchase, please contact us via WhatsApp. Our team is ready to assist you."
+                        title="Order Your OTTV Plan on WhatsApp"
+                        subtitle="Choose a plan and WhatsApp opens with your order written. The purchase is completed in that chat, and your login details arrive there."
                     />
-                    <Grid cols="aside">
-                        <div className="order-2 lg:order-1">
-                            <Card>
-                                <CardHeader>
-                                    <CardTitle>Payment Information</CardTitle>
-                                    <CardDescription>All transactions are secure and encrypted.</CardDescription>
-                                </CardHeader>
-                                <CardContent>
-                                    <div className="space-y-6">
-                                        <Field id="email" label="Email Address">
-                                            <Input type="email" placeholder="you@example.com" disabled />
-                                        </Field>
-                                        <div className="relative">
-                                            <Field id="card-number" label="Card Details">
-                                                <Input placeholder="Card Number" disabled />
-                                            </Field>
-                                            <CreditCard aria-hidden className="absolute bottom-3 right-3 h-5 w-5 text-muted-foreground" />
-                                        </div>
-                                        <div className="grid grid-cols-2 gap-4">
-                                            <Field id="expiry" label="Expiry Date">
-                                                <Input placeholder="MM / YY" disabled />
-                                            </Field>
-                                            <Field id="cvc" label="CVC">
-                                                <Input placeholder="CVC" disabled />
-                                            </Field>
-                                        </div>
-                                        <Field id="name" label="Cardholder Name">
-                                            <Input placeholder="Full Name" disabled />
-                                        </Field>
-                                        <Button asChild size="lg" className="w-full">
-                                            <WhatsAppLink>
-                                                <SiWhatsapp aria-hidden />
-                                                Contact on WhatsApp
-                                            </WhatsAppLink>
+                    <Card className="mx-auto max-w-form">
+                        <CardHeader>
+                            <Heading level={2} size="subheading">Plans and prices</Heading>
+                        </CardHeader>
+                        <CardContent>
+                            <ul className="space-y-4 tabular-nums">
+                                {plans.map((plan) => (
+                                    <li key={plan.id} className="flex items-center justify-between gap-4">
+                                        <span className="text-muted-foreground">{plan.name}</span>
+                                        <span className="ml-auto font-medium text-foreground">${plan.price.toFixed(2)}</span>
+                                        <Button asChild size="sm" variant={plan.isPopular ? "primary" : "secondary"}>
+                                            <a href={plan.orderUrl} target="_blank" rel="noopener noreferrer">
+                                                Order<span className="sr-only"> the {plan.name} plan on WhatsApp (opens in a new tab)</span>
+                                            </a>
                                         </Button>
-                                    </div>
-                                </CardContent>
-                            </Card>
-                        </div>
-                        <div className="order-1 lg:sticky lg:top-24 lg:order-2 lg:self-start">
-                             <Card>
-                                <CardHeader>
-                                    <CardTitle>Order Summary</CardTitle>
-                                </CardHeader>
-                                <CardContent>
-                                    <dl className="space-y-4 tabular-nums">
-                                        <div className="flex justify-between">
-                                            <dt className="text-muted-foreground">12-Month Plan</dt>
-                                            <dd className="font-medium text-foreground">$88.23</dd>
-                                        </div>
-                                        <div className="flex justify-between">
-                                            <dt className="text-muted-foreground">Discount</dt>
-                                            <dd className="font-medium text-foreground">-$101.61</dd>
-                                        </div>
-                                        <div className="flex justify-between border-t pt-4 text-subheading text-foreground">
-                                            <dt>Total</dt>
-                                            <dd>$88.23</dd>
-                                        </div>
-                                    </dl>
-                                    <p className="mt-4 text-caption text-muted-foreground">Your subscription will renew automatically. You can cancel anytime.</p>
-                                </CardContent>
-                            </Card>
-                        </div>
-                    </Grid>
+                                    </li>
+                                ))}
+                            </ul>
+                            <p className="mt-4 text-caption text-muted-foreground">
+                                Prices in US dollars. Each plan is a one-time payment, and nothing renews on its own.
+                            </p>
+                            <Button asChild size="lg" variant="secondary" className="mt-6 w-full">
+                                <WhatsAppLink>
+                                    <SiWhatsapp aria-hidden />
+                                    Ask a question first
+                                </WhatsAppLink>
+                            </Button>
+                        </CardContent>
+                    </Card>
                 </Container>
             </Section>
         </>

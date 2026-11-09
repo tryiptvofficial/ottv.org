@@ -38,7 +38,7 @@ export default function Error({
           </Button>
         </div>
         {error.digest && (
-          <p className="mt-6 font-mono text-meta text-subtle">Reference: {error.digest}</p>
+          <p className="mt-6 text-meta text-subtle">Reference: {error.digest}</p>
         )}
       </Container>
     </Section>

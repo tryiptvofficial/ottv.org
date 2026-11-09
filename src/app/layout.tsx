@@ -1,7 +1,7 @@
 
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
-import { Geist_Mono, Inter } from 'next/font/google';
+import { Boldonse, Geist, Instrument_Serif } from 'next/font/google';
 import { ThemeProvider } from "@/components/shared/ThemeProvider";
 import { Navbar } from "@/components/shared/Navbar";
 import { Footer } from "@/components/shared/Footer";
@@ -15,29 +15,38 @@ import { Schema } from "@/components/shared/Schema";
 import { generateOrganizationSchema, generateWebSiteSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/site-config";
 
-const inter = Inter({
+const geist = Geist({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-inter",
+  variable: "--font-geist",
   preload: true,
 });
 
-const geistMono = Geist_Mono({
+const displayFace = Boldonse({
   subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: "400",
   display: "swap",
-  variable: "--font-geist-mono",
+  variable: "--font-display",
+  preload: true,
+});
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+  variable: "--font-serif",
+  preload: false,
 });
 
 export const viewport: Viewport = {
-  // The site is dark in every OS theme, so the browser chrome matches the canvas token
-  themeColor: '#040506',
+  // Browser chrome matches the Forest Depths canvas in every OS theme
+  themeColor: '#122314',
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
 };
 
-const homeTitle = `${siteConfig.name} | 2026 Best IPTV Service With 24h Free Trial`;
+const homeTitle = `IPTV Service With 25,000+ Channels & 24h Free Trial | ${siteConfig.name}`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -48,12 +57,6 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   applicationName: siteConfig.name,
   referrer: 'origin-when-cross-origin',
-  keywords: [
-    'best IPTV provider', 'iptv providers', 'best iptv providers', 'iptv service provider',
-    'buy IPTV', 'IPTV subscription', 'IPTV USA', 'IPTV UK', 'IPTV service',
-    'premium IPTV', 'cheap IPTV', 'IPTV channels', 'live TV streaming',
-    '4K IPTV', 'sports IPTV', 'VOD streaming'
-  ],
   authors: [{ name: siteConfig.name, url: siteConfig.url }],
   creator: siteConfig.name,
   publisher: siteConfig.name,
@@ -129,17 +132,14 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={cn(
         "font-body antialiased",
-        inter.variable,
-        geistMono.variable
+        geist.variable,
+        displayFace.variable,
+        instrumentSerif.variable
       )}>
        <head>
           <Schema id="organization" schema={generateOrganizationSchema()} />
           <Schema id="website" schema={generateWebSiteSchema()} />
           <link rel="dns-prefetch" href="https://www.google-analytics.com"/>
-          {/* Preconnect to external image origins used for LCP/hero and above-fold assets */}
-          <link rel="preconnect" href="https://iptvwell.com" crossOrigin="anonymous"/>
-          <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="anonymous"/>
-          <link rel="dns-prefetch" href="https://image.tmdb.org"/>
         </head>
       <body>
         <ProgressBar />
@@ -149,13 +149,13 @@ export default function RootLayout({
           <Script
               src="https://cdn.visitors.now/v.js"
               data-token="0a9ca441-3262-415a-a3ac-e06859feeeba"
-              strategy="afterInteractive"
+              strategy="lazyOnload"
           />
         )}
         <Script
             src="https://analytics.ahrefs.com/analytics.js"
             id="ahrefs-analytics"
-            strategy="afterInteractive"
+            strategy="lazyOnload"
         />
         <ThemeProvider
           attribute="class"

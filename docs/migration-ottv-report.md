@@ -154,13 +154,13 @@ Redirect tests send the old hostnames in the `Host` header to the production bui
 1. Verify `ottv.org` as a Domain property, by DNS record. Keep the old property verified. The current meta tags belong to the old property.
 2. Submit `https://www.ottv.org/sitemap.xml` on the new property.
 3. Use URL Inspection on a sample of old URLs to confirm they redirect, and on new URLs to confirm they are indexable.
-4. Open Settings → Change of Address on the **old** property and select the new one. Do this only after the 301s are live on the real old domain.
+4. Open Settings → Change of Address on the **old** property and select the new one. Repeat for every verified variant of the old domain (www and non-www). Do this only after the 301s are live on the real old domain.
 5. Keep the old sitemap submitted for a few weeks so the redirects get crawled.
 
 **Bing Webmaster Tools**
 1. Verify `www.ottv.org` and replace the `msvalidate.01` tag if Bing issues a new one.
 2. Submit the new sitemap.
-3. Use the Site Move tool from the old site once redirects are live.
+3. Check whether your console still offers the Site Move tool. Bing's 2020 guide describes it, but Microsoft community replies say it is gone. If it is missing, rely on the 301s; Bing should pick up the move from them.
 4. IndexNow: the key file ships at `/34703b31e96542ffb49bffed790d5e29.txt`, and the route submits under the new host. Confirm the key file is reachable on `www.ottv.org`, then call `/api/indexnow` with the bearer secret.
 
 None of this has been done. I have no authorised access to either console.
@@ -183,7 +183,7 @@ Expect one 301 straight to `https://www.ottv.org/...`, a 200 on the new URL, the
 | Weekly, weeks 2–4 | Indexed count on new vs old, impressions and clicks across both properties, queries for "OTTV" and "IPTVMax", Core Web Vitals |
 | Day 30 | Old URLs dropping out and new URLs replacing them. Temporary ranking movement is normal in a migration |
 
-Keep the redirects and the old domain registered for at least a year, and preferably indefinitely.
+Keep the redirects and the old domain registered for at least 2 years, and preferably indefinitely. Google's minimum is 1 year; Bing's guide says 1 to 2 years, preferably longer.
 
 ## M. Rollback plan
 

@@ -15,7 +15,6 @@ import { Grid } from "@/components/shared/Grid";
 import { PageHeader } from "@/components/shared/PageHeader";
 import { Schema } from "@/components/shared/Schema";
 import { Section } from "@/components/shared/Section";
-import { SectionBackdrop } from "@/components/shared/SectionBackdrop";
 import { SectionHeader } from "@/components/shared/SectionHeader";
 import { StepList } from "@/components/shared/StepList";
 import { WhatsAppLink } from "@/components/shared/WhatsAppLink";
@@ -40,7 +39,7 @@ const included = [
   { icon: Film, title: `${productFacts.vodTitles} movies & TV shows`, body: "The whole on-demand library is open during your trial, exactly as a subscriber sees it." },
   { icon: MonitorPlay, title: "HD and 4K where available", body: "Trial streams play at the same quality as paid ones, so you judge the real picture." },
   { icon: CalendarClock, title: "Smart EPG and catch-up", body: "The TV guide and catch-up TV are switched on, so you can check listings against what is airing." },
-  { icon: Smartphone, title: "Every device you own", body: "TVs, streaming sticks, phones, tablets and computers. Test on the screens your household uses." },
+  { icon: Smartphone, title: "The devices you own", body: "TVs, streaming sticks, phones, tablets and computers. Standard plans play one stream at a time, so test one screen after another." },
   { icon: MessageCircle, title: "Help on WhatsApp", body: "Trial users get the same WhatsApp support as subscribers if setup gets stuck." },
 ];
 
@@ -53,7 +52,7 @@ const steps = [
 const testTips = [
   { icon: Clock, title: "Watch at your busiest hour", body: "Evening is when home connections carry the most traffic, so it is the most useful time to test live channels." },
   { icon: ListChecks, title: "Check the channels you rely on", body: "Open the news, sports, film and kids' channels you watch most, plus any in your language, and make sure each one plays cleanly." },
-  { icon: MonitorSmartphone, title: "Try every screen and the guide", body: "Sign in on each device you plan to use, compare the TV guide with what is on air, and play a 4K stream on your largest TV where 4K is available." },
+  { icon: MonitorSmartphone, title: "Try each screen and the guide", body: "Sign in on each device you plan to use, one at a time, compare the TV guide with what is on air, and play a 4K stream on your largest TV where 4K is available." },
 ];
 
 const proofPoints = [
@@ -89,18 +88,17 @@ export default function IptvFreeTrialPage() {
       <Schema id="service" schema={serviceSchema} />
 
       <Section className="isolate overflow-x-clip">
-        <SectionBackdrop />
         <Container>
           <PageHeader
             breadcrumb={[{ label: "Home", href: "/" }, { label: "IPTV Free Trial" }]}
-            eyebrow="OTTV · 24 hours · Full access · No card"
+            announcement="OTTV · 24 hours · Full access · No card"
             title="IPTV Free Trial: 24 Hours of Full Access, No Credit Card"
             lead={`See how OTTV plays on your own screens before you spend anything. The free trial opens all ${productFacts.liveChannels} live channels, the ${productFacts.vodTitles} movie and TV show library, HD and 4K streams where available and the full TV guide for 24 hours. You request it on WhatsApp, and no card is ever asked for.`}
             className="mb-0 md:mb-0"
           >
             <TrialButtons />
             {/* Each phrase wraps as a whole, so a line never ends on a stray word */}
-            <p className="mt-4 font-mono text-meta text-muted-foreground">
+            <p className="mt-4 text-meta text-muted-foreground">
               {["No credit card", "Nothing to cancel", "Full access, nothing locked"].map((item, i) => (
                 <Fragment key={item}>
                   {i > 0 && " · "}
@@ -112,10 +110,9 @@ export default function IptvFreeTrialPage() {
         </Container>
       </Section>
 
-      <Section divided>
+      <Section tone="light">
         <Container>
           <SectionHeader
-            eyebrow="What's included"
             title="What Do You Get With the OTTV Free Trial?"
             subtitle="Everything a paid plan includes, for 24 hours. No channel group, library section or feature is held back for trial users."
           />
@@ -133,10 +130,9 @@ export default function IptvFreeTrialPage() {
         </Container>
       </Section>
 
-      <Section divided>
+      <Section>
         <Container>
           <SectionHeader
-            eyebrow="How it works"
             title="How Do I Get My OTTV Free Trial?"
             subtitle="Three steps, all in WhatsApp, with no payment form anywhere."
           />
@@ -151,10 +147,9 @@ export default function IptvFreeTrialPage() {
         </Container>
       </Section>
 
-      <Section divided>
+      <Section tone="light">
         <Container>
           <SectionHeader
-            eyebrow="Make the most of it"
             title="How Should You Test OTTV During the 24 Hours?"
             subtitle="Test it the way your household really watches: on your own devices, on your own internet connection, at the times you usually turn the TV on."
           />
@@ -176,10 +171,9 @@ export default function IptvFreeTrialPage() {
         </Container>
       </Section>
 
-      <Section divided>
+      <Section>
         <Container>
           <SectionHeader
-            eyebrow="After the trial"
             title="What Does OTTV Cost After the Free Trial?"
             subtitle="If the trial convinces you, pick a plan. Prices are in US dollars and paid once per plan."
           />
@@ -204,11 +198,10 @@ export default function IptvFreeTrialPage() {
         </Container>
       </Section>
 
-      <Section divided>
+      <Section tone="light">
         <Container>
           <SectionHeader
-            eyebrow="Why OTTV"
-            title="Why Is the OTTV Free Trial Risk-Free?"
+            title="What Happens When the Free Trial Ends?"
             subtitle="We never take a payment method for the trial, so there is nothing we could charge when it ends. The trial stops after 24 hours, and whether you choose a plan is entirely up to you."
           />
           <Grid as="ul" cols={4}>
@@ -222,10 +215,9 @@ export default function IptvFreeTrialPage() {
         </Container>
       </Section>
 
-      <Section id="faq" divided>
+      <Section id="faq">
         <Container>
           <SectionHeader
-            eyebrow="Questions & answers"
             title="OTTV Free Trial FAQ"
             subtitle="Short answers to what people ask most before starting an IPTV free trial."
           />
@@ -233,14 +225,14 @@ export default function IptvFreeTrialPage() {
         </Container>
       </Section>
 
-      <Section divided>
+      <Section tone="light">
         <Container>
           <Callout
             size="large"
             title="Start Your OTTV Free Trial Tonight"
             action={<TrialButtons />}
           >
-            24 hours of full access on every device you own, with no card and nothing to cancel. If OTTV earns a place on your TV, pick a plan. If it does not, you owe nothing.
+            24 hours of full access on your own devices, with no card and nothing to cancel. If OTTV earns a place on your TV, pick a plan. If it does not, you owe nothing.
           </Callout>
         </Container>
       </Section>

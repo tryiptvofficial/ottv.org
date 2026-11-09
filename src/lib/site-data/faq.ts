@@ -10,7 +10,7 @@ const longest = plans[plans.length - 1];
 export const faqs = [
     {
         question: "What is IPTV and how does OTTV work?",
-        answer: `IPTV (Internet Protocol Television) delivers live TV and on-demand video over your internet connection instead of cable or satellite. With OTTV you order a plan on WhatsApp, receive your login details in the chat, and watch ${productFacts.summary} through a player app on your device.`,
+        answer: `IPTV (Internet Protocol Television) delivers live TV and on-demand video over your internet connection instead of cable or satellite. OTTV, formerly IPTVMax, is an IPTV subscription: you order a plan on WhatsApp, receive your login details in the chat, and watch ${productFacts.summary} through a player app on your device.`,
     },
     {
         question: "Can I get a free trial of OTTV?",
@@ -18,15 +18,15 @@ export const faqs = [
     },
     {
         question: "How much does OTTV cost?",
-        answer: `Plans are priced in US dollars: ${planPrices}. The 12-month plan works out to $${longest.price_monthly.toFixed(2)} a month.`,
+        answer: `OTTV costs $${plans[0].price.toFixed(2)} for one month, or $${longest.price_monthly.toFixed(2)} a month on the 12-month plan. All four plans are priced in US dollars: ${planPrices}.`,
     },
     {
         question: "Which devices can I use with OTTV?",
-        answer: "Amazon Fire TV Stick, Samsung and LG smart TVs, Apple TV, iPhone and iPad, Android phones and tablets, Windows PCs, Macs and MAG boxes. Roku works through screen mirroring. Each device has a step-by-step setup guide.",
+        answer: "Amazon Fire TV Stick (Firestick) models running Fire OS, Samsung and LG smart TVs, Apple TV, iPhone and iPad, Android phones and tablets, Windows PCs, Macs and MAG boxes. Roku works through screen mirroring. Each device has a step-by-step setup guide. You can install the app on several devices, but a standard plan plays one stream at a time.",
     },
     {
         question: "What is the best IPTV player app to use with OTTV?",
-        answer: "It depends on your device. Our setup guides use IPTV Smarters Pro or TiviMate on Fire TV and Android, GSE Smart IPTV on iPhone, iPad and Apple TV, Smart IPTV, SET IPTV or NET IPTV on Samsung and LG TVs, and MyIPTV Player or VLC on Windows. MAG boxes use a portal instead of an app.",
+        answer: "It depends on your device. On Fire TV and Android, our guides use IPTV Smarters Pro or TiviMate, which is made for TV screens. On iPhone, iPad and Apple TV, they use GSE SMART IPTV PRO or iPlayTV, which are paid apps. On Samsung and LG TVs, they use SET IPTV or NET IPTV, which charge a fee paid to their developers. On Windows, they use MyIPTV Player or VLC. MAG boxes use a portal instead of an app.",
     },
     {
         question: "How do I set up OTTV on my device?",
@@ -39,6 +39,22 @@ export const faqs = [
     {
         question: "Does my OTTV plan renew automatically?",
         answer: "No. Each plan is a one-time payment for its full length. When it ends, you can order a new plan on WhatsApp if you want to keep watching.",
+    },
+    {
+        question: "Can I watch OTTV on two devices at the same time?",
+        answer: "A standard plan allows one stream at a time. To watch on two devices at once you need an additional connection, so message us on WhatsApp about a custom plan.",
+    },
+    {
+        question: "Should I use an M3U link or an Xtream Codes login?",
+        answer: "Use the Xtream Codes login when your app offers it. You enter a username, password and server URL, which is quicker and easier to correct than a long link. An M3U link is one web address for the whole playlist, for apps that only ask for a URL. MAG boxes use a portal address instead.",
+    },
+    {
+        question: "What internet speed do I need for OTTV?",
+        answer: "We recommend a steady download speed of 25 to 30 Mbps for HD and 4K. Stability matters more than peak speed, and everyone streaming at home shares the same connection. The free 24-hour trial lets you test your own connection before paying.",
+    },
+    {
+        question: "How do the TV guide and catch-up TV work?",
+        answer: "The TV guide (EPG) shows what is on now and next inside your player app. Catch-up lets you go back to programmes you missed, on channels that offer it. If the guide is empty after you sign in, reload or update it from the app's settings.",
     },
     {
         question: "Why is my OTTV stream buffering?",

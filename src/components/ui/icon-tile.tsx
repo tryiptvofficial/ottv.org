@@ -2,9 +2,9 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 import type React from "react"
 
-// Circular graphite backing for feature icons and step numbers, like a dock item
+// Circular backing for feature icons and step numbers
 const iconTileVariants = cva(
-  "inline-flex shrink-0 items-center justify-center rounded-full border bg-secondary text-primary shadow-edge",
+  "inline-flex shrink-0 items-center justify-center rounded-full bg-secondary text-brand",
   {
     variants: {
       size: {

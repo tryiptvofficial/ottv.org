@@ -1,11 +1,11 @@
 {
     "name": "OTTV",
     "short_name": "OTTV",
-    "description": "Your premier IPTV service for unlocking a world of entertainment.",
+    "description": "IPTV subscription with live channels, movies and shows, a free 24-hour trial and support on WhatsApp.",
     "start_url": "/",
     "display": "standalone",
-    "background_color": "#000000",
-    "theme_color": "#00ff89",
+    "background_color": "#122314",
+    "theme_color": "#122314",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",

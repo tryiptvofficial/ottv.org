@@ -1,6 +1,3 @@
-
-"use client";
-
 import { CheckIcon } from "lucide-react";
 import { WhatsAppLink } from "@/components/shared/WhatsAppLink";
 import { Button } from "@/components/ui/button";
@@ -8,25 +5,19 @@ import { Card } from "@/components/ui/card";
 import { Heading } from "@/components/ui/typography";
 import { cn } from "@/lib/utils";
 import { plans } from "@/lib/site-data/pricing";
-import { BorderBeam } from "../shared/BorderBeam";
-import { IndexLabel } from "../shared/IndexLabel";
 import { Container } from "../shared/Container";
 import { Section } from "../shared/Section";
 import { SectionHeader } from "../shared/SectionHeader";
-import { Reveal, blurFade } from "../shared/Reveal";
-import { SectionBackdrop } from "../shared/SectionBackdrop";
+import { Reveal } from "../shared/Reveal";
 
 export function Pricing() {
   return (
-    <Section id="pricing" spacing="compact" className="isolate overflow-x-clip">
-      <SectionBackdrop />
-
+    <Section tone="light" id="pricing" spacing="compact" className="isolate overflow-x-clip">
       <Container>
-        <Reveal variants={blurFade}>
+        <Reveal>
           <SectionHeader
-            eyebrow="Pricing"
-            title="Choose Your OTTV Package"
-            subtitle="Select the perfect plan from one of the best IPTV providers. All plans come with our full feature set."
+            title="Choose Your IPTV Plan"
+            subtitle="Pick the length that suits you. Every plan includes the same channels, movies and features."
           />
         </Reveal>
 
@@ -35,7 +26,6 @@ export function Pricing() {
           {plans.map((plan, i) => (
             <Reveal
               key={plan.id}
-              variants={blurFade}
               delay={0.15 + i * 0.08}
               // The lift pulls the featured card 1rem past the row at top and bottom, so it also needs
               // 2rem more height; otherwise its larger padding squeezes the CTA button.
@@ -46,16 +36,11 @@ export function Pricing() {
                 variant={plan.isPopular ? "accent" : "base"}
                 className={cn("flex h-full flex-col p-6", plan.isPopular && "xl:py-10")}
               >
-                {plan.isPopular && <BorderBeam size={120} duration={8} />}
-
-                <div className="space-y-2">
-                  <IndexLabel index={i + 1} label="Plan" />
-                  <Heading level={3} size="subheading">{plan.name}</Heading>
-                </div>
+                <Heading level={3} size="subheading">{plan.name}</Heading>
 
                 <p className="mt-8 flex items-baseline gap-2 whitespace-nowrap">
                   <span className="text-stat tabular-nums text-foreground">${plan.price.toFixed(2)}</span>
-                  <span className="text-caption text-muted-foreground">one-time</span>
+                  <span className="font-serif text-serif-sm text-muted-foreground">one-time</span>
                 </p>
                 <p className="mt-2 min-h-10 text-caption text-muted-foreground">
                   {plan.savings ? (
@@ -88,7 +73,7 @@ export function Pricing() {
                         aria-hidden
                         className={cn(
                           "mt-0.5 h-4 w-4 shrink-0",
-                          plan.isPopular ? "text-primary" : "text-subtle",
+                          plan.isPopular ? "text-brand" : "text-subtle",
                         )}
                       />
                       {feature}

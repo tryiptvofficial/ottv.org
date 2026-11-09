@@ -7,10 +7,11 @@ const twMerge = extendTailwindMerge({
   extend: {
     classGroups: {
       "font-size": [
-        { text: ["display", "heading-lg", "heading", "heading-sm", "subheading", "stat", "body-lg", "body", "label", "caption", "meta", "eyebrow"] },
+        { text: ["display-2xl", "display-xl", "display", "heading-lg", "heading", "heading-sm", "subheading", "serif-lg", "serif-sm", "stat", "body-lg", "body", "label", "caption", "meta"] },
       ],
-      shadow: [{ shadow: ["edge", "key", "raised", "overlay"] }],
-      rounded: [{ rounded: ["badge", "control", "panel", "card", "card-lg"] }],
+      shadow: [{ shadow: ["nav", "mockup", "overlay"] }],
+      "font-family": [{ font: ["sans", "body", "headline", "display", "serif", "mono"] }],
+      rounded: [{ rounded: ["badge", "control", "panel", "card", "card-lg", "input", "pill", "nav"] }],
       "max-w": [{ "max-w": ["form", "narrow", "medium", "page"] }],
     },
   },

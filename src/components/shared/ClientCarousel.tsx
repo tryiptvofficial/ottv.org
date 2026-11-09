@@ -13,7 +13,6 @@ import {
 } from "@/components/ui/carousel";
 import { Bookmark, Heart, Play } from "lucide-react";
 import { IconTile } from "@/components/ui/icon-tile";
-import { SignalLine } from "./SignalLine";
 
 type ItemWithPlaceholder = {
   title: string;
@@ -25,11 +24,14 @@ type ItemWithPlaceholder = {
 interface ClientCarouselProps {
   items: ItemWithPlaceholder[];
   showHoverContent?: boolean;
+  /** Names the carousel for screen readers. */
+  label: string;
 }
 
 export function ClientCarousel({
   items,
   showHoverContent = false,
+  label,
 }: ClientCarouselProps) {
   // The shelf's current position (first poster in view) is read from Embla during render;
   // its select events only trigger a re-render.
@@ -50,6 +52,7 @@ export function ClientCarousel({
   return (
     <Carousel
       setApi={setApi}
+      aria-label={label}
       opts={{
         align: "start",
         loop: true,
@@ -64,7 +67,7 @@ export function ClientCarousel({
           >
             <div className="group relative overflow-hidden rounded-card ring-1 ring-border transition-shadow duration-standard hover:ring-foreground/40">
               <Image
-                alt={`Poster for ${item.title}, a popular movie available on OTTV`}
+                alt={`${item.title} poster`}
                 loading="lazy"
                 width={200}
                 height={300}
@@ -102,7 +105,7 @@ export function ClientCarousel({
             {/* Signal Line marks the shelf's current position; every item reserves the row so nothing shifts */}
             <div className="mt-3 h-2.5">
               {index === current && (
-                <SignalLine key={current} draw duration={0.6} className="h-2.5 w-16 text-brand/80" />
+                <span className="block h-0.5 w-16 rounded-full bg-brand" />
               )}
             </div>
           </CarouselItem>

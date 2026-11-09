@@ -7,17 +7,17 @@ const sectionVariants = cva('relative', {
   variants: {
     spacing: {
       none: '',
-      compact: 'py-12 md:py-16',
-      default: 'py-16 md:py-20',
-      spacious: 'py-20 md:py-30 short:py-12',
+      compact: 'py-20 md:py-24',
+      default: 'py-20 md:py-30',
+      spacious: 'py-24 md:py-30 short:py-12',
     },
-    // A hairline between sections replaces tinted background bands
-    divided: {
-      true: 'border-t',
-      false: '',
+    // Bands alternate between Forest Depths and Pure White; the colour change is the divider.
+    tone: {
+      dark: '',
+      light: 'tone-light',
     },
   },
-  defaultVariants: { spacing: 'default', divided: false },
+  defaultVariants: { spacing: 'default', tone: 'dark' },
 });
 
 interface SectionProps
@@ -26,6 +26,6 @@ interface SectionProps
   as?: React.ElementType;
 }
 
-export function Section({ className, spacing, divided, as: Component = 'section', ...props }: SectionProps) {
-  return <Component className={cn(sectionVariants({ spacing, divided }), className)} {...props} />;
+export function Section({ className, spacing, tone, as: Component = 'section', ...props }: SectionProps) {
+  return <Component className={cn(sectionVariants({ spacing, tone }), className)} {...props} />;
 }

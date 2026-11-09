@@ -34,7 +34,7 @@ export const pricingPageFaqs = [
     },
     {
         question: "Which devices can I use?",
-        answer: "Any device that runs a player app: Amazon Fire TV Stick, Samsung and LG smart TVs, Apple TV, iPhone and iPad, Android phones and tablets, Windows PCs, Macs and MAG boxes. Roku works through screen mirroring. Each one has a step-by-step setup guide.",
+        answer: "Any device that runs a player app: Amazon Fire TV Stick (Firestick) models running Fire OS, Samsung and LG smart TVs, Apple TV, iPhone and iPad, Android phones and tablets, Windows PCs, Macs and MAG boxes. Roku works through screen mirroring. Each one has a step-by-step setup guide.",
     },
     {
         question: "Is there a free trial available?",

@@ -14,16 +14,15 @@ const features = [
   { icon: Film, title: `${productFacts.vodTitles} movies & TV shows`, body: "A large on-demand library of films and series, included in every plan.", href: "/pricing", cta: "See plans" },
   { icon: CalendarClock, title: `${productFacts.liveChannels} live channels`, body: "Live channels from around the world, with a Smart EPG TV guide and catch-up TV.", href: "/pricing", cta: "See plans" },
   { icon: Ticket, title: "Pay-per-view events included", body: "PPV events come with every plan at no extra cost.", href: "/pricing", cta: "See plans" },
-  { icon: Smartphone, title: "Easy setup on every device", body: "Step-by-step guides for Fire TV, smart TVs, Apple TV, phones, computers and MAG boxes.", href: "/#devices", cta: "Setup guides" },
+  { icon: Smartphone, title: "Setup guides by device", body: "Step-by-step guides for Fire TV, smart TVs, Apple TV, phones, computers and MAG boxes.", href: "/#devices", cta: "Setup guides" },
   { icon: MessageCircle, title: "Support on WhatsApp", body: "Questions before you order and help with setup afterwards, in one WhatsApp chat.", href: "/contact", cta: "Contact us" },
 ];
 
 export function Features() {
   return (
-    <Section divided spacing="compact">
+    <Section spacing="compact">
       <Container>
         <SectionHeader
-          eyebrow="Features"
           title="What You Get With OTTV"
           subtitle="The same service on every plan, whichever length you choose."
         />

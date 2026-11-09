@@ -1,5 +1,3 @@
-"use client";
-
 import type { ComponentType } from "react";
 import {
   SiAmazonfiretv,
@@ -55,7 +53,7 @@ export function DeviceIcon({ name, iconName, href }: DeviceIconProps) {
       <Tooltip>
         <TooltipTrigger asChild>
           <Component href={href} aria-label={name} className={cn(
-            "group flex h-16 w-16 items-center justify-center rounded-panel border bg-card shadow-edge transition-colors duration-fast hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+            "group flex h-16 w-16 items-center justify-center rounded-panel border bg-card transition-colors duration-fast hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
             !isInternal && "cursor-pointer",
             href === '#' && "pointer-events-none opacity-50"
           )}>

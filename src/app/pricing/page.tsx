@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { IconTile } from "@/components/ui/icon-tile";
 import { Heading } from "@/components/ui/typography";
+import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Pricing } from "@/components/sections/Pricing";
 import { Callout } from "@/components/shared/Callout";
 import { Container } from "@/components/shared/Container";
@@ -40,7 +41,7 @@ const steps = [
 ];
 
 const benefits = [
-  { icon: Smartphone, title: "Play on the devices you own", body: "Fire TV, Samsung and LG smart TVs, Apple TV, iPhone, Android, Windows, Mac and MAG boxes, each with a setup guide." },
+  { icon: Smartphone, title: "Play on the devices you own", body: "Fire TV models running Fire OS, Samsung and LG smart TVs, Apple TV, iPhone, Android, Windows, Mac and MAG boxes, each with a setup guide. One stream plays at a time." },
   { icon: MonitorPlay, title: "HD and 4K where available", body: "HD and 4K streams on the channels and titles that offer them." },
   { icon: CalendarClock, title: "Smart EPG and catch-up", body: "A TV guide shows what is on now and next, and catch-up TV lets you go back to programmes you missed on channels that offer it." },
   { icon: Wifi, title: "Help when streams buffer", body: "The buffering guide walks through the usual fixes, from restarting your devices to a wired Ethernet connection." },
@@ -61,7 +62,6 @@ export default async function PricingPage() {
         <Container>
           <PageHeader
             breadcrumb={[{ label: "Home", href: "/" }, { label: "Pricing" }]}
-            eyebrow="OTTV pricing plans"
             title="IPTV Subscription Plans & Pricing"
             lead={`Choose your OTTV plan, from $${lowestMonthly} a month. Every plan includes ${productFacts.summary}; only the length and the price change.`}
             className="mb-0 md:mb-0"
@@ -69,7 +69,7 @@ export default async function PricingPage() {
             <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-caption text-muted-foreground">
               {[`${productFacts.liveChannels} live channels`, `${productFacts.vodTitles} movies & shows`, "One payment per plan", "7-day money-back guarantee"].map((item) => (
                 <li key={item} className="flex items-center gap-2">
-                  <Check aria-hidden className="h-4 w-4 text-primary" /> {item}
+                  <Check aria-hidden className="h-4 w-4 text-brand" /> {item}
                 </li>
               ))}
             </ul>
@@ -79,10 +79,38 @@ export default async function PricingPage() {
 
       <Pricing />
 
-      <Section divided>
+      <Section spacing="compact">
+        <Container>
+          <SectionHeader title="Compare IPTV Plan Prices" subtitle={`The 12-month plan costs $${longest.price.toFixed(2)}, or $${lowestMonthly} a month. A single month costs $${shortest.price.toFixed(2)}.`} />
+          <div className="mx-auto max-w-medium">
+            <Table>
+              <TableCaption>Prices in US dollars. Each plan is a one-time payment.</TableCaption>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Plan</TableHead>
+                  <TableHead>Total price</TableHead>
+                  <TableHead>Price per month</TableHead>
+                  <TableHead>Saving vs 1 month</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {plans.map((plan) => (
+                  <TableRow key={plan.id}>
+                    <TableCell className="text-foreground">{plan.name}</TableCell>
+                    <TableCell>${plan.price.toFixed(2)}</TableCell>
+                    <TableCell>${plan.price_monthly.toFixed(2)}</TableCell>
+                    <TableCell>{plan.savings?.replace("Save ", "") ?? "None"}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
+        </Container>
+      </Section>
+
+      <Section tone="light">
         <Container>
           <SectionHeader
-            eyebrow="How it works"
             title="How Does an OTTV Subscription Work?"
             subtitle="Pick a plan, order it on WhatsApp and start watching on your own devices."
           />
@@ -90,11 +118,11 @@ export default async function PricingPage() {
         </Container>
       </Section>
 
-      <Section divided>
+      <Section>
         <Container>
           <Grid cols="aside" gap="loose">
             <div>
-              <Heading level={2} size="heading">Stream Smarter With OTTV</Heading>
+              <Heading level={2} size="heading">What Every OTTV Plan Includes</Heading>
               <p className="mt-4 text-body text-muted-foreground">
                 OTTV plans start at ${shortest.price.toFixed(2)} for one month and come down to ${lowestMonthly} a month on the 12-month plan.
                 Every plan includes {productFacts.summary}, with the TV guide, catch-up TV and HD or 4K streams where available.
@@ -103,12 +131,12 @@ export default async function PricingPage() {
               <ul className="mt-4 space-y-3 text-body text-muted-foreground">
                 {shortest.features.map((feature) => (
                   <li key={feature} className="flex gap-3">
-                    <Check aria-hidden className="mt-1 h-4 w-4 shrink-0 text-primary" />
+                    <Check aria-hidden className="mt-1 h-4 w-4 shrink-0 text-brand" />
                     {feature}
                   </li>
                 ))}
                 <li className="flex gap-3">
-                  <Check aria-hidden className="mt-1 h-4 w-4 shrink-0 text-primary" />
+                  <Check aria-hidden className="mt-1 h-4 w-4 shrink-0 text-brand" />
                   Setup guides for 10 kinds of device
                 </li>
               </ul>
@@ -124,6 +152,15 @@ export default async function PricingPage() {
                 </Button>
               </Card>
               <Card className="p-6">
+                <Heading level={3} size="subheading">Billing terms at a glance</Heading>
+                <ul className="mt-2 list-disc space-y-2 pl-5 text-body text-muted-foreground">
+                  <li>Each plan is one payment in US dollars.</li>
+                  <li>Nothing renews on its own, so there is nothing to cancel.</li>
+                  <li>Paid plans have a 7-day money-back guarantee. Message us on WhatsApp within 7 days of ordering.</li>
+                  <li>A standard plan allows one stream at a time.</li>
+                </ul>
+              </Card>
+              <Card className="p-6">
                 <Heading level={3} size="subheading">Paying in another currency?</Heading>
                 <p className="mt-2 text-body text-muted-foreground">
                   Prices are set in US dollars. If you pay in another currency, your payment provider converts the amount at its own exchange rate.
@@ -134,10 +171,9 @@ export default async function PricingPage() {
         </Container>
       </Section>
 
-      <Section divided>
+      <Section tone="light">
         <Container>
           <SectionHeader
-            eyebrow="Included in every plan"
             title="Everything You Need to Stream"
             subtitle="The same service on every plan, whichever length you choose."
           />
@@ -162,10 +198,9 @@ export default async function PricingPage() {
         </Container>
       </Section>
 
-      <Section id="faq" divided>
+      <Section id="faq">
         <Container>
           <SectionHeader
-            eyebrow="Questions & answers"
             title="IPTV Subscription Pricing FAQ"
             subtitle="Short answers to what people ask before choosing a plan."
           />
@@ -173,10 +208,10 @@ export default async function PricingPage() {
         </Container>
       </Section>
 
-      <Section divided>
+      <Section tone="light">
         <Container>
           <Callout
-            title="Pick Your OTTV Plan"
+            title="Ready to Order Your OTTV Plan?"
             action={
               <>
                 <Button asChild size="lg">

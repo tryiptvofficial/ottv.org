@@ -4,14 +4,17 @@ import type React from 'react';
 
 // Visual size is chosen independently of the semantic level, so SEO heading order never
 // dictates how large a heading looks.
-const headingVariants = cva('font-headline text-foreground text-balance', {
+const headingVariants = cva('text-foreground text-balance', {
   variants: {
     size: {
-      display: 'text-display',
-      'heading-lg': 'text-heading-lg',
-      heading: 'text-heading',
-      'heading-sm': 'text-heading-sm',
-      subheading: 'text-subheading',
+      'display-2xl': 'font-display text-display-2xl',
+      'display-xl': 'font-display text-display-xl',
+      display: 'font-headline text-display',
+      'heading-lg': 'font-headline text-heading-lg',
+      heading: 'font-headline text-heading',
+      'heading-sm': 'font-headline text-heading-sm',
+      subheading: 'font-headline text-subheading',
+      serif: 'font-serif text-serif-lg',
     },
   },
   defaultVariants: { size: 'heading' },
@@ -28,13 +31,6 @@ interface HeadingProps
 export function Heading({ level = 2, size, className, ...props }: HeadingProps) {
   const Tag = `h${level}` as const;
   return <Tag className={cn(headingVariants({ size }), className)} {...props} />;
-}
-
-/** Geist Mono micro-label above a heading. Metadata, not decoration. */
-export function Eyebrow({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) {
-  return (
-    <p className={cn('font-mono text-eyebrow uppercase text-muted-foreground', className)} {...props} />
-  );
 }
 
 /** Lead paragraph under a page or section heading. */

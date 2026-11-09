@@ -37,6 +37,8 @@ export function generateWebSiteSchema(): WithContext<WebSite> {
     '@id': websiteId,
     'url': siteConfig.url,
     'name': siteConfig.name,
+    // Google falls back to alternateName when a short brand name is too generic to show as the site name.
+    'alternateName': 'ottv.org',
     'publisher': { '@id': organizationId },
   };
 }
@@ -51,6 +53,7 @@ export function generateOrganizationSchema(): WithContext<Organization> {
     // The brand's previous name, so search engines connect the old and new entity.
     'alternateName': 'IPTVMax',
     'url': siteConfig.url,
+    'description': `IPTV subscription with ${productFacts.summary}, in 1, 3, 6 and 12 month plans priced in US dollars, with a free 24-hour trial. Orders and support run through WhatsApp.`,
     'logo': `${siteConfig.url}/apple-touch-icon.png`,
     'contactPoint': {
       '@type': 'ContactPoint',
@@ -60,12 +63,34 @@ export function generateOrganizationSchema(): WithContext<Organization> {
   };
 }
 
+interface WebPageSchemaProps {
+  type: 'WebPage' | 'ContactPage' | 'CollectionPage';
+  /** Path from the site root, empty for the homepage. */
+  path: string;
+  name: string;
+  aboutProduct?: boolean;
+}
+
+/** Names what a page is and ties it to the site, without adding any claim. */
+export function generateWebPageSchema({ type, path, name, aboutProduct = false }: WebPageSchemaProps) {
+  return {
+    '@context': 'https://schema.org' as const,
+    '@type': type,
+    '@id': `${siteConfig.url}${path}#webpage`,
+    url: `${siteConfig.url}${path}`,
+    name,
+    isPartOf: { '@id': websiteId },
+    about: { '@id': aboutProduct ? `${siteConfig.url}/#product` : organizationId },
+  };
+}
+
 /** The subscription as a product, built only from `pricing.ts` and the product facts. No ratings: there are no reviews on the site. */
 export function generateSubscriptionProductSchema(): WithContext<Product> {
   const prices = plans.map((plan) => plan.price);
   return {
     '@context': 'https://schema.org',
     '@type': 'Product',
+    '@id': `${siteConfig.url}/#product`,
     name: `${siteConfig.name} IPTV subscription`,
     description: `IPTV subscription with ${productFacts.summary}, in 1, 3, 6 and 12 month plans priced in US dollars.`,
     image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -82,6 +107,7 @@ export function generateSubscriptionProductSchema(): WithContext<Product> {
         price: plan.price.toFixed(2),
         priceCurrency: 'USD',
         url: `${siteConfig.url}/pricing`,
+        seller: { '@id': organizationId },
       })),
     },
   };
@@ -138,9 +164,11 @@ export function generateArticleSchema(props: ArticleSchemaProps): WithContext<Ar
         dateModified: props.dateModified,
         author: {
             '@type': 'Organization',
+            '@id': organizationId,
             name: props.authorName || siteConfig.name,
         },
         publisher: defaultPublisher,
+        isPartOf: { '@id': websiteId },
         mainEntityOfPage: {
             '@type': 'WebPage',
             '@id': props.url,
@@ -178,7 +206,8 @@ export function generateHowToSchema(props: HowToSchemaProps): HowToJsonLd {
         step: steps.map((step, index) => ({
             '@type': 'HowToStep',
             name: step.name,
-            text: step.text,
+            // Guide steps are stored as HTML for the page; schema text must be plain.
+            text: step.text.replace(/<[^>]*>/g, ' ').replace(/\s+([.,;:!?])/g, '$1').replace(/\s+/g, ' ').trim(),
             url: step.url,
             position: index + 1,
         })),

@@ -17,16 +17,15 @@ const blocks = [
   },
   {
     title: "What do you need?",
-    body: "A stable internet connection, a compatible device and a player app. If streams buffer, a wired Ethernet connection and a restart of your devices fix most problems.",
+    body: "A stable internet connection, a compatible device and a player app. If streams buffer, a wired Ethernet connection and a restart of your devices often help.",
   },
 ];
 
 export function IptvExplained() {
   return (
-    <Section divided spacing="compact">
+    <Section tone="light" spacing="compact">
       <Container>
         <SectionHeader
-          eyebrow="The basics"
           title="IPTV Service Explained"
           subtitle="What IPTV is, how an OTTV subscription works, and what you need to start watching."
         />

@@ -1,10 +1,10 @@
 
 "use client";
 
+import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { MessageSquare } from "lucide-react";
-import { ContactForm } from "@/components/shared/ContactForm";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import {
@@ -15,6 +15,9 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+
+// Loaded when the sheet opens, so the form code is not part of every page.
+const ContactForm = dynamic(() => import("@/components/shared/ContactForm").then((mod) => mod.ContactForm));
 
 // The floating button steps aside while any `[data-fab-avoid]` element (the footer, the hero's
 // call-to-action group) is on screen, so it never covers links or buttons there.
@@ -64,7 +67,7 @@ export function ContactSheet() {
         <SheetHeader>
           <SheetTitle>Contact Us</SheetTitle>
           <SheetDescription>
-            Have a question or need support? Fill out the form below and we&apos;ll get back to you shortly.
+            Write your question below. Submitting opens WhatsApp with your message ready to send.
           </SheetDescription>
         </SheetHeader>
         <div className="mt-8">

@@ -1,8 +1,8 @@
 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
   <title>OTTV Icon</title>
-  <desc>Coral rounded diamond with white play symbol</desc>
+  <desc>Green rounded diamond with dark play symbol</desc>
   <g transform="rotate(45 32 32)">
-    <rect x="10" y="10" width="44" height="44" rx="10" fill="#FF6363"/>
+    <rect x="10" y="10" width="44" height="44" rx="10" fill="#68EF3F"/>
   </g>
-  <path d="M27 22.8C27 21.55 28.38 20.79 29.44 21.46L43.14 30.16C44.12 30.78 44.12 32.22 43.14 32.84L29.44 41.54C28.38 42.21 27 41.45 27 40.2V22.8Z" fill="#FFFFFF"/>
+  <path d="M27 22.8C27 21.55 28.38 20.79 29.44 21.46L43.14 30.16C44.12 30.78 44.12 32.22 43.14 32.84L29.44 41.54C28.38 42.21 27 41.45 27 40.2V22.8Z" fill="#30322A"/>
 </svg>

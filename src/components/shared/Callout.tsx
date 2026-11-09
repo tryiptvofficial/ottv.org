@@ -14,7 +14,7 @@ interface CalloutProps {
 }
 
 /**
- * The closing call to action or guarantee panel: the one warm-tinted surface on a page.
+ * The closing call to action or guarantee panel: the one inverted surface on a page.
  * Use once per page at most.
  */
 export function Callout({ title, children, action, level = 2, size = "default", className }: CalloutProps) {
@@ -25,7 +25,7 @@ export function Callout({ title, children, action, level = 2, size = "default", 
       size={large ? "large" : "default"}
       className={cn("overflow-hidden text-center", large ? "px-6 py-16 sm:px-12 sm:py-20" : "p-6 sm:p-8 md:p-12", className)}
     >
-      <Heading level={level} size={large ? "heading" : "heading-sm"} className="mx-auto max-w-2xl">
+      <Heading level={level} size="serif" className="mx-auto max-w-2xl">
         {title}
       </Heading>
       {children && <Lead className="mx-auto mt-4 max-w-2xl">{children}</Lead>}
