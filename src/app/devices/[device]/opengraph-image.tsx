@@ -48,7 +48,7 @@ export default async function Image({ params }: { params: Promise<{ device: stri
           <span style={{
             color: '#ffffff'
           }}>
-            IPTVMax
+            OTTV
           </span>
         </div>
         <p
@@ -63,7 +63,7 @@ export default async function Image({ params }: { params: Promise<{ device: stri
           {post?.title}
         </p>
         <p style={{ fontSize: 24, color: '#9c9c9d', marginTop: '20px' }}>
-          The world&apos;s most reliable streaming service.
+          Live TV, sports and movies on the devices you own.
         </p>
       </div>
     ),

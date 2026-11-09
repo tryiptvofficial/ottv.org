@@ -18,9 +18,10 @@ import { generateMetadata as generatePageMetadata } from "@/lib/site-config";
 
 export function generateMetadata(): Metadata {
     return generatePageMetadata({
-        title: "Secure Checkout | IPTVMax",
-        description: "Complete your IPTVMax subscription securely. Enter your payment details to get instant access to thousands of channels.",
+        title: "Secure Checkout | OTTV",
+        description: "Complete your OTTV subscription by contacting our team on WhatsApp.",
         canonical: "/checkout",
+        noIndex: true,
     });
 }
 

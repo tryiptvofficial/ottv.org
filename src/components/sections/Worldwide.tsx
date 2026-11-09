@@ -16,8 +16,8 @@ export function Worldwide() {
       <Container>
         <SectionHeader
           eyebrow="Around the world"
-          title="IPTVMax Around the World"
-          subtitle={`Find the IPTVMax page for your country or territory. There are pages for ${allCountries.length} of them, each with plans in US dollars and setup guides for your devices.`}
+          title="OTTV Around the World"
+          subtitle={`Find the OTTV page for your country or territory. There are pages for ${allCountries.length} of them, each with plans in US dollars and setup guides for your devices.`}
         />
         <ul className="mx-auto grid max-w-medium grid-cols-2 gap-2 sm:grid-cols-4">
           {featured.map((country) => (

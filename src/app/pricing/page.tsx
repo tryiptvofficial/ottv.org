@@ -25,8 +25,8 @@ const longest = plans[plans.length - 1];
 const lowestMonthly = longest.price_monthly.toFixed(2);
 
 export function generateMetadata(): Metadata {
-  const title = `IPTV Subscription Plans & Pricing 2026: From $${lowestMonthly}/mo | IPTVMax`;
-  const description = `IPTV subscription plans from IPTVMax: 1, 3, 6 or 12 months from $${lowestMonthly}/mo, with ${productFacts.liveChannels} live channels and ${productFacts.vodTitles} movies & TV shows. Order on WhatsApp.`;
+  const title = `IPTV Subscription Plans & Pricing 2026: From $${lowestMonthly}/mo | OTTV`;
+  const description = `IPTV subscription plans from OTTV: 1, 3, 6 or 12 months from $${lowestMonthly}/mo, with ${productFacts.liveChannels} live channels and ${productFacts.vodTitles} movies & TV shows. Order on WhatsApp.`;
   return {
     ...generatePageMetadata({ title, description, canonical: "/pricing" }),
     title: { absolute: title },
@@ -61,9 +61,9 @@ export default async function PricingPage() {
         <Container>
           <PageHeader
             breadcrumb={[{ label: "Home", href: "/" }, { label: "Pricing" }]}
-            eyebrow="IPTVMax pricing plans"
+            eyebrow="OTTV pricing plans"
             title="IPTV Subscription Plans & Pricing"
-            lead={`Choose your IPTVMax plan, from $${lowestMonthly} a month. Every plan includes ${productFacts.summary}; only the length and the price change.`}
+            lead={`Choose your OTTV plan, from $${lowestMonthly} a month. Every plan includes ${productFacts.summary}; only the length and the price change.`}
             className="mb-0 md:mb-0"
           >
             <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-caption text-muted-foreground">
@@ -83,7 +83,7 @@ export default async function PricingPage() {
         <Container>
           <SectionHeader
             eyebrow="How it works"
-            title="How Does an IPTVMax Subscription Work?"
+            title="How Does an OTTV Subscription Work?"
             subtitle="Pick a plan, order it on WhatsApp and start watching on your own devices."
           />
           <StepList steps={steps} />
@@ -94,9 +94,9 @@ export default async function PricingPage() {
         <Container>
           <Grid cols="aside" gap="loose">
             <div>
-              <Heading level={2} size="heading">Stream Smarter With IPTVMax</Heading>
+              <Heading level={2} size="heading">Stream Smarter With OTTV</Heading>
               <p className="mt-4 text-body text-muted-foreground">
-                IPTVMax plans start at ${shortest.price.toFixed(2)} for one month and come down to ${lowestMonthly} a month on the 12-month plan.
+                OTTV plans start at ${shortest.price.toFixed(2)} for one month and come down to ${lowestMonthly} a month on the 12-month plan.
                 Every plan includes {productFacts.summary}, with the TV guide, catch-up TV and HD or 4K streams where available.
               </p>
               <Heading level={3} size="subheading" className="mt-8">What you get</Heading>
@@ -117,7 +117,7 @@ export default async function PricingPage() {
               <Card className="p-6">
                 <Heading level={3} size="subheading">Try it free first</Heading>
                 <p className="mt-2 text-body text-muted-foreground">
-                  Test IPTVMax with a free 24-hour trial before you buy. It opens the full service, you request it on WhatsApp, and no card is needed.
+                  Test OTTV with a free 24-hour trial before you buy. It opens the full service, you request it on WhatsApp, and no card is needed.
                 </p>
                 <Button asChild variant="secondary" className="mt-4">
                   <Link href="/iptv-free-trial">See how the free trial works</Link>
@@ -176,7 +176,7 @@ export default async function PricingPage() {
       <Section divided>
         <Container>
           <Callout
-            title="Pick Your IPTVMax Plan"
+            title="Pick Your OTTV Plan"
             action={
               <>
                 <Button asChild size="lg">
@@ -188,7 +188,7 @@ export default async function PricingPage() {
               </>
             }
           >
-            Every plan includes the full service. Paid plans come with a 7-day money-back guarantee, and you can try IPTVMax free for 24 hours first.
+            Every plan includes the full service. Paid plans come with a 7-day money-back guarantee, and you can try OTTV free for 24 hours first.
           </Callout>
         </Container>
       </Section>

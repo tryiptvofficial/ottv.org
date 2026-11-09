@@ -16,22 +16,25 @@ import { siteConfig, whatsappUrl } from '@/lib/site-config';
 import { plans } from '@/lib/site-data/pricing';
 import { productFacts } from '@/lib/site-data/product-facts';
 
+export const organizationId = `${siteConfig.url}/#organization`;
+export const websiteId = `${siteConfig.url}/#website`;
+
 // Reusable parts of schemas
 const defaultPublisher = {
   '@type': 'Organization' as const,
+  '@id': organizationId,
   'name': siteConfig.name,
   'logo': {
     '@type': 'ImageObject' as const,
-    'url': `${siteConfig.url}/api/og`,
+    'url': `${siteConfig.url}/apple-touch-icon.png`,
   },
 };
-
-export const organizationId = `${siteConfig.url}/#organization`;
 
 export function generateWebSiteSchema(): WithContext<WebSite> {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
+    '@id': websiteId,
     'url': siteConfig.url,
     'name': siteConfig.name,
     'publisher': { '@id': organizationId },
@@ -45,6 +48,8 @@ export function generateOrganizationSchema(): WithContext<Organization> {
     '@type': 'Organization',
     '@id': organizationId,
     'name': siteConfig.name,
+    // The brand's previous name, so search engines connect the old and new entity.
+    'alternateName': 'IPTVMax',
     'url': siteConfig.url,
     'logo': `${siteConfig.url}/apple-touch-icon.png`,
     'contactPoint': {

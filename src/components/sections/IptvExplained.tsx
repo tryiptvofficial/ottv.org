@@ -12,7 +12,7 @@ const blocks = [
     body: "IPTV stands for Internet Protocol Television: live TV channels and on-demand video delivered over your internet connection instead of a cable or satellite line. You watch through an app on your TV, streaming stick, phone or computer.",
   },
   {
-    title: "How does IPTVMax work?",
+    title: "How does OTTV work?",
     body: "You choose a plan and order it on WhatsApp. Our team sends your login details in the chat, you install a player app with the setup guide for your device, sign in and start watching.",
   },
   {
@@ -28,7 +28,7 @@ export function IptvExplained() {
         <SectionHeader
           eyebrow="The basics"
           title="IPTV Service Explained"
-          subtitle="What IPTV is, how an IPTVMax subscription works, and what you need to start watching."
+          subtitle="What IPTV is, how an OTTV subscription works, and what you need to start watching."
         />
         <Grid cols={3}>
           {blocks.map((block) => (

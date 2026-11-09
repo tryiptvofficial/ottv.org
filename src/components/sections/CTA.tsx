@@ -23,7 +23,7 @@ export function CTA() {
               </Button>
             }
           >
-            Try IPTVMax free for 24 hours with full access to {productFacts.liveChannels} live channels and {productFacts.vodTitles} movies and TV shows. No card needed.
+            Try OTTV free for 24 hours with full access to {productFacts.liveChannels} live channels and {productFacts.vodTitles} movies and TV shows. No card needed.
           </Callout>
         </Reveal>
       </Container>

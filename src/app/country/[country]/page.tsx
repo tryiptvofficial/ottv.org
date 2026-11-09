@@ -44,7 +44,7 @@ const shortestPlan = plans[0];
 const longestPlan = plans[plans.length - 1];
 
 const countryIntro = (country: Country) =>
-  `Looking for the best IPTV service in ${nameInSentence(country)}? IPTVMax is an IPTV subscription with ${productFacts.summary}. You choose a plan, order it on WhatsApp, and watch through a player app on your TV, streaming stick, phone or computer. Plans are priced in US dollars, from $${shortestPlan.price.toFixed(2)} for one month to $${longestPlan.price.toFixed(2)} for twelve months ($${longestPlan.price_monthly.toFixed(2)} a month).`;
+  `Looking for the best IPTV service in ${nameInSentence(country)}? OTTV is an IPTV subscription with ${productFacts.summary}. You choose a plan, order it on WhatsApp, and watch through a player app on your TV, streaming stick, phone or computer. Plans are priced in US dollars, from $${shortestPlan.price.toFixed(2)} for one month to $${longestPlan.price.toFixed(2)} for twelve months ($${longestPlan.price_monthly.toFixed(2)} a month).`;
 
 const howItWorks = [
   { title: "Choose a plan", body: "Pick 1, 3, 6 or 12 months. Every plan includes the same service; only the length and the monthly price change." },
@@ -91,7 +91,7 @@ export default async function CountryPage({ params }: Props) {
 
       <Section divided spacing="compact">
         <Container>
-          <Heading level={2} size="heading-sm" className="text-center">How IPTVMax works</Heading>
+          <Heading level={2} size="heading-sm" className="text-center">How OTTV works</Heading>
           <Grid as="ol" cols={3} className="mt-8">
             {howItWorks.map((step, i) => (
               <li key={step.title}>
@@ -110,7 +110,7 @@ export default async function CountryPage({ params }: Props) {
       <Section spacing="compact" className="pt-0 md:pt-0">
         <Container>
           <p className="mx-auto max-w-narrow text-center text-body text-muted-foreground">
-            Want to try IPTVMax first? Read{" "}
+            Want to try OTTV first? Read{" "}
             <Link href="/iptv-free-trial" className="text-link">how the free trial works</Link>.
           </p>
         </Container>

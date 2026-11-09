@@ -1,6 +1,6 @@
 {
-  "name": "IPTVMax",
-  "short_name": "IPTVMax",
+  "name": "OTTV",
+  "short_name": "OTTV",
   "description": "Your premier IPTV service for unlocking a world of entertainment.",
   "start_url": "/",
   "display": "standalone",

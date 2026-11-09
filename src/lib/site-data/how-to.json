@@ -34,7 +34,7 @@
       { "title": "Download a Recommended IPTV Player", "description": "Go to the Google Play Store and search for an IPTV player. We highly recommend <a href='https://www.iptvsmarters.com/' target='_blank' rel='noopener noreferrer'><strong>IPTV Smarters Pro</strong></a> or <a href='https://play.google.com/store/apps/details?id=ar.tvplayer.tv' target='_blank' rel='noopener noreferrer'><strong>TiviMate</strong></a> for the best user experience and reliability." },
       { "title": "Install the Application", "description": "Tap the 'Install' button and wait for the app to download and install on your Android phone, tablet, or TV box." },
       { "title": "Open the App and Select Login Method", "description": "Launch the IPTV app. You will typically be prompted to add a new user or playlist. For the most seamless setup, choose the option to <strong>'Login with Xtream Codes API'</strong>." },
-      { "title": "Enter Your Subscription Details", "description": "Carefully enter the login credentials provided in your subscription confirmation email. This includes a playlist name (e.g., 'IPTVMax'), your username, your password, and the server URL. Double-check for typos." },
+      { "title": "Enter Your Subscription Details", "description": "Carefully enter the login credentials provided in your subscription confirmation email. This includes a playlist name (e.g., 'OTTV'), your username, your password, and the server URL. Double-check for typos." },
       { "title": "Start Streaming Your Content", "description": "After logging in, the app will automatically download the channel lists, movies, and TV shows. You can now start enjoying thousands of hours of content!" }
     ],
     "faqs": [
@@ -76,7 +76,7 @@
       { "title": "Install an IPTV Player from the App Store", "description": "Open the App Store on your iPhone or iPad and search for an IPTV player. We recommend <strong>'GSE Smart IPTV'</strong> or <strong>'IPTV Smarters Player'</strong>, both of which are free to download and use." },
       { "title": "Accept Terms and Open Menu", "description": "Launch the app you just installed. After accepting the terms and conditions, open the main menu. This is usually represented by an icon with three horizontal lines (a 'hamburger' icon) located in the top-left corner of the screen." },
       { "title": "Add Remote Playlist", "description": "In the menu, find and select the 'Remote Playlists' option. Tap the '+' icon to add a new playlist to the application." },
-      { "title": "Enter M3U Link", "description": "Select the 'Add M3U URL' option. In the 'Playlist Name' field, enter a descriptive name like 'IPTVMax'. In the 'Playlist Link' field, carefully paste the complete M3U URL that we sent to your email after you subscribed." },
+      { "title": "Enter M3U Link", "description": "Select the 'Add M3U URL' option. In the 'Playlist Name' field, enter a descriptive name like 'OTTV'. In the 'Playlist Link' field, carefully paste the complete M3U URL that we sent to your email after you subscribed." },
       { "title": "Watch Your Channels", "description": "Tap 'Add'. The app will begin processing the playlist. Once it's loaded, you can navigate through the channel groups and start watching all your content." }
     ],
     "faqs": [
@@ -118,7 +118,7 @@
       { "title": "Download the Recommended Player", "description": "For the best experience on macOS, download the official <strong>IPTV Smarters Player</strong>. Go to iptvsmarters.com and download the .dmg file specifically for macOS." },
       { "title": "Install the Application", "description": "Open the downloaded .dmg file. Drag the IPTV Smarters Player icon into your 'Applications' folder to install it. If prompted by macOS security, you may need to go to 'System Settings' > 'Privacy & Security' to grant permission to open the app." },
       { "title": "Launch and Select Login Method", "description": "Open IPTV Smarters Player from your Applications folder. When prompted, choose the <strong>'Login with Xtream Codes API'</strong> option. This is the most reliable and feature-rich method." },
-      { "title": "Enter Your Credentials", "description": "In the login screen, fill in the four fields exactly as they appear in your subscription email: a name for the playlist (e.g., 'IPTVMax'), your username, your password, and the server URL." },
+      { "title": "Enter Your Credentials", "description": "In the login screen, fill in the four fields exactly as they appear in your subscription email: a name for the playlist (e.g., 'OTTV'), your username, your password, and the server URL." },
       { "title": "Load and Watch", "description": "Click 'Add User'. The application will verify your details and automatically download all the channels, movies, and series associated with your account. Once this process is complete, you are ready to stream." }
     ],
     "extraSections": [

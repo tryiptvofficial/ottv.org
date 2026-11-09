@@ -10,8 +10,8 @@ import { generateMetadata as generatePageMetadata } from "@/lib/site-config";
 
 export function generateMetadata(): Metadata {
     return generatePageMetadata({
-        title: "Frequently Asked Questions | IPTVMax",
-        description: "Answers to common IPTVMax questions: the free trial, prices, devices and player apps, setup, buffering, refunds and how to reach support.",
+        title: "Frequently Asked Questions | OTTV",
+        description: "Answers to common OTTV questions: the free trial, prices, devices and player apps, setup, buffering, refunds and how to reach support.",
         canonical: "/faq",
     });
 }

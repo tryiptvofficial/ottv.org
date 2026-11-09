@@ -25,7 +25,7 @@ export function Pricing() {
         <Reveal variants={blurFade}>
           <SectionHeader
             eyebrow="Pricing"
-            title="Choose Your IPTVMax Package"
+            title="Choose Your OTTV Package"
             subtitle="Select the perfect plan from one of the best IPTV providers. All plans come with our full feature set."
           />
         </Reveal>

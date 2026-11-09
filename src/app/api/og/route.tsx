@@ -9,7 +9,7 @@ export async function GET(req: NextRequest) {
   const hasTitle = searchParams.has('title');
   const title = hasTitle
     ? searchParams.get('title')?.slice(0, 100)
-    : 'IPTVMax';
+    : 'OTTV';
 
   return new ImageResponse(
     (
@@ -44,7 +44,7 @@ export async function GET(req: NextRequest) {
           <span style={{
             color: '#ffffff'
           }}>
-            IPTVMax
+            OTTV
           </span>
         </div>
         <p
@@ -59,7 +59,7 @@ export async function GET(req: NextRequest) {
           {title}
         </p>
         <p style={{ fontSize: 24, color: '#9c9c9d', marginTop: '20px' }}>
-          The world&apos;s most reliable streaming service.
+          Live TV, sports and movies on the devices you own.
         </p>
       </div>
     ),

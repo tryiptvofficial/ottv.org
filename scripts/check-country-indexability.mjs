@@ -5,7 +5,7 @@ import path from 'node:path';
 
 const base = (process.argv[2] || 'http://localhost:9010').replace(/\/$/, '');
 const outFile = process.argv[3];
-const canonicalOrigin = (process.argv[4] || 'https://www.iptvmax.co').replace(/\/$/, '');
+const canonicalOrigin = (process.argv[4] || 'https://www.ottv.org').replace(/\/$/, '');
 const baseline = JSON.parse(fs.readFileSync(path.join(path.dirname(new URL(import.meta.url).pathname), 'country-urls.baseline.json'), 'utf8'));
 
 const decode = (s) => s.replace(/&amp;/g, '&').replace(/&#x27;|&#39;/g, "'").replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>');

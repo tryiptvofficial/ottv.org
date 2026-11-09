@@ -24,7 +24,7 @@ export function Features() {
       <Container>
         <SectionHeader
           eyebrow="Features"
-          title="What You Get With IPTVMax"
+          title="What You Get With OTTV"
           subtitle="The same service on every plan, whichever length you choose."
         />
         <Grid as="ul" cols={3}>

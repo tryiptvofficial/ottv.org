@@ -24,11 +24,11 @@ import { generateMetadata as generatePageMetadata } from "@/lib/site-config";
 import { plans } from "@/lib/site-data/pricing";
 import { productFacts } from "@/lib/site-data/product-facts";
 
-const trialMessage = "Hi, I would like to request the IPTVMax 24-hour free trial.";
+const trialMessage = "Hi, I would like to request the OTTV 24-hour free trial.";
 
 export function generateMetadata(): Metadata {
-  const title = "IPTV Free Trial 2026: 24 Hours Full Access, No Card | IPTVMax";
-  const description = `IPTV free trial from IPTVMax: 24 hours of full access to ${productFacts.liveChannels} live channels and ${productFacts.vodTitles} movies & TV shows. No credit card, request it on WhatsApp.`;
+  const title = "IPTV Free Trial 2026: 24 Hours Full Access, No Card | OTTV";
+  const description = `IPTV free trial from OTTV: 24 hours of full access to ${productFacts.liveChannels} live channels and ${productFacts.vodTitles} movies & TV shows. No credit card, request it on WhatsApp.`;
   return {
     ...generatePageMetadata({ title, description, canonical: "/iptv-free-trial" }),
     title: { absolute: title },
@@ -93,9 +93,9 @@ export default function IptvFreeTrialPage() {
         <Container>
           <PageHeader
             breadcrumb={[{ label: "Home", href: "/" }, { label: "IPTV Free Trial" }]}
-            eyebrow="IPTVMax · 24 hours · Full access · No card"
+            eyebrow="OTTV · 24 hours · Full access · No card"
             title="IPTV Free Trial: 24 Hours of Full Access, No Credit Card"
-            lead={`See how IPTVMax plays on your own screens before you spend anything. The free trial opens all ${productFacts.liveChannels} live channels, the ${productFacts.vodTitles} movie and TV show library, HD and 4K streams where available and the full TV guide for 24 hours. You request it on WhatsApp, and no card is ever asked for.`}
+            lead={`See how OTTV plays on your own screens before you spend anything. The free trial opens all ${productFacts.liveChannels} live channels, the ${productFacts.vodTitles} movie and TV show library, HD and 4K streams where available and the full TV guide for 24 hours. You request it on WhatsApp, and no card is ever asked for.`}
             className="mb-0 md:mb-0"
           >
             <TrialButtons />
@@ -116,7 +116,7 @@ export default function IptvFreeTrialPage() {
         <Container>
           <SectionHeader
             eyebrow="What's included"
-            title="What Do You Get With the IPTVMax Free Trial?"
+            title="What Do You Get With the OTTV Free Trial?"
             subtitle="Everything a paid plan includes, for 24 hours. No channel group, library section or feature is held back for trial users."
           />
           <Grid as="ul" cols={3}>
@@ -137,7 +137,7 @@ export default function IptvFreeTrialPage() {
         <Container>
           <SectionHeader
             eyebrow="How it works"
-            title="How Do I Get My IPTVMax Free Trial?"
+            title="How Do I Get My OTTV Free Trial?"
             subtitle="Three steps, all in WhatsApp, with no payment form anywhere."
           />
           <StepList steps={steps} />
@@ -155,7 +155,7 @@ export default function IptvFreeTrialPage() {
         <Container>
           <SectionHeader
             eyebrow="Make the most of it"
-            title="How Should You Test IPTVMax During the 24 Hours?"
+            title="How Should You Test OTTV During the 24 Hours?"
             subtitle="Test it the way your household really watches: on your own devices, on your own internet connection, at the times you usually turn the TV on."
           />
           <Grid as="ul" cols={3}>
@@ -180,7 +180,7 @@ export default function IptvFreeTrialPage() {
         <Container>
           <SectionHeader
             eyebrow="After the trial"
-            title="What Does IPTVMax Cost After the Free Trial?"
+            title="What Does OTTV Cost After the Free Trial?"
             subtitle="If the trial convinces you, pick a plan. Prices are in US dollars and paid once per plan."
           />
           <Grid as="ul" cols={4}>
@@ -207,8 +207,8 @@ export default function IptvFreeTrialPage() {
       <Section divided>
         <Container>
           <SectionHeader
-            eyebrow="Why IPTVMax"
-            title="Why Is the IPTVMax Free Trial Risk-Free?"
+            eyebrow="Why OTTV"
+            title="Why Is the OTTV Free Trial Risk-Free?"
             subtitle="We never take a payment method for the trial, so there is nothing we could charge when it ends. The trial stops after 24 hours, and whether you choose a plan is entirely up to you."
           />
           <Grid as="ul" cols={4}>
@@ -226,7 +226,7 @@ export default function IptvFreeTrialPage() {
         <Container>
           <SectionHeader
             eyebrow="Questions & answers"
-            title="IPTVMax Free Trial FAQ"
+            title="OTTV Free Trial FAQ"
             subtitle="Short answers to what people ask most before starting an IPTV free trial."
           />
           <FaqList items={trialFaqs} />
@@ -237,10 +237,10 @@ export default function IptvFreeTrialPage() {
         <Container>
           <Callout
             size="large"
-            title="Start Your IPTVMax Free Trial Tonight"
+            title="Start Your OTTV Free Trial Tonight"
             action={<TrialButtons />}
           >
-            24 hours of full access on every device you own, with no card and nothing to cancel. If IPTVMax earns a place on your TV, pick a plan. If it does not, you owe nothing.
+            24 hours of full access on every device you own, with no card and nothing to cancel. If OTTV earns a place on your TV, pick a plan. If it does not, you owe nothing.
           </Callout>
         </Container>
       </Section>

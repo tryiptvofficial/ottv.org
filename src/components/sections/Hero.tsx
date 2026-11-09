@@ -42,7 +42,7 @@ export function Hero() {
       <div aria-hidden className="bg-dot-grid mask-radial absolute inset-0" />
       <Container className="relative z-10 flex flex-col items-center text-center">
         <div className="w-full max-w-3xl motion-safe:animate-hero-rise">
-          <Eyebrow className="mb-6">IPTVMax</Eyebrow>
+          <Eyebrow className="mb-6">OTTV</Eyebrow>
           <AnimatedText
             text="Best IPTV Service in 2026"
             textClassName="font-headline text-heading-lg font-normal text-foreground text-balance"

@@ -19,11 +19,11 @@ import { WhatsAppLink } from '@/components/shared/WhatsAppLink';
 import { getContactPageData } from '@/lib/data/contact-page';
 import { generateMetadata as generatePageMetadata } from '@/lib/site-config';
 
-const supportMessage = "Hi, I need help with my IPTVMax service.";
+const supportMessage = "Hi, I need help with my OTTV service.";
 
 export function generateMetadata(): Metadata {
-  const title = "Contact IPTVMax Support: Help With Orders, Login & Setup";
-  const description = "Contact IPTVMax support on WhatsApp for help with orders, login details, setup and buffering. See what to include in your message, plus quick answers.";
+  const title = "Contact OTTV Support: Help With Orders, Login & Setup";
+  const description = "Contact OTTV support on WhatsApp for help with orders, login details, setup and buffering. See what to include in your message, plus quick answers.";
   return {
     ...generatePageMetadata({ title, description, canonical: "/contact" }),
     title: { absolute: title },
@@ -73,9 +73,9 @@ export default function ContactPage() {
         <Container>
           <PageHeader
             breadcrumb={[{ label: "Home", href: "/" }, { label: "Contact Us" }]}
-            eyebrow="IPTVMax support"
-            title="IPTVMax Support Center"
-            lead="All IPTVMax support runs through WhatsApp. Message us and our team replies in the same chat."
+            eyebrow="OTTV support"
+            title="OTTV Support Center"
+            lead="All OTTV support runs through WhatsApp. Message us and our team replies in the same chat."
             className="mb-0 md:mb-0"
           />
         </Container>

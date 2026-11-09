@@ -8,7 +8,7 @@ export const quickAnswers: { question: string; answer: string; link?: { href: st
   },
   {
     question: "My app says \"expired\" or asks me to pay. Is my subscription over?",
-    answer: "Not necessarily. The player app is made by another company, and some, such as Smart IPTV, SET IPTV or NET IPTV on smart TVs, can ask for their own activation fee after a trial period. That message is about the app, not your IPTVMax plan, which runs for the full length you paid for. Message us and we can suggest another app from our setup guides.",
+    answer: "Not necessarily. The player app is made by another company, and some, such as Smart IPTV, SET IPTV or NET IPTV on smart TVs, can ask for their own activation fee after a trial period. That message is about the app, not your OTTV plan, which runs for the full length you paid for. Message us and we can suggest another app from our setup guides.",
   },
   {
     question: "My login says invalid.",

@@ -1,0 +1,13 @@
+# OTTV
+
+> OTTV (formerly IPTVMax) is an IPTV subscription with 25,000+ live channels and 120,000+ movies and TV shows. Plans run 1, 3, 6 or 12 months, priced in US dollars, with a free 24-hour trial. Orders and support run through WhatsApp.
+
+Website: https://www.ottv.org/
+
+## Key pages
+
+- [Pricing](https://www.ottv.org/pricing): subscription plans and prices
+- [IPTV free trial](https://www.ottv.org/iptv-free-trial): how the 24-hour trial works
+- [Locations](https://www.ottv.org/locations): service pages by country or territory
+- [FAQ](https://www.ottv.org/faq): frequently asked questions
+- [Contact](https://www.ottv.org/contact): support on WhatsApp

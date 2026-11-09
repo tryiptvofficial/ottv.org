@@ -1,35 +1,21 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-// Canonical origin: always https://www.iptvmax.co
-// Any other host (non-www, http, old domain) is redirected here.
-const CANONICAL_HOST = 'www.iptvmax.co';
+import { resolveRedirect } from '@/lib/redirects';
 
+// Canonical origin: always https://www.ottv.org
+// Any other host (non-www, http, the old domain) is redirected here, keeping the path.
 export function middleware(request: NextRequest) {
   const url = request.nextUrl;
-  const host = request.headers.get('host') ?? '';
+  const target = resolveRedirect({
+    host: request.headers.get('host') ?? '',
+    protocol: url.protocol,
+    pathname: url.pathname,
+    search: url.search,
+    isPreviewDeployment: process.env.VERCEL_ENV === 'preview',
+  });
 
-  // Strip port for comparison (dev environments use localhost with a port)
-  const bareHost = host.split(':')[0];
-
-  // Allow local development hosts through without redirecting
-  if (bareHost === 'localhost' || bareHost === '127.0.0.1' || bareHost.endsWith('.localhost')) {
-    return NextResponse.next();
-  }
-
-  const needsHttps = url.protocol === 'http:';
-  const needsWww = bareHost !== CANONICAL_HOST;
-
-  if (needsHttps || needsWww) {
-    const canonical = new URL(request.url);
-    canonical.protocol = 'https:';
-    canonical.host = CANONICAL_HOST;
-    // Setting host keeps the incoming port (e.g. the app server's), which would leak into the redirect.
-    canonical.port = '';
-    return NextResponse.redirect(canonical, { status: 301 });
-  }
-
-  return NextResponse.next();
+  return target ? NextResponse.redirect(new URL(target, request.url), { status: 301 }) : NextResponse.next();
 }
 
 export const config = {

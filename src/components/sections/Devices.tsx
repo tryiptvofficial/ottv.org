@@ -17,7 +17,7 @@ export function Devices() {
         <SectionHeader
           eyebrow="Compatibility"
           title="Works on All Your Devices"
-          subtitle="Watch on your TV, computer, tablet, or phone. IPTVMax is compatible with a wide range of devices."
+          subtitle="Watch on your TV, computer, tablet, or phone. OTTV is compatible with a wide range of devices."
         />
         <Reveal variants={blurFade} delay={0.1}>
           <div className="mx-auto flex max-w-medium flex-wrap justify-center gap-4">

@@ -14,7 +14,7 @@ const cable = [
   "Extra boxes for extra TVs",
 ];
 
-const iptvmax = [
+const ottv = [
   "Watch on TVs, streaming sticks, phones and computers",
   `${productFacts.liveChannels} live channels and ${productFacts.vodTitles} on-demand titles on every plan`,
   "One payment per plan, with nothing renewing on its own",
@@ -27,8 +27,8 @@ export function Comparison() {
       <Container>
         <SectionHeader
           eyebrow="Stream more, pay once"
-          title="What Makes IPTVMax Different From Cable?"
-          subtitle="Thinking of dropping cable? Here is how an IPTVMax subscription compares with a typical cable package."
+          title="What Makes OTTV Different From Cable?"
+          subtitle="Thinking of dropping cable? Here is how an OTTV subscription compares with a typical cable package."
         />
         <Grid cols={2} className="mx-auto max-w-medium">
           <Card className="p-6">
@@ -43,9 +43,9 @@ export function Comparison() {
             </ul>
           </Card>
           <Card variant="accent" className="p-6">
-            <Heading level={3} size="subheading">IPTVMax</Heading>
+            <Heading level={3} size="subheading">OTTV</Heading>
             <ul className="mt-6 space-y-3 text-body text-foreground">
-              {iptvmax.map((item) => (
+              {ottv.map((item) => (
                 <li key={item} className="flex gap-3">
                   <Check aria-hidden className="mt-1 h-4 w-4 shrink-0 text-primary" />
                   {item}

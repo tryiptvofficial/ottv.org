@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 const config = {
-    siteUrl: process.env.SITE_URL || 'https://www.iptvmax.co',
+    siteUrl: process.env.SITE_URL || 'https://www.ottv.org',
     generateRobotsTxt: true,
     robotsTxtOptions: {
         policies: [
@@ -9,7 +9,7 @@ const config = {
             // { userAgent: '*', disallow: '/admin' },
         ],
         additionalSitemaps: [
-            `${process.env.SITE_URL || 'https://www.iptvmax.co'}/sitemap.xml`,
+            `${process.env.SITE_URL || 'https://www.ottv.org'}/sitemap.xml`,
         ],
         // To add a crawl-delay, uncomment the following line:
         // crawlDelay: 5, 

@@ -64,7 +64,7 @@ export function ClientCarousel({
           >
             <div className="group relative overflow-hidden rounded-card ring-1 ring-border transition-shadow duration-standard hover:ring-foreground/40">
               <Image
-                alt={`Poster for ${item.title}, a popular movie available on IPTVMax`}
+                alt={`Poster for ${item.title}, a popular movie available on OTTV`}
                 loading="lazy"
                 width={200}
                 height={300}

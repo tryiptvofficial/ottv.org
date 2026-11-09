@@ -6,21 +6,22 @@ import { siteConfig } from '@/lib/site-config';
 
 const baseUrl = siteConfig.url;
 
-// Last significant change to the shared country page template; update it when that content changes.
-const countryPagesUpdatedAt = '2026-11-02';
+// Date of the last content change shared by every page (the OTTV rebrand). Update by hand only when
+// that content really changes, never from the build, so lastmod stays truthful.
+const siteContentUpdatedAt = '2026-11-09';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   
   const devicePages: MetadataRoute.Sitemap = howToArticles.map((article) => ({
     url: `${baseUrl}/devices/${article.id}`,
-    lastModified: new Date(article.dateModified),
+    lastModified: new Date(Math.max(Date.parse(article.dateModified), Date.parse(siteContentUpdatedAt))),
     changeFrequency: 'weekly',
     priority: 0.8,
   }));
 
   const countryPages: MetadataRoute.Sitemap = allCountries.map((country) => ({
     url: `${baseUrl}/country/${country.id}`,
-    lastModified: new Date(countryPagesUpdatedAt),
+    lastModified: new Date(siteContentUpdatedAt),
     changeFrequency: 'monthly',
     priority: 0.7,
   }));
@@ -29,37 +30,37 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
-      lastModified: new Date('2026-11-02'),
+      lastModified: new Date(siteContentUpdatedAt),
       changeFrequency: 'daily',
       priority: 1.0,
     },
     {
       url: `${baseUrl}/pricing`,
-      lastModified: new Date('2026-11-02'),
+      lastModified: new Date(siteContentUpdatedAt),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/locations`,
-      lastModified: new Date('2026-11-02'),
+      lastModified: new Date(siteContentUpdatedAt),
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
       url: `${baseUrl}/faq`,
-      lastModified: new Date('2026-11-01'),
+      lastModified: new Date(siteContentUpdatedAt),
       changeFrequency: 'monthly',
       priority: 0.6,
     },
     {
       url: `${baseUrl}/contact`,
-      lastModified: new Date('2026-11-02'),
+      lastModified: new Date(siteContentUpdatedAt),
       changeFrequency: 'yearly',
       priority: 0.5,
     },
     {
         url: `${baseUrl}/iptv-free-trial`,
-        lastModified: new Date('2026-11-02'),
+        lastModified: new Date(siteContentUpdatedAt),
         changeFrequency: 'monthly',
         priority: 0.8,
     },

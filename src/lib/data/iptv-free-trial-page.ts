@@ -11,7 +11,7 @@ const longestPlan = plans[plans.length - 1];
 
 export const trialFaqs = [
   {
-    question: "How long does the IPTVMax free trial last?",
+    question: "How long does the OTTV free trial last?",
     answer: "24 hours. The trial gives you full access for one day, then it ends on its own.",
   },
   {
@@ -35,7 +35,7 @@ export const trialFaqs = [
     answer: "Your access stops automatically. There is nothing to cancel and nothing is charged. If you want to keep watching, choose a plan and order it on WhatsApp.",
   },
   {
-    question: "How much does IPTVMax cost after the trial?",
+    question: "How much does OTTV cost after the trial?",
     answer: `Plans are priced in US dollars and paid once per plan: ${planPrices}. The 12-month plan works out to $${longestPlan.price_monthly.toFixed(2)} a month.`,
   },
 ];
@@ -52,8 +52,8 @@ export function getIptvFreeTrialPageData() {
 
   const serviceSchema = generateServiceSchema({
     serviceType: "IPTV free trial",
-    name: "IPTVMax 24-hour free trial",
-    description: `Free 24-hour IPTVMax trial with full access to ${productFacts.summary}. Requested on WhatsApp; no payment details needed.`,
+    name: "OTTV 24-hour free trial",
+    description: `Free 24-hour OTTV trial with full access to ${productFacts.summary}. Requested on WhatsApp; no payment details needed.`,
     offers: {
       "@type": "Offer",
       price: "0",

@@ -52,7 +52,7 @@ export function Footer() {
         </div>
         <div className="border-t py-6">
           <p className="font-mono text-meta text-subtle">
-            &copy; {new Date().getFullYear()} IPTVMax. All rights reserved.
+            &copy; {new Date().getFullYear()} OTTV. All rights reserved.
           </p>
         </div>
       </Container>

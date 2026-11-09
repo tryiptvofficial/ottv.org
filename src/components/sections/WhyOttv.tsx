@@ -28,13 +28,13 @@ const reasons = [
   },
 ];
 
-export function WhyIptvmax() {
+export function WhyOttv() {
   return (
     <Section divided spacing="compact">
       <Container>
         <SectionHeader
-          eyebrow="Why IPTVMax"
-          title="Why Choose IPTVMax?"
+          eyebrow="Why OTTV"
+          title="Why Choose OTTV?"
           subtitle="Straightforward plans, setup help for your devices and a free trial before you commit."
         />
         <Grid cols={2} gap="loose" className="mx-auto max-w-medium">

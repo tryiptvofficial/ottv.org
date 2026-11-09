@@ -13,7 +13,7 @@ import { generateMetadata as generatePageMetadata } from '@/lib/site-config';
 
 export function generateMetadata(): Metadata {
     const title = "IPTV Service Locations by Country";
-    const description = "Find the IPTVMax page for your country or territory: plan prices in US dollars, how ordering on WhatsApp works, and setup guides for your devices.";
+    const description = "Find the OTTV page for your country or territory: plan prices in US dollars, how ordering on WhatsApp works, and setup guides for your devices.";
     
     return generatePageMetadata({
         title,
@@ -32,8 +32,8 @@ export default async function LocationsPage() {
                 <Container>
                     <PageHeader
                         breadcrumb={[{ label: "Home", href: "/" }, { label: "Service Locations" }]}
-                        title="IPTVMax Service Locations"
-                        lead="Choose your country or territory to see how IPTVMax works there, what the plans cost in US dollars, and which setup guides to start with."
+                        title="OTTV Service Locations"
+                        lead="Choose your country or territory to see how OTTV works there, what the plans cost in US dollars, and which setup guides to start with."
                     />
                     <Grid as="ul" cols="list" gap="tight">
                         {allCountries.map(country => (

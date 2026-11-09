@@ -5,8 +5,8 @@ import path from 'node:path';
 import { spawn } from 'node:child_process';
 
 const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
-const ORIGIN = 'https://www.iptvmax.co';
-const BRAND = 'IPTVMax';
+const ORIGIN = 'https://www.ottv.org';
+const BRAND = 'OTTV';
 const approved = { channels: '25,000', vod: '120,000' };
 const legacyRedirects = {
   '/tv': '/', '/tv/pricing': '/pricing', '/tv/faq': '/faq', '/tv/iptv-free-trial': '/iptv-free-trial',

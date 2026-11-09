@@ -8,7 +8,7 @@ import { Comparison } from "@/components/sections/Comparison";
 import { IptvExplained } from "@/components/sections/IptvExplained";
 import { Features } from "@/components/sections/Features";
 import { FAQ } from "@/components/sections/FAQ";
-import { WhyIptvmax } from "@/components/sections/WhyIptvmax";
+import { WhyOttv } from "@/components/sections/WhyOttv";
 import { Worldwide } from "@/components/sections/Worldwide";
 import { CTA } from "@/components/sections/CTA";
 import { ContentCarouselSkeleton } from "@/components/shared/ContentCarousel";
@@ -40,7 +40,7 @@ export default async function Home() {
       <WeeklyBuzz items={weeklyBuzzItemsWithPlaceholders} />
       <SportEvents items={sportEventsWithPlaceholders} />
       <FAQ />
-      <WhyIptvmax />
+      <WhyOttv />
       <Worldwide />
       <CTA />
     </>

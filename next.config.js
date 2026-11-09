@@ -93,29 +93,9 @@ const nextConfig = {
       },
     ]
   },
-  async redirects() {
-    return [
-      {
-        source: '/iptv-subscription',
-        destination: '/pricing',
-        permanent: true,
-      },
-      // Legacy iptvprovider.me paths, so path-preserving redirects from the old domain land in one hop.
-      { source: '/tv', destination: '/', permanent: true },
-      { source: '/tv/pricing', destination: '/pricing', permanent: true },
-      { source: '/tv/faq', destination: '/faq', permanent: true },
-      { source: '/tv/iptv-free-trial', destination: '/iptv-free-trial', permanent: true },
-      { source: '/tv/devices/:device', destination: '/devices/:device', permanent: true },
-      { source: '/tv/guides/iptv-buffering-troubleshooting', destination: '/devices/troubleshooting', permanent: true },
-      { source: '/tv/country/us', destination: '/country/united-states', permanent: true },
-      { source: '/tv/country/uk', destination: '/country/united-kingdom', permanent: true },
-      { source: '/tv/country/ca', destination: '/country/canada', permanent: true },
-      { source: '/tv/country/:slug', destination: '/country/:slug', permanent: true },
-      // Old-domain country slugs that differ from this site's slugs (both had Search Console impressions).
-      { source: '/country/south-korea', destination: '/country/korea', permanent: true },
-      { source: '/country/myanmar', destination: '/country/burma', permanent: true },
-    ]
-  },
+  // All redirects live in src/lib/redirects.ts (run from middleware) so the old host reaches its
+  // final URL in one hop. Next's own trailing-slash redirect would run first and add a hop.
+  skipTrailingSlashRedirect: true,
 };
 
 export default nextConfig;

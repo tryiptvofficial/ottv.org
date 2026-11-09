@@ -174,7 +174,7 @@ export default async function HowToPage({ params }: Props) {
                 </Card>
 
                 <h2>Step-by-Step Installation Guide for {primaryKeyword}</h2>
-                <p>Follow these simple steps to get IPTVMax running on your {primaryKeyword}. The entire process should only take a few minutes.</p>
+                <p>Follow these simple steps to get OTTV running on your {primaryKeyword}. The entire process should only take a few minutes.</p>
                 <ol className="not-prose mt-8 space-y-8">
                   {steps.map((step, index) => (
                     <li key={index} id={`step-${index + 1}`} className="flex gap-6">
@@ -207,7 +207,7 @@ export default async function HowToPage({ params }: Props) {
                     </Button>
                   }
                 >
-                  Get an IPTVMax subscription for {productFacts.summary}.
+                  Get an OTTV subscription for {productFacts.summary}.
                 </Callout>
 
                 {faqs && (

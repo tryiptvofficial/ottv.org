@@ -13,7 +13,7 @@ const features = shortest.features.join(", ").replace(/, ([^,]*)$/, " and $1");
 
 export const pricingPageFaqs = [
     {
-        question: "How much does an IPTVMax subscription cost?",
+        question: "How much does an OTTV subscription cost?",
         answer: `Plans are priced in US dollars: ${planPrices}. The 12-month plan works out to $${longest.price_monthly.toFixed(2)} a month.`,
     },
     {
@@ -21,7 +21,7 @@ export const pricingPageFaqs = [
         answer: `The 12-month plan. At $${longest.price.toFixed(2)} it costs $${longest.price_monthly.toFixed(2)} a month, ${longest.savings?.replace("Save ", "")} less than paying $${shortest.price.toFixed(2)} every month, which would come to $${yearOfMonthly.toFixed(2)} over a year: a saving of $${yearlySaving}.`,
     },
     {
-        question: "What does every IPTVMax plan include?",
+        question: "What does every OTTV plan include?",
         answer: `Every plan includes the same service: ${features}. Plans differ only in length and price.`,
     },
     {
@@ -38,7 +38,7 @@ export const pricingPageFaqs = [
     },
     {
         question: "Is there a free trial available?",
-        answer: `Yes. IPTVMax offers a free 24-hour trial with full access to the same ${productFacts.summary} as a paid plan. You request it on WhatsApp and no credit card is needed; the IPTV Free Trial page explains how it works.`,
+        answer: `Yes. OTTV offers a free 24-hour trial with full access to the same ${productFacts.summary} as a paid plan. You request it on WhatsApp and no credit card is needed; the IPTV Free Trial page explains how it works.`,
     },
     {
         question: "Do you offer refunds?",
