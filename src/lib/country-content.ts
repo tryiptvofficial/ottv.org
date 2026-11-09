@@ -1,6 +1,7 @@
 import { allCountries, historicalEntries, nameInSentence, type Country } from "@/lib/countries";
 import factsData from "@/lib/site-data/country-facts.json";
 import { factCorrections } from "@/lib/site-data/country-fact-corrections";
+import { marketProfiles, type MarketProfile } from "@/lib/site-data/market-profiles";
 import { plans } from "@/lib/site-data/pricing";
 
 export interface CountryFacts {
@@ -33,6 +34,14 @@ const fireTvMarkets = new Set(["us", "gb", "jp", "es", "be", "it", "fr", "de", "
 // Roku's developer documentation names these Roku Streaming Store countries.
 // https://developer.roku.com/dev/docs/channel-localization
 const rokuStores = new Set(["us", "ca", "gb", "ie", "de", "at", "ar", "br", "cl", "co", "cr", "sv", "gt", "hn", "mx", "ni", "pa", "pe", "au"]);
+
+// A mistyped slug or an empty entry would otherwise publish nothing, or publish a claim with no date behind it.
+for (const [id, market] of Object.entries(marketProfiles)) {
+  if (!allCountries.some((c) => c.id === id)) throw new Error(`Market profile for unknown country page: ${id}`);
+  if (!market.availability.trim()) throw new Error(`Market profile ${id} has no availability statement`);
+  const checked = /^\d{4}-\d{2}-\d{2}$/.test(market.checkedOn) ? Date.parse(`${market.checkedOn}T00:00:00Z`) : NaN;
+  if (Number.isNaN(checked) || checked > Date.now()) throw new Error(`Market profile ${id} needs a real past checkedOn date`);
+}
 
 export const guideLabels: Record<string, string> = {
   "fire-tv": "Fire TV Stick (Fire OS models)",
@@ -88,6 +97,8 @@ export interface CountryContent {
   where: string;
   lead: string;
   availabilityNote: string;
+  /** Owner-confirmed facts, present only for countries with a market profile. */
+  market?: MarketProfile;
   priceAnswer: string;
   formerStates: Country[];
   quickFacts: { label: string; value: string }[];
@@ -119,6 +130,7 @@ export function buildCountryContent(country: Country, data: CountryFacts): Count
   const officialLanguages = data.languageBasis === "official";
   const fire = fireTvMarkets.has(country.code);
   const roku = rokuStores.has(country.code);
+  const market = marketProfiles[country.id];
 
   const lead = usesUsd
     ? `Watching from ${where}? OTTV plans are charged in US dollars, which ${where} also uses, so there is no currency conversion. You order on WhatsApp.`
@@ -181,11 +193,15 @@ export function buildCountryContent(country: Country, data: CountryFacts): Count
         },
     {
       question: `Is OTTV available in ${where}?`,
-      answer: `OTTV has not published a country-by-country availability list. Message us on WhatsApp before ordering, or request the free 24-hour trial to test the service on your own connection in ${where}.`,
+      answer: market
+        ? `${market.availability} You can also request the free 24-hour trial to test the service on your own connection in ${where}.`
+        : `OTTV has not published a country-by-country availability list. Message us on WhatsApp before ordering, or request the free 24-hour trial to test the service on your own connection in ${where}.`,
     },
     {
       question: `Does OTTV have ${firstLanguage}-language channels?`,
-      answer: `OTTV does not publish a channel list by language. The free trial opens the full lineup, so you can search for ${firstLanguage}-language channels yourself before paying.`,
+      answer: market?.channels.length
+        ? `Channels confirmed for ${where} include ${joinList(market.channels)}. The free trial opens the full lineup, so you can search for ${firstLanguage}-language channels yourself before paying.`
+        : `OTTV does not publish a channel list by language. The free trial opens the full lineup, so you can search for ${firstLanguage}-language channels yourself before paying.`,
     },
     {
       question: `Which device should I use for OTTV in ${where}?`,
@@ -193,12 +209,14 @@ export function buildCountryContent(country: Country, data: CountryFacts): Count
         ? `Start with a device you already own: OTTV has setup guides for smart TVs, phones, tablets and computers. If you want a streaming stick, choose a Fire TV model running Fire OS, such as the 4K Plus, because Vega OS models do not support the player apps in our guide.`
         : `Start with a device you already own. OTTV has setup guides for Android, iPhone and iPad, Windows, Mac and smart TVs, and these do not depend on buying a Fire TV Stick locally.`,
     },
+    ...(market?.faqs ?? []),
   ];
 
   return {
     where,
     lead,
-    availabilityNote: `OTTV has not published a country-by-country availability or channel list. The free 24-hour trial, with no card, is the way to test it in ${where}.`,
+    availabilityNote: market?.availability ?? `OTTV has not published a country-by-country availability or channel list. The free 24-hour trial, with no card, is the way to test it in ${where}.`,
+    market,
     priceAnswer: `OTTV costs $${shortest.price.toFixed(2)} for 1 month or $${longest.price.toFixed(2)} for 12 months, which works out to $${lowestMonthly} a month. Every plan includes the same service.`,
     formerStates: Object.entries(historicalEntries).filter(([, entry]) => entry.successorId === country.id).map(([id]) => allCountries.find((c) => c.id === id)!),
     quickFacts: [

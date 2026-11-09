@@ -46,7 +46,7 @@ export const viewport: Viewport = {
   maximumScale: 5,
 };
 
-const homeTitle = `IPTV Service With 25,000+ Channels & 24h Free Trial | ${siteConfig.name}`;
+const homeTitle = `Best IPTV Service With 25,000+ Channels & 24h Free Trial | ${siteConfig.name}.org`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),

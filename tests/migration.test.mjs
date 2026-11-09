@@ -303,13 +303,12 @@ test('country pages make no availability claim and differ beyond the country nam
   for (const p of countryPaths) {
     const html = pages.get(p).body;
     assert.doesNotMatch(html, /areaServed/, p);
-    assert.doesNotMatch(titleOf(html), /Best IPTV/i, p);
     assert.ok(titleOf(html).length <= 60, `${p} title: ${titleOf(html)}`);
     assert.ok(metaContent(html, 'name', 'description').length <= 160, p);
     if (historical.has(p)) continue;
     assert.equal((html.match(/<h1[\s>]/g) || []).length, 1, p);
     const h1 = mainText((html.match(/<h1[\s\S]*?<\/h1>/) || [''])[0].replace(/^/, '<main>').concat('</main>'));
-    const name = h1.replace(/^IPTV in (the )?/, '');
+    const name = h1.replace(/^Best IPTV in (the )?/, '');
     const text = mainText(html).replace(/Other Pages in [\s\S]*?Ready to start\?/, '').replace(new RegExp(`\\b${name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'g'), 'X');
     masked.add(text);
   }

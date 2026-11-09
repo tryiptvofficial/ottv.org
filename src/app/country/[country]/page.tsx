@@ -15,6 +15,7 @@ import { FaqList } from "@/components/shared/FaqList";
 import { SectionHeader } from "@/components/shared/SectionHeader";
 import { Schema } from "@/components/shared/Schema";
 import { CountryFlag } from "@/components/shared/CountryFlag";
+import { MarketProfileSection } from "@/components/sections/MarketProfileSection";
 import { WhatsAppLink } from "@/components/shared/WhatsAppLink";
 import { allCountries, getCountryById } from "@/lib/countries";
 import { guideLabels } from "@/lib/country-content";
@@ -55,7 +56,7 @@ export default async function CountryPage({ params }: Props) {
               )}
               {history && (
                 <Button asChild size="lg" className="h-auto whitespace-normal py-3">
-                  <Link href={`/country/${history.successorId}`}>See IPTV in {history.successorName}</Link>
+                  <Link href={`/country/${history.successorId}`}>See the Best IPTV in {history.successorName}</Link>
                 </Button>
               )}
             </PageHeader>
@@ -131,6 +132,8 @@ export default async function CountryPage({ params }: Props) {
           </Grid>
         </Container>
       </Section>
+
+      {content.market && <MarketProfileSection where={where} market={content.market} />}
 
       <Section spacing="compact">
         <Container>
@@ -223,7 +226,7 @@ export default async function CountryPage({ params }: Props) {
                     <Link href={`/country/${peer.id}`} className={linkTile}>
                       <span className="flex items-center gap-3">
                         <CountryFlag code={peer.code} className="h-5 w-5" />
-                        IPTV in {peer.name}
+                        Best IPTV in {peer.name}
                       </span>
                       <ArrowRight aria-hidden className="h-4 w-4 shrink-0" />
                     </Link>

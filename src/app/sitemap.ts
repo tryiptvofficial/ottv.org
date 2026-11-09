@@ -2,6 +2,7 @@
 import { MetadataRoute } from 'next'
 import { howToArticles } from '@/lib/how-to';
 import { allCountries } from '@/lib/countries';
+import { marketProfiles } from '@/lib/site-data/market-profiles';
 import { siteConfig } from '@/lib/site-config';
 
 const baseUrl = siteConfig.url;
@@ -22,7 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const countryPages: MetadataRoute.Sitemap = allCountries.map((country) => ({
     url: `${baseUrl}/country/${country.id}`,
-    lastModified: new Date(siteContentUpdatedAt),
+    lastModified: new Date(marketProfiles[country.id]?.checkedOn ?? siteContentUpdatedAt),
     changeFrequency: 'monthly',
     priority: 0.7,
   }));

@@ -16,7 +16,7 @@ export function Hero() {
             <span><span className="text-brand">Free 24-hour trial</span>, no card needed</span>
           </AnnouncementPill>
           <Heading level={1} size="display-2xl">
-            IPTV Service With a <span className="text-brand">24h</span> Free Trial
+            Best IPTV Service With a <span className="text-brand">24h</span> Free Trial
           </Heading>
           <Lead className="mx-auto mt-10 max-w-xl text-pretty">
             Get access to {productFacts.liveChannels} live TV channels worldwide and a library of {productFacts.vodTitles} on-demand movies and TV shows. Watch in HD or 4K where available, on the devices you already own.
