@@ -13,6 +13,7 @@ import { Schema } from '@/components/shared/Schema';
 import { Heading } from '@/components/ui/typography';
 import { generateMetadata as generatePageMetadata } from '@/lib/site-config';
 import { generateWebPageSchema } from '@/lib/schema';
+import { LastUpdated } from "@/components/shared/LastUpdated";
 
 const continents = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
 
@@ -57,13 +58,13 @@ export default async function LocationsPage() {
     return (
         <>
             <Schema id="breadcrumb" schema={breadcrumbSchema} />
-            <Schema id="webpage" schema={generateWebPageSchema({ type: "CollectionPage", path: "/locations", name: "OTTV by Country and Territory" })} />
+            <Schema id="webpage" schema={generateWebPageSchema({ type: "CollectionPage", path: "/locations", name: "IPTV Guides by Country and Territory" })} />
             <Section>
                 <Container>
                     <PageHeader
                         breadcrumb={[{ label: "Home", href: "/" }, { label: "Locations" }]}
-                        title="OTTV by Country and Territory"
-                        lead="Each page covers currency, languages, time zones, plan prices in US dollars and which setup guides to start with."
+                        title="IPTV Guides by Country and Territory"
+                        lead="Each IPTV guide covers currency, languages, time zones, plan prices in US dollars and which setup guides to start with."
                     />
                     <div className="mx-auto mb-10 max-w-narrow text-center">
                         <Heading level={2} size="heading-sm">Can I Watch OTTV in My Country?</Heading>
@@ -93,6 +94,7 @@ export default async function LocationsPage() {
                     </div>
                 </Container>
             </Section>
+            <LastUpdated />
         </>
     );
 }

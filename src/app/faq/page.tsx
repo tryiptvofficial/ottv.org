@@ -8,10 +8,11 @@ import { Breadcrumb } from "@/components/shared/PageHeader";
 import { getFaqPageData } from "@/lib/data/faq-page";
 import { Schema } from "@/components/shared/Schema";
 import { generateMetadata as generatePageMetadata } from "@/lib/site-config";
+import { LastUpdated } from "@/components/shared/LastUpdated";
 
 export function generateMetadata(): Metadata {
     return generatePageMetadata({
-        title: "Frequently Asked Questions | OTTV",
+        title: "IPTV Questions and Answers | OTTV",
         description: "Answers to common OTTV questions: the free trial, prices, devices and player apps, setup, buffering, refunds and how to reach support.",
         canonical: "/faq",
     });
@@ -44,6 +45,7 @@ export default async function FaqPage() {
           </nav>
         </Container>
       </Section>
+      <LastUpdated />
     </>
   );
 }

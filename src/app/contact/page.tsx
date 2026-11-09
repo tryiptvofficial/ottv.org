@@ -19,6 +19,7 @@ import { WhatsAppLink } from '@/components/shared/WhatsAppLink';
 import { getContactPageData } from '@/lib/data/contact-page';
 import { generateMetadata as generatePageMetadata } from '@/lib/site-config';
 import { generateWebPageSchema } from '@/lib/schema';
+import { LastUpdated } from "@/components/shared/LastUpdated";
 
 const supportMessage = "Hi, I need help with my OTTV service.";
 
@@ -172,6 +173,7 @@ export default function ContactPage() {
           </Callout>
         </Container>
       </Section>
+      <LastUpdated />
     </>
   );
 }

@@ -16,6 +16,7 @@ import { ContentCarouselSkeleton } from "@/components/shared/ContentCarousel";
 import { Schema } from "@/components/shared/Schema";
 import { getHomePageData } from "@/lib/data/home-page";
 import { generateWebPageSchema } from "@/lib/schema";
+import { LastUpdated } from "@/components/shared/LastUpdated";
 
 const WeeklyBuzz = dynamic(() => import('@/components/sections/WeeklyBuzz').then(mod => mod.WeeklyBuzz), {
   loading: () => <ContentCarouselSkeleton tone="light" />,
@@ -47,6 +48,7 @@ export default async function Home() {
       <WhyOttv />
       <Worldwide />
       <CTA />
+      <LastUpdated />
     </>
   );
 }

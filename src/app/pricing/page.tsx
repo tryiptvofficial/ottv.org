@@ -20,6 +20,7 @@ import { getPricingPageData } from "@/lib/data/pricing-page";
 import { generateMetadata as generatePageMetadata } from "@/lib/site-config";
 import { plans } from "@/lib/site-data/pricing";
 import { productFacts } from "@/lib/site-data/product-facts";
+import { LastUpdated } from "@/components/shared/LastUpdated";
 
 const shortest = plans[0];
 const longest = plans[plans.length - 1];
@@ -234,6 +235,7 @@ export default async function PricingPage() {
           </Callout>
         </Container>
       </Section>
+      <LastUpdated />
     </>
   );
 }

@@ -4,7 +4,7 @@
     "id": "fire-tv",
     "imageAlt": "",
     "deviceName": "Fire TV Stick",
-    "metaDescription": "Install IPTV on a Fire TV Stick running Fire OS: install Downloader, allow it to install apps, add a player app and sign in. Vega OS models are not supported.",
+    "metaDescription": "Install IPTV on a Fire TV Stick running Fire OS: install Downloader, allow app installs, add a player app and sign in. Vega OS is not supported.",
     "title": "How Do I Install IPTV on an Amazon Fire TV Stick?",
     "description": "To install IPTV on an Amazon Fire TV Stick (Firestick) running Fire OS, install the Downloader app, allow it to install apps in Developer Options, use it to add a compatible IPTV player, and sign in with your login details.",
     "primaryKeyword": "Fire TV Stick",
@@ -75,6 +75,7 @@
   },
   {
     "id": "ios",
+    "sources": [{"label": "GSE SMART IPTV PRO on the App Store", "url": "https://apps.apple.com/us/app/gse-smart-iptv-pro/id1055456071"}],
     "imageAlt": "Smartphone lying on a wooden table",
     "deviceName": "iPhone or iPad",
     "metaDescription": "Set up IPTV on an iPhone or iPad: install a player such as GSE SMART IPTV PRO (paid) from the App Store, then add a remote playlist with your M3U URL.",
@@ -99,6 +100,7 @@
   },
   {
     "id": "windows",
+    "sources": [{"label": "VideoLAN VLC", "url": "https://www.videolan.org/vlc/"}],
     "imageAlt": "Person typing on a Windows laptop",
     "deviceName": "Windows PC",
     "metaDescription": "Watch IPTV on a Windows PC with the free VLC Media Player: open its Network Stream feature and paste in your M3U subscription URL.",
@@ -123,6 +125,7 @@
   },
   {
     "id": "macos",
+    "sources": [{"label": "Apple: opening apps from unknown developers", "url": "https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unknown-developer-mh40616/mac"}],
     "imageAlt": "MacBook with a colorful wallpaper on a dark surface",
     "deviceName": "Mac",
     "metaDescription": "Set up IPTV on a Mac with a dedicated app like IPTV Smarters Player, which adds a TV guide (EPG) and on-demand libraries that VLC on Mac lacks.",
@@ -154,6 +157,7 @@
   },
   {
     "id": "samsung-tv",
+    "sources": [{"label": "Samsung app installation", "url": "https://www.samsung.com/ca/support/tv-audio-video/install-an-app-on-your-samsung-tv/"}, {"label": "SET IPTV playlists", "url": "https://setsysteme.com/set.app?lang=en"}, {"label": "NET IPTV upload", "url": "https://netiptv.eu/upload"}],
     "imageAlt": "Hand holding a TV remote in front of a television",
     "deviceName": "Samsung Smart TV",
     "metaDescription": "Install IPTV on a Samsung Smart TV: add SET IPTV or NET IPTV from Samsung's app store, then upload your M3U playlist using your TV's MAC address.",
@@ -178,6 +182,7 @@
   },
   {
     "id": "lg-tv",
+    "sources": [{"label": "LG app installation", "url": "https://www.lg.com/us/support/help-library/lg-tv-how-to-install-or-delete-apps--20153192472469"}],
     "imageAlt": "",
     "deviceName": "LG Smart TV",
     "metaDescription": "Activate IPTV on an LG Smart TV: find a player app in LG's app store, then sign in with your Xtream Codes details or upload your playlist.",
@@ -202,6 +207,7 @@
   },
   {
     "id": "apple-tv",
+    "sources": [{"label": "iPlayTV on the App Store", "url": "https://apps.apple.com/us/app/iplaytv-iptv-m3u-player/id1072226801"}, {"label": "GSE SMART IPTV PRO on the App Store", "url": "https://apps.apple.com/us/app/gse-smart-iptv-pro/id1055456071"}],
     "imageAlt": "Apple TV box on a dark surface",
     "deviceName": "Apple TV",
     "metaDescription": "Set up IPTV on an Apple TV: get a paid player such as iPlayTV or GSE SMART IPTV PRO from the App Store, then add your playlist.",
@@ -226,6 +232,7 @@
   },
   {
     "id": "roku",
+    "sources": [{"label": "Roku screen mirroring", "url": "https://support.roku.com/article/screen-mirror-your-phone-tablet-or-computer"}, {"label": "Roku AirPlay", "url": "https://support.roku.com/article/screen-mirror-your-apple-device-with-airplay"}],
     "imageAlt": "",
     "deviceName": "Roku device",
     "metaDescription": "Watch OTTV on Roku by mirroring the stream from an Android phone, Windows PC or Apple device, and see the limits of screen mirroring.",
@@ -253,6 +260,7 @@
   },
   {
     "id": "mag",
+    "sources": [{"label": "Infomir system settings", "url": "https://wiki.infomir.eu/eng/set-top-box/stb-linux-webkit/embedded-portal/system-settings"}, {"label": "Infomir portal loading", "url": "https://wiki.infomir.eu/eng/set-top-box/stb-linux-webkit/embedded-portal/external-portal-loading"}],
     "imageAlt": "",
     "deviceName": "MAG box",
     "metaDescription": "Configure a MAG box for IPTV: send us your device's MAC address, then enter the portal URL we provide in your box's server settings.",

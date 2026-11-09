@@ -155,7 +155,7 @@ export default async function HowToPage({ params }: Props) {
     notFound();
   }
   
-  const { title, description, steps, extraSections, faqs, image, imageAlt, deviceName, id, totalTime, dateModified, notice } = article;
+  const { title, description, steps, extraSections, faqs, image, imageAlt, deviceName, id, totalTime, dateModified, notice, sources } = article;
   // The troubleshooting guide is not tied to one device, so it has its own wording.
   const requirements = deviceName
     ? [`A compatible ${deviceName}`, "A stable internet connection", "An active OTTV plan or free trial", "Your login details (Xtream Codes login or M3U link)"]
@@ -186,6 +186,17 @@ export default async function HowToPage({ params }: Props) {
                   <time dateTime={dateModified}>{new Date(dateModified).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
                 </span>
                 <span>Checked against vendor documentation, not re-tested on every device or app version.</span>
+                {sources && (
+                  <span>
+                    Sources:{" "}
+                    {sources.map((source, i) => (
+                      <span key={source.url}>
+                        {i > 0 && ", "}
+                        <a href={source.url} target="_blank" rel="noopener noreferrer" className="text-link">{source.label}</a>
+                      </span>
+                    ))}
+                  </span>
+                )}
               </div>
             </PageHeader>
 

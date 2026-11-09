@@ -6,7 +6,7 @@ import { generateMetadata as generatePageMetadata } from "@/lib/site-config";
 
 const lowestMonthly = Math.min(...plans.map((p) => p.price_monthly)).toFixed(2);
 const maxTitle = 60;
-const maxDescription = 160;
+const maxDescription = 155;
 
 export function countryTitle(country: Country): string {
   const history = historicalEntries[country.id];

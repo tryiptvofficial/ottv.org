@@ -22,6 +22,7 @@ import { getIptvFreeTrialPageData } from "@/lib/data/iptv-free-trial-page";
 import { generateMetadata as generatePageMetadata } from "@/lib/site-config";
 import { plans } from "@/lib/site-data/pricing";
 import { productFacts } from "@/lib/site-data/product-facts";
+import { LastUpdated } from "@/components/shared/LastUpdated";
 
 const trialMessage = "Hi, I would like to request the OTTV 24-hour free trial.";
 
@@ -241,6 +242,7 @@ export default function IptvFreeTrialPage() {
           </Callout>
         </Container>
       </Section>
+      <LastUpdated />
     </>
   );
 }

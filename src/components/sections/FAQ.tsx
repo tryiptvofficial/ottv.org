@@ -16,7 +16,7 @@ export function FAQ({ bare = false }: FAQProps) {
       <SectionHeader
         level={bare ? 1 : 2}
         className={bare ? "md:mb-16" : undefined}
-        title="Frequently Asked Questions"
+        title={bare ? "IPTV Questions and Answers" : "Frequently Asked Questions"}
         subtitle="Answers on cost, setup and the free trial. Still stuck? Message us on WhatsApp."
       />
       <Reveal delay={0.1}>

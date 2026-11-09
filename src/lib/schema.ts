@@ -12,7 +12,7 @@ import type {
   AggregateOffer,
   WithContext
 } from 'schema-dts';
-import { siteConfig, whatsappUrl } from '@/lib/site-config';
+import { siteConfig, siteContentUpdatedAt, whatsappUrl } from '@/lib/site-config';
 import { plans } from '@/lib/site-data/pricing';
 import { productFacts } from '@/lib/site-data/product-facts';
 
@@ -79,6 +79,7 @@ export function generateWebPageSchema({ type, path, name, aboutProduct = false }
     '@id': `${siteConfig.url}${path}#webpage`,
     url: `${siteConfig.url}${path}`,
     name,
+    dateModified: siteContentUpdatedAt,
     isPartOf: { '@id': websiteId },
     about: { '@id': aboutProduct ? `${siteConfig.url}/#product` : organizationId },
   };
