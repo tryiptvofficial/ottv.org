@@ -10,9 +10,9 @@
     },
     {
       "id": "guide-image-ios",
-      "imageUrl": "https://images.unsplash.com/photo-1729860646582-10a6721e05f4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxpb3MlMjBkZXZpY2V8ZW58MHx8fHwxNzYzMzk2ODk2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "ios device",
-      "description": "Featured image for the iOS IPTV guide, showing an iPhone to illustrate compatibility with Apple mobile devices.",
+      "imageUrl": "https://images.unsplash.com/photo-1585060544812-6b45742d762f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "imageHint": "smartphone blank screen",
+      "description": "Featured image for the iPhone and iPad guide: a smartphone with a blank white screen on a light wooden table, no logos or apps on screen. Photo by Vojtech Bruzek (unsplash.com/photos/J82GxqnwKSs), Unsplash License.",
       "width": 600,
       "height": 400
     },
@@ -34,17 +34,17 @@
     },
     {
       "id": "guide-image-samsung-tv",
-      "imageUrl": "https://images.unsplash.com/photo-1593784991188-c899ca07263b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxzYW1zdW5nJTIwdHZ8ZW58MHx8fHwxNzYzMzk2ODk3fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "samsung tv",
-      "description": "Featured image for the Samsung TV IPTV guide, showing a Samsung Smart TV in a living room setting.",
+      "imageUrl": "https://images.unsplash.com/photo-1761330439671-a7f20c285c5e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "imageHint": "tv living room",
+      "description": "Featured image for the Samsung TV guide: a wall-mounted TV, switched off, in a bright modern living room, with no logos or content on screen. Photo by Caroline Badran (unsplash.com/photos/prIf3TI-U54), Unsplash License.",
       "width": 600,
       "height": 400
     },
     {
       "id": "guide-image-apple-tv",
-      "imageUrl": "https://images.unsplash.com/photo-1591970698020-e685959dcdaa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxhcHBsZSUyMHR2fGVufDB8fHx8MTc2MzM5Njg5Nnww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "apple tv",
-      "description": "Featured image for the Apple TV IPTV guide, showing the Apple TV device and remote.",
+      "imageUrl": "https://images.unsplash.com/photo-1780042731953-15dd1b3b5f00?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "imageHint": "tv minimalist room",
+      "description": "Featured image for the Apple TV guide: a TV, switched off, on a white cabinet in a minimalist room, with no logos or content on screen. Photo by Margo Evardson (unsplash.com/photos/HWAyAtxbDVk), Unsplash License.",
       "width": 600,
       "height": 400
     }

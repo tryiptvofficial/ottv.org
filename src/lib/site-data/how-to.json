@@ -76,7 +76,7 @@
   {
     "id": "ios",
     "sources": [{"label": "GSE SMART IPTV PRO on the App Store", "url": "https://apps.apple.com/us/app/gse-smart-iptv-pro/id1055456071"}],
-    "imageAlt": "Smartphone lying on a wooden table",
+    "imageAlt": "Smartphone with a blank screen on a light wooden table",
     "deviceName": "iPhone or iPad",
     "metaDescription": "Set up IPTV on an iPhone or iPad: install a player such as GSE SMART IPTV PRO (paid) from the App Store, then add a remote playlist with your M3U URL.",
     "title": "How Do I Set Up IPTV on an iPhone or iPad?",
@@ -158,7 +158,7 @@
   {
     "id": "samsung-tv",
     "sources": [{"label": "Samsung app installation", "url": "https://www.samsung.com/ca/support/tv-audio-video/install-an-app-on-your-samsung-tv/"}, {"label": "SET IPTV playlists", "url": "https://setsysteme.com/set.app?lang=en"}, {"label": "NET IPTV upload", "url": "https://netiptv.eu/upload"}],
-    "imageAlt": "Hand holding a TV remote in front of a television",
+    "imageAlt": "Wall-mounted TV, switched off, in a bright living room",
     "deviceName": "Samsung Smart TV",
     "metaDescription": "Install IPTV on a Samsung Smart TV: add SET IPTV or NET IPTV from Samsung's app store, then upload your M3U playlist using your TV's MAC address.",
     "title": "How Can I Install IPTV on a Samsung Smart TV?",
@@ -208,7 +208,7 @@
   {
     "id": "apple-tv",
     "sources": [{"label": "iPlayTV on the App Store", "url": "https://apps.apple.com/us/app/iplaytv-iptv-m3u-player/id1072226801"}, {"label": "GSE SMART IPTV PRO on the App Store", "url": "https://apps.apple.com/us/app/gse-smart-iptv-pro/id1055456071"}],
-    "imageAlt": "Apple TV box on a dark surface",
+    "imageAlt": "TV switched off on a white cabinet in a minimalist room",
     "deviceName": "Apple TV",
     "metaDescription": "Set up IPTV on an Apple TV: get a paid player such as iPlayTV or GSE SMART IPTV PRO from the App Store, then add your playlist.",
     "title": "How Do I Set Up IPTV on an Apple TV?",
