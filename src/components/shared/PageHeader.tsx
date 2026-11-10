@@ -46,7 +46,7 @@ interface PageHeaderProps {
 }
 
 /** The top of every inner page: breadcrumb, the page's H1 and its lead paragraph. */
-export function PageHeader({ breadcrumb, announcement, title, lead, children, align = 'center', className }: PageHeaderProps) {
+export function PageHeader({ breadcrumb, announcement, title, lead, children, align = 'start', className }: PageHeaderProps) {
   const centered = align === 'center';
   return (
     <header className={cn('mb-12 md:mb-16', className)}>

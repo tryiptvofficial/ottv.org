@@ -4,24 +4,26 @@ import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
 
-// The one button. Red marks the primary action; secondary actions use a solid neutral fill, never an outline.
-// 4px corners throughout. Danger is for destructive actions only.
+// The one button. Conversion controls stay monochrome: Paper White for the primary action, Graphite for the
+// secondary. 8px corners throughout. Danger is for destructive actions only.
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-pill text-label ring-offset-background transition-colors duration-fast ease-standard focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "hit-44 relative active:translate-y-px inline-flex items-center justify-center gap-2 whitespace-nowrap text-label ring-offset-background transition-colors duration-fast ease-standard focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
-        primary: "bg-primary text-primary-foreground hover:bg-primary/85 active:bg-primary/70",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 active:bg-secondary/70",
-        ghost: "text-muted-foreground hover:bg-foreground/10 hover:text-foreground",
+        primary: "border border-foreground/10 bg-primary text-primary-foreground shadow-button-primary hover:bg-foreground active:bg-primary/85",
+        secondary: "border border-steel bg-secondary text-secondary-foreground shadow-button-secondary hover:bg-steel/70 active:bg-steel",
+        ghost: "border border-foreground/10 text-muted-foreground hover:bg-accent hover:text-foreground",
         link: "h-auto px-0 text-foreground underline decoration-subtle underline-offset-4 hover:decoration-foreground",
         danger: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+        // Dark circular control for carousels and floating actions.
+        pill: "border bg-accent text-foreground shadow-nav hover:bg-secondary",
       },
       size: {
-        sm: "h-10 rounded-control px-4",
-        default: "h-11 px-5",
-        lg: "h-12 px-8 font-bold",
-        icon: "h-11 w-11",
+        sm: "h-9 rounded-control px-4",
+        default: "h-9 rounded-control px-4",
+        lg: "h-9 rounded-control px-4",
+        icon: "h-8 w-8 rounded-pill",
       },
     },
     defaultVariants: {

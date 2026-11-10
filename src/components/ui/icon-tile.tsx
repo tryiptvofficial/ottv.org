@@ -4,7 +4,7 @@ import type React from "react"
 
 // Square backing for feature icons and step numbers
 const iconTileVariants = cva(
-  "inline-flex shrink-0 items-center justify-center rounded-control bg-secondary text-foreground",
+  "inline-flex shrink-0 items-center justify-center rounded-control border bg-accent text-foreground",
   {
     variants: {
       size: {

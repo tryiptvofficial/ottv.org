@@ -36,10 +36,10 @@ export function WhyOttv() {
           title="Why Choose OTTV for IPTV?"
           subtitle="Straightforward plans, setup help for your devices and a free trial before you commit."
         />
-        <Grid cols={2} gap="loose">
+        <Grid cols={2} gap="lattice">
           {reasons.map((reason) => (
-            <div key={reason.title}>
-              <Heading level={3} size="subheading">{reason.title}</Heading>
+            <div key={reason.title} className="bg-background p-4">
+              <Heading level={3} size="heading">{reason.title}</Heading>
               <p className="mt-2 text-muted-foreground">{reason.body}</p>
             </div>
           ))}

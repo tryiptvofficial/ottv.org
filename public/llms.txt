@@ -35,7 +35,3 @@ Paid plans come with a 7-day money-back guarantee. A standard plan allows one st
 - [Mac](https://www.ottv.org/devices/macos)
 - [MAG box](https://www.ottv.org/devices/mag)
 - [Fix IPTV buffering](https://www.ottv.org/devices/troubleshooting)
-
-## Country pages
-
-[Locations](https://www.ottv.org/locations) lists a page for each country or territory, with currency, languages, time zones and setup guide suggestions. Regional facts come from Unicode CLDR. OTTV has not published a country-by-country availability or channel list, so these pages do not confirm coverage in any country.

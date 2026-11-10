@@ -174,7 +174,7 @@ export default async function HowToPage({ params }: Props) {
               title={title}
               lead={description}
             >
-              <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-meta text-subtle">
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-meta text-subtle">
                 {totalTimeInMinutes && (
                   <span className="inline-flex items-center gap-2">
                     <Clock aria-hidden className="h-4 w-4" />

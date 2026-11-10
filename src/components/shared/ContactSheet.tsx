@@ -52,8 +52,9 @@ export function ContactSheet() {
       <SheetTrigger asChild>
         <Button
           size="icon"
+          variant="pill"
           className={cn(
-            "fixed bottom-4 right-4 z-50 rounded-control transition duration-standard ease-standard sm:bottom-6 sm:right-6",
+            "fixed bottom-4 right-4 z-50 transition duration-standard ease-standard sm:bottom-6 sm:right-6",
             hidden && "pointer-events-none translate-y-4 opacity-0"
           )}
           aria-label="Open contact form"

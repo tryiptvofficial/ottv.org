@@ -11,10 +11,10 @@ const approved = { channels: '25,000', vod: '120,000' };
 const legacyRedirects = {
   '/tv': '/', '/tv/pricing': '/pricing', '/tv/faq': '/faq', '/tv/iptv-free-trial': '/iptv-free-trial',
   '/tv/devices/fire-tv': '/devices/fire-tv', '/tv/guides/iptv-buffering-troubleshooting': '/devices/troubleshooting',
-  '/tv/country/us': '/country/united-states', '/tv/country/uk': '/country/united-kingdom', '/tv/country/ca': '/country/canada',
-  '/tv/country/belgium': '/country/belgium', '/country/south-korea': '/country/korea', '/country/myanmar': '/country/burma',
   '/iptv-subscription': '/pricing',
 };
+// Removed with no replacement page: must return 404/410, not redirect.
+const removedPaths = ['/locations', '/country/france', '/country/south-korea', '/tv/country/us', '/tv/country/uk'];
 
 let base = process.argv[2];
 const reportDir = process.argv[3];
@@ -144,6 +144,10 @@ try {
     if (![301, 308].includes(r.status) || dest !== to) err(`redirect ${from}: expected 301/308 → ${to}, got ${r.status} → ${dest}`);
     else if ((await status(base + to)) !== 200) err(`redirect ${from} → ${to}: target not 200 (single hop expected)`);
   }
+  for (const p of removedPaths) {
+    const r = await fetch(base + p, { redirect: 'manual' });
+    if (![404, 410].includes(r.status)) err(`removed page ${p}: expected 404/410, got ${r.status}${r.headers.get('location') ? ` → ${r.headers.get('location')}` : ''}`);
+  }
 
   const summary = {
     base,
@@ -153,6 +157,7 @@ try {
     internalLinksChecked: links.size,
     localImagesChecked: [...images].filter((s) => s.startsWith('/')).length,
     legacyRedirectsChecked: Object.keys(legacyRedirects).length,
+    removedPagesChecked: removedPaths.length,
     errors: errors.length,
     warnings: warnings.length,
   };

@@ -103,7 +103,7 @@ test('every indexable page has a self-referencing canonical on the new origin', 
 test('sitemap is on the new origin, complete, and not build-stamped', () => {
   assert.match(sitemapXml, /^<\?xml/);
   assert.ok(sitemapXml.includes('<urlset'));
-  assert.ok(locs.length >= 216, `${locs.length} URLs`);
+  assert.ok(locs.length >= 16, `${locs.length} URLs`);
   assert.equal(new Set(locs).size, locs.length);
   for (const l of locs) assert.ok(l === ORIGIN || l.startsWith(`${ORIGIN}/`), l);
   assert.doesNotMatch(fs.readFileSync(path.join(root, 'src/app/sitemap.ts'), 'utf8'), /new Date\(\)/);
@@ -155,16 +155,7 @@ test('breadcrumbs are ordered and point at live pages', async () => {
       }
     }
   }
-  assert.ok(seen > 200, `${seen} breadcrumb lists`);
-});
-
-test('every baseline country URL is preserved', () => {
-  const { paths: baseline } = JSON.parse(fs.readFileSync(path.join(root, 'scripts/country-urls.baseline.json'), 'utf8'));
-  assert.ok(baseline.length > 0);
-  for (const p of baseline) {
-    assert.equal(pages.get(p)?.status, 200, p);
-    assert.equal(canonicalOf(pages.get(p).body), `${ORIGIN}${p}`, p);
-  }
+  assert.ok(seen > 0, `${seen} breadcrumb lists`);
 });
 
 test('hreflang values are valid and reciprocal', () => {
@@ -214,8 +205,8 @@ test('no public page is noindexed; checkout is', async () => {
 
 test('old hostnames reach the same path on the new origin in one permanent hop', async () => {
   const special = {
-    '/pricing/': '/pricing', '/iptv-subscription': '/pricing', '/tv/pricing': '/pricing', '/tv/country/us': '/country/united-states',
-    '/tv/country/myanmar': '/country/burma', '/country/south-korea': '/country/korea', '/pricing?utm_source=x': '/pricing?utm_source=x',
+    '/pricing/': '/pricing', '/iptv-subscription': '/pricing', '/tv/pricing': '/pricing',
+    '/pricing?utm_source=x': '/pricing?utm_source=x',
   };
   const cases = [...paths.map((p) => [p, p]), ...Object.entries(special)];
   for (const host of ['www.iptvmax.co', 'iptvmax.co']) {
@@ -226,6 +217,15 @@ test('old hostnames reach the same path on the new origin in one permanent hop',
       const landed = await get(to, { host: 'www.ottv.org', proto: 'https' });
       assert.equal(landed.status, 200, `${host}${from} -> ${to}: ${landed.status}`);
     }
+  }
+});
+
+test('removed location and country pages return 404 instead of redirecting', async () => {
+  for (const p of ['/locations', '/country/france', '/country/south-korea', '/tv/country/us']) {
+    const res = await get(p, { host: 'www.ottv.org', proto: 'https' });
+    assert.equal(res.status, 404, p);
+    assert.equal(res.headers.location, undefined, p);
+    assert.match(metaContent(res.body, 'name', 'robots'), /noindex/i, p);
   }
 });
 
@@ -242,7 +242,7 @@ test('internal links on every page resolve', async () => {
   for (const { body } of pages.values()) {
     for (const m of body.matchAll(/<a [^>]*href="(\/[^"#?]*)/g)) targets.add(m[1]);
   }
-  assert.ok(targets.size > 200);
+  assert.ok(targets.size > 10, `${targets.size} link targets`);
   for (const t of targets) {
     if (pages.has(t)) continue;
     const { status } = await get(t);
@@ -284,38 +284,11 @@ test('no secrets are committed', () => {
   assert.deepEqual(fs.readdirSync(root).filter((n) => /^\.env/.test(n)), []);
 });
 
-const mainText = (html) => decode((html.match(/<main[\s\S]*?<\/main>/) || [''])[0]
-  .replace(/<script[\s\S]*?<\/script>|<svg[\s\S]*?<\/svg>/g, ' ')
-  .replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim();
-
-test('all 216 URLs stay indexable and listed in the sitemap', () => {
-  assert.equal(locs.length, 216);
-  const baseline = JSON.parse(fs.readFileSync(path.join(root, 'scripts/country-urls.baseline.json'), 'utf8'));
-  const countries = (Array.isArray(baseline) ? baseline : baseline.urls ?? baseline.paths).map((u) => new URL(u, ORIGIN).pathname);
-  assert.equal(countries.length, 199);
-  for (const p of countries) assert.ok(paths.includes(p), p);
+test('every sitemap URL stays indexable, and removed location pages are not listed', () => {
+  for (const p of paths) assert.ok(!p.startsWith('/country/') && p !== '/locations', p);
   for (const [p, res] of pages) {
     assert.equal(res.status, 200, p);
     assert.doesNotMatch(res.body, /<meta name="robots" content="[^"]*noindex/, p);
   }
 });
 
-test('country pages make no availability claim and differ beyond the country name', () => {
-  const countryPaths = paths.filter((p) => p.startsWith('/country/'));
-  const historical = new Set(['/country/east-germany', '/country/congo-free-state']);
-  const masked = new Set();
-  for (const p of countryPaths) {
-    const html = pages.get(p).body;
-    assert.doesNotMatch(html, /areaServed/, p);
-    assert.ok(titleOf(html).length <= 60, `${p} title: ${titleOf(html)}`);
-    assert.ok(metaContent(html, 'name', 'description').length <= 160, p);
-    if (historical.has(p)) continue;
-    assert.equal((html.match(/<h1[\s>]/g) || []).length, 1, p);
-    const h1 = mainText((html.match(/<h1[\s\S]*?<\/h1>/) || [''])[0].replace(/^/, '<main>').concat('</main>'));
-    const name = h1.replace(/^Best IPTV in (the )?/, '');
-    const text = mainText(html).replace(/Other Pages in [\s\S]*?Ready to start\?/, '').replace(new RegExp(`\\b${name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'g'), 'X');
-    masked.add(text);
-  }
-  // A few countries genuinely share every fact (same currency, language, offset and device lists), so this is not 197.
-  assert.ok(masked.size >= 185, `only ${masked.size} of 197 pages differ once the name is masked`);
-});

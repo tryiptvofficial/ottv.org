@@ -1,7 +1,8 @@
 
 import type { Metadata, Viewport } from "next";
-import { Boldonse, Geist, Instrument_Serif } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import { ThemeProvider } from "@/components/shared/ThemeProvider";
+import { AnnouncementBar } from "@/components/shared/AnnouncementBar";
 import { Navbar } from "@/components/shared/Navbar";
 import { Footer } from "@/components/shared/Footer";
 import { Toaster } from "@/components/ui/toaster";
@@ -14,38 +15,23 @@ import { Schema } from "@/components/shared/Schema";
 import { generateOrganizationSchema, generateWebSiteSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/site-config";
 
-const geist = Geist({
+// The closest open substitute for the design system's commercial typeface.
+const inter = Inter({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-geist",
+  variable: "--font-sans",
   preload: true,
-});
-
-const displayFace = Boldonse({
-  subsets: ["latin"],
-  weight: "400",
-  display: "swap",
-  variable: "--font-display",
-  preload: true,
-});
-
-const instrumentSerif = Instrument_Serif({
-  subsets: ["latin"],
-  weight: "400",
-  display: "swap",
-  variable: "--font-serif",
-  preload: false,
 });
 
 export const viewport: Viewport = {
-  // Browser chrome matches the Forest Depths canvas in every OS theme
-  themeColor: '#122314',
+  // Browser chrome matches the Obsidian Canvas in every OS theme
+  themeColor: '#0a0a0a',
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
 };
 
-const homeTitle = `Best IPTV Service With 25,000+ Channels & 24h Free Trial | ${siteConfig.name}.org`;
+const homeTitle = `Best IPTV Service: 25,000+ Channels & 24h Free Trial | ${siteConfig.name}`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -131,9 +117,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={cn(
         "font-body antialiased",
-        geist.variable,
-        displayFace.variable,
-        instrumentSerif.variable
+        inter.variable
       )}>
        <head>
           <Schema id="organization" schema={generateOrganizationSchema()} />
@@ -155,6 +139,7 @@ export default function RootLayout({
             >
               Skip to main content
             </a>
+            <AnnouncementBar />
             <Navbar />
             <main id="main-content" className="flex-grow">{children}</main>
             <Footer />

@@ -12,7 +12,7 @@ test('old hosts keep the path', () => {
     assert.equal(at(host, '/'), `${NEW}/`);
     assert.equal(at(host, '/pricing'), `${NEW}/pricing`);
     assert.equal(at(host, '/iptv-free-trial'), `${NEW}/iptv-free-trial`);
-    assert.equal(at(host, '/country/france'), `${NEW}/country/france`);
+    assert.equal(at(host, '/devices/fire-tv'), `${NEW}/devices/fire-tv`);
   }
 });
 
@@ -31,19 +31,23 @@ test('legacy paths on the old host land in one hop', () => {
     '/tv': '/',
     '/tv/pricing': '/pricing',
     '/tv/devices/fire-tv': '/devices/fire-tv',
-    '/tv/country/us': '/country/united-states',
-    '/tv/country/belgium': '/country/belgium',
-    '/tv/country/south-korea': '/country/korea',
-    '/tv/country/myanmar': '/country/burma',
-    '/country/south-korea': '/country/korea',
     '/pricing/': '/pricing',
     '/tv/pricing/': '/pricing',
   };
   for (const [from, to] of Object.entries(cases)) assert.equal(at('www.iptvmax.co', from), `${NEW}${to}`, from);
 });
 
+test('removed location and country URLs are not redirected to the homepage', () => {
+  // Deleted with no replacement page: served as-is so the site returns 404.
+  for (const p of ['/locations', '/country', '/country/france', '/country/south-korea', '/tv/country/us', '/tv/country/myanmar']) {
+    assert.equal(canonicalPath(p), p, p);
+    assert.equal(at('www.ottv.org', p), null, p);
+    assert.equal(at('www.iptvmax.co', p), `${NEW}${p}`, p);
+  }
+});
+
 test('every resolved path is final, so there are no chains or loops', () => {
-  for (const p of ['/', '/tv', '/tv/pricing', '/tv/country/myanmar', '/country/south-korea', '/iptv-subscription', '/a/b/', '/pricing//']) {
+  for (const p of ['/', '/tv', '/tv/pricing', '/tv/country/myanmar', '/country/south-korea', '/locations', '/iptv-subscription', '/a/b/', '/pricing//']) {
     const once = canonicalPath(p);
     assert.equal(canonicalPath(once), once, p);
     assert.equal(at('www.ottv.org', once), null, p);

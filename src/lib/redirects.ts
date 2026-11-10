@@ -13,17 +13,12 @@ const exactPaths: Record<string, string> = {
   '/tv/faq': '/faq',
   '/tv/iptv-free-trial': '/iptv-free-trial',
   '/tv/guides/iptv-buffering-troubleshooting': '/devices/troubleshooting',
-  '/tv/country/us': '/country/united-states',
-  '/tv/country/uk': '/country/united-kingdom',
-  '/tv/country/ca': '/country/canada',
-  // Old-domain country slugs that differ from this site's slugs (both had Search Console impressions).
-  '/country/south-korea': '/country/korea',
-  '/country/myanmar': '/country/burma',
+  // /locations, /country/* and the legacy /tv/country/* pages were removed with no replacement page,
+  // so they are deliberately not redirected: they return the site's 404 page (noindex).
 };
 
 const segmentRewrites: [RegExp, string][] = [
   [/^\/tv\/devices\/([^/]+)$/, '/devices/$1'],
-  [/^\/tv\/country\/([^/]+)$/, '/country/$1'],
 ];
 
 // Dropped when leaving the requested host, so credentials never travel in a redirect to another origin.

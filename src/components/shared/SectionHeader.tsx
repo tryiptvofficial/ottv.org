@@ -12,8 +12,8 @@ interface SectionHeaderProps {
 
 export function SectionHeader({ title, subtitle, level = 2, align = 'start', className }: SectionHeaderProps) {
   return (
-    <div className={cn('mb-6 max-w-narrow', align === 'center' ? 'mx-auto text-center' : 'text-left', className)}>
-      <Heading level={level} size={level === 1 ? 'display-xl' : 'heading'}>
+    <div className={cn('mb-8 max-w-narrow', align === 'center' ? 'mx-auto text-center' : 'text-left', className)}>
+      <Heading level={level} size={level === 1 ? 'display-xl' : 'heading-lg'}>
         {title}
       </Heading>
       {subtitle && <Lead className={cn('mt-2 max-w-2xl text-body', align === 'center' && 'mx-auto')}>{subtitle}</Lead>}

@@ -31,8 +31,8 @@ export function Comparison() {
           subtitle="Thinking of dropping cable? Here is how an OTTV subscription compares with a typical cable package."
         />
         <Grid cols={2}>
-          <Card className="p-6">
-            <Heading level={3} size="subheading">Typical cable TV</Heading>
+          <Card className="p-4">
+            <Heading level={3} size="heading">Typical cable TV</Heading>
             <ul className="mt-6 space-y-3 text-body text-muted-foreground">
               {cable.map((item) => (
                 <li key={item} className="flex gap-3">
@@ -42,8 +42,8 @@ export function Comparison() {
               ))}
             </ul>
           </Card>
-          <Card variant="accent" className="p-6">
-            <Heading level={3} size="subheading">OTTV</Heading>
+          <Card variant="accent" className="p-4">
+            <Heading level={3} size="heading">OTTV</Heading>
             <ul className="mt-6 space-y-3 text-body text-foreground">
               {ottv.map((item) => (
                 <li key={item} className="flex gap-3">

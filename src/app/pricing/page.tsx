@@ -74,7 +74,7 @@ export default async function PricingPage() {
               <Link href="#pricing">See all {plans.length} plans</Link>
             </Button>
             <p className="mt-4 text-meta text-muted-foreground">Some devices need a player app that charges its own fee. Each setup guide says which.</p>
-            <ul className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-caption text-muted-foreground">
+            <ul className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-caption text-muted-foreground">
               {[`${productFacts.liveChannels} live channels`, `${productFacts.vodTitles} movies & shows`, "One payment per plan", "7-day money-back guarantee"].map((item) => (
                 <li key={item} className="flex items-center gap-2">
                   <Check aria-hidden className="h-4 w-4 text-foreground" /> {item}
@@ -150,8 +150,8 @@ export default async function PricingPage() {
               </ul>
             </div>
             <div className="space-y-4">
-              <Card className="p-6">
-                <Heading level={3} size="subheading">Try it free first</Heading>
+              <Card className="p-4">
+                <Heading level={3} size="heading">Try it free first</Heading>
                 <p className="mt-2 text-body text-muted-foreground">
                   Test OTTV with a free 24-hour trial before you buy. It opens the full service, you request it on WhatsApp, and no card is needed.
                 </p>
@@ -159,8 +159,8 @@ export default async function PricingPage() {
                   <Link href="/iptv-free-trial">See how the free trial works</Link>
                 </Button>
               </Card>
-              <Card className="p-6">
-                <Heading level={3} size="subheading">Billing terms at a glance</Heading>
+              <Card className="p-4">
+                <Heading level={3} size="heading">Billing terms at a glance</Heading>
                 <ul className="mt-2 list-disc space-y-2 pl-5 text-body text-muted-foreground">
                   <li>Each plan is one payment in US dollars.</li>
                   <li>Nothing renews on its own, so there is nothing to cancel.</li>
@@ -168,8 +168,8 @@ export default async function PricingPage() {
                   <li>A standard plan allows one stream at a time.</li>
                 </ul>
               </Card>
-              <Card className="p-6">
-                <Heading level={3} size="subheading">Paying in another currency?</Heading>
+              <Card className="p-4">
+                <Heading level={3} size="heading">Paying in another currency?</Heading>
                 <p className="mt-2 text-body text-muted-foreground">
                   Prices are set in US dollars. If you pay in another currency, your payment provider converts the amount at its own exchange rate.
                 </p>
@@ -185,18 +185,18 @@ export default async function PricingPage() {
             title="Everything You Need to Stream"
             subtitle="The same service on every plan, whichever length you choose."
           />
-          <Grid as="ul" cols={3}>
+          <Grid as="ul" cols="triple" gap="lattice">
             {benefits.map((item) => (
-              <Card as="li" key={item.title} className="p-6">
+              <Card variant="cell" as="li" key={item.title} className="p-4">
                 <IconTile className="mb-6">
                   <item.icon aria-hidden />
                 </IconTile>
-                <Heading level={3} size="subheading">{item.title}</Heading>
+                <Heading level={3} size="heading">{item.title}</Heading>
                 <p className="mt-2 text-muted-foreground">{item.body}</p>
               </Card>
             ))}
           </Grid>
-          <p className="mx-auto mt-10 max-w-narrow text-center text-body text-muted-foreground">
+          <p className="mt-10 max-w-narrow text-body text-muted-foreground">
             Setup guides: <Link href="/devices/fire-tv" className="text-link">Fire TV</Link>,{" "}
             <Link href="/devices/samsung-tv" className="text-link">Samsung TV</Link>,{" "}
             <Link href="/devices/ios" className="text-link">iPhone and iPad</Link>,{" "}

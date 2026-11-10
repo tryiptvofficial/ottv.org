@@ -39,7 +39,6 @@ export default async function FaqPage() {
               <li><Link href="/pricing" className="text-link">Plans and prices</Link></li>
               <li><Link href="/iptv-free-trial" className="text-link">How the 24-hour free trial works</Link></li>
               <li><Link href="/devices/troubleshooting" className="text-link">Fix IPTV buffering</Link></li>
-              <li><Link href="/locations" className="text-link">Pages by country and territory</Link></li>
               <li><Link href="/contact" className="text-link">Contact support on WhatsApp</Link></li>
             </ul>
           </nav>

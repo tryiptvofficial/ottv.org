@@ -6,7 +6,7 @@ export function Logo() {
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src="/favicon.svg" alt="" width={28} height={28} className="shrink-0" />
       <strong className="whitespace-nowrap font-headline text-heading-sm font-bold text-foreground">
-        OT<span className="text-brand">TV</span>
+        OTTV
       </strong>
     </Link>
   );

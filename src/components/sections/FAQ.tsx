@@ -19,7 +19,7 @@ export function FAQ({ bare = false }: FAQProps) {
         title={bare ? "IPTV Questions and Answers" : "Frequently Asked Questions"}
         subtitle="Answers on cost, setup and the free trial. Still stuck? Message us on WhatsApp."
       />
-      <Reveal delay={0.1}>
+      <Reveal>
         <FaqList items={faqs} headingLevel={bare ? 2 : 3} />
       </Reveal>
     </>

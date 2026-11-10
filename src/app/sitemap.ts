@@ -1,9 +1,7 @@
 
 import { MetadataRoute } from 'next'
 import { howToArticles } from '@/lib/how-to';
-import { allCountries } from '@/lib/countries';
 import { legalDetails, legalLinks } from '@/lib/site-data/legal-details';
-import { marketProfiles } from '@/lib/site-data/market-profiles';
 import { siteConfig, siteContentUpdatedAt } from '@/lib/site-config';
 
 const baseUrl = siteConfig.url;
@@ -19,13 +17,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  const countryPages: MetadataRoute.Sitemap = allCountries.map((country) => ({
-    url: `${baseUrl}/country/${country.id}`,
-    lastModified: new Date(marketProfiles[country.id]?.checkedOn ?? siteContentUpdatedAt),
-    changeFrequency: 'monthly',
-    priority: 0.7,
-  }));
-
   // Dates of each page's last significant content change; update them when the page content changes.
   const staticPages: MetadataRoute.Sitemap = [
     {
@@ -39,12 +30,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(siteContentUpdatedAt),
       changeFrequency: 'monthly',
       priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/locations`,
-      lastModified: new Date(siteContentUpdatedAt),
-      changeFrequency: 'monthly',
-      priority: 0.7,
     },
     {
       url: `${baseUrl}/faq`,
@@ -76,7 +61,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...staticPages,
     ...devicePages,
-    ...countryPages,
     ...legalPages,
   ]
 }

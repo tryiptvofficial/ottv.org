@@ -6,7 +6,6 @@ export const footerLinks = {
         { name: "Pricing", href: "/pricing" },
         { name: "Free Trial", href: "/iptv-free-trial" },
         { name: "FAQ", href: "/faq" },
-        { name: "Locations", href: "/locations" },
         { name: "Contact", href: "/contact" },
         ...legalLinks,
     ],

@@ -14,7 +14,7 @@ const headingVariants = cva('text-foreground text-balance', {
       heading: 'font-headline text-heading',
       'heading-sm': 'font-headline text-heading-sm',
       subheading: 'font-headline text-subheading',
-      serif: 'font-headline text-heading',
+      serif: 'font-headline text-heading-lg',
     },
   },
   defaultVariants: { size: 'heading' },

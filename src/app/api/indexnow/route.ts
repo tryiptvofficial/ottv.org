@@ -1,7 +1,6 @@
 
 import { NextRequest, NextResponse } from 'next/server'
 import { howToArticles } from '@/lib/how-to';
-import { allCountries } from '@/lib/countries';
 import { rejectUnlessAuthorized } from '@/lib/server/api-secret';
 import { siteConfig } from '@/lib/site-config';
 
@@ -48,19 +47,16 @@ export async function GET(req: NextRequest) {
     const staticPages = [
         '/',
         '/pricing',
-        '/locations',
         '/faq',
         '/contact',
         '/iptv-free-trial',
     ];
 
     const devicePages = howToArticles.map(article => `/devices/${article.id}`);
-    const countryPages = allCountries.map(country => `/country/${country.id}`);
 
     const allUrls = [
         ...staticPages.map(path => `${SITE_URL}${path}`),
         ...devicePages.map(path => `${SITE_URL}${path}`),
-        ...countryPages.map(path => `${SITE_URL}${path}`),
     ];
     
     const result = await submitUrls(allUrls);

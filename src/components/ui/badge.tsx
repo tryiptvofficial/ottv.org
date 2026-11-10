@@ -3,16 +3,16 @@ import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
 
-// Compact pills. Sprout Wash is the soft default; `accent` is the Electric Sprout fill.
+// Compact outlined labels. `accent` is the Paper White fill.
 const badgeVariants = cva(
   "inline-flex h-6 items-center gap-1 rounded-badge border px-3 text-meta font-medium",
   {
     variants: {
       variant: {
-        neutral: "border-transparent bg-secondary text-secondary-foreground",
+        neutral: "border-border bg-accent text-foreground",
         accent: "border-transparent bg-primary text-primary-foreground",
-        success: "border-transparent bg-secondary text-secondary-foreground",
-        info: "border-transparent bg-secondary text-secondary-foreground",
+        success: "border-border bg-accent text-foreground",
+        info: "border-border bg-accent text-foreground",
         warning: "border-warning/20 bg-warning/10 text-warning",
         outline: "border-subtle text-muted-foreground",
       },

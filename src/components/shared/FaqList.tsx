@@ -26,12 +26,12 @@ export function FaqList({ items, headingLevel = 3, columns = 2, className }: Faq
       {groups.map((group, g) => (
         <div key={g} className="grid gap-2">
           {group.map((faq) => (
-            <details key={faq.question} className="group bg-muted">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5 text-left text-foreground transition-colors duration-fast hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background [&::-webkit-details-marker]:hidden">
+            <details key={faq.question} className="group rounded-card border bg-card transition-colors duration-fast open:border-steel">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-4 text-left text-foreground transition-colors duration-fast rounded-card hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background [&::-webkit-details-marker]:hidden">
                 <Question className="text-pretty text-subheading">{faq.question}</Question>
                 <Plus aria-hidden className="h-6 w-6 shrink-0 transition-transform duration-standard ease-standard group-open:rotate-45" />
               </summary>
-              <div className="border-t border-background px-6 py-5 text-body text-foreground">{faq.answer}</div>
+              <div className="border-t p-4 text-body text-muted-foreground">{faq.answer}</div>
             </details>
           ))}
         </div>

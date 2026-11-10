@@ -29,15 +29,15 @@ export function IptvExplained() {
           title="IPTV Service Explained"
           subtitle="What IPTV is, how an OTTV subscription works, and what you need to start watching."
         />
-        <Grid cols={3}>
+        <Grid cols="triple" gap="lattice">
           {blocks.map((block) => (
-            <Card key={block.title} className="p-6">
-              <Heading level={3} size="subheading">{block.title}</Heading>
+            <Card variant="cell" key={block.title} className="p-4">
+              <Heading level={3} size="heading">{block.title}</Heading>
               <p className="mt-3 text-muted-foreground">{block.body}</p>
             </Card>
           ))}
         </Grid>
-        <p className="mx-auto mt-10 max-w-narrow text-center text-body text-muted-foreground">
+        <p className="mt-10 max-w-narrow text-body text-muted-foreground">
           Ready to set up? Start with the{" "}
           <Link href="/devices/fire-tv" className="text-link">Fire TV</Link>,{" "}
           <Link href="/devices/samsung-tv" className="text-link">Samsung TV</Link> or{" "}

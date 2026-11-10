@@ -22,21 +22,18 @@ export function Pricing() {
         </Reveal>
 
         {/* Pricing grid: one column on phones, two on tablets, the four plans side by side on desktop */}
-        <div className="mx-auto grid max-w-form gap-4 md:max-w-3xl md:grid-cols-2 md:gap-6 lg:max-w-none xl:grid-cols-4">
-          {plans.map((plan, i) => (
+        <div className="mx-auto grid max-w-form gap-2 md:max-w-3xl md:grid-cols-2 lg:max-w-none xl:grid-cols-4">
+          {plans.map((plan) => (
             <Reveal
               key={plan.id}
-              delay={0.15 + i * 0.08}
-              // The lift pulls the featured card 1rem past the row at top and bottom, so it also needs
-              // 2rem more height; otherwise its larger padding squeezes the CTA button.
-              className={cn("h-full [&>div]:h-full", plan.isPopular && "xl:-my-4 xl:h-[calc(100%+2rem)]")}
+              className="h-full [&>div]:h-full"
             >
               <Card
                 as="article"
                 variant={plan.isPopular ? "accent" : "base"}
-                className={cn("flex h-full flex-col p-6", plan.isPopular && "xl:py-10")}
+                className="flex h-full flex-col p-4"
               >
-                <Heading level={3} size="subheading">{plan.name}</Heading>
+                <Heading level={3} size="heading">{plan.name}</Heading>
 
                 <p className="mt-8 flex items-baseline gap-2 whitespace-nowrap">
                   <span className="text-stat tabular-nums text-foreground">${plan.price.toFixed(2)}</span>
@@ -85,7 +82,7 @@ export function Pricing() {
           ))}
         </div>
 
-        <p className="mt-12 text-center text-caption text-muted-foreground">
+        <p className="mt-4 text-caption text-muted-foreground">
           Prices in USD. Questions before you order?{" "}
           <WhatsAppLink className="text-link">
             Chat with us on WhatsApp

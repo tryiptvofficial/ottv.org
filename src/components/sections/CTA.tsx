@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Callout } from "../shared/Callout";
+import { LuminousPolygon } from "../shared/LuminousPolygon";
 import { Container } from "../shared/Container";
 import { Section } from "../shared/Section";
 import { Reveal } from "../shared/Reveal";
@@ -14,6 +15,7 @@ export function CTA() {
         <Reveal>
           <Callout
             size="large"
+            backdrop={<LuminousPolygon className="pointer-events-none absolute -right-24 -top-32 hidden w-96 opacity-30 md:block" />}
             title="Start Your IPTV Free Trial Today"
             action={
               <Button asChild size="lg">

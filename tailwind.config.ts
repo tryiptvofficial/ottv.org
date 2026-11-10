@@ -29,24 +29,31 @@ export default {
       },
       // Semantic type scale. Large roles are fluid so pages never pick their own responsive pairs.
       fontSize: {
-        "display-2xl": ["clamp(2.25rem, 1.2rem + 4.2vw, 3.5rem)", { lineHeight: "1.17", fontWeight: "700" }],
-        "display-xl": ["clamp(1.75rem, 1.2rem + 2.4vw, 3rem)", { lineHeight: "1.17", fontWeight: "700" }],
-        display: ["clamp(2rem, 1.7rem + 1.25vw, 2.5rem)", { lineHeight: "1.17", fontWeight: "700" }],
-        "heading-lg": ["clamp(1.5rem, 1.3rem + 0.8vw, 2rem)", { lineHeight: "1.2", fontWeight: "700" }],
-        heading: ["1.5rem", { lineHeight: "1.2", fontWeight: "700" }],
-        "heading-sm": ["1.25rem", { lineHeight: "1.25", fontWeight: "700" }],
-        subheading: ["1.25rem", { lineHeight: "1.25", fontWeight: "500" }],
-        stat: ["2.5rem", { lineHeight: "1", fontWeight: "900" }],
-        "body-lg": ["clamp(1rem, 0.9rem + 0.5vw, 1.25rem)", { lineHeight: "1.5" }],
+        // Display: 60px/500, compact block with -1.5px tracking. Hero only.
+        "display-2xl": ["clamp(2.5rem, 1.75rem + 3.2vw, 3.75rem)", { lineHeight: "1", letterSpacing: "-0.025em", fontWeight: "500" }],
+        "display-xl": ["clamp(1.875rem, 1.55rem + 1.3vw, 2.25rem)", { lineHeight: "1.11", fontWeight: "500" }],
+        display: ["2.25rem", { lineHeight: "1.11", fontWeight: "500" }],
+        // Section headings: 36px/500.
+        "heading-lg": ["clamp(1.75rem, 1.5rem + 1vw, 2.25rem)", { lineHeight: "1.11", fontWeight: "500" }],
+        // Feature headings: 24px/600.
+        heading: ["1.5rem", { lineHeight: "1.17", fontWeight: "600" }],
+        "heading-sm": ["1.25rem", { lineHeight: "1.4", fontWeight: "500" }],
+        subheading: ["1.25rem", { lineHeight: "1.4", fontWeight: "500" }],
+        stat: ["2.25rem", { lineHeight: "1.11", fontWeight: "500" }],
+        "body-lg": ["1.125rem", { lineHeight: "1.25" }],
         body: ["1rem", { lineHeight: "1.5" }],
         label: ["0.875rem", { lineHeight: "1.43", fontWeight: "500" }],
-        caption: ["0.8125rem", { lineHeight: "1.5" }],
-        meta: ["0.75rem", { lineHeight: "1.5" }],
+        caption: ["0.75rem", { lineHeight: "1.33" }],
+        announcement: ["0.875rem", { lineHeight: "1.43", fontWeight: "600" }],
+        meta: ["0.75rem", { lineHeight: "1.33" }],
       },
       colors: {
         background: token("background"),
         foreground: token("foreground"),
         brand: token("brand"),
+        signal: token("signal"),
+        steel: token("steel"),
+        deep: token("deep"),
         placeholder: token("placeholder"),
         card: {
           DEFAULT: token("card"),
@@ -92,11 +99,14 @@ export default {
           "5": token("chart-5"),
         },
       },
+      minHeight: {
+        demo: "27rem", // keeps the frame steady when demo tabs change
+      },
       maxWidth: {
         form: "32rem",    // 512px single form or card column
         narrow: "45rem",  // 720px reading column
         medium: "60rem",  // 960px
-        page: "80rem",    // 1280px page width
+        page: "76rem",    // 1152px of content plus side gutters
       },
       spacing: {
         30: "7.5rem", // 120px spacious section rhythm
@@ -106,6 +116,10 @@ export default {
         article: "minmax(0, 45rem) minmax(0, 1fr)",
         // Main content beside a 384px summary column (checkout)
         aside: "minmax(0, 1fr) 24rem",
+        // Homepage hero: the statement beside the polygon artwork
+        hero: "minmax(0, 1fr) 28rem",
+        // Product demo: category rail beside the player
+        demo: "11rem minmax(0, 1fr)",
       },
       aspectRatio: {
         poster: "2 / 3",
@@ -114,26 +128,26 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
-        badge: "4px",
-        control: "4px",
-        panel: "8px",
-        card: "16px",
-        "card-lg": "16px",
-        input: "4px",
-        pill: "4px",
-        nav: "4px",
+        badge: "20px",
+        control: "8px",
+        panel: "10px",
+        card: "10px",
+        "card-lg": "10px",
+        input: "10px",
+        pill: "9999px",
+        tab: "4px",
+        nav: "10px",
       },
-      // No cast shadows: depth comes from layering on black and from the feature gradient.
+      // Black drop shadows only, plus the muted inset that frames product media.
       boxShadow: {
-        nav: "none",
-        mockup: "none",
-        overlay: "none",
-      },
-      backgroundImage: {
-        feature: "var(--feature-gradient)",
+        nav: "rgba(0, 0, 0, 0.25) 0px 4px 4px 0px",
+        overlay: "rgba(0, 0, 0, 0.3) 0px 8px 10px 0px",
+        mockup: "rgba(101, 129, 128, 0.15) 0px 0px 2px 2px inset, rgba(32, 47, 46, 0.15) 0px 0px 4px 4px inset",
+        "button-primary": "rgb(255, 255, 255) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -2px 6px 0px inset",
+        "button-secondary": "rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px",
       },
       backgroundColor: {
-        field: "rgb(22 22 22 / 0.7)",
+        field: "rgb(23 23 23 / 0.7)",
       },
       transitionDuration: {
         fast: "var(--duration-fast)",

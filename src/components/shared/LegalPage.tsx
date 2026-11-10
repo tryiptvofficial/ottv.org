@@ -20,7 +20,7 @@ export function LegalPage({ title, lead, children }: { title: string; lead: stri
     <Section data-fab-avoid>
       <Container>
         <PageHeader breadcrumb={[{ label: "Home", href: "/" }, { label: title }]} title={title} lead={lead} />
-        <div className="prose mx-auto max-w-narrow">
+        <div className="prose max-w-narrow">
           {!legalPagesReady && (
             <p role="note" className="not-prose mb-6 rounded-card border p-4 text-body text-foreground">
               Draft for the owner and a lawyer. It is not legal advice, and it returns a 404 in production until every

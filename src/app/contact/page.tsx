@@ -87,9 +87,9 @@ export default function ContactPage() {
         <Container>
           <SectionHeader title="Choose How to Contact Us" />
           <Grid as="ul" cols={3}>
-            <Card as="li" className="flex flex-col p-6">
+            <Card as="li" className="flex flex-col p-4">
               <IconTile className="mb-6"><MessageCircle aria-hidden /></IconTile>
-              <Heading level={3} size="subheading">Chat with us on WhatsApp</Heading>
+              <Heading level={3} size="heading">Chat with us on WhatsApp</Heading>
               <p className="mt-2 flex-grow text-muted-foreground">Orders, login details, setup or anything else. Tell us your device and what happens.</p>
               <Button asChild className="mt-6 w-full">
                 <WhatsAppLink message={supportMessage}>
@@ -98,17 +98,17 @@ export default function ContactPage() {
                 </WhatsAppLink>
               </Button>
             </Card>
-            <Card as="li" className="flex flex-col p-6">
+            <Card as="li" className="flex flex-col p-4">
               <IconTile className="mb-6"><PenLine aria-hidden /></IconTile>
-              <Heading level={3} size="subheading">Write your message here</Heading>
+              <Heading level={3} size="heading">Write your message here</Heading>
               <p className="mt-2 flex-grow text-muted-foreground">Prefer to type it out first? The form below opens WhatsApp with your name, email and message already filled in.</p>
               <Button asChild variant="secondary" className="mt-6 w-full">
                 <Link href="#contact-form">Go to the form</Link>
               </Button>
             </Card>
-            <Card as="li" className="flex flex-col p-6">
+            <Card as="li" className="flex flex-col p-4">
               <IconTile className="mb-6"><BookOpen aria-hidden /></IconTile>
-              <Heading level={3} size="subheading">Browse setup guides</Heading>
+              <Heading level={3} size="heading">Browse setup guides</Heading>
               <p className="mt-2 text-muted-foreground">Step-by-step setup for each device we support, plus fixes for buffering.</p>
               <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-caption">
                 {guideLinks.map((link) => (
@@ -135,8 +135,8 @@ export default function ContactPage() {
                 ))}
               </ul>
             </div>
-            <Card id="contact-form" className="scroll-mt-24 p-6">
-              <Heading level={2} size="subheading">Send us a message</Heading>
+            <Card id="contact-form" className="scroll-mt-24 p-4">
+              <Heading level={2} size="heading">Send us a message</Heading>
               <p className="mt-2 text-caption text-muted-foreground">Submitting opens WhatsApp with your message ready to send.</p>
               <div className="mt-6">
                 <ContactForm />

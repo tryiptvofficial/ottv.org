@@ -1,92 +1,80 @@
 # Design system
 
-A neo-botanical dark-and-light system: Forest Depths bands alternate with Pure White bands, and one green, Electric Sprout, carries every action. Pages are mostly type on flat surfaces.
+A dark, bordered system: one near-black canvas, precise off-white type, hairline graphite borders and monochrome controls. Colour is rare. Signal Orange marks inline links, and the spectrum gradient appears only in the hero artwork.
 
-Stack note: Tailwind 3.4, so the source of truth is the CSS variables in `src/app/globals.css`, exposed through `tailwind.config.ts`. Components use semantic tokens (`bg-card`, `text-muted-foreground`, `rounded-pill`, `text-display`), never raw values.
-
-## Tone
-
-Sections are dark by default. `<Section tone="light">` applies `.tone-light`, which re-points the same semantic tokens, so no component needs a light variant. The colour change is the divider: never add a rule between bands. Bands alternate, and the home page and inner pages set their order explicitly.
-
-`Card variant="accent"` applies `.surface-invert`: Bone White on a dark band, Forest Depths on a white one. Use it for the featured plan or the closing call to action.
+Stack note: Tailwind 3.4, so the source of truth is the CSS variables in `src/app/globals.css`, exposed through `tailwind.config.ts`. Components use semantic tokens (`bg-card`, `text-muted-foreground`, `rounded-card`), never raw values.
 
 ## Colour
 
 | Token | Hex | Role |
 |---|---|---|
-| `--forest-depths` | `#122314` | Dark canvas and dark cards |
-| `--moss-shadow` | `#273f2b` | Muted text on light, field borders on dark. Not a surface |
-| `--lichen-sage` | `#7e8371` | Reserved decorative tone. Fails AA as text |
-| `--lichen-deep` | `#5c6152` | Lichen Sage darkened for AA metadata on white. Added to the spec |
-| `--pale-fern` | `#b7bda5` | Secondary text on dark, field borders on light |
-| `--electric-sprout` | `#68ef3f` | The only filled action colour, and the accent on dark |
-| `--deep-verdant` | `#26a200` | The accent on light, where Sprout has no contrast |
-| `--sprout-wash` | `#e7f9dd` | Soft badges and icon backings on light |
-| `--mist-green` | `#d9deca` | Hover wells on light |
-| `--onyx-olive` | `#30322a` | Text on light, every hairline, the nav bar |
-| `--pure-white` | `#ffffff` | Light band, text on dark |
-| `--bone-white` | `#f2f5eb` | Cards on light bands |
+| `--true-black` | `#000000` | Deepest backdrops and fades |
+| `--obsidian-canvas` | `#0a0a0a` | Page, footer and card interiors |
+| `--charcoal-surface` | `#171717` | Elevated surfaces, chips, the highlighted card |
+| `--graphite-edge` | `#262626` | Every hairline, secondary button fill |
+| `--steel-border` | `#464646` | Emphasised edges, field borders |
+| `--cloud-white` | `#fafafa` | Headings, high-emphasis text, icons |
+| `--paper-white` | `#e5e5e5` | Primary button fill |
+| `--fog` | `#a1a1a1` | Navigation, secondary text |
+| `--ash-grey` | `#737373` | Decoration and focus rings only |
+| `--signal-orange` | `#ff8833` | Inline links only |
 
-Do not add a second accent. `--danger-hue` and `--warning-hue` exist for states only.
+The canvas never changes colour. `<Section tone="light">` is only a grouping marker. `--danger-hue` and `--warning-hue` exist for states only. Do not use a saturated colour as a button fill.
 
 ## Type
 
-Ozik and Aeonik are commercial and not licensed here, so the site uses the spec's substitutes. If the licences are bought, change only the font loading in `src/app/layout.tsx`, then restore Ozik's 0.86-0.90 line-height.
+Matter is commercial and not licensed here, so the site uses the spec's substitute, Inter, loaded in `src/app/layout.tsx`. If a licence is bought, only the font loading changes.
 
-| Face | Stands in for | Use |
-|---|---|---|
-| Boldonse (`font-display`) | Ozik | `h1` only, through `display-2xl` and `display-xl` |
-| Geist (`font-headline`, `font-body`) | Aeonik | All UI, body and section titles, up to 40px |
-| Instrument Serif (`font-serif`) | Itself | Accents only, 16-32px: closing headings, small notes |
+| Token | Size | Weight | Line height | Use |
+|---|---|---|---|---|
+| `display-2xl` | 40-60px fluid | 500 | 1 (-1.5px tracking at 60px) | Homepage hero only |
+| `display-xl` | 30-36px fluid | 500 | 1.11 | Inner page H1 |
+| `heading-lg` | 28-36px fluid | 500 | 1.11 | Section headings |
+| `heading` | 24px | 600 | 1.17 | Feature card headings, long-form H2 |
+| `heading-sm`, `subheading` | 20px | 500 | 1.4 | Card titles |
+| `body-lg` | 18px | 400 | 1.25 | Lead paragraphs |
+| `body` | 16px | 400 | 1.5 | Reading text |
+| `label` | 14px | 500 | 1.43 | Navigation and controls |
+| `announcement` | 14px | 600 | 1.43 | Top announcement bar |
+| `caption`, `meta` | 12px | 400 | 1.33 | Small print |
 
-Boldonse capitals are about 1.07em tall, against roughly 0.7em for Ozik, so its line-height is 1.2 and its sizes are smaller than the spec's 56-80px. The visual stack is the same; lines would collide at 0.86.
-
-Hierarchy comes from size and from one accent word in green, never from bold body text. The logo and the hero both set "TV" in green.
-
-| Token | Size | Line height | Tracking |
-|---|---|---|---|
-| `display-2xl` | 32-72px fluid | 1.2 | -0.01em |
-| `display-xl` | 24-48px fluid | 1.2 | -0.014em |
-| `display` | 32-40px fluid, 700 | 1.2 | -0.031em |
-| `heading-lg` | 28-32px fluid, 700 | 1.2 | -0.021em |
-| `heading` | 24px, 600 | 1.33 | -0.015em |
-| `heading-sm` | 20px, 600 | 1.43 | -0.015em |
-| `subheading` | 18px, 600 | 1.5 | -0.021em |
-| `body-lg` | 18px | 1.5 | -0.021em |
-| `body` | 16px | 1.5 | -0.031em |
-| `label` | 14px, 500 | 1.43 | -0.003em |
-| `caption` | 14px | 1.5 | -0.003em |
-| `meta` | 12px | 1.5 | -0.003em |
+Never set a display headline above 600 or loosen its line height.
 
 ## Shape and space
 
-The base unit is 8px and the page width is 1200px. Section padding is 80-120px through `Section`'s `spacing` variants; sections never set their own.
+The base unit is 8px. Content is 1152px wide. Sections sit 224px apart on desktop (128px for `compact`), set only through `Section`'s `spacing` variants. Cards use 16px padding and grids use 8px gaps.
 
 | Radius | Value | Use |
 |---|---|---|
-| `rounded-nav`, `rounded-pill` | 28px | Nav, default buttons |
-| `rounded-control` | 8px | Compact buttons (`size="sm"`) |
-| `rounded-card`, `rounded-card-lg` | 20px, 24px | Cards |
-| `rounded-input` | 24px | Fields |
-| `rounded-badge` | 40px | Badges |
+| `rounded-control` | 8px | Buttons |
+| `rounded-card`, `rounded-nav`, `rounded-input` | 10px | Cards, the nav shell, fields, media |
+| `rounded-badge` | 20px | Chips |
+| `rounded-pill` | 9999px | Circular controls only |
 
-Surfaces are flat and framed by a 1px Onyx Olive hairline. Only three things cast a shadow: the nav (`shadow-nav`), tilted mockups (`shadow-mockup`) and overlays (`shadow-overlay`).
+Modules are separated by 1px Graphite Edge borders, not floating shadows. Shadows are black, or the muted inset on framed media (`shadow-mockup`).
 
 ## Components
 
-- **Nav:** a floating Onyx Olive pill at 90% opacity. Sits on the root dark tone at every scroll position.
-- **`Button`:** `primary` is the Sprout fill and should appear once per view where possible. `secondary` is outlined in the current foreground. Do not add another filled colour.
-- **`AnnouncementPill`:** the only chip above a headline, and it must state a real offer. Section labels above headings are not part of this system.
-- **`SetupMockup`:** tilted white cards showing the real order and login flow. Decorative, hidden from assistive tech.
-- **`.hero-orb`:** the one gradient on the site, grainy and cropped by the hero. Text is never gradient-filled.
-- **Trust strip:** logos in white at 50% opacity, directly under the hero.
+- **`AnnouncementBar`:** a shallow Charcoal strip above the nav, stating a real offer.
+- **Nav:** a contained shell on the canvas with a 1px border and 10px radius.
+- **`Button`:** `primary` is Paper White, for the main conversion on a view. `secondary` is a Graphite fill with a Steel edge. `ghost` is transparent with a faint edge. `pill` is the dark 32px circular control. All rectangular buttons are 36px tall.
+- **`Card`:** `base` is bordered canvas. `accent` lifts to Charcoal with a Steel edge, for the featured plan or closing call to action.
+- **`.text-link`:** Signal Orange, underlined.
+- **`ProductDemo`:** the wide framed module after the hero, with True Black tabs along the bottom. Illustrations use generic labels and never name a channel or programme.
+- **Lattice:** `Grid gap="lattice"` with `Card variant="cell"` joins modules with 1px hairlines inside one frame. Use it instead of a row of equal cards.
+- **Mosaic:** `Features` leads with two wide panels holding product visuals, then four compact modules.
+- **`LuminousPolygon`:** hollow rotated outlines beside the homepage hero. Decorative, never filled.
+- **`ConsentManager`:** Accept and Reject must keep the same variant and size.
 
 ## Motion
 
-The hero moves in once, without a fade, because text first painted at opacity 0 delays LCP. Sections reveal once on scroll, and the logo row loops slowly. Everything stops under `prefers-reduced-motion`.
+The hero moves in once, without a fade, because text first painted at opacity 0 delays LCP. The one continuous moment is light travelling along the polygon. Sections do not animate in. Everything stops under `prefers-reduced-motion`.
 
-## Accessibility decisions that differ from the spec
+## Decisions that differ from the spec
 
-- Nav links use Pale Fern, not Lichen Sage, which is under 4.5:1 on Onyx Olive.
-- Muted text on white uses Moss Shadow and metadata uses `--lichen-deep`, because Lichen Sage is under 4.5:1 on white.
-- The accent on white bands is Deep Verdant, because Electric Sprout is unreadable on white.
+- Tertiary text uses Fog, not Ash, because Ash is under 4.5:1 on the canvas.
+- Inline links keep an underline, because orange and Fog are too close in lightness to separate a link by colour alone.
+- Buttons measure 36px as specified but carry an invisible 44px tap area.
+- Long reading text uses the 1.5 line height (`body-relaxed` in the spec).
+- Large headings scale down on phones.
+- Customer Story Cards are not used, because the site has no verified customers to show.

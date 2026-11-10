@@ -11,46 +11,10 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'placehold.co',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
         hostname: 'images.unsplash.com',
         port: '',
         pathname: '/**',
       },
-      {
-        protocol: 'https',
-        hostname: 'picsum.photos',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'images-cdn.ubuy.co.in',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'iptvwell.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'r2.thesportsdb.com',
-        port: '',
-        pathname: '/images/media/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'image.tmdb.org',
-        port: '',
-        pathname: '/**',
-      }
     ],
   },
   compress: true,

@@ -42,12 +42,6 @@ export default function NotFound() {
               </Link>
             </Button>
             <Button asChild variant="secondary">
-              <Link href="/locations">
-                <Compass aria-hidden />
-                Browse Locations
-              </Link>
-            </Button>
-            <Button asChild variant="secondary">
               <Link href="/faq">
                 <HelpCircle aria-hidden />
                 Read FAQ

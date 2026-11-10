@@ -7,11 +7,11 @@ const sectionVariants = cva('relative', {
   variants: {
     spacing: {
       none: '',
-      compact: 'py-8 md:py-10',
-      default: 'py-10 md:py-14',
-      spacious: 'py-24 md:py-30 short:py-12',
+      compact: 'py-9 md:py-16',
+      default: 'py-16 md:py-28',
+      spacious: 'py-16 md:py-28 short:py-12',
     },
-    // Every band is black; generous spacing separates them.
+    // One uninterrupted canvas; spacing and bordered modules separate content.
     tone: {
       dark: '',
       light: 'tone-light',

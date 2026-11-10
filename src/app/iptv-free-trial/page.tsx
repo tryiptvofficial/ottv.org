@@ -65,7 +65,7 @@ const proofPoints = [
 
 function TrialButtons() {
   return (
-    <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+    <div className="flex flex-wrap gap-2">
       <Button asChild size="lg">
         <WhatsAppLink message={trialMessage}>
           <SiWhatsapp aria-hidden />
@@ -119,11 +119,11 @@ export default function IptvFreeTrialPage() {
           />
           <Grid as="ul" cols={3}>
             {included.map((item) => (
-              <Card as="li" key={item.title} className="p-6">
+              <Card as="li" key={item.title} className="p-4">
                 <IconTile className="mb-6">
                   <item.icon aria-hidden />
                 </IconTile>
-                <Heading level={3} size="subheading">{item.title}</Heading>
+                <Heading level={3} size="heading">{item.title}</Heading>
                 <p className="mt-2 text-muted-foreground">{item.body}</p>
               </Card>
             ))}
@@ -138,7 +138,7 @@ export default function IptvFreeTrialPage() {
             subtitle="Three steps, all in WhatsApp, with no payment form anywhere."
           />
           <StepList steps={steps} />
-          <p className="mx-auto mt-10 max-w-narrow text-center text-body text-muted-foreground">
+          <p className="mt-10 max-w-narrow text-body text-muted-foreground">
             A person answers every request, so the reply is not always instant. Once you have your login, the{" "}
             <Link href="/devices/fire-tv" className="text-link">Fire TV</Link>,{" "}
             <Link href="/devices/samsung-tv" className="text-link">Samsung TV</Link>,{" "}
@@ -159,18 +159,18 @@ export default function IptvFreeTrialPage() {
             title="How Should You Test OTTV During the 24 Hours?"
             subtitle="Test it the way your household really watches: on your own devices, on your own internet connection, at the times you usually turn the TV on."
           />
-          <Grid as="ul" cols={3}>
+          <Grid as="ul" cols="triple" gap="lattice">
             {testTips.map((tip) => (
-              <Card as="li" key={tip.title} className="p-6">
+              <Card variant="cell" as="li" key={tip.title} className="p-4">
                 <IconTile className="mb-6">
                   <tip.icon aria-hidden />
                 </IconTile>
-                <Heading level={3} size="subheading">{tip.title}</Heading>
+                <Heading level={3} size="heading">{tip.title}</Heading>
                 <p className="mt-2 text-muted-foreground">{tip.body}</p>
               </Card>
             ))}
           </Grid>
-          <p className="mx-auto mt-10 max-w-narrow text-center text-body text-muted-foreground">
+          <p className="mt-10 max-w-narrow text-body text-muted-foreground">
             A stream stutters during your test? The{" "}
             <Link href="/devices/troubleshooting" className="text-link">buffering troubleshooting guide</Link> covers the common fixes.
           </p>
@@ -185,9 +185,9 @@ export default function IptvFreeTrialPage() {
           />
           <Grid as="ul" cols={4}>
             {plans.map((plan) => (
-              <Card as="li" key={plan.id} variant={plan.isPopular ? "accent" : "base"} className="flex flex-col p-6">
+              <Card as="li" key={plan.id} variant={plan.isPopular ? "accent" : "base"} className="flex flex-col p-4">
                 <div className="flex items-center justify-between gap-3">
-                  <Heading level={3} size="subheading">{plan.name}</Heading>
+                  <Heading level={3} size="heading">{plan.name}</Heading>
                   {plan.isPopular && <Badge>Best value</Badge>}
                 </div>
                 <p className="mt-6 text-stat tabular-nums text-foreground">${plan.price.toFixed(2)}</p>
@@ -197,7 +197,7 @@ export default function IptvFreeTrialPage() {
               </Card>
             ))}
           </Grid>
-          <p className="mx-auto mt-10 max-w-narrow text-center text-body text-muted-foreground">
+          <p className="mt-10 max-w-narrow text-body text-muted-foreground">
             Every plan includes the same service you tested: {productFacts.summary}. Compare them on the{" "}
             <Link href="/pricing" className="text-link">pricing page</Link> and order the one you want on WhatsApp.
           </p>
@@ -212,7 +212,7 @@ export default function IptvFreeTrialPage() {
           />
           <Grid as="ul" cols={4}>
             {proofPoints.map((point) => (
-              <Card as="li" key={point.label} className="p-6 text-center">
+              <Card as="li" key={point.label} className="p-4 text-center">
                 <p className="text-stat tabular-nums text-foreground">{point.value}</p>
                 <p className="mt-2 text-caption text-muted-foreground">{point.label}</p>
               </Card>

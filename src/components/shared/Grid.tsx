@@ -9,6 +9,8 @@ const gridVariants = cva('grid grid-cols-1', {
       2: 'sm:grid-cols-2',
       3: 'sm:grid-cols-2 lg:grid-cols-3',
       4: 'sm:grid-cols-2 xl:grid-cols-4',
+      // Three across on desktop, stacked below, so a lattice never leaves an empty cell
+      triple: 'lg:grid-cols-3',
       // Dense lists (countries, links): two columns even on phones
       list: 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5',
       // Main content with a 384px side column from 1024; stacked below
@@ -16,8 +18,10 @@ const gridVariants = cva('grid grid-cols-1', {
     },
     gap: {
       tight: 'gap-2',
-      default: 'gap-4 md:gap-6',
+      default: 'gap-2',
       loose: 'gap-8 md:gap-12',
+      // Modules joined by 1px hairlines inside one frame. Pair with `Card variant="cell"`.
+      lattice: 'gap-px overflow-hidden rounded-card border bg-border',
     },
   },
   defaultVariants: { cols: 3, gap: 'default' },

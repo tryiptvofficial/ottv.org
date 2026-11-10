@@ -12,13 +12,11 @@
     "typecheck": "tsc --noEmit",
     "seo:facts": "node scripts/check-product-facts.mjs",
     "seo": "npm run seo:facts && node scripts/seo-audit.mjs",
-    "seo:countries": "node scripts/check-country-indexability.mjs",
     "test": "node --test tests/*.test.mjs",
     "seo:gate": "npm run typecheck && npm run lint && npm run build && npm run seo && npm test"
   },
   "dependencies": {
     "@genkit-ai/google-genai": "latest",
-    "@iconify-icons/circle-flags": "^1.2.4",
     "@iconify/react": "^5.0.1",
     "@radix-ui/react-accordion": "latest",
     "@radix-ui/react-alert-dialog": "latest",

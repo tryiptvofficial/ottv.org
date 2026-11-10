@@ -10,6 +10,8 @@ interface CalloutProps {
   /** Heading level for the document outline; the size stays the same. */
   level?: 2 | 3;
   size?: "default" | "large";
+  /** Decorative artwork placed behind the copy. */
+  backdrop?: React.ReactNode;
   className?: string;
 }
 
@@ -17,7 +19,7 @@ interface CalloutProps {
  * The closing call to action or guarantee panel: the one inverted surface on a page.
  * Use once per page at most.
  */
-export function Callout({ title, children, action, level = 2, size = "default", className }: CalloutProps) {
+export function Callout({ title, children, action, level = 2, size = "default", backdrop, className }: CalloutProps) {
   const large = size === "large";
   return (
     <Card
@@ -25,11 +27,12 @@ export function Callout({ title, children, action, level = 2, size = "default", 
       size={large ? "large" : "default"}
       className={cn("overflow-hidden text-center", large ? "px-6 py-16 sm:px-12 sm:py-20" : "p-6 sm:p-8 md:p-12", className)}
     >
-      <Heading level={level} size="serif" className="mx-auto max-w-2xl">
+      {backdrop}
+      <Heading level={level} size="serif" className="relative mx-auto max-w-2xl">
         {title}
       </Heading>
-      {children && <Lead className="mx-auto mt-4 max-w-2xl">{children}</Lead>}
-      {action && <div className="mt-8 flex flex-wrap justify-center gap-3">{action}</div>}
+      {children && <Lead className="relative mx-auto mt-4 max-w-2xl">{children}</Lead>}
+      {action && <div className="relative mt-8 flex flex-wrap justify-center gap-2">{action}</div>}
     </Card>
   );
 }

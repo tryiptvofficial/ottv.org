@@ -8,53 +8,57 @@
  */
 @layer base {
   :root {
-    /* Primitives. Near-black neutrals plus one red. */
-    --void-black: 0 0% 0%; /* #000000 */
-    --surface-raised: 0 0% 13.7%; /* #232323 */
-    --graphite: 0 0% 17.6%; /* #2d2d2d */
-    --charcoal: 0 0% 25.5%; /* #414141 */
-    --slate: 0 0% 35.3%; /* #5a5a5a */
-    --ash: 0 0% 50.2%; /* #808080 */
-    --silver: 0 0% 70.2%; /* #b3b3b3 */
-    --chalk: 0 0% 100%; /* #ffffff */
-    --signal-red: 357 92.4% 46.7%; /* #e50914 */
+    /* Primitives: the Graphite palette. */
+    --true-black: 0 0% 0%; /* #000000 */
+    --obsidian-canvas: 0 0% 3.9%; /* #0a0a0a */
+    --charcoal-surface: 0 0% 9%; /* #171717 */
+    --graphite-edge: 0 0% 14.9%; /* #262626 */
+    --steel-border: 0 0% 27.5%; /* #464646 */
+    --ash-grey: 0 0% 45.1%; /* #737373 */
+    --fog: 0 0% 63.1%; /* #a1a1a1 */
+    --paper-white: 0 0% 89.8%; /* #e5e5e5 */
+    --cloud-white: 0 0% 98%; /* #fafafa */
+    --signal-orange: 25 100% 60%; /* #ff8833 */
     --danger-hue: 358 75.1% 59.0%; /* #e5484d */
     --warning-hue: 37 91.3% 55.1%; /* #f5a524 */
-    --feature-gradient: linear-gradient(149deg, #192247, #210e17);
 
     /* Semantic: components depend on these, not on primitives. */
-    --background: var(--void-black);
-    --foreground: var(--chalk);
-    --card: var(--surface-raised);
-    --card-foreground: var(--chalk);
-    --popover: var(--surface-raised);
-    --popover-foreground: var(--chalk);
-    --recessed: var(--surface-raised);
-    --secondary: var(--charcoal);
-    --secondary-foreground: var(--chalk);
-    --muted: var(--graphite);
-    --muted-foreground: var(--silver);
-    --subtle: var(--silver);
-    --placeholder: var(--ash);
-    --accent: var(--graphite);
-    --accent-foreground: var(--chalk);
-    --border: var(--graphite);
-    --input: var(--slate);
-    --ring: var(--chalk);
-    --brand: var(--signal-red);
-    --primary: var(--signal-red);
-    --primary-foreground: var(--chalk);
+    --background: var(--obsidian-canvas);
+    --foreground: var(--cloud-white);
+    --card: var(--obsidian-canvas);
+    --card-foreground: var(--cloud-white);
+    --popover: var(--charcoal-surface);
+    --popover-foreground: var(--cloud-white);
+    --recessed: var(--charcoal-surface);
+    --secondary: var(--graphite-edge);
+    --secondary-foreground: var(--cloud-white);
+    --muted: var(--charcoal-surface);
+    --muted-foreground: var(--fog);
+    /* Fog, not Ash: Ash is under 4.5:1 on the canvas, so it is kept for decoration and focus rings. */
+    --subtle: var(--fog);
+    --placeholder: var(--fog);
+    --accent: var(--charcoal-surface);
+    --accent-foreground: var(--cloud-white);
+    --border: var(--graphite-edge);
+    --input: var(--steel-border);
+    --steel: var(--steel-border);
+    --deep: var(--true-black);
+    --ring: var(--ash-grey);
+    --brand: var(--cloud-white);
+    --signal: var(--signal-orange);
+    --primary: var(--paper-white);
+    --primary-foreground: var(--charcoal-surface);
     --destructive: var(--danger-hue);
-    --destructive-foreground: var(--chalk);
-    --info: var(--silver);
-    --success: var(--chalk);
+    --destructive-foreground: var(--cloud-white);
+    --info: var(--fog);
+    --success: var(--cloud-white);
     --warning: var(--warning-hue);
-    --chart-1: var(--signal-red);
-    --chart-2: var(--silver);
-    --chart-3: var(--ash);
-    --chart-4: var(--slate);
-    --chart-5: var(--charcoal);
-    --radius: 0.5rem;
+    --chart-1: var(--cloud-white);
+    --chart-2: var(--fog);
+    --chart-3: var(--ash-grey);
+    --chart-4: var(--steel-border);
+    --chart-5: var(--graphite-edge);
+    --radius: 0.625rem;
 
     /* Motion */
     --duration-fast: 150ms;
@@ -63,15 +67,15 @@
     --ease-standard: cubic-bezier(0.2, 0, 0, 1);
   }
 
-  /* The whole site is dark, so a "light" band is only a marker for section grouping. */
+  /* The canvas never changes colour, so a "light" band is only a marker for section grouping. */
   .tone-light {
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
   }
 
-  /* The highlighted card: the feature gradient, framed so it reads against other gradient cards. */
+  /* The highlighted card: one level up from the canvas, with a stronger edge. */
   .surface-invert {
-    background-image: var(--feature-gradient);
+    background-color: hsl(var(--charcoal-surface));
     color: hsl(var(--foreground));
   }
 }
@@ -83,11 +87,11 @@
   html {
     color-scheme: dark;
     scroll-padding-top: 6rem;
-    scrollbar-color: hsl(var(--charcoal)) hsl(var(--void-black));
+    scrollbar-color: hsl(var(--graphite-edge)) hsl(var(--obsidian-canvas));
   }
   body {
     @apply bg-background text-body text-foreground;
-    font-feature-settings: "calt", "kern", "liga";
+    font-feature-settings: "clig" 0, "liga" 0;
   }
   h1, h2, h3, h4 {
     text-wrap: balance;
@@ -96,13 +100,13 @@
     text-wrap: pretty;
   }
   ::selection {
-    background: hsl(var(--signal-red));
-    color: hsl(var(--chalk));
+    background: hsl(var(--paper-white));
+    color: hsl(var(--charcoal-surface));
   }
   input,
   textarea {
     caret-color: hsl(var(--foreground));
-    accent-color: hsl(var(--signal-red));
+    accent-color: hsl(var(--paper-white));
   }
 
   /* Every animation and transition stops for people who ask for less motion */
@@ -120,9 +124,10 @@
 
 /* Long-form reading style for guides and generated HTML. `.not-prose` opts a block out. */
 @layer components {
-  /* Inline text link: white text with a quiet underline that brightens on hover. Red fails AA at this size. */
+  /* Inline text link: Signal Orange, the only warm colour in reading text. The underline stays because
+     orange and Fog are too close in lightness to separate a link by colour alone. */
   .text-link {
-    @apply rounded-control text-foreground underline decoration-subtle underline-offset-4 transition-colors duration-fast hover:decoration-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring;
+    @apply rounded-control text-signal underline decoration-signal/40 underline-offset-4 transition-colors duration-fast hover:decoration-signal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring;
   }
   .prose {
     @apply text-body text-muted-foreground;
@@ -170,20 +175,6 @@
 
 /* Named one-off recipes. Pages use these names instead of arbitrary values. */
 @layer utilities {
-  /* The one atmospheric element: a soft glow of the feature gradient rising out of the hero. */
-  .hero-orb {
-    position: absolute;
-    left: 50%;
-    bottom: -24rem;
-    width: min(60rem, 150vw);
-    aspect-ratio: 1;
-    transform: translateX(-50%);
-    border-radius: 9999px;
-    opacity: 0.7;
-    background: var(--feature-gradient);
-    mask-image: radial-gradient(closest-side, #000 40%, transparent);
-  }
-
   /* Hero height: 76% of the small viewport (stable under mobile toolbars, 76vh fallback),
      a fixed 640px from 768 up, and no minimum on short landscape screens */
   .min-h-hero {
@@ -206,6 +197,17 @@
     position: relative;
   }
   .touch-target::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: max(100%, 44px);
+    height: max(100%, 44px);
+    transform: translate(-50%, -50%);
+  }
+
+  /* The same 44px hit area for controls that are already positioned */
+  .hit-44::after {
     content: "";
     position: absolute;
     left: 50%;
@@ -242,18 +244,18 @@
   }
 }
 
-/* Scroll reveal: CSS only, so content is never hidden when JavaScript or scroll timelines are missing. */
-@keyframes reveal-in {
-  from { opacity: 0; transform: translateY(12px); filter: blur(6px); }
-  to { opacity: 1; transform: none; filter: none; }
+/* The one moving moment: points of light travelling along the hero artwork. */
+.polygon-trace {
+  stroke-dasharray: 0.12 0.88;
+  animation: polygon-trace 11s linear infinite;
 }
-
-@supports (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) {
-    .reveal {
-      animation: reveal-in linear both;
-      animation-timeline: view();
-      animation-range: entry var(--reveal-start, 0px) entry calc(var(--reveal-start, 0px) + 140px);
-    }
-  }
+.polygon-trace-reverse {
+  animation-direction: reverse;
+  animation-duration: 15s;
+}
+@keyframes polygon-trace {
+  to { stroke-dashoffset: -1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .polygon-trace { display: none; }
 }
