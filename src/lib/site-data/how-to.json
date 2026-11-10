@@ -10,13 +10,13 @@
     "primaryKeyword": "Fire TV Stick",
     "keywords": ["IPTV Fire TV", "Firestick IPTV setup", "install IPTV on Fire TV"],
     "datePublished": "2024-07-20T10:00:00Z",
-    "dateModified": "2026-11-09T12:00:00Z",
+    "dateModified": "2026-11-10T12:00:00Z",
     "totalTime": "PT5M",
     "notice": "<strong>Check your model first.</strong> This guide installs an Android player app, so it only works on Fire TV devices running Fire OS, such as the Fire TV Stick 4K Plus or 4K Max. <a href='https://developer.amazon.com/docs/device-specs/device-specifications-fire-tv-streaming-media-player.html' target='_blank' rel='noopener noreferrer'>Amazon's specifications</a> list the Fire TV Stick HD (2026), Fire TV Stick 4K 3rd Gen (2026) and Fire TV Stick 4K Select (2025) as running Vega OS, and <a href='https://www.aftvnews.com/these-are-the-fire-tvs-that-dont-support-sideloading-or-downloader-due-to-vega-os/' target='_blank' rel='noopener noreferrer'>AFTVnews reports</a> that Vega OS sticks do not support the Downloader app or sideloading. On those models, use a smart TV, phone or computer guide instead. You can see your model under Settings > My Fire TV > About.",
     "steps": [
       { "title": "Install the Downloader App", "description": "From the Fire TV home screen, use the search function to find the 'Downloader' app and install it. This utility lets you download files from the internet directly onto your Fire TV." },
       { "title": "Allow Downloader to Install Apps", "description": "Go to <strong>Settings > My Fire TV > Developer Options > Install unknown apps</strong>, select <strong>Downloader</strong> and turn it on. On older models, turn on <strong>Apps from Unknown Sources</strong> instead. If Developer Options is missing, go to <strong>Settings > My Fire TV > About</strong>, highlight <strong>Your TV</strong> and press the remote's D-pad seven times." },
-      { "title": "Enter the IPTV App URL", "description": "Open the Downloader app and enter the APK URL for your chosen IPTV player (e.g., IPTV Smarters Pro or TiviMate). Ask us for this URL on WhatsApp when you request your free trial or place your order." },
+      { "title": "Get the Player From Its Developer", "description": "Open the Downloader app and enter the download address that your chosen player app's developer publishes on its official website. Install player apps only from their developers, and check the developer's name first, because several apps have similar names." },
       { "title": "Download and Install the App", "description": "Follow the on-screen prompts to download and install the IPTV application. After installation is complete, you can delete the downloaded APK file to free up storage space." },
       { "title": "Log In with Your Credentials", "description": "Open your newly installed IPTV app and log in using the username, password, and server URL we sent you for your plan or free trial. Then choose a channel to start watching." }
     ],
@@ -51,25 +51,25 @@
   },
   {
     "id": "troubleshooting",
-    "imageAlt": "",
+    "imageAlt": "Grey Ethernet cable and plug on a light background",
     "deviceName": "",
-    "metaDescription": "Fix IPTV buffering: check for at least 25 Mbps, restart your device and router, switch to wired Ethernet, then test with a VPN and clear the app cache.",
+    "metaDescription": "Fix IPTV buffering: check for at least 25 Mbps, restart your device and router, switch to wired Ethernet, test another connection and clear the app cache.",
     "title": "How Can I Fix Common IPTV Buffering Issues?",
-    "description": "To fix IPTV buffering, first check that your internet speed is at least 25 Mbps. Then, try restarting your streaming device and router. If the problem persists, use a wired Ethernet connection instead of Wi-Fi, and compare the same channel with a VPN on and off.",
+    "description": "To fix IPTV buffering, first check that your internet speed is at least 25 Mbps. Then, try restarting your streaming device and router. If the problem persists, use a wired Ethernet connection instead of Wi-Fi, and compare the same channel on another connection, such as a phone hotspot.",
     "primaryKeyword": "IPTV Buffering",
     "keywords": ["IPTV buffering fix", "stop IPTV freezing", "IPTV troubleshooting"],
     "datePublished": "2024-07-18T14:00:00Z",
-    "dateModified": "2026-11-09T12:00:00Z",
+    "dateModified": "2026-11-10T12:00:00Z",
     "totalTime": "PT10M",
     "steps": [
       { "title": "Check Your Internet Speed", "description": "Buffering is often caused by a slow or unstable internet connection. Run a speed test. For HD and 4K, we recommend a steady download speed of <strong>25-30 Mbps</strong>. For comparison, <a href='https://help.netflix.com/en/node/306' target='_blank' rel='noopener noreferrer'>Netflix lists 15 Mbps or higher</a> for its own 4K streams." },
       { "title": "Restart Your Devices", "description": "Power cycle your streaming device (Fire TV, Android box, etc.) and your internet router by unplugging them for 60 seconds before plugging them back in. This can resolve many connectivity problems." },
       { "title": "Use a Wired Ethernet Connection", "description": "Wi-Fi signals can be unstable due to interference from other devices or distance from the router. Whenever possible, connect your streaming device directly to your router using an Ethernet cable. Fire TV Sticks need an Ethernet adapter for this. A wired connection is usually steadier than Wi-Fi." },
-      { "title": "Test With a VPN", "description": "If your speed test looks fine but streams slow down at the same times each day, your network may be congested or your internet provider may be managing video traffic. A VPN helps you test this: play the same channel with the VPN on and then off. If it makes no difference, turn it off, because a VPN can also slow your connection. Check that VPN use is allowed where you live." },
+      { "title": "Test Another Connection", "description": "If your speed test looks fine but streams slow down at the same times each day, your home network may be congested. Play the same channel for a minute on another connection, such as your phone's mobile hotspot, and keep the test short because video uses a lot of mobile data. If it plays smoothly there, restart your router, and contact your internet provider if the problem continues." },
       { "title": "Clear the App's Cache", "description": "Over time, your IPTV app can accumulate a large cache which can slow it down. Go to your device's settings, find your installed IPTV app, and select the 'Clear Cache' option. Do NOT choose 'Clear Data' (called 'Clear Storage' on Android phones), as this erases your login details and you would have to set up the app again." }
     ],
     "faqs": [
-      { "question": "Why does my IPTV only seem to buffer at night?", "answer": "This usually points to network congestion, because evenings are when home connections carry the most traffic. Some internet providers also manage video traffic at busy times. Try a wired connection first, then compare the same channel with a VPN on and off." },
+      { "question": "Why does my IPTV only seem to buffer at night?", "answer": "This usually points to network congestion, because evenings are when home connections carry the most traffic. Try a wired connection first, then compare the same channel on another connection, such as a mobile hotspot." },
       { "question": "Will a faster internet plan fix buffering issues?", "answer": "Not always. While a minimum speed is required, having an extremely fast plan (e.g., 1 Gbps) won't help if the underlying problem is an unstable Wi-Fi connection or a congested network. A stable connection is more important than raw speed." }
     ]
   },
@@ -84,7 +84,7 @@
     "primaryKeyword": "IPTV on iOS",
     "keywords": ["IPTV iPhone", "iPad IPTV app", "GSE Smart IPTV iOS"],
     "datePublished": "2024-07-21T09:00:00Z",
-    "dateModified": "2026-11-09T12:00:00Z",
+    "dateModified": "2026-11-10T12:00:00Z",
     "totalTime": "PT5M",
     "steps": [
       { "title": "Install an IPTV Player from the App Store", "description": "Open the App Store on your iPhone or iPad and search for an IPTV player. This guide uses <strong>'GSE SMART IPTV PRO'</strong> by droidvision, which is a paid app. Several apps have similar names, so check the developer before you buy." },
@@ -166,7 +166,7 @@
     "primaryKeyword": "Samsung Smart TV",
     "keywords": ["IPTV on Samsung TV", "Samsung Smart IPTV", "Set IPTV Samsung"],
     "datePublished": "2024-07-24T10:00:00Z",
-    "dateModified": "2026-11-09T12:00:00Z",
+    "dateModified": "2026-11-10T12:00:00Z",
     "totalTime": "PT10M",
     "steps": [
         { "title": "Install an IPTV Player", "description": "<ol><li>Sign in to a Samsung account on your TV.</li><li>From <strong>Home</strong>, press Left and select <strong>Search</strong>.</li><li>Enter <strong>'SET IPTV'</strong> or <strong>'NET IPTV'</strong>, select the app and choose <strong>Install</strong>.</li></ol>" },
@@ -216,7 +216,7 @@
     "primaryKeyword": "Apple TV",
     "keywords": ["IPTV Apple TV", "tvOS IPTV player", "iPlayTV setup"],
     "datePublished": "2024-07-26T15:00:00Z",
-    "dateModified": "2026-11-09T12:00:00Z",
+    "dateModified": "2026-11-10T12:00:00Z",
     "totalTime": "PT5M",
     "steps": [
       { "title": "Go to the App Store", "description": "From your Apple TV home screen, navigate to and open the App Store application." },

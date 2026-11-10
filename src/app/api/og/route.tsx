@@ -5,11 +5,9 @@ import { NextRequest } from 'next/server';
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   
-  // ?title=<title>
-  const hasTitle = searchParams.has('title');
-  const title = hasTitle
-    ? searchParams.get('title')?.slice(0, 100)
-    : 'OTTV';
+  // ?title=<title>. Without one (the homepage preview), only the brand line and tagline are drawn,
+  // so "OTTV" does not appear twice.
+  const title = searchParams.get('title')?.slice(0, 100);
 
   return new ImageResponse(
     (
@@ -27,36 +25,35 @@ export async function GET(req: NextRequest) {
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px', fontSize: '48px', fontWeight: 500 }}>
-           <svg
-              width="50"
-              height="50"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              style={{ color: '#fafafa' }}
-            >
-              <path
-                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.51 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
-                fill="currentColor"
-              />
-            </svg>
+          {/* The OTTV mark, as in public/favicon.svg */}
+          <svg width="56" height="56" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g transform="rotate(45 32 32)">
+              <rect x="10" y="10" width="44" height="44" rx="10" fill="#FAFAFA" />
+            </g>
+            <path
+              d="M27 22.8C27 21.55 28.38 20.79 29.44 21.46L43.14 30.16C44.12 30.78 44.12 32.22 43.14 32.84L29.44 41.54C28.38 42.21 27 41.45 27 40.2V22.8Z"
+              fill="#0A0A0A"
+            />
+          </svg>
           <span style={{
             color: '#fafafa'
           }}>
             OTTV
           </span>
         </div>
-        <p
-          style={{
-            fontSize: 60,
-            fontWeight: 500,
-            textAlign: 'center',
-            padding: '0 50px',
-            lineHeight: 1.2
-          }}
-        >
-          {title}
-        </p>
+        {title && (
+          <p
+            style={{
+              fontSize: 60,
+              fontWeight: 500,
+              textAlign: 'center',
+              padding: '0 50px',
+              lineHeight: 1.2
+            }}
+          >
+            {title}
+          </p>
+        )}
         <p style={{ fontSize: 24, color: '#a1a1a1', marginTop: '20px' }}>
           Live TV, sports and movies on the devices you own.
         </p>

@@ -2,9 +2,9 @@
   "placeholderImages": [
     {
       "id": "guide-image-troubleshooting",
-      "imageUrl": "https://images.unsplash.com/photo-1760531932521-8eb5a064dbca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx0cm91Ymxlc2hvb3RpbmclMjB0ZWNofGVufDB8fHx8MTc2MzM5Njg5Nnww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "troubleshooting tech",
-      "description": "Conceptual image for IPTV troubleshooting, showing a technician examining equipment to represent problem-solving.",
+      "imageUrl": "https://images.unsplash.com/photo-1578016980868-197203ff4b02?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "imageHint": "ethernet cable",
+      "description": "Featured image for the buffering guide: a grey Ethernet cable and its plug on a plain light background, with no logos or text. Photo by Claudio Schwarz (unsplash.com/photos/w0aMCZIW6Qc), Unsplash License.",
       "width": 600,
       "height": 400
     },
@@ -20,7 +20,7 @@
       "id": "guide-image-windows",
       "imageUrl": "https://images.unsplash.com/photo-1624571395775-253d9666612b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3aW5kb3dzJTIwcGN8ZW58MHx8fHwxNzYzMzk2ODk2fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "windows pc",
-      "description": "Featured image for the Windows IPTV guide, illustrating a PC setup to show desktop compatibility.",
+      "description": "Featured image for the Windows guide: a laptop showing the Windows 11 desktop, on a person's lap. Photo by the Unsplash account Windows (unsplash.com/photos/AigsWJmvoEo), Unsplash License.",
       "width": 600,
       "height": 400
     },
@@ -28,7 +28,7 @@
       "id": "guide-image-macos",
       "imageUrl": "https://images.unsplash.com/photo-1627660163617-72878fc413e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtYWNvcyUyMGxhcHRvcHxlbnwwfHx8fDE3NjMzOTY4OTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "macos laptop",
-      "description": "Featured image for the macOS IPTV guide, showing a MacBook to represent compatibility with Apple computers.",
+      "description": "Featured image for the macOS guide: a MacBook showing the macOS Big Sur wallpaper in a dark room. Photo by Guillaume Coupy (unsplash.com/photos/ZJC8ZVLzrVM), Unsplash License.",
       "width": 600,
       "height": 400
     },

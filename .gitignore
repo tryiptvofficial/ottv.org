@@ -43,3 +43,7 @@ next-env.d.ts
 # firebase
 firebase-debug.log
 firestore-debug.log
+
+# Third-party agent skill whose source (genkit-ai/skills) publishes no licence: kept locally, not in the public repo.
+# skills-lock.json still records its source so it can be reinstalled.
+/.agents/skills/developing-genkit-js/
