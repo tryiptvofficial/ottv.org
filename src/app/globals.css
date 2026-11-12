@@ -270,8 +270,9 @@
   }
 }
 
-/* Subtle scroll reveal for cards below the fold, in browsers with scroll-driven animations. Elsewhere, and
-   for anyone who asks for less motion, content simply shows. Content never starts fully invisible. */
+/* Subtle scroll reveal for cards below the fold, in browsers with scroll-driven animations: a short rise at full
+   opacity, so text never shows at reduced contrast (it used to fade in from 35%, which failed contrast checks for
+   anything not yet scrolled to). Elsewhere, and for anyone who asks for less motion, content simply shows. */
 @supports (animation-timeline: view()) {
   .reveal {
     animation: reveal linear both;
@@ -281,11 +282,9 @@
 }
 @keyframes reveal {
   from {
-    opacity: 0.35;
     transform: translateY(16px);
   }
   to {
-    opacity: 1;
     transform: none;
   }
 }

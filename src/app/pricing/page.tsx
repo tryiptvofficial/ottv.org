@@ -96,19 +96,30 @@ export default async function PricingPage() {
               <TableCaption>Prices in US dollars. Each plan is a one-time payment.</TableCaption>
               <TableHeader>
                 <TableRow>
-                  <TableHead>Plan</TableHead>
-                  <TableHead>Total price</TableHead>
-                  <TableHead>Price per month</TableHead>
-                  <TableHead>Saving vs 1 month</TableHead>
+                  {/* On phones the headings shorten and each plan's saving moves under its name, so the table fits a
+                      320px screen without scrolling sideways. */}
+                  <TableHead className="px-3 sm:px-4">Plan</TableHead>
+                  <TableHead className="px-3 sm:px-4">
+                    <span className="sm:hidden">Total</span>
+                    <span className="hidden sm:inline">Total price</span>
+                  </TableHead>
+                  <TableHead className="px-3 sm:px-4">
+                    <span className="sm:hidden">Per month</span>
+                    <span className="hidden sm:inline">Price per month</span>
+                  </TableHead>
+                  <TableHead className="hidden sm:table-cell">Saving vs 1 month</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {plans.map((plan) => (
                   <TableRow key={plan.id}>
-                    <TableCell className="text-foreground">{plan.name}</TableCell>
-                    <TableCell>${plan.price.toFixed(2)}</TableCell>
-                    <TableCell>${plan.price_monthly.toFixed(2)}</TableCell>
-                    <TableCell>{plan.savings?.replace("Save ", "") ?? "None"}</TableCell>
+                    <TableCell className="px-3 text-foreground sm:px-4">
+                      {plan.name}
+                      {plan.savings && <span className="block text-caption text-muted-foreground sm:hidden">{plan.savings}</span>}
+                    </TableCell>
+                    <TableCell className="px-3 sm:px-4">${plan.price.toFixed(2)}</TableCell>
+                    <TableCell className="px-3 sm:px-4">${plan.price_monthly.toFixed(2)}</TableCell>
+                    <TableCell className="hidden sm:table-cell">{plan.savings?.replace("Save ", "") ?? "None"}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>

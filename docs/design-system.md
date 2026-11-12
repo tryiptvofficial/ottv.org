@@ -96,7 +96,7 @@ The mono stamp is for labels and metadata (breadcrumbs, device-group labels, cat
 - **Gradients:** one subtle green wash, behind the hero. No gradient text.
 - **Motion:**
   - Buttons and cards transition in 150-200ms; cards lift 2px on hover.
-  - Cards use `.reveal`, a subtle scroll reveal (CSS scroll-driven, from 35% opacity, never invisible).
+  - Cards use `.reveal`, a subtle scroll reveal: a 16px rise at full opacity (CSS scroll-driven). It never fades text, because faded text fails contrast checks for anything not yet scrolled to.
   - Scrolling is smooth.
   - Under `prefers-reduced-motion`, all of it stops.
 
@@ -135,6 +135,7 @@ The mono stamp is for labels and metadata (breadcrumbs, device-group labels, cat
   - The subtitle under "Choose Your IPTV Plan" says how ordering works: the chat opens with the plan written, and a person replies with the login.
   - "Before you order" sits beside the cards: on phones right after the featured plan, from 768px in a row under the cards. It covers one payment with nothing renewing and the 7-day money-back guarantee, the free trial, the player-app fee some devices need (linked to the device grid) and that a person handles each order (so allow a short wait). How to pay is added only once the owner confirms the payment methods.
   - `/pricing` leaves out "Included in every plan", because that page lists the features in its own section.
+- **Price table (`/pricing`):** on phones the headings shorten ("Total", "Per month") and each plan's saving sits under its name, so the table fits a 320px screen without scrolling sideways.
 - **Devices (`#devices`):** four cards by kind of device, each labelled with a small device icon, and each device linking to its guide.
   - A note under a device's name says when its guide needs a paid player app, screen mirroring or the box's MAC address (`note` in `guideGroups`).
   - The buffering guide is a line under the grid, not a card.
@@ -157,6 +158,7 @@ The mono stamp is for labels and metadata (breadcrumbs, device-group labels, cat
   - On phones, a bar of about 104px on the bottom edge: the question and a two-line sentence, then Reject and Accept side by side with equal weight. On a 375x812 screen it leaves the hero's buttons in view.
   - From 640px, a card in the bottom-right corner, away from the hero's buttons on the left.
   - The floating contact button steps aside while it is open, since both use the bottom-right corner.
+  - On screens under 500px tall (a phone turned sideways) a card would cover a third of the page, so it stays a bar on the bottom edge with the buttons beside the text: 60px tall on an 844x390 screen, where the card took 157px.
   - The sentence names the three services and says they run only if the visitor accepts.
 - **`/devices`:** the setup-guides hub, grouped by kind of device.
 - **Fields:** the card colour, an edge that passes 3:1 against the band, and a green focus ring. An error says what to enter ("Enter an email address like name@example.com."), and the form keeps what was typed.
@@ -183,5 +185,6 @@ The mono stamp is for labels and metadata (breadcrumbs, device-group labels, cat
 - **Touch targets:** buttons and list links keep a 44px tap area that touches no other control.
   - Header icon buttons are 44px squares.
   - The 36px header pill reaches 44px through an invisible strip above and below it.
+  - The menu links reach 44px the same way (`touch-target`). The offer bar's "How the trial works" link uses it too, and its tap area fills the bar's full 41px height.
   - On phones, footer links are 44px rows.
 - **Button pairs:** large buttons have 16px sides on phones and 24px from 640px, so the hero's and the explainer's pairs fit one row from 360px.

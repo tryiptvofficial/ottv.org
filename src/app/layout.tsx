@@ -1,7 +1,6 @@
 
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from 'next/font/google';
-import { ThemeProvider } from "@/components/shared/ThemeProvider";
 import { AnnouncementBar } from "@/components/shared/AnnouncementBar";
 import { Navbar } from "@/components/shared/Navbar";
 import { Footer } from "@/components/shared/Footer";
@@ -9,7 +8,6 @@ import { Toaster } from "@/components/ui/toaster";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ContactSheet } from "@/components/shared/ContactSheet";
-import { ProgressBar } from '@/components/shared/ProgressBar';
 import { ConsentManager } from "@/components/shared/ConsentManager";
 import { Schema } from "@/components/shared/Schema";
 import { generateOrganizationSchema, generateWebSiteSchema } from "@/lib/schema";
@@ -123,8 +121,11 @@ export default function RootLayout({
 }>) {
 
   return (
-    <html lang="en" suppressHydrationWarning className={cn(
-        "font-body antialiased",
+    // The site is always dark, so the class and colour scheme are set here rather than by a theme provider: that saves
+    // its script on every page. (A route progress bar written for the old Pages Router also went: it never ran here,
+    // and it pulled that router's code into every page.)
+    <html lang="en" style={{ colorScheme: "dark" }} className={cn(
+        "dark font-body antialiased",
         geistSans.variable,
         geistMono.variable
       )}>
@@ -133,29 +134,21 @@ export default function RootLayout({
           <Schema id="website" schema={generateWebSiteSchema()} />
         </head>
       <body>
-        <ProgressBar />
         <ConsentManager />
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          forcedTheme="dark"
-          disableTransitionOnChange
-        >
-          <div className="relative flex min-h-screen flex-col">
-            <a 
-              href="#main-content" 
-              className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-control focus:bg-primary focus:px-4 focus:py-2 focus:text-label focus:text-primary-foreground"
-            >
-              Skip to main content
-            </a>
-            <AnnouncementBar />
-            <Navbar />
-            <main id="main-content" className="flex-grow">{children}</main>
-            <Footer />
-          </div>
-          <ContactSheet />
-          <Toaster />
-        </ThemeProvider>
+        <div className="relative flex min-h-screen flex-col">
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-control focus:bg-primary focus:px-4 focus:py-2 focus:text-label focus:text-primary-foreground"
+          >
+            Skip to main content
+          </a>
+          <AnnouncementBar />
+          <Navbar />
+          <main id="main-content" className="flex-grow">{children}</main>
+          <Footer />
+        </div>
+        <ContactSheet />
+        <Toaster />
       </body>
     </html>
   );

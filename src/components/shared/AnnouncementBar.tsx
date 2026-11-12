@@ -10,7 +10,7 @@ export function AnnouncementBar() {
         24-hour free trial, no card needed
         <Link
           href="/iptv-free-trial"
-          className="hidden items-center gap-1 rounded-sm text-muted-foreground underline decoration-subtle/40 underline-offset-4 transition-colors duration-fast hover:text-foreground hover:decoration-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:inline-flex"
+          className="touch-target hidden items-center gap-1 rounded-sm text-muted-foreground underline decoration-subtle/40 underline-offset-4 transition-colors duration-fast hover:text-foreground hover:decoration-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:inline-flex"
         >
           How the trial works <ArrowRight aria-hidden className="h-3.5 w-3.5" />
         </Link>
