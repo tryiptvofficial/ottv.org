@@ -15,8 +15,9 @@ export interface Step {
 /**
  * A numbered sequence of steps: one card per step with a green number, and an illustration or icon when
  * given. Three columns from 1024px; below that the steps stack, because three columns get too narrow to read.
- * From 768px a stacked card puts its illustration beside the text, so the three steps take about one tablet
- * screen instead of three.
+ * Below 1024px the illustration stays small so the text leads: on phones it sits above the text in a short 2:1
+ * frame, and from 640px (a phone turned sideways, a tablet) it sits beside the text at a fixed 224px. A frame
+ * as wide as the card was 367px tall on a 667x375 sideways phone, nearly the whole screen.
  */
 export function StepList({ steps, className }: { steps: Step[]; className?: string }) {
   return (
@@ -24,17 +25,18 @@ export function StepList({ steps, className }: { steps: Step[]; className?: stri
       {steps.map((step, i) => (
         <li
           key={step.title}
-          className="reveal flex flex-col rounded-card bg-card p-4 shadow-card md:flex-row md:items-center md:gap-8 md:p-6 lg:flex-col lg:items-stretch lg:gap-0"
+          className="reveal flex flex-col rounded-card bg-card p-4 shadow-card sm:flex-row sm:items-center sm:gap-6 sm:p-6 lg:flex-col lg:items-stretch lg:gap-0"
         >
           {step.illustration && (
-            <div className="mb-6 flex aspect-[8/5] items-center justify-center overflow-clip rounded-control bg-background p-4 md:mb-0 md:w-2/5 md:shrink-0 lg:mb-6 lg:w-auto">
+            <div className="mb-5 flex aspect-[2/1] items-center justify-center overflow-clip rounded-control bg-background p-3 sm:mb-0 sm:aspect-[8/5] sm:w-56 sm:shrink-0 lg:mb-6 lg:w-auto lg:p-4">
               <Image
                 src={step.illustration.src}
                 alt=""
                 width={step.illustration.width}
                 height={step.illustration.height}
                 unoptimized
-                className="h-full w-auto"
+                // On phones the drawing is sized by width: 72% of the frame's width gives a frame of about 2:1.
+                className="h-auto w-[72%] sm:h-full sm:w-auto"
               />
             </div>
           )}
@@ -48,7 +50,7 @@ export function StepList({ steps, className }: { steps: Step[]; className?: stri
             <Heading level={3} size="heading" className="mt-5">
               {step.title}
             </Heading>
-            <p className="mt-2 text-pretty text-muted-foreground">
+            <p className="mt-2 max-w-xl text-pretty text-muted-foreground">
               {typeof step.description === "string" ? keepTogether(step.description) : step.description}
             </p>
           </div>
