@@ -17,7 +17,7 @@ export interface Step {
  * given. Three columns from 1024px; below that the steps stack, because three columns get too narrow to read.
  * Below 1024px the illustration stays small so the text leads: on phones it sits above the text in a short 2:1
  * frame, and from 640px (a phone turned sideways, a tablet) it sits beside the text at a fixed 224px. A frame
- * as wide as the card would be taller than a sideways phone's screen.
+ * as wide as the card was 367px tall on a 667x375 sideways phone, nearly the whole screen.
  */
 export function StepList({ steps, className }: { steps: Step[]; className?: string }) {
   return (
@@ -35,8 +35,7 @@ export function StepList({ steps, className }: { steps: Step[]; className?: stri
                 width={step.illustration.width}
                 height={step.illustration.height}
                 unoptimized
-                // Phones size the drawing by width: a percentage height can't resolve inside the stacked card,
-                // and 72% of the frame's width gives a frame of about 2:1.
+                // On phones the drawing is sized by width: 72% of the frame's width gives a frame of about 2:1.
                 className="h-auto w-[72%] sm:h-full sm:w-auto"
               />
             </div>

@@ -142,7 +142,7 @@ The mono stamp is for labels and metadata (breadcrumbs, device-group labels, cat
 - **`StepList`:** numbered circles in the primary colour (green on black, ink on off-white), with an original illustration or an icon.
   - Three columns from 1024px. Below that the steps stack, and the illustration stays small so the text leads.
   - On phones the illustration sits above the text in a 2:1 frame (295×148 on a 375px screen), at 72% of the frame's width.
-  - From 640px (a phone turned sideways, a tablet) it sits beside the text at a fixed 224×140, so a 667×375 screen shows a whole step. A frame as wide as the card would be taller than that screen.
+  - From 640px (a phone turned sideways, a tablet) it sits beside the text at a fixed 224×140, so a 667×375 screen shows a whole step. A frame as wide as the card was 367px tall there, nearly the whole screen.
 - **Why OTTV:** cards in two columns on black, heading and text only.
 - **IPTV explained:** a TV-guide drawing (channels, what is on now, catch-up, the channel playing) and two cards (what IPTV is, what you need) on a light band, side by side from 1024px with the drawing first below that; then the free trial and pricing buttons. How OTTV works is the steps section's own question ("How Does OTTV Work?").
   - These buttons and the one under the FAQ are the page's only actions between the plans and the closing free-trial band.
