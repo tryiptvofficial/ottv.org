@@ -2,8 +2,8 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 import type React from 'react';
 
-// The only place page width and side gutters are defined
-const containerVariants = cva('mx-auto w-full px-4 sm:px-6 lg:px-8', {
+// The only place page width and side gutters are defined: 1280px wide, 24px gutters on phones and 48px from 1024
+const containerVariants = cva('mx-auto w-full px-6 lg:px-12', {
   variants: {
     size: {
       narrow: 'max-w-narrow',

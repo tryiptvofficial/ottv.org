@@ -2,9 +2,9 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 import type React from "react"
 
-// Square backing for feature icons and step numbers
+// A card-coloured square with a border, for feature icons and step numbers. Icons take the green accent.
 const iconTileVariants = cva(
-  "inline-flex shrink-0 items-center justify-center rounded-control border bg-accent text-foreground",
+  "inline-flex shrink-0 items-center justify-center rounded-control bg-card text-signal shadow-hairline",
   {
     variants: {
       size: {

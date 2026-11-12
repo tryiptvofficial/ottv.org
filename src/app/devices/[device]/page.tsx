@@ -72,7 +72,8 @@ async function getArticleData(deviceId: string): Promise<ArticleType | undefined
     const imageInfo = PlaceHolderImages.find(img => img.id === `guide-image-${article.id}`);
     if (!imageInfo) return { ...article, image: undefined };
 
-    const blurDataURL = await getPlaceholderImage(imageInfo.imageUrl);
+    // Guide images are local SVG drawings, which need no blurred placeholder; only a remote photo gets one.
+    const blurDataURL = imageInfo.imageUrl.startsWith("http") ? await getPlaceholderImage(imageInfo.imageUrl) : undefined;
     return {
         ...article,
         image: {
@@ -86,11 +87,13 @@ async function getArticleData(deviceId: string): Promise<ArticleType | undefined
 function StructuredData({ article }: { article: ArticleType }) {
     const { id, title, description, steps, faqs, image, datePublished, dateModified, totalTime } = article;
     const baseUrl = siteConfig.url;
+    // Structured data needs an absolute URL; local images are stored as site paths.
+    const imageUrl = image ? new URL(image.imageUrl, baseUrl).toString() : undefined;
 
     const articleSchema = generateArticleSchema({
         headline: title,
         description,
-        image: image?.imageUrl,
+        image: imageUrl,
         datePublished,
         dateModified,
         url: `${baseUrl}/devices/${id}`,
@@ -100,8 +103,8 @@ function StructuredData({ article }: { article: ArticleType }) {
         name: title,
         description: description,
         totalTime: totalTime,
-        image: image ? {
-            url: image.imageUrl,
+        image: image && imageUrl ? {
+            url: imageUrl,
             width: image.width,
             height: image.height
         } : undefined,
@@ -174,14 +177,14 @@ export default async function HowToPage({ params }: Props) {
               title={title}
               lead={description}
             >
-              <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-meta text-subtle">
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-caption text-subtle">
                 {totalTimeInMinutes && (
-                  <span className="inline-flex items-center gap-2">
-                    <Clock aria-hidden className="h-4 w-4" />
+                  <span className="stamp inline-flex items-center gap-2">
+                    <Clock aria-hidden className="h-3.5 w-3.5" />
                     Estimated time: {totalTimeInMinutes} minutes
                   </span>
                 )}
-                <span>
+                <span className="stamp">
                   Updated:{" "}
                   <time dateTime={dateModified}>{new Date(dateModified).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
                 </span>
@@ -204,7 +207,7 @@ export default async function HowToPage({ params }: Props) {
             <div className="grid grid-cols-1 gap-12 xl:grid-cols-article">
               <div className="prose max-w-narrow">
                 {notice && (
-                  <p role="note" className="not-prose mb-6 rounded-card border p-4 text-body text-muted-foreground [&_a]:text-link" dangerouslySetInnerHTML={{ __html: notice }} />
+                  <p role="note" className="not-prose mb-8 rounded-card bg-card p-4 text-body text-muted-foreground shadow-card md:p-6 [&_a]:text-link" dangerouslySetInnerHTML={{ __html: notice }} />
                 )}
                 <Card className="not-prose">
                   <CardHeader>
@@ -214,12 +217,12 @@ export default async function HowToPage({ params }: Props) {
                     <ul className="space-y-3 text-muted-foreground">
                       {requirements.map((item) => (
                         <li key={item} className="flex items-start gap-3">
-                          <Check aria-hidden className="mt-0.5 h-4 w-4 shrink-0 text-foreground" /> {item}
+                          <Check aria-hidden className="mt-1 h-4 w-4 shrink-0 text-signal" /> {item}
                         </li>
                       ))}
                     </ul>
                     <p className="mt-4 text-caption text-muted-foreground">
-                      No login yet? <Link href="/iptv-free-trial" className="text-link">Request the free 24-hour trial</Link> or{" "}
+                      No login yet? <Link href="/iptv-free-trial" className="text-link">Request the 24-hour free trial</Link> or{" "}
                       <Link href="/pricing" className="text-link">see the plans</Link>.
                     </p>
                   </CardContent>
@@ -232,16 +235,16 @@ export default async function HowToPage({ params }: Props) {
                     : "Work through these steps in order and test your stream after each one. If it still buffers, "}
                   <WhatsAppLink className="text-link">message us on WhatsApp</WhatsAppLink>.
                 </p>
-                <ol className="not-prose mt-8 space-y-8">
+                <ol className="not-prose mt-10 space-y-6">
                   {steps.map((step, index) => (
                     <li key={index} id={`step-${index + 1}`} className="flex gap-6">
                       <div className="flex flex-col items-center">
-                        <IconTile size="md" className="font-mono">{String(index + 1).padStart(2, "0")}</IconTile>
+                        <IconTile size="md" className="font-mono text-caption tabular-nums">{String(index + 1).padStart(2, "0")}</IconTile>
                         {index < steps.length - 1 && <div className="mt-2 w-px flex-grow bg-border" />}
                       </div>
-                      <div className="pb-2">
-                        <Heading level={3} size="subheading" className="mb-2 mt-2">{step.title}</Heading>
-                        <div className="prose" dangerouslySetInnerHTML={{ __html: step.description }} />
+                      <div className="min-w-0 pb-4">
+                        <Heading level={3} size="subheading" className="mb-2 mt-1.5">{step.title}</Heading>
+                        <div className="prose [&_strong]:font-medium [&_strong]:text-foreground" dangerouslySetInnerHTML={{ __html: step.description }} />
                       </div>
                     </li>
                   ))}
@@ -255,11 +258,11 @@ export default async function HowToPage({ params }: Props) {
                 ))}
 
                 <Callout
-                  className="not-prose my-12"
+                  className="not-prose my-16"
                   title={deviceName ? `Ready to Start Watching on Your ${deviceHeading}?` : "Need an OTTV Subscription?"}
                   action={
                     <Button asChild size="lg">
-                      <Link href="/pricing">Get Your Subscription Now</Link>
+                      <Link href="/pricing">View Pricing</Link>
                     </Button>
                   }
                 >
@@ -274,7 +277,7 @@ export default async function HowToPage({ params }: Props) {
                 )}
               </div>
               <div className="w-full max-w-narrow space-y-6 xl:sticky xl:top-24 xl:self-start">
-                {image && image.blurDataURL && (
+                {image && (
                   <Card className="overflow-hidden">
                     <Image
                       src={image.imageUrl}
@@ -283,8 +286,9 @@ export default async function HowToPage({ params }: Props) {
                       height={image.height || 400}
                       loading="lazy"
                       sizes="(max-width: 1279px) 100vw, 400px"
+                      unoptimized={image.imageUrl.endsWith(".svg")}
                       className="h-auto w-full"
-                      placeholder="blur"
+                      placeholder={image.blurDataURL ? "blur" : "empty"}
                       blurDataURL={image.blurDataURL}
                     />
                   </Card>
@@ -299,10 +303,10 @@ export default async function HowToPage({ params }: Props) {
                         <li key={link.href}>
                           <Link
                             href={link.href}
-                            className="group flex items-center justify-between gap-3 rounded-control text-muted-foreground transition-colors duration-fast hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                            className="group flex items-center justify-between gap-3 rounded-sm text-label text-muted-foreground transition-colors duration-fast hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                           >
                             <span>{link.title}</span>
-                            <ArrowRight aria-hidden className="h-4 w-4 shrink-0 opacity-0 transition-opacity duration-fast group-hover:opacity-100" />
+                            <ArrowRight aria-hidden className="h-4 w-4 shrink-0 text-signal opacity-0 transition-opacity duration-fast group-hover:opacity-100 group-focus-visible:opacity-100" />
                           </Link>
                         </li>
                       ))}

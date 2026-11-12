@@ -1,6 +1,6 @@
 
 import type { Metadata, Viewport } from "next";
-import { Inter } from 'next/font/google';
+import { Geist, Geist_Mono } from 'next/font/google';
 import { ThemeProvider } from "@/components/shared/ThemeProvider";
 import { AnnouncementBar } from "@/components/shared/AnnouncementBar";
 import { Navbar } from "@/components/shared/Navbar";
@@ -15,17 +15,25 @@ import { Schema } from "@/components/shared/Schema";
 import { generateOrganizationSchema, generateWebSiteSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/site-config";
 
-// The closest open substitute for the design system's commercial typeface.
-const inter = Inter({
+// Geist Sans for reading and headlines, Geist Mono for labels and metadata. Both are open source (OFL).
+const geistSans = Geist({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-sans",
+  variable: "--font-geist-sans",
   preload: true,
 });
 
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-geist-mono",
+  preload: false,
+});
+
 export const viewport: Viewport = {
-  // Browser chrome matches the Obsidian Canvas in every OS theme
-  themeColor: '#0a0a0a',
+  // Browser chrome matches the black page in every OS theme
+  themeColor: '#000000',
+  colorScheme: 'dark',
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
@@ -117,7 +125,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={cn(
         "font-body antialiased",
-        inter.variable
+        geistSans.variable,
+        geistMono.variable
       )}>
        <head>
           <Schema id="organization" schema={generateOrganizationSchema()} />
@@ -129,13 +138,13 @@ export default function RootLayout({
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
-          enableSystem
+          forcedTheme="dark"
           disableTransitionOnChange
         >
           <div className="relative flex min-h-screen flex-col">
             <a 
               href="#main-content" 
-              className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:rounded-control focus:bg-primary focus:text-primary-foreground"
+              className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-control focus:bg-primary focus:px-4 focus:py-2 focus:text-label focus:text-primary-foreground"
             >
               Skip to main content
             </a>

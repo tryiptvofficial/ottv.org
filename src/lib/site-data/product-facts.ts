@@ -6,8 +6,8 @@
 export const productFacts = {
   liveChannels: "25,000+",
   vodTitles: "120,000+",
-  liveChannelsLabel: "25,000+ Live Channels Worldwide",
-  vodLabel: "120,000+ On-Demand (VOD) Movies & TV Shows",
+  liveChannelsLabel: "25,000+ live channels worldwide",
+  vodLabel: "120,000+ on-demand (VOD) movies & TV shows",
   /** For use mid-sentence. */
   summary: "25,000+ live channels worldwide and 120,000+ on-demand movies and TV shows",
 } as const;

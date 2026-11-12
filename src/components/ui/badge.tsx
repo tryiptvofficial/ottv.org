@@ -3,18 +3,19 @@ import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
 
-// Compact outlined labels. `accent` is the Paper White fill.
+// Tags are mono stamps in a pill: Geist Mono 11px uppercase. `accent` is the filled Obsidian tag (white on an
+// inverted card, where the tokens flip).
 const badgeVariants = cva(
-  "inline-flex h-6 items-center gap-1 rounded-badge border px-3 text-meta font-medium",
+  "stamp inline-flex h-6 items-center gap-1 rounded-badge px-2.5",
   {
     variants: {
       variant: {
-        neutral: "border-border bg-accent text-foreground",
-        accent: "border-transparent bg-primary text-primary-foreground",
-        success: "border-border bg-accent text-foreground",
-        info: "border-border bg-accent text-foreground",
-        warning: "border-warning/20 bg-warning/10 text-warning",
-        outline: "border-subtle text-muted-foreground",
+        neutral: "bg-accent text-foreground",
+        accent: "bg-primary text-primary-foreground",
+        success: "bg-signal/10 text-signal",
+        info: "bg-accent text-foreground",
+        warning: "bg-warning/10 text-warning",
+        outline: "text-muted-foreground shadow-hairline",
       },
     },
     defaultVariants: {

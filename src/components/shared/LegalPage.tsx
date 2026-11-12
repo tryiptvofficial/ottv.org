@@ -9,7 +9,7 @@ import { legalDetails, legalPagesReady, type LegalField } from "@/lib/site-data/
 export function LegalValue({ field, label }: { field: LegalField; label: string }) {
   const value = legalDetails[field].trim();
   if (value) return <>{value}</>;
-  return <mark className="rounded-control bg-accent px-1 text-foreground">[To complete: {label}]</mark>;
+  return <mark className="rounded-sm bg-accent px-1 text-foreground">[To complete: {label}]</mark>;
 }
 
 /** Layout for legal pages. Unfinished pages exist only on the dev server. */
@@ -22,7 +22,7 @@ export function LegalPage({ title, lead, children }: { title: string; lead: stri
         <PageHeader breadcrumb={[{ label: "Home", href: "/" }, { label: title }]} title={title} lead={lead} />
         <div className="prose max-w-narrow">
           {!legalPagesReady && (
-            <p role="note" className="not-prose mb-6 rounded-card border p-4 text-body text-foreground">
+            <p role="note" className="not-prose mb-8 rounded-card bg-card p-4 text-body text-foreground shadow-card md:p-6">
               Draft for the owner and a lawyer. It is not legal advice, and it returns a 404 in production until every
               blank is completed and <code>legalReviewComplete</code> is set.
             </p>

@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 320 200" fill="none">
+  <title>A TV showing a TV guide, with the channel playing in a corner</title>
+  <!-- Original OTTV illustration: generic TV, no channel or programme names (bars stand in for text), no logos.
+       Category chips: sports, films, news, kids. Same palette and line weights as the step and guide drawings. -->
+  <rect width="320" height="200" fill="#ece9e2"/>
+  <ellipse cx="160" cy="190" rx="132" ry="5" fill="#0b0b0a" fill-opacity="0.08"/>
+
+  <!-- TV -->
+  <rect x="22" y="12" width="276" height="160" rx="9" fill="#0b0b0a"/>
+  <rect x="30" y="20" width="260" height="144" rx="4" fill="#141413"/>
+  <path d="M148 172l-6 12h36l-6-12" fill="#ffffff" stroke="#0b0b0a" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="134" y="183" width="52" height="5" rx="2.5" fill="#0b0b0a"/>
+
+  <!-- Now playing: live label, title, details -->
+  <circle cx="44" cy="33" r="2.5" fill="#25f07c"/>
+  <rect x="50" y="31" width="22" height="4" rx="2" fill="#f0ece5" fill-opacity="0.85"/>
+  <rect x="40" y="42" width="84" height="7" rx="3.5" fill="#f0ece5"/>
+  <rect x="40" y="54" width="58" height="5" rx="2.5" fill="#3a3835"/>
+
+  <!-- Categories: sports (selected), films, news, kids -->
+  <rect x="40" y="66" width="30" height="12" rx="6" fill="#25f07c"/>
+  <circle cx="55" cy="72" r="3.3" stroke="#0b0b0a" stroke-width="1.2"/>
+  <path d="M51.9 71.1c1.9.9 4.3.9 6.2 0" stroke="#0b0b0a" stroke-width="1.1" stroke-linecap="round"/>
+  <rect x="74" y="66" width="30" height="12" rx="6" fill="#232220"/>
+  <rect x="85.5" y="69.4" width="7" height="5.2" rx="1" stroke="#f0ece5" stroke-width="1.1"/>
+  <path d="M85.5 71.2h7" stroke="#f0ece5" stroke-width="1.1"/>
+  <rect x="108" y="66" width="30" height="12" rx="6" fill="#232220"/>
+  <path d="M119.5 69.8h7M119.5 72h7M119.5 74.2h4.5" stroke="#f0ece5" stroke-width="1.1" stroke-linecap="round"/>
+  <rect x="142" y="66" width="30" height="12" rx="6" fill="#232220"/>
+  <path d="M157 68.6l.82 2.27 2.41.08-1.9 1.48.67 2.32-2-1.35-2 1.35.67-2.32-1.9-1.48 2.41-.08z" fill="#f0ece5"/>
+
+  <!-- The channel playing, in a corner -->
+  <rect x="196" y="28" width="86" height="54" rx="3" fill="#232220"/>
+  <g transform="translate(239 52) scale(0.34)">
+    <g transform="rotate(45)">
+      <rect x="-26" y="-26" width="52" height="52" rx="12" fill="#25f07c"/>
+    </g>
+    <path d="M-7 -11.5c0-1.5 1.6-2.4 2.9-1.6l16.2 10.3c1.2.8 1.2 2.5 0 3.3L-4.1 10.8c-1.3.8-2.9-.1-2.9-1.6V-11.5z" fill="#0b0b0a"/>
+  </g>
+  <rect x="204" y="73.5" width="70" height="2.5" rx="1.25" fill="#3a3835"/>
+  <rect x="204" y="73.5" width="44" height="2.5" rx="1.25" fill="#25f07c"/>
+  <circle cx="248" cy="74.75" r="2.4" fill="#f0ece5"/>
+
+  <!-- Guide: times across the top -->
+  <g fill="#3a3835">
+    <rect x="64" y="88" width="14" height="3" rx="1.5"/>
+    <rect x="114" y="88" width="14" height="3" rx="1.5"/>
+    <rect x="164" y="88" width="14" height="3" rx="1.5"/>
+    <rect x="214" y="88" width="14" height="3" rx="1.5"/>
+    <rect x="264" y="88" width="14" height="3" rx="1.5"/>
+  </g>
+  <path d="M40 95.5h242" stroke="#232220" stroke-width="1"/>
+
+  <!-- Guide: channels down the side -->
+  <g fill="#232220">
+    <rect x="40" y="100" width="16" height="16" rx="3"/>
+    <rect x="40" y="120" width="16" height="16" rx="3"/>
+    <rect x="40" y="140" width="16" height="16" rx="3"/>
+  </g>
+  <circle cx="48" cy="108" r="3" fill="#f0ece5" fill-opacity="0.7"/>
+  <rect x="44" y="125.5" width="8" height="5" rx="1.5" fill="#f0ece5" fill-opacity="0.7"/>
+  <path d="M44.5 151.5l3.5-7 3.5 7z" fill="#f0ece5" fill-opacity="0.7"/>
+
+  <!-- Guide: programmes across the hours -->
+  <g fill="#232220">
+    <rect x="60" y="100" width="58" height="16" rx="3"/>
+    <rect x="198" y="100" width="84" height="16" rx="3"/>
+    <rect x="60" y="120" width="38" height="16" rx="3"/>
+    <rect x="178" y="120" width="104" height="16" rx="3"/>
+    <rect x="60" y="140" width="76" height="16" rx="3"/>
+    <rect x="234" y="140" width="48" height="16" rx="3"/>
+  </g>
+  <g fill="#3a3835">
+    <rect x="120" y="100" width="76" height="16" rx="3"/>
+    <rect x="138" y="140" width="94" height="16" rx="3"/>
+  </g>
+  <!-- The selected programme -->
+  <rect x="100.75" y="120.75" width="74.5" height="14.5" rx="2.5" fill="#25f07c" fill-opacity="0.16" stroke="#25f07c" stroke-width="1.5"/>
+  <g fill="#f0ece5" fill-opacity="0.55">
+    <rect x="66" y="106" width="34" height="4" rx="2"/>
+    <rect x="204" y="106" width="40" height="4" rx="2"/>
+    <rect x="66" y="146" width="40" height="4" rx="2"/>
+    <rect x="184" y="126" width="44" height="4" rx="2"/>
+    <rect x="240" y="146" width="26" height="4" rx="2"/>
+  </g>
+  <g fill="#f0ece5" fill-opacity="0.9">
+    <rect x="126" y="106" width="40" height="4" rx="2"/>
+    <rect x="144" y="146" width="44" height="4" rx="2"/>
+  </g>
+  <rect x="107" y="126" width="44" height="4" rx="2" fill="#f0ece5"/>
+  <rect x="66" y="126" width="14" height="4" rx="2" fill="#f0ece5" fill-opacity="0.55"/>
+  <!-- Catch-up on an earlier programme -->
+  <path d="M89.8 124.9a3.6 3.6 0 1 1-5.2 1.9" stroke="#25f07c" stroke-width="1.3" stroke-linecap="round"/>
+  <path d="M83.4 124.5l1.2 2.3 2.4-.8" stroke="#25f07c" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- What is on now -->
+  <path d="M150 90v68" stroke="#25f07c" stroke-width="1.5"/>
+  <circle cx="150" cy="89" r="2.4" fill="#25f07c"/>
+
+  <!-- Remote -->
+  <g transform="translate(266 181) rotate(-68)">
+    <rect x="-6" y="-19" width="12" height="38" rx="6" fill="#ffffff" stroke="#0b0b0a" stroke-width="1.8"/>
+    <circle cx="0" cy="-10.5" r="2.6" fill="#25f07c" stroke="#0b0b0a" stroke-width="1"/>
+    <rect x="-2.6" y="-3.5" width="5.2" height="2.2" rx="1.1" fill="#3a3835"/>
+    <rect x="-2.6" y="1" width="5.2" height="2.2" rx="1.1" fill="#3a3835"/>
+    <rect x="-2.6" y="5.5" width="5.2" height="2.2" rx="1.1" fill="#3a3835"/>
+  </g>
+</svg>

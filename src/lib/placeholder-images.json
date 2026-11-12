@@ -2,51 +2,51 @@
   "placeholderImages": [
     {
       "id": "guide-image-troubleshooting",
-      "imageUrl": "https://images.unsplash.com/photo-1578016980868-197203ff4b02?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
-      "imageHint": "ethernet cable",
-      "description": "Featured image for the buffering guide: a grey Ethernet cable and its plug on a plain light background, with no logos or text. Photo by Claudio Schwarz (unsplash.com/photos/w0aMCZIW6Qc), Unsplash License.",
-      "width": 600,
-      "height": 400
+      "imageUrl": "/demo-assets/illustrations/guide-troubleshooting.svg",
+      "imageHint": "router ethernet tv illustration",
+      "description": "Featured image for the buffering guide: an original OTTV drawing of a router wired to a TV with an Ethernet cable, the TV loading a stream, and a restart symbol. Generic devices with no manufacturer marks.",
+      "width": 1280,
+      "height": 800
     },
     {
       "id": "guide-image-ios",
-      "imageUrl": "https://images.unsplash.com/photo-1585060544812-6b45742d762f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
-      "imageHint": "smartphone blank screen",
-      "description": "Featured image for the iPhone and iPad guide: a smartphone with a blank white screen on a light wooden table, no logos or apps on screen. Photo by Vojtech Bruzek (unsplash.com/photos/J82GxqnwKSs), Unsplash License.",
-      "width": 600,
-      "height": 400
+      "imageUrl": "/demo-assets/illustrations/guide-ios.svg",
+      "imageHint": "tablet phone playlist illustration",
+      "description": "Featured image for the iPhone and iPad guide: an original OTTV drawing of a tablet with a form for adding a playlist link, beside a phone playing a channel. Generic devices with no manufacturer marks.",
+      "width": 1280,
+      "height": 800
     },
     {
       "id": "guide-image-windows",
-      "imageUrl": "https://images.unsplash.com/photo-1624571395775-253d9666612b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3aW5kb3dzJTIwcGN8ZW58MHx8fHwxNzYzMzk2ODk2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "windows pc",
-      "description": "Featured image for the Windows guide: a laptop showing the Windows 11 desktop, on a person's lap. Photo by the Unsplash account Windows (unsplash.com/photos/AigsWJmvoEo), Unsplash License.",
-      "width": 600,
-      "height": 400
+      "imageUrl": "/demo-assets/illustrations/guide-windows.svg",
+      "imageHint": "laptop media player illustration",
+      "description": "Featured image for the Windows guide: an original OTTV drawing of a laptop with a media player window, a playlist link pasted into its address field and the pointer on Play. Generic laptop and window, no operating-system or app marks.",
+      "width": 1280,
+      "height": 800
     },
     {
       "id": "guide-image-macos",
-      "imageUrl": "https://images.unsplash.com/photo-1627660163617-72878fc413e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtYWNvcyUyMGxhcHRvcHxlbnwwfHx8fDE3NjMzOTY4OTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "macos laptop",
-      "description": "Featured image for the macOS guide: a MacBook showing the macOS Big Sur wallpaper in a dark room. Photo by Guillaume Coupy (unsplash.com/photos/ZJC8ZVLzrVM), Unsplash License.",
-      "width": 600,
-      "height": 400
+      "imageUrl": "/demo-assets/illustrations/guide-macos.svg",
+      "imageHint": "laptop sign-in illustration",
+      "description": "Featured image for the macOS guide: an original OTTV drawing of a laptop showing a player app's sign-in form for a username, password and server address. Generic laptop and window, no operating-system or app marks.",
+      "width": 1280,
+      "height": 800
     },
     {
       "id": "guide-image-samsung-tv",
-      "imageUrl": "https://images.unsplash.com/photo-1761330439671-a7f20c285c5e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
-      "imageHint": "tv living room",
-      "description": "Featured image for the Samsung TV guide: a wall-mounted TV, switched off, in a bright modern living room, with no logos or content on screen. Photo by Caroline Badran (unsplash.com/photos/prIf3TI-U54), Unsplash License.",
-      "width": 600,
-      "height": 400
+      "imageUrl": "/demo-assets/illustrations/guide-samsung-tv.svg",
+      "imageHint": "smart tv phone playlist illustration",
+      "description": "Featured image for the Samsung TV guide: an original OTTV drawing of a smart TV showing a player app with its MAC address, and a phone sending it the playlist. Generic devices with no manufacturer marks.",
+      "width": 1280,
+      "height": 800
     },
     {
       "id": "guide-image-apple-tv",
-      "imageUrl": "https://images.unsplash.com/photo-1780042731953-15dd1b3b5f00?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
-      "imageHint": "tv minimalist room",
-      "description": "Featured image for the Apple TV guide: a TV, switched off, on a white cabinet in a minimalist room, with no logos or content on screen. Photo by Margo Evardson (unsplash.com/photos/HWAyAtxbDVk), Unsplash License.",
-      "width": 600,
-      "height": 400
+      "imageUrl": "/demo-assets/illustrations/guide-apple-tv.svg",
+      "imageHint": "tv streaming box illustration",
+      "description": "Featured image for the Apple TV guide: an original OTTV drawing of a TV with a player app's add-playlist screen, a streaming box and a remote. Generic devices with no manufacturer marks.",
+      "width": 1280,
+      "height": 800
     }
   ]
 }

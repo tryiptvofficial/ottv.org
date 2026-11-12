@@ -31,10 +31,10 @@ export default function Error({
         </Lead>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <Button size="lg" onClick={reset}>
-            Try again
+            Try Again
           </Button>
           <Button asChild size="lg" variant="secondary">
-            <Link href="/">Go to homepage</Link>
+            <Link href="/">Go to Homepage</Link>
           </Button>
         </div>
         {error.digest && (

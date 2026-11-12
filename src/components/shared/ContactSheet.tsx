@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useConsentPanelOpen } from "@/components/shared/ConsentManager";
 import {
   Sheet,
   SheetContent,
@@ -45,7 +46,10 @@ function useAvoidZonesInView() {
 
 export function ContactSheet() {
   const [isOpen, setIsOpen] = useState(false);
-  const hidden = useAvoidZonesInView() && !isOpen;
+  // It also steps aside while the analytics choice is open: from 640px both use the bottom-right corner.
+  const avoidZonesInView = useAvoidZonesInView();
+  const consentOpen = useConsentPanelOpen();
+  const hidden = (avoidZonesInView || consentOpen) && !isOpen;
 
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>

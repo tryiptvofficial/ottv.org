@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 320 200" fill="none">
+  <title>A laptop with a media player window: a playlist link pasted into the address field, the pointer on Play</title>
+  <!-- Original OTTV illustration for the Windows guide: a generic laptop and window, no operating-system or app marks. Ink #0b0b0a, green #25f07c. -->
+  <rect width="320" height="200" fill="#ece9e2"/>
+  <ellipse cx="160" cy="183" rx="115" ry="6" fill="#0b0b0a" fill-opacity="0.08"/>
+  <!-- The top-left corner stays empty for the category tag that cards place there. -->
+  <g transform="translate(16 25.8) scale(0.9)">
+    <rect x="56" y="18" width="208" height="134" rx="8" fill="#0b0b0a"/>
+    <rect x="64" y="26" width="192" height="118" rx="4" fill="#141413"/>
+
+    <!-- The player's open-stream window: title bar with window controls on the right -->
+    <rect x="78" y="38" width="164" height="94" rx="5" fill="#e3ded5"/>
+    <path d="M78 50h164v77a5 5 0 0 1-5 5H83a5 5 0 0 1-5-5z" fill="#f0ece5"/>
+    <rect x="85" y="42.5" width="40" height="3" rx="1.5" fill="#0b0b0a" fill-opacity="0.55"/>
+    <path d="M210 44.5h5M231 41.5l5 5m0-5l-5 5" stroke="#0b0b0a" stroke-width="1.2" stroke-linecap="round"/>
+    <rect x="220" y="41.5" width="5" height="5" rx="0.5" stroke="#0b0b0a" stroke-width="1.2"/>
+
+    <!-- Address field with the pasted playlist link -->
+    <rect x="86" y="58" width="46" height="3" rx="1.5" fill="#8c877f"/>
+    <rect x="86" y="64" width="148" height="14" rx="3" fill="#ffffff" stroke="#0b0b0a" stroke-width="1.2"/>
+    <rect x="92" y="69.5" width="100" height="3" rx="1.5" fill="#0b0b0a" fill-opacity="0.75"/>
+    <path d="M196 67.5v7" stroke="#0b0b0a" stroke-width="1.2" stroke-linecap="round"/>
+    <rect x="86" y="86" width="92" height="3" rx="1.5" fill="#8c877f"/>
+
+    <!-- Cancel and Play, with the pointer on Play -->
+    <rect x="156" y="108" width="36" height="14" rx="3" fill="#ffffff" stroke="#0b0b0a" stroke-width="1.2"/>
+    <rect x="164" y="113.5" width="20" height="3" rx="1.5" fill="#0b0b0a" fill-opacity="0.6"/>
+    <rect x="198" y="108" width="36" height="14" rx="3" fill="#25f07c" stroke="#0b0b0a" stroke-width="1.2"/>
+    <path d="M213 111.5v7l6-3.5z" fill="#0b0b0a"/>
+    <path d="M226 117v11l3-2.6 2 4.6 2-.9-2-4.5 4-.3z" fill="#ffffff" stroke="#0b0b0a" stroke-width="1.1" stroke-linejoin="round"/>
+
+    <!-- Laptop base -->
+    <path d="M38 152h244l-12 20H50z" fill="#ffffff" stroke="#0b0b0a" stroke-width="2" stroke-linejoin="round"/>
+    <rect x="140" y="155" width="40" height="4" rx="2" fill="#e3ded5"/>
+  </g>
+</svg>

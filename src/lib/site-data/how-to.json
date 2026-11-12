@@ -51,7 +51,7 @@
   },
   {
     "id": "troubleshooting",
-    "imageAlt": "Grey Ethernet cable and plug on a light background",
+    "imageAlt": "Drawing of a router wired to a TV with an Ethernet cable while the TV loads a stream",
     "deviceName": "",
     "metaDescription": "Fix IPTV buffering: check for at least 25 Mbps, restart your device and router, switch to wired Ethernet, test another connection and clear the app cache.",
     "title": "How Can I Fix Common IPTV Buffering Issues?",
@@ -76,7 +76,7 @@
   {
     "id": "ios",
     "sources": [{"label": "GSE SMART IPTV PRO on the App Store", "url": "https://apps.apple.com/us/app/gse-smart-iptv-pro/id1055456071"}],
-    "imageAlt": "Smartphone with a blank screen on a light wooden table",
+    "imageAlt": "Drawing of a tablet with a form for adding a playlist link, beside a phone playing a channel",
     "deviceName": "iPhone or iPad",
     "metaDescription": "Set up IPTV on an iPhone or iPad: install a player such as GSE SMART IPTV PRO (paid) from the App Store, then add a remote playlist with your M3U URL.",
     "title": "How Do I Set Up IPTV on an iPhone or iPad?",
@@ -101,7 +101,7 @@
   {
     "id": "windows",
     "sources": [{"label": "VideoLAN VLC", "url": "https://www.videolan.org/vlc/"}],
-    "imageAlt": "Person typing on a Windows laptop",
+    "imageAlt": "Drawing of a laptop with a media player window, a playlist link pasted into its address field",
     "deviceName": "Windows PC",
     "metaDescription": "Watch IPTV on a Windows PC with the free VLC Media Player: open its Network Stream feature and paste in your M3U subscription URL.",
     "title": "How Can I Watch IPTV on a Windows PC?",
@@ -126,7 +126,7 @@
   {
     "id": "macos",
     "sources": [{"label": "Apple: opening apps from unknown developers", "url": "https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unknown-developer-mh40616/mac"}],
-    "imageAlt": "MacBook with a colorful wallpaper on a dark surface",
+    "imageAlt": "Drawing of a laptop showing a player app's sign-in form for a username, password and server address",
     "deviceName": "Mac",
     "metaDescription": "Set up IPTV on a Mac with a dedicated app like IPTV Smarters Player, which adds a TV guide (EPG) and on-demand libraries that VLC on Mac lacks.",
     "title": "What's the Best Way to Set Up IPTV on macOS?",
@@ -158,7 +158,7 @@
   {
     "id": "samsung-tv",
     "sources": [{"label": "Samsung app installation", "url": "https://www.samsung.com/ca/support/tv-audio-video/install-an-app-on-your-samsung-tv/"}, {"label": "SET IPTV playlists", "url": "https://setsysteme.com/set.app?lang=en"}, {"label": "NET IPTV upload", "url": "https://netiptv.eu/upload"}],
-    "imageAlt": "Wall-mounted TV, switched off, in a bright living room",
+    "imageAlt": "Drawing of a smart TV showing a player app with its MAC address, and a phone sending it the playlist",
     "deviceName": "Samsung Smart TV",
     "metaDescription": "Install IPTV on a Samsung Smart TV: add SET IPTV or NET IPTV from Samsung's app store, then upload your M3U playlist using your TV's MAC address.",
     "title": "How Can I Install IPTV on a Samsung Smart TV?",
@@ -208,7 +208,7 @@
   {
     "id": "apple-tv",
     "sources": [{"label": "iPlayTV on the App Store", "url": "https://apps.apple.com/us/app/iplaytv-iptv-m3u-player/id1072226801"}, {"label": "GSE SMART IPTV PRO on the App Store", "url": "https://apps.apple.com/us/app/gse-smart-iptv-pro/id1055456071"}],
-    "imageAlt": "TV switched off on a white cabinet in a minimalist room",
+    "imageAlt": "Drawing of a TV with a player app's add-playlist screen, a streaming box and a remote",
     "deviceName": "Apple TV",
     "metaDescription": "Set up IPTV on an Apple TV: get a paid player such as iPlayTV or GSE SMART IPTV PRO from the App Store, then add your playlist.",
     "title": "How Do I Set Up IPTV on an Apple TV?",

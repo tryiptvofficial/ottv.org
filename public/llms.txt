@@ -24,6 +24,7 @@ Paid plans come with a 7-day money-back guarantee. A standard plan allows one st
 
 ## Setup guides
 
+- [All setup guides](https://www.ottv.org/devices): every guide below on one page, grouped by device
 - [Amazon Fire TV Stick, Fire OS models only](https://www.ottv.org/devices/fire-tv)
 - [Samsung smart TV](https://www.ottv.org/devices/samsung-tv)
 - [LG smart TV](https://www.ottv.org/devices/lg-tv)

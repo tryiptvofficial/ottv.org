@@ -2,7 +2,7 @@ import { productFacts } from "@/lib/site-data/product-facts";
 
 // Date of the last real content change on the core pages (home, pricing, FAQ, contact, free trial). Update by
 // hand only when that content changes, never from the build, so the visible date, schema and sitemap stay truthful.
-export const siteContentUpdatedAt = "2026-11-10";
+export const siteContentUpdatedAt = "2026-11-11";
 
 export const siteConfig = {
   name: "OTTV",

@@ -49,6 +49,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: 'monthly',
         priority: 0.8,
     },
+    {
+      // The setup-guides hub: lists every guide below.
+      url: `${baseUrl}/devices`,
+      lastModified: new Date(siteContentUpdatedAt),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
   ];
 
   const legalPages: MetadataRoute.Sitemap = legalLinks.map((link) => ({

@@ -8,74 +8,132 @@
  */
 @layer base {
   :root {
-    /* Primitives: the Graphite palette. */
-    --true-black: 0 0% 0%; /* #000000 */
-    --obsidian-canvas: 0 0% 3.9%; /* #0a0a0a */
-    --charcoal-surface: 0 0% 9%; /* #171717 */
-    --graphite-edge: 0 0% 14.9%; /* #262626 */
-    --steel-border: 0 0% 27.5%; /* #464646 */
-    --ash-grey: 0 0% 45.1%; /* #737373 */
-    --fog: 0 0% 63.1%; /* #a1a1a1 */
-    --paper-white: 0 0% 89.8%; /* #e5e5e5 */
-    --cloud-white: 0 0% 98%; /* #fafafa */
-    --signal-orange: 25 100% 60%; /* #ff8833 */
-    --danger-hue: 358 75.1% 59.0%; /* #e5484d */
-    --warning-hue: 37 91.3% 55.1%; /* #f5a524 */
-
-    /* Semantic: components depend on these, not on primitives. */
-    --background: var(--obsidian-canvas);
-    --foreground: var(--cloud-white);
-    --card: var(--obsidian-canvas);
-    --card-foreground: var(--cloud-white);
-    --popover: var(--charcoal-surface);
-    --popover-foreground: var(--cloud-white);
-    --recessed: var(--charcoal-surface);
-    --secondary: var(--graphite-edge);
-    --secondary-foreground: var(--cloud-white);
-    --muted: var(--charcoal-surface);
-    --muted-foreground: var(--fog);
-    /* Fog, not Ash: Ash is under 4.5:1 on the canvas, so it is kept for decoration and focus rings. */
-    --subtle: var(--fog);
-    --placeholder: var(--fog);
-    --accent: var(--charcoal-surface);
-    --accent-foreground: var(--cloud-white);
-    --border: var(--graphite-edge);
-    --input: var(--steel-border);
-    --steel: var(--steel-border);
-    --deep: var(--true-black);
-    --ring: var(--ash-grey);
-    --brand: var(--cloud-white);
-    --signal: var(--signal-orange);
-    --primary: var(--paper-white);
-    --primary-foreground: var(--charcoal-surface);
-    --destructive: var(--danger-hue);
-    --destructive-foreground: var(--cloud-white);
-    --info: var(--fog);
-    --success: var(--cloud-white);
-    --warning: var(--warning-hue);
-    --chart-1: var(--cloud-white);
-    --chart-2: var(--fog);
-    --chart-3: var(--ash-grey);
-    --chart-4: var(--steel-border);
-    --chart-5: var(--graphite-edge);
-    --radius: 0.625rem;
+    /* Primitives: black, warm neutrals and one green. */
+    --black: 0 0% 0%; /* #000000, the page */
+    --char: 0 0% 3.5%; /* #090909, cards on black */
+    --char-raised: 60 2.6% 7.6%; /* #141413, hover fills on black */
+    --char-line: 40 4.5% 13.1%; /* #232220, borders on black */
+    --stone-dark: 35 5.9% 39.6%; /* #6b665f, field edges on black (3.7:1) */
+    --ash-warm: 36.9 5.3% 52.4%; /* #8c877f, captions on black */
+    --fog-warm: 36.9 7% 63.3%; /* #a8a39b, reading text on black */
+    --bone: 38.2 26.8% 92%; /* #f0ece5, text on black */
+    --linen: 42.9 25.9% 94.7%; /* #f5f3ee, light bands */
+    --linen-raised: 42 20.8% 90.6%; /* #ece9e2, hover fills on light */
+    --linen-line: 38.6 20% 86.3%; /* #e3ded5, borders on light */
+    --pure-white: 0 0% 100%; /* #ffffff, cards on light */
+    --umber: 33.3 5.5% 32.4%; /* #57534e, reading text on light */
+    --taupe: 35 5.9% 39.6%; /* #6b665f, captions on light */
+    --ink: 60 4.8% 4.1%; /* #0b0b0a, text on light */
+    --green: 145.7 87.1% 54.3%; /* #25f07c, the accent: actions, links and checks on black */
+    --green-deep: 147.6 86% 22.4%; /* #086a35, the accent as text on light bands (6:1) */
+    --danger-on-dark: 0 83.6% 68.8%; /* #f26d6d */
+    --danger-on-light: 0 66.4% 46.7%; /* #c62828 */
 
     /* Motion */
     --duration-fast: 150ms;
     --duration-standard: 200ms;
     --duration-slow: 350ms;
     --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --radius: 0.625rem;
   }
 
-  /* The canvas never changes colour, so a "light" band is only a marker for section grouping. */
-  .tone-light {
+  /* Dark semantic tokens: the page and every dark band. Components depend on these, not on primitives. */
+  :root,
+  .band-ink,
+  .surface-invert {
+    --background: var(--black);
+    --foreground: var(--bone);
+    --card: var(--char);
+    --card-foreground: var(--bone);
+    --popover: var(--char);
+    --popover-foreground: var(--bone);
+    --recessed: var(--char-raised);
+    --secondary: var(--char-raised);
+    --secondary-foreground: var(--bone);
+    --muted: var(--char-raised);
+    --muted-foreground: var(--fog-warm);
+    --subtle: var(--ash-warm);
+    --placeholder: var(--ash-warm);
+    --accent: var(--char-raised);
+    --accent-foreground: var(--bone);
+    --border: var(--char-line);
+    --input: var(--stone-dark);
+    --steel: var(--stone-dark);
+    --deep: var(--black);
+    --ring: var(--green);
+    --brand: var(--green);
+    --signal: var(--green);
+    --primary: var(--green);
+    --primary-foreground: var(--black);
+    --destructive: var(--danger-on-dark);
+    --destructive-foreground: var(--black);
+    --info: var(--ash-warm);
+    --success: var(--green);
+    --warning: 38 92% 60%;
+    --chart-1: var(--green);
+    --chart-2: var(--bone);
+    --chart-3: var(--fog-warm);
+    --chart-4: var(--ash-warm);
+    --chart-5: var(--char-line);
+
+    /* Soft depth: an elegant border plus a long, faint shadow. The glow marks one recommended element. */
+    --shadow-card: 0 0 0 1px hsl(var(--char-line)), 0 24px 48px -32px rgb(0 0 0 / 0.9);
+    --shadow-hairline: 0 0 0 1px hsl(var(--char-line));
+    --shadow-glow: 0 0 0 1px hsl(var(--green) / 0.6), 0 0 36px -6px hsl(var(--green) / 0.32);
+    color-scheme: dark;
+  }
+
+  /* Light semantic tokens: warm off-white bands, and any card that returns to paper on black. */
+  .band-light,
+  .surface-paper {
+    --background: var(--linen);
+    --foreground: var(--ink);
+    --card: var(--pure-white);
+    --card-foreground: var(--ink);
+    --popover: var(--pure-white);
+    --popover-foreground: var(--ink);
+    --recessed: var(--linen-raised);
+    --secondary: var(--linen-raised);
+    --secondary-foreground: var(--ink);
+    --muted: var(--linen-raised);
+    --muted-foreground: var(--umber);
+    --subtle: var(--taupe);
+    --placeholder: var(--taupe);
+    --accent: var(--linen-raised);
+    --accent-foreground: var(--ink);
+    --border: var(--linen-line);
+    --input: var(--ash-warm);
+    --steel: var(--ash-warm);
+    --deep: var(--linen);
+    --ring: var(--green-deep);
+    --brand: var(--ink);
+    /* The main button turns ink here: green on off-white stands out only 1.4:1 from the band. */
+    --primary: var(--ink);
+    --primary-foreground: var(--linen);
+    --signal: var(--green-deep);
+    --success: var(--green-deep);
+    --destructive: var(--danger-on-light);
+    --destructive-foreground: var(--pure-white);
+    --shadow-card: 0 0 0 1px hsl(var(--linen-line)), 0 18px 36px -26px rgb(28 25 23 / 0.28);
+    --shadow-hairline: 0 0 0 1px hsl(var(--linen-line));
+    color-scheme: light;
+  }
+
+  .band-ink,
+  .band-light {
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
   }
-
-  /* The highlighted card: one level up from the canvas, with a stronger edge. */
+  .surface-paper,
   .surface-invert {
-    background-color: hsl(var(--charcoal-surface));
+    background-color: hsl(var(--card));
+    color: hsl(var(--foreground));
+  }
+
+  /* Kept for older call sites: a band marker with no colour of its own. */
+  .tone-light {
+    background-color: hsl(var(--background));
     color: hsl(var(--foreground));
   }
 }
@@ -85,13 +143,13 @@
     @apply border-border;
   }
   html {
-    color-scheme: dark;
-    scroll-padding-top: 6rem;
-    scrollbar-color: hsl(var(--graphite-edge)) hsl(var(--obsidian-canvas));
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    scrollbar-color: hsl(var(--stone-dark)) hsl(var(--black));
   }
   body {
     @apply bg-background text-body text-foreground;
-    font-feature-settings: "clig" 0, "liga" 0;
+    font-feature-settings: "calt" 0, "rlig" 1, "ss11" 1;
   }
   h1, h2, h3, h4 {
     text-wrap: balance;
@@ -100,13 +158,13 @@
     text-wrap: pretty;
   }
   ::selection {
-    background: hsl(var(--paper-white));
-    color: hsl(var(--charcoal-surface));
+    background: hsl(var(--green));
+    color: hsl(var(--black));
   }
   input,
   textarea {
-    caret-color: hsl(var(--foreground));
-    accent-color: hsl(var(--paper-white));
+    caret-color: hsl(var(--signal));
+    accent-color: hsl(var(--foreground));
   }
 
   /* Every animation and transition stops for people who ask for less motion */
@@ -122,18 +180,25 @@
   }
 }
 
-/* Long-form reading style for guides and generated HTML. `.not-prose` opts a block out. */
 @layer components {
-  /* Inline text link: Signal Orange, the only warm colour in reading text. The underline stays because
-     orange and Fog are too close in lightness to separate a link by colour alone. */
-  .text-link {
-    @apply rounded-control text-signal underline decoration-signal/40 underline-offset-4 transition-colors duration-fast hover:decoration-signal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring;
+  /* The mono stamp: Geist Mono 11px uppercase for labels, metadata, step numbers and table heads.
+     Never for sentences, and never as a kicker above a heading. */
+  .stamp {
+    @apply font-mono text-eyebrow font-medium uppercase;
   }
+
+  /* Inline text link: Terminal Green, the one colour in reading text. The underline stays, because green
+     and Charcoal are too close in lightness to tell a link apart by colour alone. */
+  .text-link {
+    @apply rounded-sm text-signal underline decoration-signal/40 underline-offset-4 transition-colors duration-fast hover:decoration-signal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+
+  /* Long-form reading style for guides and generated HTML. `.not-prose` opts a block out. */
   .prose {
     @apply text-body text-muted-foreground;
   }
   .prose :where(h2):not(:where(.not-prose, .not-prose *)) {
-    @apply mb-4 mt-12 text-balance text-heading text-foreground;
+    @apply mb-4 mt-14 text-balance text-heading-md text-foreground;
   }
   .prose :where(h3):not(:where(.not-prose, .not-prose *)) {
     @apply mb-2 mt-8 text-balance text-subheading text-foreground;
@@ -142,10 +207,10 @@
     @apply my-4;
   }
   .prose :where(ul):not(:where(.not-prose, .not-prose *)) {
-    @apply list-disc space-y-2 pl-6 marker:text-subtle;
+    @apply list-disc space-y-2 pl-6 marker:text-foreground;
   }
   .prose :where(ol):not(:where(.not-prose, .not-prose *)) {
-    @apply list-decimal space-y-2 pl-6 marker:text-subtle;
+    @apply list-decimal space-y-2 pl-6 marker:font-mono marker:text-caption marker:text-foreground;
   }
   .prose :where(strong):not(:where(.not-prose, .not-prose *)) {
     @apply font-medium text-foreground;
@@ -154,10 +219,10 @@
     @apply text-link;
   }
   .prose :where(blockquote):not(:where(.not-prose, .not-prose *)) {
-    @apply border-l-2 border-foreground/30 pl-4 text-foreground;
+    @apply border-l border-foreground pl-4 text-foreground;
   }
   .prose :where(code):not(:where(.not-prose, .not-prose *)) {
-    @apply rounded-badge bg-recessed px-1.5 py-0.5 font-mono text-meta text-foreground;
+    @apply rounded-sm bg-recessed px-1.5 py-0.5 font-mono text-caption text-foreground;
   }
   .prose :where(table):not(:where(.not-prose, .not-prose *)) {
     @apply w-full text-left text-caption;
@@ -166,7 +231,7 @@
     @apply border-b px-3 py-2;
   }
   .prose :where(th):not(:where(.not-prose, .not-prose *)) {
-    @apply font-medium text-foreground;
+    @apply font-mono text-eyebrow font-normal uppercase text-foreground;
   }
   .prose > :first-child {
     @apply mt-0;
@@ -175,23 +240,6 @@
 
 /* Named one-off recipes. Pages use these names instead of arbitrary values. */
 @layer utilities {
-  /* Hero height: 76% of the small viewport (stable under mobile toolbars, 76vh fallback),
-     a fixed 640px from 768 up, and no minimum on short landscape screens */
-  .min-h-hero {
-    min-height: 76vh;
-    min-height: 76svh;
-  }
-  @media (min-width: 768px) {
-    .min-h-hero {
-      min-height: 640px;
-    }
-  }
-  @media (max-height: 500px) {
-    .min-h-hero {
-      min-height: 0;
-    }
-  }
-
   /* Expands a small control's hit area to 44px without changing its layout */
   .touch-target {
     position: relative;
@@ -217,45 +265,32 @@
     transform: translate(-50%, -50%);
   }
 
-  .mask-radial {
-    mask-image: radial-gradient(ellipse at center, black, transparent 70%);
-  }
   .mask-fade-b {
-    mask-image: linear-gradient(to bottom, black 60%, transparent);
-  }
-  .mask-fade-x {
-    mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
-  }
-
-  @keyframes marquee {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      /* Translate exactly half the strip width + half the gap so the loop is seamless */
-      transform: translateX(calc(-50% - 0.5rem));
-    }
-  }
-  .animate-marquee {
-    animation: marquee 40s linear infinite;
-  }
-  .animate-marquee-reverse {
-    animation: marquee 40s linear infinite reverse;
+    mask-image: linear-gradient(to bottom, black 55%, transparent);
   }
 }
 
-/* The one moving moment: points of light travelling along the hero artwork. */
-.polygon-trace {
-  stroke-dasharray: 0.12 0.88;
-  animation: polygon-trace 11s linear infinite;
+/* Subtle scroll reveal for cards below the fold, in browsers with scroll-driven animations. Elsewhere, and
+   for anyone who asks for less motion, content simply shows. Content never starts fully invisible. */
+@supports (animation-timeline: view()) {
+  .reveal {
+    animation: reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 40%;
+  }
 }
-.polygon-trace-reverse {
-  animation-direction: reverse;
-  animation-duration: 15s;
-}
-@keyframes polygon-trace {
-  to { stroke-dashoffset: -1; }
+@keyframes reveal {
+  from {
+    opacity: 0.35;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
-  .polygon-trace { display: none; }
+  .reveal {
+    animation: none !important;
+  }
 }

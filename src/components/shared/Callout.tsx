@@ -16,8 +16,8 @@ interface CalloutProps {
 }
 
 /**
- * The closing call to action or guarantee panel: the one inverted surface on a page.
- * Use once per page at most.
+ * The closing call to action or guarantee panel: a black card, so it reads on black and on off-white bands.
+ * Use once per page at most. It does not glow: the featured plan is the one element that does.
  */
 export function Callout({ title, children, action, level = 2, size = "default", backdrop, className }: CalloutProps) {
   const large = size === "large";
@@ -25,14 +25,14 @@ export function Callout({ title, children, action, level = 2, size = "default", 
     <Card
       variant="accent"
       size={large ? "large" : "default"}
-      className={cn("overflow-hidden text-center", large ? "px-6 py-16 sm:px-12 sm:py-20" : "p-6 sm:p-8 md:p-12", className)}
+      className={cn("overflow-clip text-center", large ? "px-6 py-16 sm:px-12 md:py-24" : "p-6 sm:p-10 md:p-12", className)}
     >
       {backdrop}
-      <Heading level={level} size="serif" className="relative mx-auto max-w-2xl">
+      <Heading level={level} size={large ? "heading-lg" : "heading-md"} className="relative mx-auto max-w-3xl">
         {title}
       </Heading>
-      {children && <Lead className="relative mx-auto mt-4 max-w-2xl">{children}</Lead>}
-      {action && <div className="relative mt-8 flex flex-wrap justify-center gap-2">{action}</div>}
+      {children && <Lead className="relative mx-auto mt-4 max-w-2xl text-body">{children}</Lead>}
+      {action && <div className="relative mt-8 flex flex-wrap justify-center gap-3">{action}</div>}
     </Card>
   );
 }

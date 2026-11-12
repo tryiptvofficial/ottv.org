@@ -1,0 +1,128 @@
+{
+  "about": "Every image on the OTTV homepage. All are original SVG illustrations made for OTTV and stored in this folder; the homepage uses no stock photos.",
+  "updated": "2026-11-11",
+  "photosRemoved": {
+    "note": "The hero's four Unsplash photos (hero-cinema, hero-remote, hero-stadium, hero-popcorn) were replaced on 2026-11-11 by the original drawing hero-order-flow."
+  },
+  "guideImages": {
+    "note": "The six setup-guide images (homepage guide cards and guide pages) are original drawings listed below as guide-*. src/lib/placeholder-images.json points each guide to its drawing. They replaced stock photos on 2026-11-11, after logos were found in three of them.",
+    "ids": [
+      "guide-image-troubleshooting",
+      "guide-image-ios",
+      "guide-image-windows",
+      "guide-image-macos",
+      "guide-image-samsung-tv",
+      "guide-image-apple-tv"
+    ]
+  },
+  "illustrations": [
+    {
+      "id": "hero-order-flow",
+      "usedIn": "Homepage hero",
+      "src": "/demo-assets/illustrations/hero-order-flow.svg",
+      "width": 1440,
+      "height": 1440,
+      "alt": "Drawing of a phone chat with OTTV, where an order is sent and the reply holds the login details, next to a TV playing a stream",
+      "license": "Original illustration made for OTTV"
+    },
+    {
+      "id": "explainer-tv-guide",
+      "usedIn": "IPTV Service Explained (homepage)",
+      "src": "/demo-assets/illustrations/explainer-tv-guide.svg",
+      "width": 1280,
+      "height": 800,
+      "alt": "Drawing of a TV showing a TV guide: channels down the side, programmes across the hours, a marker for what is on now, a catch-up symbol on an earlier programme, and the channel playing in a corner",
+      "license": "Original illustration made for OTTV"
+    },
+    {
+      "id": "guide-samsung-tv",
+      "usedIn": "Homepage setup guides and the Samsung TV guide",
+      "src": "/demo-assets/illustrations/guide-samsung-tv.svg",
+      "width": 1280,
+      "height": 800,
+      "alt": "Drawing of a smart TV showing a player app with its MAC address, and a phone sending it the playlist",
+      "license": "Original illustration made for OTTV"
+    },
+    {
+      "id": "guide-apple-tv",
+      "usedIn": "Homepage setup guides and the Apple TV guide",
+      "src": "/demo-assets/illustrations/guide-apple-tv.svg",
+      "width": 1280,
+      "height": 800,
+      "alt": "Drawing of a TV with a player app's add-playlist screen, a streaming box and a remote",
+      "license": "Original illustration made for OTTV"
+    },
+    {
+      "id": "guide-ios",
+      "usedIn": "Homepage setup guides and the iPhone and iPad guide",
+      "src": "/demo-assets/illustrations/guide-ios.svg",
+      "width": 1280,
+      "height": 800,
+      "alt": "Drawing of a tablet with a form for adding a playlist link, beside a phone playing a channel",
+      "license": "Original illustration made for OTTV"
+    },
+    {
+      "id": "guide-windows",
+      "usedIn": "Homepage setup guides and the Windows guide",
+      "src": "/demo-assets/illustrations/guide-windows.svg",
+      "width": 1280,
+      "height": 800,
+      "alt": "Drawing of a laptop with a media player window, a playlist link pasted into its address field",
+      "license": "Original illustration made for OTTV"
+    },
+    {
+      "id": "guide-macos",
+      "usedIn": "Homepage setup guides and the macOS guide",
+      "src": "/demo-assets/illustrations/guide-macos.svg",
+      "width": 1280,
+      "height": 800,
+      "alt": "Drawing of a laptop showing a player app's sign-in form for a username, password and server address",
+      "license": "Original illustration made for OTTV"
+    },
+    {
+      "id": "guide-troubleshooting",
+      "usedIn": "Homepage setup guides and the buffering guide",
+      "src": "/demo-assets/illustrations/guide-troubleshooting.svg",
+      "width": 1280,
+      "height": 800,
+      "alt": "Drawing of a router wired to a TV with an Ethernet cable while the TV loads a stream",
+      "license": "Original illustration made for OTTV"
+    },
+    {
+      "id": "step-choose-plan",
+      "usedIn": "How it works, step 1",
+      "src": "/demo-assets/illustrations/step-choose-plan.svg",
+      "width": 320,
+      "height": 200,
+      "alt": "",
+      "license": "Original illustration made for OTTV"
+    },
+    {
+      "id": "step-order-chat",
+      "usedIn": "How it works, step 2",
+      "src": "/demo-assets/illustrations/step-order-chat.svg",
+      "width": 320,
+      "height": 200,
+      "alt": "",
+      "license": "Original illustration made for OTTV"
+    },
+    {
+      "id": "step-start-watching",
+      "usedIn": "How it works, step 3",
+      "src": "/demo-assets/illustrations/step-start-watching.svg",
+      "width": 320,
+      "height": 200,
+      "alt": "",
+      "license": "Original illustration made for OTTV"
+    },
+    {
+      "id": "devices-lineup",
+      "usedIn": "Free trial promotion band",
+      "src": "/demo-assets/illustrations/devices-lineup.svg",
+      "width": 640,
+      "height": 420,
+      "alt": "A TV, laptop, tablet and phone, each showing a TV guide",
+      "license": "Original illustration made for OTTV"
+    }
+  ]
+}

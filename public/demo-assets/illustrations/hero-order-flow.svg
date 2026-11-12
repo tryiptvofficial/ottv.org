@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1440" viewBox="0 0 480 480" fill="none">
+  <title>Ordering OTTV: an order sent in a chat, the login details in the reply, and a TV playing</title>
+  <!-- Original OTTV illustration for the homepage hero: a generic chat with no messaging-app branding and generic
+       devices with no manufacturer marks. Same palette and line weights as the step and guide drawings. -->
+  <rect width="480" height="480" fill="#ece9e2"/>
+  <ellipse cx="244" cy="452" rx="200" ry="9" fill="#0b0b0a" fill-opacity="0.08"/>
+
+  <!-- The TV, playing -->
+  <rect x="170" y="52" width="272" height="172" rx="14" fill="#0b0b0a"/>
+  <rect x="182" y="64" width="248" height="148" rx="7" fill="#141413"/>
+  <circle cx="200" cy="82" r="4" fill="#25f07c"/>
+  <rect x="210" y="79" width="40" height="6" rx="3" fill="#f0ece5" fill-opacity="0.85"/>
+  <g transform="translate(306 128) scale(0.72)">
+    <g transform="rotate(45)">
+      <rect x="-26" y="-26" width="52" height="52" rx="12" fill="#25f07c"/>
+    </g>
+    <path d="M-7 -11.5c0-1.5 1.6-2.4 2.9-1.6l16.2 10.3c1.2.8 1.2 2.5 0 3.3L-4.1 10.8c-1.3.8-2.9-.1-2.9-1.6V-11.5z" fill="#0b0b0a"/>
+  </g>
+  <rect x="200" y="186" width="212" height="5" rx="2.5" fill="#3a3835"/>
+  <rect x="200" y="186" width="132" height="5" rx="2.5" fill="#25f07c"/>
+  <circle cx="332" cy="188.5" r="6" fill="#f0ece5"/>
+  <path d="M294 224l-10 24h48l-10-24" fill="#ffffff" stroke="#0b0b0a" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="270" y="247" width="72" height="8" rx="4" fill="#0b0b0a"/>
+
+  <!-- The login details go from the reply to the TV -->
+  <path d="M234 330C280 334 330 326 362 311" stroke="#0b0b0a" stroke-width="3" stroke-dasharray="4 7" stroke-linecap="round"/>
+  <circle cx="392" cy="300" r="26" fill="#0b0b0a"/>
+  <circle cx="383" cy="300" r="8" stroke="#25f07c" stroke-width="3.5"/>
+  <path d="M391 300h16m-5 0v7m5-7v6" stroke="#25f07c" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M392 266v-20" stroke="#0b0b0a" stroke-width="3" stroke-dasharray="4 7" stroke-linecap="round"/>
+  <path d="M385 242l7-8 7 8" stroke="#0b0b0a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- The phone: a chat with OTTV -->
+  <rect x="38" y="142" width="190" height="300" rx="28" fill="#ffffff" stroke="#0b0b0a" stroke-width="3"/>
+  <rect x="104" y="154" width="58" height="8" rx="4" fill="#0b0b0a"/>
+  <g transform="translate(66 187) scale(0.32)">
+    <g transform="rotate(45)">
+      <rect x="-26" y="-26" width="52" height="52" rx="12" fill="#25f07c"/>
+    </g>
+    <path d="M-7 -11.5c0-1.5 1.6-2.4 2.9-1.6l16.2 10.3c1.2.8 1.2 2.5 0 3.3L-4.1 10.8c-1.3.8-2.9-.1-2.9-1.6V-11.5z" fill="#0b0b0a"/>
+  </g>
+  <rect x="86" y="180" width="62" height="6" rx="3" fill="#0b0b0a"/>
+  <rect x="86" y="191" width="38" height="5" rx="2.5" fill="#8c877f"/>
+  <path d="M52 210h162" stroke="#e3ded5" stroke-width="2"/>
+
+  <!-- The order, sent -->
+  <rect x="104" y="224" width="108" height="48" rx="13" fill="#25f07c" stroke="#0b0b0a" stroke-width="2.5"/>
+  <rect x="116" y="236" width="76" height="6" rx="3" fill="#0b0b0a"/>
+  <rect x="116" y="248" width="52" height="6" rx="3" fill="#0b0b0a"/>
+  <rect x="178" y="260" width="22" height="4" rx="2" fill="#0b0b0a" fill-opacity="0.45"/>
+
+  <!-- The reply, with the login details -->
+  <rect x="52" y="286" width="134" height="88" rx="13" fill="#f5f3ee" stroke="#0b0b0a" stroke-width="2.5"/>
+  <rect x="64" y="298" width="58" height="6" rx="3" fill="#0b0b0a"/>
+  <rect x="64" y="312" width="110" height="18" rx="5" fill="#ffffff" stroke="#0b0b0a" stroke-width="2"/>
+  <circle cx="74" cy="321" r="3" fill="#0b0b0a"/>
+  <rect x="82" y="318.5" width="56" height="5" rx="2.5" fill="#e3ded5"/>
+  <rect x="64" y="338" width="110" height="18" rx="5" fill="#ffffff" stroke="#0b0b0a" stroke-width="2"/>
+  <g fill="#0b0b0a">
+    <circle cx="74" cy="347" r="3"/>
+    <circle cx="84" cy="347" r="3"/>
+    <circle cx="94" cy="347" r="3"/>
+    <circle cx="104" cy="347" r="3"/>
+    <circle cx="114" cy="347" r="3"/>
+  </g>
+  <rect x="152" y="362" width="22" height="4" rx="2" fill="#8c877f"/>
+
+  <!-- Typing field -->
+  <rect x="52" y="404" width="128" height="24" rx="12" fill="#ffffff" stroke="#e3ded5" stroke-width="2.5"/>
+  <circle cx="200" cy="416" r="11" fill="#25f07c" stroke="#0b0b0a" stroke-width="2"/>
+  <path d="M196 416h8m-3-3l3 3-3 3" stroke="#0b0b0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

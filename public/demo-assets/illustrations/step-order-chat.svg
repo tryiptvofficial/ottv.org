@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="200" viewBox="0 0 320 200" fill="none">
+  <title>A phone with a chat: an order and a reply with login details</title>
+  <!-- Original OTTV illustration. A generic chat, no messaging-app branding. -->
+  <rect x="104" y="8" width="112" height="184" rx="18" fill="#ffffff" stroke="#0b0b0a" stroke-width="2"/>
+  <rect x="140" y="18" width="40" height="6" rx="3" fill="#0b0b0a"/>
+  <!-- Outgoing order -->
+  <rect x="140" y="40" width="64" height="34" rx="10" fill="#25f07c" stroke="#0b0b0a" stroke-width="2"/>
+  <rect x="150" y="50" width="40" height="5" rx="2.5" fill="#0b0b0a"/>
+  <rect x="150" y="60" width="28" height="5" rx="2.5" fill="#0b0b0a"/>
+  <!-- Reply with login details -->
+  <rect x="116" y="88" width="78" height="58" rx="10" fill="#f5f3ee" stroke="#0b0b0a" stroke-width="2"/>
+  <rect x="126" y="98" width="34" height="5" rx="2.5" fill="#0b0b0a"/>
+  <rect x="126" y="112" width="58" height="10" rx="4" fill="#ffffff" stroke="#0b0b0a" stroke-width="1.5"/>
+  <rect x="126" y="128" width="58" height="10" rx="4" fill="#ffffff" stroke="#0b0b0a" stroke-width="1.5"/>
+  <circle cx="132" cy="117" r="2" fill="#0b0b0a"/>
+  <g fill="#0b0b0a">
+    <circle cx="132" cy="133" r="2"/>
+    <circle cx="139" cy="133" r="2"/>
+    <circle cx="146" cy="133" r="2"/>
+    <circle cx="153" cy="133" r="2"/>
+  </g>
+  <rect x="138" y="115" width="30" height="4" rx="2" fill="#e3ded5"/>
+  <!-- Typing field -->
+  <rect x="116" y="164" width="88" height="16" rx="8" fill="#ffffff" stroke="#e3ded5" stroke-width="2"/>
+  <circle cx="196" cy="172" r="5" fill="#25f07c" stroke="#0b0b0a" stroke-width="1.5"/>
+  <!-- Key: the login arrives in the chat -->
+  <circle cx="252" cy="118" r="20" fill="#0b0b0a"/>
+  <circle cx="245" cy="118" r="6" stroke="#25f07c" stroke-width="2.6"/>
+  <path d="M251 118h12m-4 0v5m4-5v4" stroke="#25f07c" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M196 118h30" stroke="#0b0b0a" stroke-width="2" stroke-dasharray="3 5" stroke-linecap="round"/>
+</svg>
