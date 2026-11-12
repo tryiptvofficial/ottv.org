@@ -140,9 +140,10 @@ The mono stamp is for labels and metadata (breadcrumbs, device-group labels, cat
   - A note under a device's name says when its guide needs a paid player app, screen mirroring or the box's MAC address (`note` in `guideGroups`).
   - The buffering guide is a line under the grid, not a card.
 - **`StepList`:** numbered circles in the primary colour (green on black, ink on off-white), with an original illustration or an icon.
-  - Three columns from 1024px. Below that the steps stack, and the illustration stays small so the text leads.
+  - From 768px the steps sit three in a row as equal cards with the illustration on top, like the plan cards above them on the homepage (306×430 at 997px). Below that they stack.
   - On phones the illustration sits above the text in a 2:1 frame (295×148 on a 375px screen), at 72% of the frame's width.
-  - From 640px (a phone turned sideways, a tablet) it sits beside the text at a fixed 224×140, so a 667×375 screen shows a whole step. A frame as wide as the card was 367px tall there, nearly the whole screen.
+  - From 640px to 767px (a phone turned sideways) it sits beside the text at a fixed 224×140, so a 667×375 screen shows a whole step. A frame as wide as the card was 367px tall there, nearly the whole screen.
+  - Each drawing is sized by width: 72% of the frame on phones, 92% beside the text, and the full frame from 768px (336×222 at 1280px). Never use a percentage height inside the aspect-ratio frame. It resolved differently depending on the tab's layout history, so the same page measured 336×210 or 336×222.
 - **Why OTTV:** cards in two columns on black, heading and text only.
 - **IPTV explained:** a TV-guide drawing (channels, what is on now, catch-up, the channel playing) and two cards (what IPTV is, what you need) on a light band, side by side from 1024px with the drawing first below that; then the free trial and pricing buttons. How OTTV works is the steps section's own question ("How Does OTTV Work?").
   - These buttons and the one under the FAQ are the page's only actions between the plans and the closing free-trial band.

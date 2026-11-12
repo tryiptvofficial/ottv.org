@@ -14,29 +14,31 @@ export interface Step {
 
 /**
  * A numbered sequence of steps: one card per step with a green number, and an illustration or icon when
- * given. Three columns from 1024px; below that the steps stack, because three columns get too narrow to read.
- * Below 1024px the illustration stays small so the text leads: on phones it sits above the text in a short 2:1
- * frame, and from 640px (a phone turned sideways, a tablet) it sits beside the text at a fixed 224px. A frame
+ * given. From 768px the steps sit three in a row as equal cards, illustration on top, like the plan cards
+ * above them on the homepage. Below that the steps stack: on phones the illustration sits above the text in a
+ * short 2:1 frame, and from 640px (a phone turned sideways) it sits beside the text at a fixed 224px. A frame
  * as wide as the card was 367px tall on a 667x375 sideways phone, nearly the whole screen.
  */
 export function StepList({ steps, className }: { steps: Step[]; className?: string }) {
   return (
-    <ol className={cn("grid gap-4 lg:grid-cols-3", className)}>
+    <ol className={cn("grid gap-4 md:grid-cols-3", className)}>
       {steps.map((step, i) => (
         <li
           key={step.title}
-          className="reveal flex flex-col rounded-card bg-card p-4 shadow-card sm:flex-row sm:items-center sm:gap-6 sm:p-6 lg:flex-col lg:items-stretch lg:gap-0"
+          className="reveal flex flex-col rounded-card bg-card p-4 shadow-card sm:flex-row sm:items-center sm:gap-6 sm:p-6 md:flex-col md:items-stretch md:gap-0 md:p-4 lg:p-6"
         >
           {step.illustration && (
-            <div className="mb-5 flex aspect-[2/1] items-center justify-center overflow-clip rounded-control bg-background p-3 sm:mb-0 sm:aspect-[8/5] sm:w-56 sm:shrink-0 lg:mb-6 lg:w-auto lg:p-4">
+            <div className="mb-5 flex aspect-[2/1] items-center justify-center overflow-clip rounded-control bg-background p-3 sm:mb-0 sm:aspect-[8/5] sm:w-56 sm:shrink-0 md:mb-5 md:w-auto lg:mb-6 lg:p-4">
               <Image
                 src={step.illustration.src}
                 alt=""
                 width={step.illustration.width}
                 height={step.illustration.height}
                 unoptimized
-                // On phones the drawing is sized by width: 72% of the frame's width gives a frame of about 2:1.
-                className="h-auto w-[72%] sm:h-full sm:w-auto"
+                // Sized by width at every screen size, never by a percentage height. Inside the aspect-ratio frame a
+                // percentage height came out differently depending on the tab's layout history: on desktop
+                // 336x222 on a fresh load, but 336x210 after resizing from a phone width.
+                className="h-auto w-[72%] sm:w-[92%] md:w-full"
               />
             </div>
           )}
