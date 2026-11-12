@@ -8,14 +8,6 @@ const nextConfig = {
     // Include 144 and 256 so small UI images (brand logos, avatars) aren't
     // served at the next deviceSize step (640 px) which is 4× oversized.
     imageSizes: [16, 32, 48, 64, 96, 128, 144, 256, 384],
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-        port: '',
-        pathname: '/**',
-      },
-    ],
   },
   compress: true,
   poweredByHeader: false,
