@@ -65,7 +65,8 @@ export default async function CheckoutPage() {
                             <Button asChild size="lg" variant="secondary" className="mt-6 w-full">
                                 <WhatsAppLink>
                                     <SiWhatsapp aria-hidden />
-                                    Ask a question first
+                                    Ask a Question on WhatsApp
+                                    <span className="sr-only">, opens in a new tab</span>
                                 </WhatsAppLink>
                             </Button>
                         </CardContent>

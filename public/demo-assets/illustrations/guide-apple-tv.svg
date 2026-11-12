@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 320 200" fill="none">
+  <title>A TV showing a player app's add-playlist screen, with a streaming box and a remote</title>
+  <!-- Original OTTV illustration for the Apple TV guide: generic devices with no manufacturer marks. Ink #0b0b0a, green #25f07c. -->
+  <rect width="320" height="200" fill="#ece9e2"/>
+  <ellipse cx="160" cy="188" rx="122" ry="6" fill="#0b0b0a" fill-opacity="0.08"/>
+  <!-- The top band stays empty for the category tag that cards place there. -->
+  <g transform="translate(16 27.6) scale(0.9)">
+    <!-- TV with the player app: the playlist link field, the add button and the channels -->
+    <rect x="44" y="16" width="232" height="132" rx="10" fill="#0b0b0a"/>
+    <rect x="52" y="24" width="216" height="116" rx="5" fill="#141413"/>
+    <rect x="64" y="36" width="140" height="14" rx="5" fill="#232220" stroke="#25f07c" stroke-width="1.5"/>
+    <circle cx="73" cy="43" r="2.5" fill="#25f07c"/>
+    <rect x="80" y="41" width="84" height="4" rx="2" fill="#f0ece5" fill-opacity="0.8"/>
+    <rect x="210" y="36" width="46" height="14" rx="5" fill="#25f07c"/>
+    <rect x="220" y="41" width="26" height="4" rx="2" fill="#0b0b0a"/>
+    <g fill="#232220">
+      <rect x="64" y="60" width="40" height="26" rx="4"/>
+      <rect x="160" y="60" width="40" height="26" rx="4"/>
+      <rect x="208" y="60" width="40" height="26" rx="4"/>
+      <rect x="64" y="94" width="40" height="26" rx="4"/>
+      <rect x="112" y="94" width="40" height="26" rx="4"/>
+      <rect x="160" y="94" width="40" height="26" rx="4"/>
+      <rect x="208" y="94" width="40" height="26" rx="4"/>
+    </g>
+    <rect x="112" y="60" width="40" height="26" rx="4" fill="#232220" stroke="#25f07c" stroke-width="1.5"/>
+    <g transform="translate(132 69) scale(0.22)">
+      <g transform="rotate(45)">
+        <rect x="-26" y="-26" width="52" height="52" rx="12" fill="#25f07c"/>
+      </g>
+      <path d="M-7 -11.5c0-1.5 1.6-2.4 2.9-1.6l16.2 10.3c1.2.8 1.2 2.5 0 3.3L-4.1 10.8c-1.3.8-2.9-.1-2.9-1.6V-11.5z" fill="#0b0b0a"/>
+    </g>
+    <rect x="122" y="80" width="20" height="3" rx="1.5" fill="#f0ece5" fill-opacity="0.85"/>
+    <g fill="#3a3835">
+      <rect x="70" y="79" width="20" height="3" rx="1.5"/>
+      <rect x="166" y="79" width="20" height="3" rx="1.5"/>
+      <rect x="214" y="79" width="20" height="3" rx="1.5"/>
+      <rect x="70" y="113" width="20" height="3" rx="1.5"/>
+      <rect x="118" y="113" width="20" height="3" rx="1.5"/>
+      <rect x="166" y="113" width="20" height="3" rx="1.5"/>
+      <rect x="214" y="113" width="20" height="3" rx="1.5"/>
+    </g>
+    <rect x="64" y="128" width="192" height="3" rx="1.5" fill="#3a3835"/>
+    <rect x="64" y="128" width="78" height="3" rx="1.5" fill="#25f07c"/>
+    <path d="M96 148l-8 14M224 148l8 14" stroke="#0b0b0a" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- Streaming box, cabled to the TV, and its remote -->
+    <path d="M58 160c0-6 12-6 12-12" stroke="#0b0b0a" stroke-width="1.5" stroke-linecap="round"/>
+    <rect x="36" y="160" width="44" height="14" rx="5" fill="#0b0b0a"/>
+    <circle cx="73" cy="167" r="1.5" fill="#25f07c"/>
+    <rect x="236" y="166" width="46" height="10" rx="5" fill="#ffffff" stroke="#0b0b0a" stroke-width="2"/>
+    <circle cx="246" cy="171" r="3" fill="#0b0b0a"/>
+    <circle cx="258" cy="171" r="1.6" fill="#0b0b0a"/>
+    <circle cx="266" cy="171" r="1.6" fill="#0b0b0a"/>
+  </g>
+</svg>

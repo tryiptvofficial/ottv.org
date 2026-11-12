@@ -20,6 +20,11 @@ const nextConfig = {
   compress: true,
   poweredByHeader: false,
   reactStrictMode: true,
+  experimental: {
+    // Puts the site's CSS in each page's HTML instead of a separate file the browser has to fetch before it can draw
+    // anything: one round trip less on a first visit from a phone. The CSS is about 13 KB compressed.
+    inlineCss: true,
+  },
   async headers() {
     return [
       {

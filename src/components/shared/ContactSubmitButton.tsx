@@ -9,7 +9,7 @@ export function ContactSubmitButton() {
   return (
     <Button type="submit" size="lg" disabled={pending} aria-busy={pending} className="w-full">
       {pending && <Loader2 aria-hidden className="animate-spin" />}
-      {pending ? 'Sending...' : 'Send Message'}
+      {pending ? 'Opening WhatsApp…' : 'Continue in WhatsApp'}
     </Button>
   );
 }

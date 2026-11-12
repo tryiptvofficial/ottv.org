@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 320 200" fill="none">
+  <title>A smart TV showing a player app with its MAC address, and a phone sending the playlist to it</title>
+  <!-- Original OTTV illustration for the Samsung TV guide: generic devices with no manufacturer marks. Ink #0b0b0a, green #25f07c. -->
+  <rect width="320" height="200" fill="#ece9e2"/>
+  <ellipse cx="160" cy="176" rx="122" ry="6" fill="#0b0b0a" fill-opacity="0.08"/>
+  <!-- The top-left corner stays empty for the category tag that cards place there. -->
+  <g transform="translate(16 26.2) scale(0.9)">
+    <!-- TV with a player app: categories on the left, the TV's MAC address and the playlist on the right -->
+    <rect x="20" y="18" width="196" height="124" rx="10" fill="#0b0b0a"/>
+    <rect x="28" y="26" width="180" height="108" rx="5" fill="#141413"/>
+    <rect x="36" y="34" width="42" height="92" rx="4" fill="#232220"/>
+    <rect x="42" y="42" width="28" height="4" rx="2" fill="#3a3835"/>
+    <rect x="42" y="52" width="22" height="4" rx="2" fill="#3a3835"/>
+    <rect x="42" y="62" width="26" height="4" rx="2" fill="#25f07c"/>
+    <rect x="42" y="72" width="20" height="4" rx="2" fill="#3a3835"/>
+    <rect x="42" y="82" width="24" height="4" rx="2" fill="#3a3835"/>
+    <rect x="86" y="34" width="114" height="36" rx="5" fill="#232220" stroke="#25f07c" stroke-width="1.5"/>
+    <rect x="94" y="41" width="26" height="4" rx="2" fill="#3a3835"/>
+    <g fill="#f0ece5">
+      <rect x="94" y="52" width="10" height="8" rx="2"/>
+      <rect x="108" y="52" width="10" height="8" rx="2"/>
+      <rect x="122" y="52" width="10" height="8" rx="2"/>
+      <rect x="136" y="52" width="10" height="8" rx="2"/>
+      <rect x="150" y="52" width="10" height="8" rx="2"/>
+      <rect x="164" y="52" width="10" height="8" rx="2"/>
+    </g>
+    <rect x="86" y="80" width="14" height="10" rx="2" fill="#232220"/>
+    <rect x="106" y="83" width="70" height="4" rx="2" fill="#f0ece5" fill-opacity="0.85"/>
+    <rect x="86" y="96" width="14" height="10" rx="2" fill="#232220"/>
+    <rect x="106" y="99" width="56" height="4" rx="2" fill="#3a3835"/>
+    <rect x="86" y="112" width="14" height="10" rx="2" fill="#232220"/>
+    <rect x="106" y="115" width="64" height="4" rx="2" fill="#3a3835"/>
+    <path d="M110 142l-8 16h32l-8-16" fill="#ffffff" stroke="#0b0b0a" stroke-width="2" stroke-linejoin="round"/>
+    <rect x="90" y="158" width="56" height="6" rx="3" fill="#0b0b0a"/>
+
+    <!-- Phone on the app's website: the MAC address, the playlist link and the upload button -->
+    <rect x="250" y="58" width="50" height="98" rx="10" fill="#ffffff" stroke="#0b0b0a" stroke-width="2"/>
+    <rect x="257" y="68" width="36" height="76" rx="4" fill="#0b0b0a"/>
+    <rect x="263" y="76" width="18" height="4" rx="2" fill="#f0ece5"/>
+    <rect x="262" y="86" width="26" height="9" rx="2" fill="#232220"/>
+    <g fill="#f0ece5" fill-opacity="0.8">
+      <rect x="265" y="89.5" width="4" height="2" rx="1"/>
+      <rect x="270" y="89.5" width="4" height="2" rx="1"/>
+      <rect x="275" y="89.5" width="4" height="2" rx="1"/>
+      <rect x="280" y="89.5" width="4" height="2" rx="1"/>
+    </g>
+    <rect x="262" y="99" width="26" height="9" rx="2" fill="#232220"/>
+    <rect x="265" y="102.5" width="18" height="2" rx="1" fill="#25f07c"/>
+    <rect x="262" y="114" width="26" height="12" rx="3" fill="#25f07c"/>
+    <path d="M275 123v-6m-3 3l3-3 3 3" stroke="#0b0b0a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="268" y="148" width="14" height="3" rx="1.5" fill="#0b0b0a"/>
+
+    <!-- The playlist goes from the phone to the TV -->
+    <path d="M244 110H226" stroke="#0b0b0a" stroke-width="2" stroke-dasharray="3 5" stroke-linecap="round"/>
+    <path d="M229 105l-5 5 5 5" stroke="#0b0b0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

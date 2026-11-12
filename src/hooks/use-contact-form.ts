@@ -19,7 +19,7 @@ function openInWhatsApp(_prevState: ContactFormState, formData: FormData): Conta
   if (!validatedFields.success) {
     return {
       errors: validatedFields.error.flatten().fieldErrors,
-      message: 'Please correct the errors below.',
+      message: 'Some fields need a fix. Each one says what to enter.',
       values,
     };
   }
@@ -55,7 +55,7 @@ export function useContactForm(onSuccess?: () => void) {
     } else if (state.message && state.errors) {
       toast({
         variant: 'destructive',
-        title: 'Error',
+        title: 'Check the form',
         description: state.message,
       });
     }

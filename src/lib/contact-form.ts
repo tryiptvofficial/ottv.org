@@ -2,9 +2,9 @@ import { z } from 'zod';
 import { whatsappUrl } from '@/lib/site-config';
 
 export const contactSchema = z.object({
-  name: z.string().min(2, 'Name must be at least 2 characters.'),
-  email: z.string().email('Invalid email address.'),
-  message: z.string().min(10, 'Message must be at least 10 characters long.'),
+  name: z.string().min(2, 'Enter your name, at least 2 characters.'),
+  email: z.string().email('Enter an email address like name@example.com.'),
+  message: z.string().min(10, 'Write at least 10 characters so we know what you need.'),
 });
 
 export type ContactValues = z.infer<typeof contactSchema>;

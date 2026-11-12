@@ -93,6 +93,13 @@ export function ConsentSettingsButton({ className }: { className?: string }) {
   );
 }
 
+/** True while the analytics choice is on screen (first visit, or reopened from the footer). */
+export function useConsentPanelOpen() {
+  const choice = useSyncExternalStore<ChoiceState | "server">(subscribe, readChoice, () => "server");
+  const reopened = useSyncExternalStore(subscribe, () => settingsOpen, () => false);
+  return choice === "unset" || reopened;
+}
+
 export function ConsentManager() {
   const choice = useSyncExternalStore<ChoiceState | "server">(subscribe, readChoice, () => "server");
   const reopened = useSyncExternalStore(subscribe, () => settingsOpen, () => false);
@@ -102,13 +109,18 @@ export function ConsentManager() {
     <>
       {choice === "accepted" && <Analytics />}
       {(choice === "unset" || reopened) && (
+        // Phones: a compact bar on the bottom edge, short enough to leave the hero's buttons in view on a 375x812
+        // screen. From 640px: a card in the bottom-right corner, away from the hero's buttons on the left. It sits
+        // above the floating contact button, which steps aside while the choice is open. On screens under 500px tall,
+        // such as a phone turned sideways, a card would cover a third of the page, so it stays a bar on the bottom
+        // edge, with the buttons beside the text.
         <section
           aria-label="Analytics choice"
-          className="fixed inset-x-0 bottom-0 z-[60] rounded-t-card border-t bg-background p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] shadow-overlay sm:inset-x-auto sm:bottom-6 sm:left-6 sm:z-50 sm:max-w-md sm:rounded-card sm:border sm:p-4"
+          className="fixed inset-x-0 bottom-0 z-[60] border-t bg-card px-4 pb-[max(0.625rem,env(safe-area-inset-bottom))] pt-2.5 sm:inset-x-auto sm:bottom-6 sm:right-6 sm:max-w-md sm:rounded-card sm:border-t-0 sm:p-5 sm:shadow-overlay sm:short:inset-x-0 sm:short:bottom-0 sm:short:flex sm:short:max-w-none sm:short:items-center sm:short:gap-6 sm:short:rounded-none sm:short:border-t sm:short:px-6 sm:short:py-2.5 sm:short:shadow-none"
         >
-          <p className="text-label text-foreground">Allow analytics?</p>
-          <p className="mt-1 text-caption text-muted-foreground">
-            OTTV uses Google Analytics, Visitors and Ahrefs to see how the site is used. They run only if you accept.
+          <p className="text-caption text-muted-foreground sm:short:flex-1">
+            <span className="font-medium text-foreground sm:mb-1 sm:block sm:text-label sm:short:mb-0 sm:short:inline sm:short:text-caption">Allow analytics?</span>{" "}
+            Google Analytics, Visitors and Ahrefs see how the site is used. They run only if you accept.
             {reopened && choice !== "unset" && ` Your current choice: ${choice}.`}
             {privacyLink && (
               <>
@@ -117,7 +129,7 @@ export function ConsentManager() {
               </>
             )}
           </p>
-          <div className="mt-3 grid grid-cols-2 gap-2">
+          <div className="mt-2 grid grid-cols-2 gap-2 sm:mt-4 sm:short:mt-0 sm:short:w-48 sm:short:shrink-0">
             <Button size="sm" variant="secondary" autoFocus={reopened} onClick={() => saveChoice("rejected")}>Reject</Button>
             <Button size="sm" variant="secondary" onClick={() => saveChoice("accepted")}>Accept</Button>
           </div>

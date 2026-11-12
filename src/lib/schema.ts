@@ -10,6 +10,7 @@ import type {
   Service,
   Offer,
   AggregateOffer,
+  ItemList,
   WithContext
 } from 'schema-dts';
 import { siteConfig, siteContentUpdatedAt, whatsappUrl } from '@/lib/site-config';
@@ -139,6 +140,22 @@ export function generateBreadcrumbSchema(itemListElement: { name: string; item: 
       position: index + 1,
       name: item.name,
       item: item.item,
+    })),
+  };
+}
+
+/** An ordered list of pages, for a hub page that shows the same list visibly (the setup guides). */
+export function generateItemListSchema({ name, items }: { name: string; items: { name: string; url: string }[] }): WithContext<ItemList> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name,
+    numberOfItems: items.length,
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      url: item.url,
     })),
   };
 }

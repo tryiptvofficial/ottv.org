@@ -47,3 +47,6 @@ firestore-debug.log
 # Third-party agent skill whose source (genkit-ai/skills) publishes no licence: kept locally, not in the public repo.
 # skills-lock.json still records its source so it can be reinstalled.
 /.agents/skills/developing-genkit-js/
+# Impeccable design skill (Apache-2.0, github.com/pbakaus/impeccable): its 20 MB engine binary is
+# platform-specific and re-created by `npx impeccable install`, so it stays out of the repository.
+/.claude/skills/impeccable/scripts/bin/

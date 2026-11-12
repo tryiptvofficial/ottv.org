@@ -1,10 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { BookOpen, Check, MessageCircle, PenLine } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { SiWhatsapp } from 'react-icons/si';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { IconTile } from '@/components/ui/icon-tile';
 import { Heading } from '@/components/ui/typography';
 import { Callout } from '@/components/shared/Callout';
 import { ContactForm } from '@/components/shared/ContactForm';
@@ -83,12 +82,11 @@ export default function ContactPage() {
         </Container>
       </Section>
 
-      <Section tone="light">
+      <Section flushTop>
         <Container>
           <SectionHeader title="Choose How to Contact Us" />
-          <Grid as="ul" cols={3}>
-            <Card as="li" className="flex flex-col p-4">
-              <IconTile className="mb-6"><MessageCircle aria-hidden /></IconTile>
+          <Grid as="ul" cols="triple" gap="lattice">
+            <Card variant="cell" as="li" className="flex flex-col p-6 md:p-8">
               <Heading level={3} size="heading">Chat with us on WhatsApp</Heading>
               <p className="mt-2 flex-grow text-muted-foreground">Orders, login details, setup or anything else. Tell us your device and what happens.</p>
               <Button asChild className="mt-6 w-full">
@@ -98,16 +96,14 @@ export default function ContactPage() {
                 </WhatsAppLink>
               </Button>
             </Card>
-            <Card as="li" className="flex flex-col p-4">
-              <IconTile className="mb-6"><PenLine aria-hidden /></IconTile>
+            <Card variant="cell" as="li" className="flex flex-col p-6 md:p-8">
               <Heading level={3} size="heading">Write your message here</Heading>
               <p className="mt-2 flex-grow text-muted-foreground">Prefer to type it out first? The form below opens WhatsApp with your name, email and message already filled in.</p>
               <Button asChild variant="secondary" className="mt-6 w-full">
-                <Link href="#contact-form">Go to the form</Link>
+                <Link href="#contact-form">Go to the Form</Link>
               </Button>
             </Card>
-            <Card as="li" className="flex flex-col p-4">
-              <IconTile className="mb-6"><BookOpen aria-hidden /></IconTile>
+            <Card variant="cell" as="li" className="flex flex-col p-6 md:p-8">
               <Heading level={3} size="heading">Browse setup guides</Heading>
               <p className="mt-2 text-muted-foreground">Step-by-step setup for each device we support, plus fixes for buffering.</p>
               <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-caption">
@@ -120,23 +116,23 @@ export default function ContactPage() {
         </Container>
       </Section>
 
-      <Section>
+      <Section tone="light">
         <Container>
           <Grid cols="aside" gap="loose">
             <div>
-              <Heading level={2} size="heading">Include This in Your Message</Heading>
+              <Heading level={2} size="heading-md">Include This in Your Message</Heading>
               <p className="mt-4 text-body text-muted-foreground">These details help us solve the problem in fewer messages.</p>
               <ul className="mt-6 space-y-3 text-body text-muted-foreground">
                 {checklist.map((item) => (
                   <li key={item} className="flex gap-3">
-                    <Check aria-hidden className="mt-1 h-4 w-4 shrink-0 text-foreground" />
+                    <Check aria-hidden className="mt-1 h-4 w-4 shrink-0 text-signal" />
                     {item}
                   </li>
                 ))}
               </ul>
             </div>
-            <Card id="contact-form" className="scroll-mt-24 p-4">
-              <Heading level={2} size="heading">Send us a message</Heading>
+            <Card id="contact-form" className="scroll-mt-24 p-6 md:p-8">
+              <Heading level={2} size="heading-md">Send Us a Message</Heading>
               <p className="mt-2 text-caption text-muted-foreground">Submitting opens WhatsApp with your message ready to send.</p>
               <div className="mt-6">
                 <ContactForm />
@@ -146,7 +142,7 @@ export default function ContactPage() {
         </Container>
       </Section>
 
-      <Section tone="light">
+      <Section tone="light" flushTop>
         <Container>
           <SectionHeader
             title="Common Support Questions"
@@ -164,7 +160,7 @@ export default function ContactPage() {
               <Button asChild size="lg">
                 <WhatsAppLink message={supportMessage}>
                   <SiWhatsapp aria-hidden />
-                  Message us on WhatsApp
+                  Message Us on WhatsApp
                 </WhatsAppLink>
               </Button>
             }

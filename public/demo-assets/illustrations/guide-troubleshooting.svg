@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 320 200" fill="none">
+  <title>A router wired to a TV with an Ethernet cable, the TV loading a stream, and a restart symbol</title>
+  <!-- Original OTTV illustration for the buffering guide: generic devices with no manufacturer marks. Ink #0b0b0a, green #25f07c. -->
+  <rect width="320" height="200" fill="#ece9e2"/>
+  <ellipse cx="164" cy="180" rx="140" ry="6" fill="#0b0b0a" fill-opacity="0.08"/>
+  <g transform="translate(0 4)">
+    <!-- TV loading the stream -->
+    <rect x="124" y="18" width="176" height="110" rx="9" fill="#0b0b0a"/>
+    <rect x="131" y="25" width="162" height="96" rx="5" fill="#141413"/>
+    <circle cx="212" cy="66" r="15" stroke="#3a3835" stroke-width="4"/>
+    <circle cx="212" cy="66" r="15" stroke="#25f07c" stroke-width="4" stroke-dasharray="30 100" stroke-linecap="round" transform="rotate(-90 212 66)"/>
+    <rect x="190" y="92" width="44" height="3" rx="1.5" fill="#3a3835"/>
+    <rect x="143" y="108" width="138" height="3" rx="1.5" fill="#3a3835"/>
+    <rect x="143" y="108" width="52" height="3" rx="1.5" fill="#25f07c"/>
+    <path d="M206 128l-6 12h24l-6-12" fill="#ffffff" stroke="#0b0b0a" stroke-width="2" stroke-linejoin="round"/>
+    <rect x="192" y="140" width="40" height="5" rx="2.5" fill="#0b0b0a"/>
+
+    <!-- Router with its lights on, wired to the TV -->
+    <path d="M40 134L34 104M100 134l6-30" stroke="#0b0b0a" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="34" cy="104" r="2.5" fill="#0b0b0a"/>
+    <circle cx="106" cy="104" r="2.5" fill="#0b0b0a"/>
+    <rect x="26" y="134" width="88" height="26" rx="6" fill="#ffffff" stroke="#0b0b0a" stroke-width="2"/>
+    <g fill="#25f07c" stroke="#0b0b0a" stroke-width="1">
+      <circle cx="40" cy="151" r="2"/>
+      <circle cx="50" cy="151" r="2"/>
+      <circle cx="60" cy="151" r="2"/>
+    </g>
+    <circle cx="70" cy="151" r="2" fill="#3a3835"/>
+    <path d="M114 150C150 150 150 168 184 168S262 160 268 136" stroke="#0b0b0a" stroke-width="3" stroke-linecap="round"/>
+    <rect x="263" y="128" width="10" height="8" rx="1.5" fill="#ffffff" stroke="#0b0b0a" stroke-width="1.5"/>
+
+    <!-- Restart -->
+    <circle cx="82" cy="58" r="14" fill="#25f07c" stroke="#0b0b0a" stroke-width="2"/>
+    <path d="M76 58a6 6 0 1 0 1.8-4.3" stroke="#0b0b0a" stroke-width="2" stroke-linecap="round"/>
+    <path d="M76.8 50.8l1 3.9 3.9-1" stroke="#0b0b0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

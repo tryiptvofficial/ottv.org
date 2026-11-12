@@ -7,7 +7,7 @@ import { Menu } from 'lucide-react';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/shared/Logo';
-import { navLinks } from '@/lib/site-data/nav';
+import { navCurrent, navLinks } from '@/lib/site-data/nav';
 
 export function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,13 +18,14 @@ export function MobileNav() {
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger asChild>
-        <Button variant="ghost" size="sm" className="w-9 px-0 lg:hidden">
-          <Menu className="h-5 w-5" />
+        <Button variant="ghost" size="sm" className="h-11 w-11 rounded-pill px-0 lg:hidden">
+          <Menu className="!size-5" />
           <span className="sr-only">Toggle Navigation</span>
         </Button>
       </SheetTrigger>
+      {/* Opens from the right, the side the menu button is on. */}
       <SheetContent
-        side="left"
+        side="right"
         className="flex flex-col"
         onCloseAutoFocus={(event) => {
           if (followedLink.current) event.preventDefault();
@@ -35,13 +36,13 @@ export function MobileNav() {
           <SheetTitle>Navigation Menu</SheetTitle>
         </SheetHeader>
         <Logo />
-        <nav className="mt-8 flex flex-1 flex-col gap-1">
+        <nav className="mt-10 flex flex-1 flex-col">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              aria-current={pathname === link.href ? "page" : undefined}
-              className="rounded-control px-3 py-3 text-subheading text-muted-foreground transition-colors duration-fast hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring aria-[current=page]:bg-accent aria-[current=page]:text-foreground"
+              aria-current={navCurrent(pathname, link.href)}
+              className="-mx-3 rounded-control px-3 py-3 text-body-lg font-medium text-muted-foreground transition-colors duration-fast hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring aria-[current=page]:text-foreground aria-[current=true]:text-foreground"
               onClick={() => {
                 followedLink.current = true;
                 setIsOpen(false);
@@ -50,6 +51,18 @@ export function MobileNav() {
               {link.name}
             </Link>))}
         </nav>
+        {/* The menu covers the header's free trial button, so the menu carries it too, at the bottom where a thumb reaches. */}
+        <Button asChild size="lg" className="mt-6 w-full">
+          <Link
+            href="/iptv-free-trial"
+            onClick={() => {
+              followedLink.current = true;
+              setIsOpen(false);
+            }}
+          >
+            Get IPTV Free Trial
+          </Link>
+        </Button>
       </SheetContent>
     </Sheet>
   );

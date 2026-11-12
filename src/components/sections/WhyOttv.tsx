@@ -1,3 +1,4 @@
+import { Card } from "@/components/ui/card";
 import { Heading } from "@/components/ui/typography";
 import { Container } from "../shared/Container";
 import { Grid } from "../shared/Grid";
@@ -24,24 +25,24 @@ const reasons = [
   },
   {
     title: "Try it before you pay",
-    body: "Start with a free 24-hour trial, with no card needed. Paid plans also come with a 7-day money-back guarantee.",
+    body: "Start with a 24-hour free trial, with no card needed. Paid plans also come with a 7-day money-back guarantee.",
   },
 ];
 
 export function WhyOttv() {
   return (
-    <Section spacing="compact">
+    <Section>
       <Container>
         <SectionHeader
           title="Why Choose OTTV for IPTV?"
           subtitle="Straightforward plans, setup help for your devices and a free trial before you commit."
         />
-        <Grid cols={2} gap="lattice">
+        <Grid cols={2}>
           {reasons.map((reason) => (
-            <div key={reason.title} className="bg-background p-4">
+            <Card key={reason.title} className="reveal p-6 md:p-8">
               <Heading level={3} size="heading">{reason.title}</Heading>
-              <p className="mt-2 text-muted-foreground">{reason.body}</p>
-            </div>
+              <p className="mt-3 max-w-xl text-muted-foreground">{reason.body}</p>
+            </Card>
           ))}
         </Grid>
       </Container>

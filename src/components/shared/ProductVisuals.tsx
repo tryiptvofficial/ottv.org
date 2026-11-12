@@ -1,8 +1,8 @@
 import { cn } from "@/lib/utils";
 
 /**
- * Illustrations of the player interface, drawn in CSS. They use generic labels only, so they never
- * imply that a specific channel or programme is available.
+ * Illustrations of the player interface, drawn in CSS as light-mode product mockups. They use generic labels
+ * only, so they never imply that a specific channel or programme is available.
  */
 const guideRows: { label: string; blocks: number[]; live: number }[] = [
   { label: "News", blocks: [3, 5, 2, 4], live: 1 },
@@ -12,18 +12,19 @@ const guideRows: { label: string; blocks: number[]; live: number }[] = [
   { label: "Music", blocks: [3, 3, 3, 5], live: 0 },
 ];
 
+/** A TV guide grid: mono row labels, white programme blocks on hairlines, the airing block ringed in Obsidian. */
 export function TvGuideVisual({ className }: { className?: string }) {
   return (
-    <div aria-hidden className={cn("space-y-1", className)}>
+    <div aria-hidden className={cn("space-y-1.5", className)}>
       {guideRows.map((row) => (
-        <div key={row.label} className="flex items-center gap-2">
-          <span className="w-14 shrink-0 text-caption text-muted-foreground">{row.label}</span>
+        <div key={row.label} className="flex items-center gap-3">
+          <span className="stamp w-14 shrink-0 text-subtle">{row.label}</span>
           <div className="flex min-w-0 flex-1 gap-1">
             {row.blocks.map((grow, i) => (
               <span
                 key={i}
                 style={{ flexGrow: grow }}
-                className={cn("h-7 basis-0 rounded-tab border", i === row.live ? "border-steel bg-secondary" : "bg-accent")}
+                className={cn("h-7 basis-0 rounded-tab", i === row.live ? "bg-card ring-1 ring-inset ring-foreground" : "bg-card shadow-hairline")}
               />
             ))}
           </div>

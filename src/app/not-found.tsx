@@ -1,4 +1,3 @@
-import { Badge } from "@/components/ui/badge";
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Container } from '@/components/shared/Container';
@@ -18,8 +17,7 @@ export default function NotFound() {
   return (
     <Section spacing="spacious" className="flex min-h-[60vh] items-center">
       <Container size="narrow" className="text-center">
-        <Badge variant="outline">Error 404</Badge>
-        <Heading level={1} size="heading-lg" className="mt-4">
+        <Heading level={1} size="heading-lg">
           Page Not Found
         </Heading>
         <Lead className="mt-4">

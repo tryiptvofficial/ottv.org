@@ -3,15 +3,21 @@ import { whatsappUrl } from "@/lib/site-config";
 import { productFacts } from "@/lib/site-data/product-facts";
 
 const features = [
-  "HD and 4K Streams Where Available",
+  "HD and 4K streams where available",
   productFacts.liveChannelsLabel,
   productFacts.vodLabel,
-  "Pay-Per-View (PPV) Events Included",
-  "Smart EPG (TV Guide) & Catch-Up TV",
-  "Customer Support",
-  "Works on TVs, Phones and Computers",
-  "One Stream at a Time",
+  "Pay-per-view (PPV) events included",
+  "Smart EPG (TV guide) & catch-up TV",
+  "Support on WhatsApp",
+  "Works on TVs, phones and computers",
 ];
+
+// What a plan does not include, shown apart from the features so a limit never reads as a benefit.
+const limits = ["One stream at a time"];
+
+/** Every plan includes the same service, so the pricing section lists these once under the plans, not on each card. */
+export const planFeatures = features;
+export const planLimits = limits;
 
 const orderOnWhatsApp = (planName: string) =>
   whatsappUrl(`I would like to order the ${planName} IPTV plan.`);
@@ -24,8 +30,9 @@ export const plans = [
     price: 15.82,
     price_monthly: 15.82,
     savings: null,
-    description: "Standard 1-month access",
+    description: "One month of full service",
     features,
+    limits,
     isPopular: false,
     url: "/checkout?plan=1-month",
     orderUrl: orderOnWhatsApp("1 Month"),
@@ -39,6 +46,7 @@ export const plans = [
     savings: "Save 19%",
     description: null,
     features,
+    limits,
     isPopular: false,
     url: "/checkout?plan=3-months",
     orderUrl: orderOnWhatsApp("3 Months"),
@@ -52,6 +60,7 @@ export const plans = [
     savings: "Save 38%",
     description: null,
     features,
+    limits,
     isPopular: false,
     url: "/checkout?plan=6-months",
     orderUrl: orderOnWhatsApp("6 Months"),
@@ -65,6 +74,7 @@ export const plans = [
     savings: "Save 54%",
     description: null,
     features,
+    limits,
     isPopular: true,
     url: "/checkout?plan=12-months",
     orderUrl: orderOnWhatsApp("12 Months"),

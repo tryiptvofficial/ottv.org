@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="200" viewBox="0 0 320 200" fill="none">
+  <title>Four plan cards, the last one chosen</title>
+  <!-- Original OTTV illustration. Ink #0b0b0a, green #25f07c, paper #ffffff, lines #e3ded5. -->
+  <g stroke="#0b0b0a" stroke-width="2" stroke-linejoin="round">
+    <rect x="16" y="46" width="62" height="112" rx="10" fill="#ffffff"/>
+    <rect x="90" y="46" width="62" height="112" rx="10" fill="#ffffff"/>
+    <rect x="164" y="46" width="62" height="112" rx="10" fill="#ffffff"/>
+    <rect x="238" y="30" width="66" height="128" rx="10" fill="#0b0b0a"/>
+  </g>
+  <g fill="#0b0b0a">
+    <rect x="26" y="60" width="26" height="6" rx="3"/>
+    <rect x="100" y="60" width="26" height="6" rx="3"/>
+    <rect x="174" y="60" width="26" height="6" rx="3"/>
+    <rect x="26" y="78" width="40" height="12" rx="4"/>
+    <rect x="100" y="78" width="40" height="12" rx="4"/>
+    <rect x="174" y="78" width="40" height="12" rx="4"/>
+  </g>
+  <g fill="#e3ded5">
+    <rect x="26" y="104" width="42" height="5" rx="2.5"/>
+    <rect x="26" y="116" width="34" height="5" rx="2.5"/>
+    <rect x="26" y="128" width="38" height="5" rx="2.5"/>
+    <rect x="100" y="104" width="42" height="5" rx="2.5"/>
+    <rect x="100" y="116" width="34" height="5" rx="2.5"/>
+    <rect x="100" y="128" width="38" height="5" rx="2.5"/>
+    <rect x="174" y="104" width="42" height="5" rx="2.5"/>
+    <rect x="174" y="116" width="34" height="5" rx="2.5"/>
+    <rect x="174" y="128" width="38" height="5" rx="2.5"/>
+  </g>
+  <rect x="248" y="44" width="28" height="6" rx="3" fill="#25f07c"/>
+  <rect x="248" y="62" width="44" height="14" rx="4" fill="#f0ece5"/>
+  <g fill="#3a3835">
+    <rect x="248" y="92" width="44" height="5" rx="2.5"/>
+    <rect x="248" y="104" width="36" height="5" rx="2.5"/>
+    <rect x="248" y="116" width="40" height="5" rx="2.5"/>
+  </g>
+  <rect x="248" y="134" width="46" height="14" rx="7" fill="#25f07c"/>
+  <circle cx="300" cy="32" r="15" fill="#25f07c" stroke="#0b0b0a" stroke-width="2"/>
+  <path d="M293 32.5l5 5 9-10" stroke="#0b0b0a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
